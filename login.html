@@ -1,0 +1,566 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Stackly | Login & Sign Up</title>
+
+    <meta name="description"
+        content="Sign in or create your Stackly Smart Storage Solutions account.">
+
+    <link rel="icon" href="Stackly-logo-Blue.webp">
+
+    <!-- GOOGLE FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <!-- LOGIN CSS -->
+    <link rel="stylesheet" href="login.css">
+</head>
+
+<body>
+
+    <!-- =========================================
+         STACKLY AUTHENTICATION PAGE
+    ========================================== -->
+
+    <main class="stackly-storage-auth-page">
+
+        <!-- BACKGROUND DECORATION -->
+        <div class="stackly-storage-auth-glow"></div>
+        <div class="stackly-storage-auth-pattern"></div>
+
+        <div class="stackly-storage-auth-container">
+
+            <!-- =================================
+                 AUTH LEFT CONTENT
+            ================================== -->
+
+            <div class="stackly-storage-auth-content">
+
+                <!-- LOGO -->
+                <a href="index.html" class="stackly-storage-auth-logo">
+                    <img src="Stackly-logo-Blue.webp"
+                        alt="Stackly Smart Storage Solutions Logo">
+                </a>
+
+                <span class="stackly-storage-auth-label">
+                    <span></span>
+                    SMART STORAGE SOLUTIONS
+                </span>
+
+                <h1>
+                    Smarter Storage.
+                    <span>Better Business.</span>
+                </h1>
+
+                <p>
+                    Access your Stackly account to manage storage operations,
+                    track inventory, and stay connected with your business.
+                </p>
+
+                <!-- BENEFITS -->
+                <div class="stackly-storage-auth-benefits">
+
+                    <div class="stackly-storage-auth-benefit">
+                        <div class="stackly-storage-auth-benefit-icon">
+                            <i class="fa-solid fa-warehouse"></i>
+                        </div>
+                        <div>
+                            <h3>Smart Storage</h3>
+                            <p>Organized and reliable storage solutions.</p>
+                        </div>
+                    </div>
+
+                    <div class="stackly-storage-auth-benefit">
+                        <div class="stackly-storage-auth-benefit-icon">
+                            <i class="fa-solid fa-boxes-stacked"></i>
+                        </div>
+                        <div>
+                            <h3>Easy Management</h3>
+                            <p>Keep your inventory and operations organized.</p>
+                        </div>
+                    </div>
+
+                    <div class="stackly-storage-auth-benefit">
+                        <div class="stackly-storage-auth-benefit-icon">
+                            <i class="fa-solid fa-shield-halved"></i>
+                        </div>
+                        <div>
+                            <h3>Secure Access</h3>
+                            <p>Your account access in one convenient place.</p>
+                        </div>
+                    </div>
+
+                </div>
+
+                <!-- BACK TO HOME -->
+                <a href="index.html" class="stackly-storage-auth-home-btn">
+                    <i class="fa-solid fa-arrow-left"></i>
+                    Back to Home
+                </a>
+
+            </div>
+
+
+            <!-- =================================
+                 AUTH RIGHT FORM
+            ================================== -->
+
+            <div class="stackly-storage-auth-form-wrapper">
+
+                <div class="stackly-storage-auth-card">
+
+                    <!-- FORM HEADER -->
+                    <div class="stackly-storage-auth-heading">
+                        <span class="stackly-storage-auth-small-label">
+                            WELCOME TO STACKLY
+                        </span>
+
+                        <h2 id="stacklyStorageAuthTitle">
+                            Welcome Back!
+                        </h2>
+
+                        <p id="stacklyStorageAuthDescription">
+                            Sign in to continue to your account.
+                        </p>
+                    </div>
+
+
+                    <!-- =================================
+                         LOGIN FORM
+                    ================================== -->
+
+                    <form class="stackly-storage-auth-form"
+                        id="stacklyStorageLoginForm">
+
+                        <!-- EMAIL -->
+                        <div class="stackly-storage-auth-field">
+
+                            <label for="storageLoginEmail">
+                                Email Address
+                            </label>
+
+                            <div class="stackly-storage-auth-input-wrap">
+                                <i class="fa-regular fa-envelope"></i>
+
+                                <input type="email"
+                                    id="storageLoginEmail"
+                                    name="email"
+                                    placeholder="Enter your email address"
+                                    autocomplete="email"
+                                    required>
+                            </div>
+
+                        </div>
+
+
+                        <!-- PASSWORD -->
+                        <div class="stackly-storage-auth-field">
+
+                            <label for="storageLoginPassword">
+                                Password
+                            </label>
+
+                            <div class="stackly-storage-auth-input-wrap">
+                                <i class="fa-solid fa-lock"></i>
+
+                                <input type="password"
+                                    id="storageLoginPassword"
+                                    name="password"
+                                    placeholder="Enter your password"
+                                    autocomplete="current-password"
+                                    required>
+
+                                <button type="button"
+                                    class="stackly-storage-password-toggle"
+                                    data-password-toggle="storageLoginPassword"
+                                    aria-label="Show password"
+                                    aria-pressed="false">
+
+                                    <i class="fa-regular fa-eye"></i>
+
+                                </button>
+                            </div>
+
+                        </div>
+
+
+                        <!-- ROLE DROPDOWN -->
+                        <div class="stackly-storage-auth-field">
+
+                            <label>Login As</label>
+
+                            <div class="stackly-storage-role-dropdown"
+                                data-role-select>
+
+                                <input type="hidden"
+                                    name="role"
+                                    value="client"
+                                    required>
+
+                                <button type="button"
+                                    class="stackly-storage-role-trigger"
+                                    aria-haspopup="listbox"
+                                    aria-expanded="false">
+
+                                    <span class="stackly-storage-role-selected">
+                                        <i class="fa-solid fa-user"></i>
+                                        Client
+                                    </span>
+
+                                    <i class="fa-solid fa-chevron-down stackly-storage-role-arrow"></i>
+
+                                </button>
+
+                                <div class="stackly-storage-role-options"
+                                    role="listbox"
+                                    aria-label="Select account role"
+                                    hidden>
+
+                                    <button type="button"
+                                        class="stackly-storage-role-option"
+                                        role="option"
+                                        data-value="client"
+                                        aria-selected="true">
+
+                                        <i class="fa-solid fa-user"></i>
+                                        Client
+                                    </button>
+
+                                    <button type="button"
+                                        class="stackly-storage-role-option"
+                                        role="option"
+                                        data-value="admin"
+                                        aria-selected="false">
+
+                                        <i class="fa-solid fa-user-shield"></i>
+                                        Admin
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- REMEMBER / FORGOT -->
+                        <div class="stackly-storage-auth-options">
+
+                            <label class="stackly-storage-remember">
+                                <input type="checkbox" name="remember">
+                                <span class="stackly-storage-checkmark"></span>
+                                Remember Me
+                            </label>
+
+                            <a href="forgot-password.html"
+                                class="stackly-storage-forgot-link">
+                                Forgot Password?
+                            </a>
+
+                        </div>
+
+
+                        <!-- LOGIN BUTTON -->
+                        <button type="submit"
+                            class="stackly-storage-auth-submit">
+
+                            Sign In
+                            <i class="fa-solid fa-arrow-right"></i>
+
+                        </button>
+
+                        <p class="stackly-storage-auth-status"
+                            id="storageLoginStatus"
+                            role="status"
+                            aria-live="polite"></p>
+
+
+                        <!-- SIGNUP SWITCH -->
+                        <div class="stackly-storage-auth-switch">
+
+                            Don't have an account?
+
+                            <button type="button"
+                                class="stackly-storage-auth-switch-btn"
+                                id="storageShowSignup">
+                                Sign Up
+                            </button>
+
+                        </div>
+
+                    </form>
+
+
+                    <!-- =================================
+                         SIGNUP FORM
+                    ================================== -->
+
+                    <form class="stackly-storage-auth-form"
+                        id="stacklyStorageSignupForm"
+                        hidden>
+
+                        <!-- FULL NAME -->
+                        <div class="stackly-storage-auth-field">
+
+                            <label for="storageSignupName">
+                                Full Name
+                            </label>
+
+                            <div class="stackly-storage-auth-input-wrap">
+                                <i class="fa-regular fa-user"></i>
+
+                                <input type="text"
+                                    id="storageSignupName"
+                                    name="name"
+                                    placeholder="Enter your full name"
+                                    autocomplete="name"
+                                    required>
+                            </div>
+
+                        </div>
+
+
+                        <!-- EMAIL -->
+                        <div class="stackly-storage-auth-field">
+
+                            <label for="storageSignupEmail">
+                                Email Address
+                            </label>
+
+                            <div class="stackly-storage-auth-input-wrap">
+                                <i class="fa-regular fa-envelope"></i>
+
+                                <input type="email"
+                                    id="storageSignupEmail"
+                                    name="email"
+                                    placeholder="Enter your email address"
+                                    autocomplete="email"
+                                    required>
+                            </div>
+
+                        </div>
+
+
+                        <!-- PHONE -->
+                        <div class="stackly-storage-auth-field">
+
+                            <label for="storageSignupPhone">
+                                Phone Number
+                            </label>
+
+                            <div class="stackly-storage-auth-input-wrap">
+                                <i class="fa-solid fa-phone"></i>
+
+                                <input type="tel"
+                                    id="storageSignupPhone"
+                                    name="phone"
+                                    placeholder="Enter your phone number"
+                                    autocomplete="tel"
+                                    required>
+                            </div>
+
+                        </div>
+
+
+                        <!-- PASSWORD -->
+                        <div class="stackly-storage-auth-field">
+
+                            <label for="storageSignupPassword">
+                                Create Password
+                            </label>
+
+                            <div class="stackly-storage-auth-input-wrap">
+                                <i class="fa-solid fa-lock"></i>
+
+                                <input type="password"
+                                    id="storageSignupPassword"
+                                    name="password"
+                                    placeholder="Create a password"
+                                    autocomplete="new-password"
+                                    required>
+
+                                <button type="button"
+                                    class="stackly-storage-password-toggle"
+                                    data-password-toggle="storageSignupPassword"
+                                    aria-label="Show password"
+                                    aria-pressed="false">
+
+                                    <i class="fa-regular fa-eye"></i>
+
+                                </button>
+                            </div>
+
+                        </div>
+
+
+                        <!-- CONFIRM PASSWORD -->
+                        <div class="stackly-storage-auth-field">
+
+                            <label for="storageSignupConfirmPassword">
+                                Confirm Password
+                            </label>
+
+                            <div class="stackly-storage-auth-input-wrap">
+                                <i class="fa-solid fa-lock"></i>
+
+                                <input type="password"
+                                    id="storageSignupConfirmPassword"
+                                    name="confirmPassword"
+                                    placeholder="Confirm your password"
+                                    autocomplete="new-password"
+                                    required>
+
+                                <button type="button"
+                                    class="stackly-storage-password-toggle"
+                                    data-password-toggle="storageSignupConfirmPassword"
+                                    aria-label="Show password"
+                                    aria-pressed="false">
+
+                                    <i class="fa-regular fa-eye"></i>
+
+                                </button>
+                            </div>
+
+                        </div>
+
+
+                        <!-- ROLE DROPDOWN -->
+                        <div class="stackly-storage-auth-field">
+
+                            <label>Register As</label>
+
+                            <div class="stackly-storage-role-dropdown"
+                                data-role-select>
+
+                                <input type="hidden"
+                                    name="role"
+                                    value="client"
+                                    required>
+
+                                <button type="button"
+                                    class="stackly-storage-role-trigger"
+                                    aria-haspopup="listbox"
+                                    aria-expanded="false">
+
+                                    <span class="stackly-storage-role-selected">
+                                        <i class="fa-solid fa-user"></i>
+                                        Client
+                                    </span>
+
+                                    <i class="fa-solid fa-chevron-down stackly-storage-role-arrow"></i>
+
+                                </button>
+
+                                <div class="stackly-storage-role-options"
+                                    role="listbox"
+                                    aria-label="Select account role"
+                                    hidden>
+
+                                    <button type="button"
+                                        class="stackly-storage-role-option"
+                                        role="option"
+                                        data-value="client"
+                                        aria-selected="true">
+
+                                        <i class="fa-solid fa-user"></i>
+                                        Client
+                                    </button>
+
+                                    <button type="button"
+                                        class="stackly-storage-role-option"
+                                        role="option"
+                                        data-value="admin"
+                                        aria-selected="false">
+
+                                        <i class="fa-solid fa-user-shield"></i>
+                                        Admin
+                                    </button>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- TERMS -->
+                        <label class="stackly-storage-remember stackly-storage-terms">
+                            <input type="checkbox"
+                                name="terms"
+                                required>
+
+                            <span class="stackly-storage-checkmark"></span>
+
+                            I agree to the
+                            <a href="terms.html">Terms & Conditions</a>
+                        </label>
+
+
+                        <!-- SIGNUP BUTTON -->
+                        <button type="submit"
+                            class="stackly-storage-auth-submit">
+
+                            Create Account
+                            <i class="fa-solid fa-arrow-right"></i>
+
+                        </button>
+
+                        <p class="stackly-storage-auth-status"
+                            id="storageSignupStatus"
+                            role="status"
+                            aria-live="polite"></p>
+
+
+                        <!-- LOGIN SWITCH -->
+                        <div class="stackly-storage-auth-switch">
+
+                            Already have an account?
+
+                            <button type="button"
+                                class="stackly-storage-auth-switch-btn"
+                                id="storageShowLogin">
+                                Sign In
+                            </button>
+
+                        </div>
+
+                    </form>
+
+                </div>
+
+                <!-- FOOTER TEXT -->
+                <div class="stackly-storage-auth-footer">
+                    <p>
+                        <i class="fa-solid fa-shield-halved"></i>
+                        Secure Account Access
+                    </p>
+
+                    <span>
+                        © 2026 Stackly. All Rights Reserved.
+                    </span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </main>
+
+    <!-- LOGIN JAVASCRIPT -->
+    <script src="login.js"></script>
+
+</body>
+</html>

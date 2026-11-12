@@ -1,0 +1,992 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Stackly | Admin Dashboard</title>
+
+    <meta name="description"
+        content="Manage storage operations, inventory, warehouses, orders and business performance with the Stackly Admin Dashboard.">
+
+    <link rel="icon" href="Stackly-logo-Blue.webp">
+
+    <!-- GOOGLE FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <!-- AOS ANIMATION -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+
+    <!-- DASHBOARD CSS -->
+    <link rel="stylesheet" href="admin.css">
+</head>
+
+<body>
+
+    <!-- =========================================
+         DASHBOARD OVERLAY
+    ========================================== -->
+
+    <div class="stackly-storage-admin-overlay"
+        id="stacklyGiftAdminOverlay"></div>
+
+
+    <!-- =========================================
+         SIDEBAR
+    ========================================== -->
+
+    <aside class="stackly-storage-admin-sidebar"
+        id="stacklyGiftAdminSidebar">
+
+        <!-- SIDEBAR HEADER -->
+
+        <div class="stackly-storage-admin-sidebar-header">
+
+            <a href="admin.html" class="stackly-storage-admin-logo">
+
+                <img src="Stackly-logo-Blue.webp"
+                    alt="Stackly Smart Storage Solutions Logo">
+
+            </a>
+
+            <!-- MOBILE CLOSE BUTTON -->
+
+            <button class="stackly-storage-admin-close"
+                id="stacklyGiftAdminClose"
+                aria-label="Close sidebar">
+
+                <i class="fa-solid fa-xmark"></i>
+
+            </button>
+
+        </div>
+
+
+        <!-- ADMIN PROFILE -->
+
+        <div class="stackly-storage-admin-profile">
+
+            <div class="stackly-storage-admin-avatar">
+                <i class="fa-solid fa-user-tie"></i>
+            </div>
+
+            <div class="stackly-storage-admin-profile-info">
+                <h3>Administrator</h3>
+                <span>
+                    <span class="stackly-storage-admin-online-dot"></span>
+                    Online
+                </span>
+            </div>
+
+        </div>
+
+
+        <!-- SIDEBAR NAVIGATION -->
+
+        <nav class="stackly-storage-admin-nav">
+
+            <p class="stackly-storage-admin-nav-title">
+                MAIN MENU
+            </p>
+
+            <a href="admin.html"
+                class="stackly-storage-admin-nav-link active">
+
+                <i class="fa-solid fa-chart-pie"></i>
+                <span>Dashboard</span>
+
+            </a>
+
+            <a href="admin-warehouses.html"
+                class="stackly-storage-admin-nav-link">
+
+                <i class="fa-solid fa-warehouse"></i>
+                <span>Warehouses</span>
+
+            </a>
+
+            <a href="admin-orders.html"
+                class="stackly-storage-admin-nav-link">
+
+                <i class="fa-solid fa-clipboard-list"></i>
+                <span>Orders</span>
+                <span class="stackly-storage-admin-nav-count">08</span>
+
+            </a>
+
+            <a href="admin-shipments.html"
+                class="stackly-storage-admin-nav-link">
+
+                <i class="fa-solid fa-truck-fast"></i>
+                <span>Shipments</span>
+
+            </a>
+
+            <a href="admin-customers.html"
+                class="stackly-storage-admin-nav-link">
+
+                <i class="fa-solid fa-users"></i>
+                <span>Customers</span>
+
+            </a>
+
+
+            <p class="stackly-storage-admin-nav-title">
+                MANAGEMENT
+            </p>
+
+
+            <a href="admin-billing.html"
+                class="stackly-storage-admin-nav-link">
+
+                <i class="fa-solid fa-file-invoice-dollar"></i>
+                <span>Billing & Payments</span>
+
+            </a>
+
+            <a href="admin-settings.html"
+                class="stackly-storage-admin-nav-link">
+
+                <i class="fa-solid fa-gear"></i>
+                <span>Settings</span>
+
+            </a>
+
+
+            <p class="stackly-storage-admin-nav-title">
+                OTHER
+            </p>
+
+            <a href="index.html"
+                class="stackly-storage-admin-nav-link stackly-storage-admin-logout">
+
+                <i class="fa-solid fa-right-from-bracket"></i>
+                <span>Logout</span>
+
+            </a>
+
+        </nav>
+
+
+        <!-- SIDEBAR BOTTOM CARD -->
+
+        <div class="stackly-storage-admin-sidebar-card">
+
+            <div class="stackly-storage-admin-sidebar-card-icon">
+                <i class="fa-solid fa-headset"></i>
+            </div>
+
+            <h4>Need Assistance?</h4>
+
+            <p>Our support team is ready to help you.</p>
+
+            <a href="404-admin.html">
+                Contact Support
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+        </div>
+
+         
+
+    </aside>
+
+
+    <!-- =========================================
+         MAIN DASHBOARD CONTENT
+    ========================================== -->
+
+    <main class="stackly-storage-admin-main">
+
+
+        <!-- =====================================
+             TOP HEADER
+        ====================================== -->
+
+        <header class="stackly-storage-admin-topbar">
+
+            <div class="stackly-storage-admin-topbar-left">
+
+                <!-- MOBILE MENU BUTTON -->
+
+                <button class="stackly-storage-admin-menu-toggle"
+                    id="stacklyGiftAdminMenuToggle"
+                    aria-label="Open navigation menu"
+                    aria-expanded="false"
+                    aria-controls="stacklyGiftAdminSidebar">
+
+                    <i class="fa-solid fa-bars"></i>
+
+                </button>
+
+                <div class="stackly-storage-admin-page-title">
+                    <span>ADMINISTRATION</span>
+                    <h1>Dashboard Overview</h1>
+                </div>
+
+            </div>
+
+
+            <!-- TOPBAR RIGHT -->
+
+            <div class="stackly-storage-admin-topbar-right">
+
+                <a href="404-admin.html"><button class="stackly-storage-admin-icon-btn"
+                    aria-label="Notifications">
+
+                    <i class="fa-regular fa-bell"></i>
+                    <span class="stackly-storage-admin-notification-dot"></span>
+
+                </button></a>
+
+                 
+
+
+                <!-- ADMIN EMAIL DISPLAY -->
+
+                <div class="stackly-storage-admin-email-box">
+
+                    <div class="stackly-storage-admin-email-avatar">
+                        <i class="fa-solid fa-user-shield"></i>
+                    </div>
+
+                    <div class="stackly-storage-admin-email-info">
+                        <span>Administrator Account</span>
+                        <strong>admin@stacklystorage.com</strong>
+                    </div>
+
+                    <i class="fa-solid fa-chevron-down"></i>
+
+                </div>
+
+            </div>
+
+        </header>
+
+<div class="stackly-storage-admin-content">
+
+
+<!-- =========================================
+     STACKLY CUSTOMERS MANAGEMENT PAGE
+     CUSTOMER RELATIONSHIP OVERVIEW
+========================================== -->
+
+
+<!-- =========================================
+     01. CUSTOMERS HERO SECTION
+========================================== -->
+
+<section class="stackly-storage-customers-hero" data-aos="fade-up">
+
+    <div class="stackly-storage-customers-hero-content">
+
+        <div class="stackly-storage-customers-hero-text">
+
+            <span class="stackly-storage-customers-eyebrow">
+                <i class="fa-solid fa-users"></i>
+                CUSTOMER RELATIONSHIP CENTER
+            </span>
+
+            <h2>
+                Strong Connections.
+                <span>Smarter Customer Care.</span>
+            </h2>
+
+            <p>
+                Understand your customers, manage valuable relationships,
+                and discover opportunities to deliver a better storage
+                experience at every interaction.
+            </p>
+
+            <div class="stackly-storage-customers-hero-actions">
+
+                <a href="404-admin.html"
+                    class="stackly-storage-customers-primary-btn">
+                    <i class="fa-solid fa-users-viewfinder"></i>
+                    Explore Customers
+                </a>
+
+                <a href="404-admin.html"
+                    class="stackly-storage-customers-secondary-btn">
+                    Customer Insights
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+
+            </div>
+
+            <div class="stackly-storage-customers-hero-features">
+
+                <div>
+                    <i class="fa-solid fa-shield-halved"></i>
+                    <span>Trusted Relationships</span>
+                </div>
+
+                <div>
+                    <i class="fa-solid fa-chart-line"></i>
+                    <span>Customer Insights</span>
+                </div>
+
+                <div>
+                    <i class="fa-solid fa-handshake"></i>
+                    <span>Better Engagement</span>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="stackly-storage-customers-hero-visual">
+
+            <img src="blog-banner.webp"
+                alt="Professional customer relationship management team">
+
+            <div class="stackly-storage-customers-floating-card">
+
+                <div class="stackly-storage-customers-floating-icon">
+                    <i class="fa-solid fa-user-group"></i>
+                </div>
+
+                <div>
+                    <span>ACTIVE CUSTOMERS</span>
+                    <h3>3,562</h3>
+                    <small>Growing customer community</small>
+                </div>
+
+            </div>
+
+            <div class="stackly-storage-customers-hero-tag">
+                <i class="fa-solid fa-circle-check"></i>
+                Customer Experience First
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================
+     02. CUSTOMER PERFORMANCE STATS
+========================================== -->
+
+<section class="stackly-storage-customers-stats" data-aos="fade-up">
+
+    <div class="stackly-storage-customers-stat-card">
+
+        <div class="stackly-storage-customers-stat-top">
+
+            <div class="stackly-storage-customers-stat-icon green">
+                <i class="fa-solid fa-users"></i>
+            </div>
+
+            <span class="positive">
+                <i class="fa-solid fa-arrow-trend-up"></i>
+                12.8%
+            </span>
+
+        </div>
+
+        <h3>3,562</h3>
+        <p>Total Customers</p>
+        <small>Registered across the platform</small>
+
+    </div>
+
+
+    <div class="stackly-storage-customers-stat-card">
+
+        <div class="stackly-storage-customers-stat-top">
+
+            <div class="stackly-storage-customers-stat-icon blue">
+                <i class="fa-solid fa-user-check"></i>
+            </div>
+
+            <span class="positive">
+                <i class="fa-solid fa-arrow-trend-up"></i>
+                9.6%
+            </span>
+
+        </div>
+
+        <h3>2,840</h3>
+        <p>Active Customers</p>
+        <small>Currently using storage services</small>
+
+    </div>
+
+
+    <div class="stackly-storage-customers-stat-card">
+
+        <div class="stackly-storage-customers-stat-top">
+
+            <div class="stackly-storage-customers-stat-icon orange">
+                <i class="fa-solid fa-user-plus"></i>
+            </div>
+
+            <span class="positive">
+                <i class="fa-solid fa-arrow-trend-up"></i>
+                18.2%
+            </span>
+
+        </div>
+
+        <h3>248</h3>
+        <p>New Customers</p>
+        <small>Joined during this month</small>
+
+    </div>
+
+
+    <div class="stackly-storage-customers-stat-card">
+
+        <div class="stackly-storage-customers-stat-top">
+
+            <div class="stackly-storage-customers-stat-icon purple">
+                <i class="fa-solid fa-heart"></i>
+            </div>
+
+            <span class="positive">
+                <i class="fa-solid fa-arrow-trend-up"></i>
+                4.5%
+            </span>
+
+        </div>
+
+        <h3>94.8%</h3>
+        <p>Retention Rate</p>
+        <small>Returning customer percentage</small>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================
+     03. CUSTOMER SEGMENTS
+========================================== -->
+
+<section class="stackly-storage-customer-segments"
+    id="stacklyCustomerSegments"
+    data-aos="fade-up">
+
+    <div class="stackly-storage-customer-section-heading">
+
+        <div>
+            <span>KNOW YOUR CUSTOMERS</span>
+            <h2>Customer Segments</h2>
+            <p>Explore different customer groups and their activity.</p>
+        </div>
+
+        <a href="404-admin.html">
+            View Insights
+            <i class="fa-solid fa-arrow-right"></i>
+        </a>
+
+    </div>
+
+
+    <div class="stackly-storage-customer-segments-grid">
+
+        <div class="stackly-storage-customer-segment-card premium">
+
+            <div class="stackly-storage-customer-segment-icon">
+                <i class="fa-solid fa-crown"></i>
+            </div>
+
+            <span>PREMIUM MEMBERS</span>
+
+            <h3>486</h3>
+
+            <p>
+                High-value customers with priority
+                storage and dedicated support.
+            </p>
+
+            <div class="stackly-storage-customer-segment-footer">
+                <span>13.6% of customers</span>
+                <a href="404-admin.html">
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </a>
+            </div>
+
+        </div>
+
+
+        <div class="stackly-storage-customer-segment-card business">
+
+            <div class="stackly-storage-customer-segment-icon">
+                <i class="fa-solid fa-building"></i>
+            </div>
+
+            <span>BUSINESS CLIENTS</span>
+
+            <h3>824</h3>
+
+            <p>
+                Organizations using flexible warehouse
+                and inventory management services.
+            </p>
+
+            <div class="stackly-storage-customer-segment-footer">
+                <span>23.1% of customers</span>
+                <a href="404-admin.html">
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </a>
+            </div>
+
+        </div>
+
+
+        <div class="stackly-storage-customer-segment-card regular">
+
+            <div class="stackly-storage-customer-segment-icon">
+                <i class="fa-solid fa-user"></i>
+            </div>
+
+            <span>REGULAR CUSTOMERS</span>
+
+            <h3>2,252</h3>
+
+            <p>
+                Customers who regularly use our
+                storage and distribution solutions.
+            </p>
+
+            <div class="stackly-storage-customer-segment-footer">
+                <span>63.3% of customers</span>
+                <a href="404-admin.html">
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </a>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================
+     04. CUSTOMER DIRECTORY
+========================================== -->
+
+<section class="stackly-storage-customers-directory"
+    id="stacklyCustomersDirectory"
+    data-aos="fade-up">
+
+    <div class="stackly-storage-customer-section-heading">
+
+        <div>
+            <span>CUSTOMER MANAGEMENT</span>
+            <h2>Customer Directory</h2>
+            <p>Keep track of customer details and account activity.</p>
+        </div>
+
+        <a href="404-admin.html"
+            class="stackly-storage-customer-add-btn">
+            <i class="fa-solid fa-user-plus"></i>
+            Add New Customer
+        </a>
+
+    </div>
+
+
+    <div class="stackly-storage-customer-directory-panel">
+
+        <div class="stackly-storage-customer-directory-toolbar">
+
+            <div class="stackly-storage-customer-directory-title">
+                <h3>All Customers</h3>
+                <span>Recently updated customer accounts</span>
+            </div>
+
+            <a href="404-admin.html"
+                class="stackly-storage-customer-filter-btn">
+                <i class="fa-solid fa-sliders"></i>
+                Filters
+            </a>
+
+        </div>
+
+
+        <div class="stackly-storage-customer-table-wrapper">
+
+            <table class="stackly-storage-customer-table">
+
+                <thead>
+                    <tr>
+                        <th>CUSTOMER</th>
+                        <th>CUSTOMER ID</th>
+                        <th>EMAIL ADDRESS</th>
+                        <th>ACCOUNT TYPE</th>
+                        <th>JOINED DATE</th>
+                        <th>STATUS</th>
+                        <th>ACTION</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+
+                    <tr>
+
+                        <td>
+                            <div class="stackly-storage-customer-person">
+                                <span class="customer-avatar green">RK</span>
+                                <div>
+                                    <strong>Rahul Kumar</strong>
+                                    <small>Chennai, India</small>
+                                </div>
+                            </div>
+                        </td>
+
+                        <td><strong>#CUS-1042</strong></td>
+                        <td>rahul.kumar@email.com</td>
+                        <td>
+                            <span class="stackly-storage-customer-type premium">
+                                Premium
+                            </span>
+                        </td>
+                        <td>Oct 18, 2026</td>
+                        <td>
+                            <span class="stackly-storage-customer-status active">
+                                Active
+                            </span>
+                        </td>
+                        <td>
+                            <a href="404-admin.html"
+                                class="stackly-storage-customer-action"
+                                aria-label="View Rahul Kumar">
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            </a>
+                        </td>
+
+                    </tr>
+
+
+                    <tr>
+
+                        <td>
+                            <div class="stackly-storage-customer-person">
+                                <span class="customer-avatar blue">AP</span>
+                                <div>
+                                    <strong>Ananya Patel</strong>
+                                    <small>Hyderabad, India</small>
+                                </div>
+                            </div>
+                        </td>
+
+                        <td><strong>#CUS-1041</strong></td>
+                        <td>ananya.patel@email.com</td>
+                        <td>
+                            <span class="stackly-storage-customer-type business">
+                                Business
+                            </span>
+                        </td>
+                        <td>Oct 15, 2026</td>
+                        <td>
+                            <span class="stackly-storage-customer-status active">
+                                Active
+                            </span>
+                        </td>
+                        <td>
+                            <a href="404-admin.html"
+                                class="stackly-storage-customer-action"
+                                aria-label="View Ananya Patel">
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            </a>
+                        </td>
+
+                    </tr>
+
+
+                    <tr>
+
+                        <td>
+                            <div class="stackly-storage-customer-person">
+                                <span class="customer-avatar orange">VS</span>
+                                <div>
+                                    <strong>Vikram Shah</strong>
+                                    <small>Coimbatore, India</small>
+                                </div>
+                            </div>
+                        </td>
+
+                        <td><strong>#CUS-1040</strong></td>
+                        <td>vikram.shah@email.com</td>
+                        <td>
+                            <span class="stackly-storage-customer-type regular">
+                                Regular
+                            </span>
+                        </td>
+                        <td>Oct 12, 2026</td>
+                        <td>
+                            <span class="stackly-storage-customer-status pending">
+                                Pending
+                            </span>
+                        </td>
+                        <td>
+                            <a href="404-admin.html"
+                                class="stackly-storage-customer-action"
+                                aria-label="View Vikram Shah">
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            </a>
+                        </td>
+
+                    </tr>
+
+
+                    <tr>
+
+                        <td>
+                            <div class="stackly-storage-customer-person">
+                                <span class="customer-avatar purple">SM</span>
+                                <div>
+                                    <strong>Sneha Menon</strong>
+                                    <small>Kochi, India</small>
+                                </div>
+                            </div>
+                        </td>
+
+                        <td><strong>#CUS-1039</strong></td>
+                        <td>sneha.menon@email.com</td>
+                        <td>
+                            <span class="stackly-storage-customer-type premium">
+                                Premium
+                            </span>
+                        </td>
+                        <td>Oct 09, 2026</td>
+                        <td>
+                            <span class="stackly-storage-customer-status active">
+                                Active
+                            </span>
+                        </td>
+                        <td>
+                            <a href="404-admin.html"
+                                class="stackly-storage-customer-action"
+                                aria-label="View Sneha Menon">
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            </a>
+                        </td>
+
+                    </tr>
+
+
+                    <tr>
+
+                        <td>
+                            <div class="stackly-storage-customer-person">
+                                <span class="customer-avatar teal">MJ</span>
+                                <div>
+                                    <strong>Manoj Joseph</strong>
+                                    <small>Madurai, India</small>
+                                </div>
+                            </div>
+                        </td>
+
+                        <td><strong>#CUS-1038</strong></td>
+                        <td>manoj.joseph@email.com</td>
+                        <td>
+                            <span class="stackly-storage-customer-type business">
+                                Business
+                            </span>
+                        </td>
+                        <td>Oct 05, 2026</td>
+                        <td>
+                            <span class="stackly-storage-customer-status inactive">
+                                Inactive
+                            </span>
+                        </td>
+                        <td>
+                            <a href="404-admin.html"
+                                class="stackly-storage-customer-action"
+                                aria-label="View Manoj Joseph">
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            </a>
+                        </td>
+
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+
+        <div class="stackly-storage-customer-directory-footer">
+
+            <span>Showing 5 of 3,562 customers</span>
+
+            <a href="404-admin.html">
+                View All Customers
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================
+     05. CUSTOMER EXPERIENCE HIGHLIGHTS
+========================================== -->
+
+<section class="stackly-storage-customer-experience"
+    data-aos="fade-up">
+
+    <div class="stackly-storage-customer-section-heading">
+
+        <div>
+            <span>RELATIONSHIP PERFORMANCE</span>
+            <h2>Customer Experience Highlights</h2>
+            <p>Key indicators that help build lasting customer relationships.</p>
+        </div>
+
+    </div>
+
+
+    <div class="stackly-storage-customer-experience-grid">
+
+        <div class="stackly-storage-customer-experience-card">
+
+            <div class="stackly-storage-customer-experience-icon green">
+                <i class="fa-solid fa-face-smile-beam"></i>
+            </div>
+
+            <div>
+                <span>CUSTOMER SATISFACTION</span>
+                <h3>96.4%</h3>
+                <p>Positive service experiences</p>
+            </div>
+
+            <div class="stackly-storage-customer-experience-bar">
+                <span style="width:96.4%"></span>
+            </div>
+
+        </div>
+
+
+        <div class="stackly-storage-customer-experience-card">
+
+            <div class="stackly-storage-customer-experience-icon blue">
+                <i class="fa-solid fa-headset"></i>
+            </div>
+
+            <div>
+                <span>SUPPORT RESPONSE RATE</span>
+                <h3>98.2%</h3>
+                <p>Customer queries addressed</p>
+            </div>
+
+            <div class="stackly-storage-customer-experience-bar">
+                <span style="width:98.2%"></span>
+            </div>
+
+        </div>
+
+
+        <div class="stackly-storage-customer-experience-card">
+
+            <div class="stackly-storage-customer-experience-icon purple">
+                <i class="fa-solid fa-repeat"></i>
+            </div>
+
+            <div>
+                <span>RETURNING CUSTOMERS</span>
+                <h3>82.6%</h3>
+                <p>Customers choosing us again</p>
+            </div>
+
+            <div class="stackly-storage-customer-experience-bar">
+                <span style="width:82.6%"></span>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================
+     06. CUSTOMER ENGAGEMENT BANNER
+========================================== -->
+
+<section class="stackly-storage-customer-engagement"
+    data-aos="fade-up">
+
+    <div class="stackly-storage-customer-engagement-content">
+
+        <div class="stackly-storage-customer-engagement-icon">
+            <i class="fa-solid fa-handshake-angle"></i>
+        </div>
+
+        <div class="stackly-storage-customer-engagement-text">
+
+            <span>BUILD STRONGER RELATIONSHIPS</span>
+
+            <h2>
+                Every Customer Matters.
+                <span>Every Connection Counts.</span>
+            </h2>
+
+            <p>
+                Create meaningful customer experiences with
+                personalized support, reliable storage services,
+                and stronger long-term relationships.
+            </p>
+
+            <a href="404-admin.html">
+                Explore Customer Engagement
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+        </div>
+
+        <div class="stackly-storage-customer-engagement-visual">
+
+            <div class="stackly-storage-customer-engagement-circle">
+                <i class="fa-solid fa-users"></i>
+                <strong>3.5K+</strong>
+                <span>Happy Customers</span>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+</div>
+
+    </main>
+
+
+    <!-- =========================================
+         AOS SCRIPT
+    ========================================== -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
+    <!-- DASHBOARD JAVASCRIPT -->
+    <script src="admin.js"></script>
+
+</body>
+
+</html>

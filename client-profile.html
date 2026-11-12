@@ -1,0 +1,900 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Stackly | Client Dashboard</title>
+
+    <meta name="description"
+        content="Manage your storage bookings, shipments, invoices and account details with the Stackly Client Dashboard.">
+
+    <link rel="icon" href="Stackly-logo-Blue.webp">
+
+    <!-- GOOGLE FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <!-- AOS ANIMATION -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+
+    <!-- DASHBOARD CSS -->
+     
+    <link rel="stylesheet" href="client.css">
+
+</head>
+
+<body>
+
+    <!-- =========================================
+         CLIENT DASHBOARD SIDEBAR
+    ========================================== -->
+
+    <aside class="stackly-storage-client-sidebar"
+        id="stacklyStorageClientSidebar">
+
+        <!-- LOGO -->
+        <div class="stackly-storage-client-logo">
+
+            <a href="client.html" aria-label="Stackly Home">
+                <img src="Stackly-logo-Blue.webp"
+                    alt="Stackly Storage Solutions Logo">
+            </a>
+
+            <!-- MOBILE CLOSE BUTTON -->
+            <button class="stackly-storage-client-close"
+                id="stacklyStorageClientClose"
+                type="button"
+                aria-label="Close sidebar">
+
+                <i class="fa-solid fa-xmark"></i>
+
+            </button>
+
+        </div>
+
+
+        <!-- CLIENT PROFILE -->
+        <div class="stackly-storage-client-sidebar-profile">
+
+            <div class="stackly-storage-client-avatar">
+                <i class="fa-solid fa-user"></i>
+            </div>
+
+            <div class="stackly-storage-client-profile-info">
+
+                <h4 id="storageClientSidebarName">Client</h4>
+
+                <span>
+                    <span class="stackly-storage-client-online-dot"></span>
+                    Active Account
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <!-- SIDEBAR NAVIGATION -->
+        <nav class="stackly-storage-client-navigation">
+
+            <span class="stackly-storage-client-nav-label">
+                MAIN MENU
+            </span>
+
+            <a href="client.html"
+                class="stackly-storage-client-nav-link active">
+
+                <i class="fa-solid fa-house"></i>
+                <span>Dashboard</span>
+
+            </a>
+
+            <a href="client-storage.html"
+                class="stackly-storage-client-nav-link">
+
+                <i class="fa-solid fa-warehouse"></i>
+                <span>My Storage</span>
+
+            </a>
+
+            <a href="client-bookings.html"
+                class="stackly-storage-client-nav-link">
+
+                <i class="fa-solid fa-calendar-check"></i>
+                <span>My Bookings</span>
+
+            </a>
+
+            <a href="client-shipments.html"
+                class="stackly-storage-client-nav-link">
+
+                <i class="fa-solid fa-truck-fast"></i>
+                <span>Shipments</span>
+
+                <span class="stackly-storage-client-nav-count">02</span>
+
+            </a>
+
+            <a href="client-invoices.html"
+                class="stackly-storage-client-nav-link">
+
+                <i class="fa-solid fa-file-invoice-dollar"></i>
+                <span>Invoices</span>
+
+            </a>
+
+
+            <span class="stackly-storage-client-nav-label">
+                ACCOUNT
+            </span>
+
+            <a href="client-profile.html"
+                class="stackly-storage-client-nav-link">
+
+                <i class="fa-solid fa-user-gear"></i>
+                <span>My Profile</span>
+
+            </a>
+
+        </nav>
+
+
+        <!-- SIDEBAR BOTTOM -->
+        <div class="stackly-storage-client-sidebar-bottom">
+
+            <div class="stackly-storage-client-help-card">
+
+                <div class="stackly-storage-client-help-icon">
+                    <i class="fa-solid fa-headset"></i>
+                </div>
+
+                <h4>Need Assistance?</h4>
+
+                <p>Our support team is ready to help you.</p>
+
+                <a href="404-client.html">
+                    Contact Support
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+
+            </div>
+
+
+            <a href="index.html"
+                class="stackly-storage-client-logout">
+
+                <i class="fa-solid fa-right-from-bracket"></i>
+                <span>Logout</span>
+
+            </a>
+
+        </div>
+
+    </aside>
+
+
+    <!-- =========================================
+         MOBILE SIDEBAR OVERLAY
+    ========================================== -->
+
+    <div class="stackly-storage-client-overlay"
+        id="stacklyStorageClientOverlay"></div>
+
+
+    <!-- =========================================
+         CLIENT MAIN CONTENT
+    ========================================== -->
+
+    <main class="stackly-storage-client-main">
+
+
+        <!-- =====================================
+             TOPBAR
+        ====================================== -->
+
+        <header class="stackly-storage-client-topbar">
+
+            <div class="stackly-storage-client-topbar-left">
+
+                <!-- MOBILE HAMBURGER -->
+                <button class="stackly-storage-client-menu-toggle"
+                    id="stacklyStorageClientMenuToggle"
+                    type="button"
+                    aria-label="Open navigation menu"
+                    aria-expanded="false">
+
+                    <i class="fa-solid fa-bars"></i>
+
+                </button>
+
+
+                <div class="stackly-storage-client-page-heading">
+
+                    <span>CLIENT PORTAL</span>
+
+                    <h2>Client Dashboard</h2>
+
+                </div>
+
+            </div>
+
+
+            <!-- TOPBAR RIGHT -->
+            <div class="stackly-storage-client-topbar-right">
+
+                <a href="404-client.html"
+                    class="stackly-storage-client-notification"
+                    aria-label="Support">
+
+                    <i class="fa-regular fa-bell"></i>
+
+                    <span></span>
+
+                </a>
+
+
+                <!-- EMAIL DISPLAY -->
+                <div class="stackly-storage-client-email-box">
+
+                    <div class="stackly-storage-client-email-avatar">
+                        <i class="fa-solid fa-user"></i>
+                    </div>
+
+                    <div class="stackly-storage-client-email-info">
+
+                        <span>Logged in as</span>
+
+                        <strong id="storageClientTopbarEmail">
+                            client@stacklystorage.com
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </header>
+
+        <div class="stackly-storage-client-content">
+
+
+<!-- =========================================
+     STACKLY CLIENT PROFILE PAGE
+     COMPLETE HTML SECTIONS
+========================================== -->
+
+
+<!-- =========================================
+     01. PROFILE HERO SECTION
+========================================== -->
+
+<section class="stackly-storage-client-profile-hero"
+    id="clientProfileHero"
+    data-aos="fade-up">
+
+    <div class="stackly-storage-client-profile-hero-content">
+
+        <div class="stackly-storage-client-profile-hero-text">
+
+            <span class="stackly-storage-client-profile-tag">
+                <i class="fa-solid fa-user-gear"></i>
+                ACCOUNT SETTINGS
+            </span>
+
+            <h1>
+                Manage Your
+                <span>Personal Profile.</span>
+            </h1>
+
+            <p>
+                Keep your personal information updated, manage
+                your account preferences and maintain a secure
+                storage experience with Stackly.
+            </p>
+
+            <a href="#profileInformation"
+                class="stackly-storage-client-profile-edit-btn">
+                <i class="fa-solid fa-pen-to-square"></i>
+                Edit Profile
+            </a>
+
+        </div>
+
+
+        <div class="stackly-storage-client-profile-hero-visual">
+
+            <div class="stackly-storage-client-profile-avatar-large">
+                <i class="fa-solid fa-user"></i>
+            </div>
+
+            <div class="stackly-storage-client-profile-verified">
+
+                <i class="fa-solid fa-circle-check"></i>
+                Verified Client
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================
+     02. PROFILE SUMMARY
+========================================== -->
+
+<section class="stackly-storage-client-profile-summary"
+    data-aos="fade-up">
+
+    <div class="stackly-storage-client-profile-summary-card">
+
+        <div class="stackly-storage-client-profile-summary-avatar">
+            <i class="fa-solid fa-user"></i>
+        </div>
+
+        <div class="stackly-storage-client-profile-summary-info">
+
+            <span>WELCOME BACK</span>
+
+            <h2 id="clientProfileName">John Anderson</h2>
+
+            <p>
+                <i class="fa-solid fa-envelope"></i>
+                <span id="clientProfileSummaryEmail">
+                    client@stacklystorage.com
+                </span>
+</p>
+
+            <div class="stackly-storage-client-profile-member">
+
+                <span class="stackly-storage-client-profile-active-dot"></span>
+                Active Client Account
+
+            </div>
+
+        </div>
+
+        <div class="stackly-storage-client-profile-member-since">
+
+            <i class="fa-regular fa-calendar-check"></i>
+
+            <div>
+                <span>MEMBER SINCE</span>
+                <strong>January 2025</strong>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================
+     03. PERSONAL INFORMATION
+========================================== -->
+
+<section class="stackly-storage-client-profile-information"
+    id="profileInformation"
+    data-aos="fade-up">
+
+    <div class="stackly-storage-client-profile-section-heading">
+
+        <div>
+            <span>YOUR DETAILS</span>
+            <h2>Personal Information</h2>
+            <p>View and update your basic account information.</p>
+        </div>
+
+        <button type="button"
+            class="stackly-storage-client-profile-action-btn"
+            id="clientProfileEditBtn">
+
+            <i class="fa-solid fa-pen"></i>
+            Edit Details
+
+        </button>
+
+    </div>
+
+
+    <div class="stackly-storage-client-profile-information-card">
+
+        <form id="clientProfileForm">
+
+            <div class="stackly-storage-client-profile-form-grid">
+
+
+                <!-- FULL NAME -->
+
+                <div class="stackly-storage-client-profile-field">
+
+                    <label for="clientProfileFullName">
+                        Full Name
+                    </label>
+
+                    <div class="stackly-storage-client-profile-input-wrap">
+
+                        <i class="fa-regular fa-user"></i>
+
+                        <input type="text"
+                            id="clientProfileFullName"
+                            name="fullName"
+                            value="John Anderson"
+                            placeholder="Enter your full name"
+                            disabled
+                            required>
+
+                    </div>
+
+                </div>
+
+
+                <!-- EMAIL -->
+
+                <div class="stackly-storage-client-profile-field">
+
+                    <label for="clientProfileEmail">
+                        Email Address
+                    </label>
+
+                    <div class="stackly-storage-client-profile-input-wrap">
+
+                        <i class="fa-regular fa-envelope"></i>
+
+                        <input type="email"
+                            id="clientProfileEmail"
+                            name="email"
+                            value="client@stacklystorage.com"
+                            placeholder="Enter your email"
+                            disabled
+                            required>
+
+                    </div>
+
+                </div>
+
+
+                <!-- PHONE -->
+
+                <div class="stackly-storage-client-profile-field">
+
+                    <label for="clientProfilePhone">
+                        Phone Number
+                    </label>
+
+                    <div class="stackly-storage-client-profile-input-wrap">
+
+                        <i class="fa-solid fa-phone"></i>
+
+                        <input type="tel"
+                            id="clientProfilePhone"
+                            name="phone"
+                            value="+91 98765 43210"
+                            placeholder="Enter phone number"
+                            disabled
+                            required>
+
+                    </div>
+
+                </div>
+
+
+                <!-- COMPANY -->
+
+                <div class="stackly-storage-client-profile-field">
+
+                    <label for="clientProfileCompany">
+                        Company Name
+                    </label>
+
+                    <div class="stackly-storage-client-profile-input-wrap">
+
+                        <i class="fa-solid fa-building"></i>
+
+                        <input type="text"
+                            id="clientProfileCompany"
+                            name="company"
+                            value="Anderson Trading Company"
+                            placeholder="Enter company name"
+                            disabled>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ADDRESS -->
+
+                <div class="stackly-storage-client-profile-field full-width">
+
+                    <label for="clientProfileAddress">
+                        Business Address
+                    </label>
+
+                    <div class="stackly-storage-client-profile-input-wrap">
+
+                        <i class="fa-solid fa-location-dot"></i>
+
+                        <input type="text"
+                            id="clientProfileAddress"
+                            name="address"
+                            value="Chennai, Tamil Nadu, India"
+                            placeholder="Enter your address"
+                            disabled>
+
+                    </div>
+
+                </div>
+
+
+                <!-- CITY -->
+
+                <div class="stackly-storage-client-profile-field">
+
+                    <label for="clientProfileCity">
+                        City
+                    </label>
+
+                    <div class="stackly-storage-client-profile-input-wrap">
+
+                        <i class="fa-solid fa-city"></i>
+
+                        <input type="text"
+                            id="clientProfileCity"
+                            name="city"
+                            value="Chennai"
+                            placeholder="Enter your city"
+                            disabled>
+
+                    </div>
+
+                </div>
+
+
+                <!-- POSTAL CODE -->
+
+                <div class="stackly-storage-client-profile-field">
+
+                    <label for="clientProfilePostal">
+                        Postal Code
+                    </label>
+
+                    <div class="stackly-storage-client-profile-input-wrap">
+
+                        <i class="fa-solid fa-map-pin"></i>
+
+                        <input type="text"
+                            id="clientProfilePostal"
+                            name="postal"
+                            value="600001"
+                            placeholder="Enter postal code"
+                            disabled>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+            <!-- FORM ACTIONS -->
+
+            <div class="stackly-storage-client-profile-form-actions"
+                id="clientProfileFormActions"
+                hidden>
+
+                <button type="button"
+                    class="stackly-storage-client-profile-cancel-btn"
+                    id="clientProfileCancelBtn">
+                    Cancel
+                </button>
+
+                <button type="submit"
+                    class="stackly-storage-client-profile-save-btn">
+                    <i class="fa-solid fa-check"></i>
+                    Save Changes
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================
+     04. SECURITY SETTINGS
+========================================== -->
+
+<section class="stackly-storage-client-profile-security"
+    data-aos="fade-up">
+
+    <div class="stackly-storage-client-profile-section-heading">
+
+        <div>
+            <span>ACCOUNT PROTECTION</span>
+            <h2>Security Settings</h2>
+            <p>Manage your password and account security.</p>
+        </div>
+
+    </div>
+
+
+    <div class="stackly-storage-client-profile-security-grid">
+
+
+        <!-- PASSWORD -->
+
+        <div class="stackly-storage-client-profile-security-card">
+
+            <div class="stackly-storage-client-profile-security-icon">
+                <i class="fa-solid fa-lock"></i>
+            </div>
+
+            <div class="stackly-storage-client-profile-security-info">
+
+                <h3>Password</h3>
+
+                <p>
+                    Keep your account secure by updating your password.
+                </p>
+
+                <span>
+                    <i class="fa-solid fa-shield-halved"></i>
+                    Password protected
+                </span>
+
+            </div>
+
+            <a href="404-client.html"
+                class="stackly-storage-client-profile-security-btn">
+                Change Password
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+        </div>
+
+
+        <!-- TWO FACTOR -->
+
+        <div class="stackly-storage-client-profile-security-card">
+
+            <div class="stackly-storage-client-profile-security-icon two-factor">
+                <i class="fa-solid fa-mobile-screen-button"></i>
+            </div>
+
+            <div class="stackly-storage-client-profile-security-info">
+
+                <h3>Two-Factor Authentication</h3>
+
+                <p>
+                    Add another layer of protection to your account.
+                </p>
+
+                <span class="not-enabled">
+                    <i class="fa-solid fa-circle-exclamation"></i>
+                    Not configured
+                </span>
+
+            </div>
+
+            <a href="404-client.html"
+                class="stackly-storage-client-profile-security-btn">
+                Setup Security
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================
+     05. NOTIFICATION PREFERENCES
+========================================== -->
+
+<section class="stackly-storage-client-profile-notifications"
+    data-aos="fade-up">
+
+    <div class="stackly-storage-client-profile-section-heading">
+
+        <div>
+            <span>STAY INFORMED</span>
+            <h2>Notification Preferences</h2>
+            <p>Choose which account updates you want to receive.</p>
+        </div>
+
+    </div>
+
+
+    <div class="stackly-storage-client-profile-notification-card">
+
+
+        <!-- EMAIL NOTIFICATIONS -->
+
+        <div class="stackly-storage-client-profile-notification-item">
+
+            <div class="stackly-storage-client-profile-notification-icon">
+                <i class="fa-regular fa-envelope"></i>
+            </div>
+
+            <div class="stackly-storage-client-profile-notification-info">
+
+                <h3>Email Notifications</h3>
+
+                <p>
+                    Receive invoices, booking confirmations and account updates.
+                </p>
+
+            </div>
+
+            <label class="stackly-storage-client-profile-switch"
+                aria-label="Email notifications">
+
+                <input type="checkbox"
+                    id="clientEmailNotifications"
+                    checked>
+
+                <span class="stackly-storage-client-profile-slider"></span>
+
+            </label>
+
+        </div>
+
+
+        <!-- SHIPMENT UPDATES -->
+
+        <div class="stackly-storage-client-profile-notification-item">
+
+            <div class="stackly-storage-client-profile-notification-icon shipment">
+                <i class="fa-solid fa-truck-fast"></i>
+            </div>
+
+            <div class="stackly-storage-client-profile-notification-info">
+
+                <h3>Shipment Updates</h3>
+
+                <p>
+                    Get notifications about shipment progress and delivery status.
+                </p>
+
+            </div>
+
+            <label class="stackly-storage-client-profile-switch"
+                aria-label="Shipment notifications">
+
+                <input type="checkbox"
+                    id="clientShipmentNotifications"
+                    checked>
+
+                <span class="stackly-storage-client-profile-slider"></span>
+
+            </label>
+
+        </div>
+
+
+        <!-- PAYMENT REMINDERS -->
+
+        <div class="stackly-storage-client-profile-notification-item">
+
+            <div class="stackly-storage-client-profile-notification-icon payment">
+                <i class="fa-solid fa-file-invoice-dollar"></i>
+            </div>
+
+            <div class="stackly-storage-client-profile-notification-info">
+
+                <h3>Payment Reminders</h3>
+
+                <p>
+                    Receive reminders about upcoming and pending payments.
+                </p>
+
+            </div>
+
+            <label class="stackly-storage-client-profile-switch"
+                aria-label="Payment reminders">
+
+                <input type="checkbox"
+                    id="clientPaymentNotifications"
+                    checked>
+
+                <span class="stackly-storage-client-profile-slider"></span>
+
+            </label>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================
+     06. ACCOUNT SUPPORT SECTION
+========================================== -->
+
+<section class="stackly-storage-client-profile-support"
+    data-aos="fade-up">
+
+    <div class="stackly-storage-client-profile-support-content">
+
+        <div class="stackly-storage-client-profile-support-icon">
+            <i class="fa-solid fa-headset"></i>
+        </div>
+
+        <div class="stackly-storage-client-profile-support-text">
+
+            <span>WE ARE HERE FOR YOU</span>
+
+            <h2>Need Help With Your Account?</h2>
+
+            <p>
+                Contact our support team for assistance with your
+                profile, account security or personal information.
+            </p>
+
+        </div>
+
+        <a href="404-client.html"
+            class="stackly-storage-client-profile-support-btn">
+
+            Contact Support
+            <i class="fa-solid fa-arrow-right"></i>
+
+        </a>
+
+    </div>
+
+</section>
+
+            
+        </div>
+
+
+</main>
+
+
+    <!-- =========================================
+         AOS SCRIPT
+    ========================================== -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
+
+    <!-- =========================================
+         CLIENT DASHBOARD JAVASCRIPT
+    ========================================== -->
+
+    <script src="client.js"></script>
+
+</body>
+
+</html>

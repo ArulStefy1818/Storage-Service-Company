@@ -1,0 +1,1313 @@
+
+/* ==========================================================
+   STACKLY SMART STORAGE SOLUTIONS
+   LOGIN & SIGNUP PAGE - COMPLETE RESPONSIVE CSS
+========================================================== */
+
+/* ==========================================================
+   01. ROOT VARIABLES & RESET
+========================================================== */
+
+:root {
+    --storage-primary: #b9ed62;
+    --storage-primary-dark: #93c83e;
+    --storage-secondary: #19b5a5;
+    --storage-navy: #102333;
+    --storage-dark: #091723;
+    --storage-blue: #24445a;
+    --storage-light: #f5f9f2;
+    --storage-white: #ffffff;
+    --storage-text: #63717b;
+    --storage-border: #e4ebe5;
+    --storage-heading-font: "Space Grotesk", sans-serif;
+    --storage-body-font: "DM Sans", sans-serif;
+    --storage-transition: all 0.35s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--storage-body-font);
+    color: var(--storage-navy);
+    background: var(--storage-light);
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+}
+
+button,
+input {
+    font: inherit;
+}
+
+button,
+a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+a {
+    text-decoration: none;
+}
+
+button {
+    cursor: pointer;
+}
+
+[hidden] {
+    display: none !important;
+}
+
+
+/* ==========================================================
+   02. MAIN AUTHENTICATION PAGE
+========================================================== */
+
+.stackly-storage-auth-page {
+    position: relative;
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 65px 5%;
+    overflow: hidden;
+    background:
+        radial-gradient(circle at 10% 15%, rgba(185, 237, 98, 0.14), transparent 30%),
+        radial-gradient(circle at 90% 85%, rgba(25, 181, 165, 0.12), transparent 30%),
+        #f5f9f2;
+}
+
+.stackly-storage-auth-glow {
+    position: absolute;
+    width: 480px;
+    height: 480px;
+    border-radius: 50%;
+    background: rgba(185, 237, 98, 0.13);
+    filter: blur(90px);
+    top: -180px;
+    right: -100px;
+    pointer-events: none;
+    animation: storageAuthGlow 9s ease-in-out infinite alternate;
+}
+
+.stackly-storage-auth-pattern {
+    position: absolute;
+    inset: 0;
+    opacity: 0.24;
+    pointer-events: none;
+    background-image: radial-gradient(#9bb78b 0.8px, transparent 0.8px);
+    background-size: 27px 27px;
+    mask-image: linear-gradient(to bottom, black, transparent 90%);
+}
+
+@keyframes storageAuthGlow {
+    0% {
+        transform: translate(0, 0) scale(1);
+    }
+
+    100% {
+        transform: translate(-45px, 55px) scale(1.15);
+    }
+}
+
+
+/* ==========================================================
+   03. MAIN CONTAINER
+========================================================== */
+
+.stackly-storage-auth-container {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    max-width: 1250px;
+    min-height: 720px;
+    display: grid;
+    grid-template-columns: 1fr 0.95fr;
+    align-items: center;
+    gap: 65px;
+    padding: 55px;
+    border-radius: 30px;
+    background: rgba(255, 255, 255, 0.88);
+    border: 1px solid rgba(255, 255, 255, 0.9);
+    box-shadow:
+        0 25px 80px rgba(16, 35, 51, 0.09),
+        0 5px 20px rgba(16, 35, 51, 0.035);
+    backdrop-filter: blur(18px);
+    animation: storageAuthContainer 0.9s ease both;
+}
+
+@keyframes storageAuthContainer {
+    from {
+        opacity: 0;
+        transform: translateY(35px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* ==========================================================
+   04. LEFT CONTENT SECTION
+========================================================== */
+
+.stackly-storage-auth-content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    animation: storageAuthContent 1s ease 0.15s both;
+}
+
+@keyframes storageAuthContent {
+    from {
+        opacity: 0;
+        transform: translateX(-35px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+
+/* LOGO */
+
+.stackly-storage-auth-logo {
+    display: inline-flex;
+    align-items: center;
+    margin-bottom: 55px;
+}
+
+.stackly-storage-auth-logo img {
+    display: block;
+    width: 175px;
+    height: 75px;
+    object-fit: contain;
+    transition: var(--storage-transition);
+    filter: brightness(0) saturate(100%)
+            invert(69%) sepia(36%) saturate(700%)
+            hue-rotate(42deg) brightness(94%) contrast(90%);
+}
+
+.stackly-storage-auth-logo:hover img {
+    transform: scale(1.06);
+    filter: brightness(0) saturate(100%)
+            invert(69%) sepia(36%) saturate(700%)
+            hue-rotate(42deg) brightness(94%) contrast(90%);
+}
+
+
+/* LABEL */
+
+.stackly-storage-auth-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 11px;
+    font-size: 13px;
+    font-weight: 800;
+    letter-spacing: 2.2px;
+    color: #668b36;
+    margin-bottom: 22px;
+}
+
+.stackly-storage-auth-label span {
+    width: 10px;
+    height: 10px;
+    background: var(--storage-secondary);
+    border-radius: 50%;
+    box-shadow: 0 0 0 5px rgba(25, 181, 165, 0.12);
+    animation: storageAuthPulse 2s infinite;
+}
+
+@keyframes storageAuthPulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(25, 181, 165, 0.35);
+    }
+
+    70% {
+        box-shadow: 0 0 0 9px rgba(25, 181, 165, 0);
+    }
+
+    100% {
+        box-shadow: 0 0 0 0 rgba(25, 181, 165, 0);
+    }
+}
+
+
+/* MAIN HEADING */
+
+.stackly-storage-auth-content h1 {
+    max-width: 560px;
+    font-family: var(--storage-heading-font);
+    font-size: clamp(42px, 4.5vw, 62px);
+    font-weight: 700;
+    line-height: 1.12;
+    letter-spacing: -2px;
+    color: var(--storage-navy);
+    margin-bottom: 23px;
+}
+
+.stackly-storage-auth-content h1 span {
+    display: block;
+    color: var(--storage-secondary);
+    transition: var(--storage-transition);
+}
+
+.stackly-storage-auth-content h1:hover span {
+    color: var(--storage-primary-dark);
+}
+
+.stackly-storage-auth-content > p {
+    max-width: 470px;
+    color: var(--storage-text);
+    font-size: 16px;
+    line-height: 1.9;
+    margin-bottom: 38px;
+}
+
+
+/* ==========================================================
+   05. BENEFIT CARDS
+========================================================== */
+
+.stackly-storage-auth-benefits {
+    width: 100%;
+    max-width: 475px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 40px;
+}
+
+.stackly-storage-auth-benefit {
+    display: flex;
+    align-items: center;
+    gap: 17px;
+    padding: 15px 17px;
+    border: 1px solid #edf1e9;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.78);
+    transition: var(--storage-transition);
+}
+
+.stackly-storage-auth-benefit:hover {
+    transform: translateX(9px);
+    border-color: var(--storage-primary);
+    background: #fbfff5;
+    box-shadow: 0 12px 28px rgba(16, 35, 51, 0.07);
+}
+
+.stackly-storage-auth-benefit-icon {
+    flex-shrink: 0;
+    width: 49px;
+    height: 49px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 13px;
+    color: var(--storage-navy);
+    background: rgba(185, 237, 98, 0.28);
+    font-size: 20px;
+    transition: var(--storage-transition);
+}
+
+.stackly-storage-auth-benefit:hover .stackly-storage-auth-benefit-icon {
+    color: var(--storage-white);
+    background: var(--storage-secondary);
+    transform: rotate(-6deg) scale(1.06);
+}
+
+.stackly-storage-auth-benefit h3 {
+    font-family: var(--storage-heading-font);
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--storage-navy);
+    margin-bottom: 4px;
+}
+
+.stackly-storage-auth-benefit p {
+    color: var(--storage-text);
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+
+/* ==========================================================
+   06. BACK TO HOME BUTTON
+========================================================== */
+
+.stackly-storage-auth-home-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 11px;
+    padding: 14px 23px;
+    border: 1px solid rgba(16, 35, 51, 0.16);
+    border-radius: 9px;
+    color: var(--storage-navy);
+    font-size: 14px;
+    font-weight: 700;
+    background: transparent;
+    transition: var(--storage-transition);
+}
+
+.stackly-storage-auth-home-btn i {
+    font-size: 14px;
+    transition: transform 0.3s ease;
+}
+
+.stackly-storage-auth-home-btn:hover {
+    color: var(--storage-navy);
+    background: var(--storage-primary);
+    border-color: var(--storage-primary);
+    transform: translateY(-4px);
+    box-shadow: 0 10px 22px rgba(147, 200, 62, 0.2);
+}
+
+.stackly-storage-auth-home-btn:hover i {
+    transform: translateX(-5px);
+}
+
+
+/* ==========================================================
+   07. RIGHT FORM WRAPPER
+========================================================== */
+
+.stackly-storage-auth-form-wrapper {
+    width: 100%;
+    max-width: 490px;
+    justify-self: end;
+    animation: storageAuthForm 1s ease 0.2s both;
+}
+
+@keyframes storageAuthForm {
+    from {
+        opacity: 0;
+        transform: translateX(35px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+
+/* ==========================================================
+   08. AUTHENTICATION CARD
+========================================================== */
+
+.stackly-storage-auth-card {
+    width: 100%;
+    padding: 42px 38px;
+    border-radius: 22px;
+    background: var(--storage-white);
+    border: 1px solid #edf1ed;
+    box-shadow: 0 15px 45px rgba(16, 35, 51, 0.075);
+    transition: var(--storage-transition);
+}
+
+.stackly-storage-auth-card:hover {
+    box-shadow: 0 20px 55px rgba(16, 35, 51, 0.11);
+}
+
+
+/* FORM HEADING */
+
+.stackly-storage-auth-heading {
+    margin-bottom: 30px;
+}
+
+.stackly-storage-auth-small-label {
+    display: inline-block;
+    color: #79a53b;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 1.7px;
+    margin-bottom: 12px;
+}
+
+.stackly-storage-auth-heading h2 {
+    font-family: var(--storage-heading-font);
+    font-size: 34px;
+    font-weight: 700;
+    letter-spacing: -1px;
+    line-height: 1.2;
+    color: var(--storage-navy);
+    margin-bottom: 10px;
+}
+
+.stackly-storage-auth-heading p {
+    color: var(--storage-text);
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+
+/* ==========================================================
+   09. FORM FIELDS
+========================================================== */
+
+.stackly-storage-auth-form {
+    width: 100%;
+    animation: storageFormAppear 0.45s ease both;
+}
+
+@keyframes storageFormAppear {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.stackly-storage-auth-field {
+    width: 100%;
+    margin-bottom: 21px;
+}
+
+.stackly-storage-auth-field > label {
+    display: block;
+    color: var(--storage-navy);
+    font-size: 14px;
+    font-weight: 700;
+    margin-bottom: 10px;
+}
+
+
+/* INPUT WRAPPER */
+
+.stackly-storage-auth-input-wrap {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.stackly-storage-auth-input-wrap > i:first-child {
+    position: absolute;
+    left: 16px;
+    z-index: 1;
+    color: #84939b;
+    font-size: 16px;
+    transition: var(--storage-transition);
+    pointer-events: none;
+}
+
+.stackly-storage-auth-input-wrap input {
+    width: 100%;
+    height: 55px;
+    padding: 0 48px;
+    outline: none;
+    border: 1px solid var(--storage-border);
+    border-radius: 10px;
+    background: #fbfcfa;
+    color: var(--storage-navy);
+    font-size: 14px;
+    font-weight: 500;
+    transition: var(--storage-transition);
+}
+
+.stackly-storage-auth-input-wrap input::placeholder {
+    color: #a2adb2;
+    font-size: 13px;
+    font-weight: 400;
+}
+
+.stackly-storage-auth-input-wrap input:hover {
+    border-color: #c4d8a7;
+    background: #ffffff;
+}
+
+.stackly-storage-auth-input-wrap input:focus {
+    border-color: var(--storage-secondary);
+    background: #ffffff;
+    box-shadow: 0 0 0 4px rgba(25, 181, 165, 0.1);
+}
+
+.stackly-storage-auth-input-wrap:focus-within > i:first-child {
+    color: var(--storage-secondary);
+}
+
+
+/* ==========================================================
+   10. PASSWORD EYE BUTTON
+========================================================== */
+
+.stackly-storage-password-toggle {
+    position: absolute;
+    right: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 8px;
+    background: transparent;
+    color: #82919a;
+    font-size: 16px;
+    transition: var(--storage-transition);
+}
+
+.stackly-storage-password-toggle:hover {
+    color: var(--storage-secondary);
+    background: rgba(25, 181, 165, 0.1);
+}
+
+.stackly-storage-password-toggle:active {
+    transform: translateY(-50%) scale(0.92);
+}
+
+
+/* ==========================================================
+   11. CUSTOM ROLE DROPDOWN
+========================================================== */
+
+.stackly-storage-role-dropdown {
+    position: relative;
+    width: 100%;
+    z-index: 5;
+}
+
+.stackly-storage-role-trigger {
+    width: 100%;
+    height: 55px;
+    padding: 0 16px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: 1px solid var(--storage-border);
+    border-radius: 10px;
+    background: #fbfcfa;
+    color: var(--storage-navy);
+    font-size: 14px;
+    font-weight: 600;
+    transition: var(--storage-transition);
+}
+
+.stackly-storage-role-trigger:hover,
+.stackly-storage-role-dropdown.active .stackly-storage-role-trigger {
+    border-color: var(--storage-secondary);
+    background: #ffffff;
+    box-shadow: 0 0 0 3px rgba(25, 181, 165, 0.08);
+}
+
+.stackly-storage-role-selected {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+}
+
+.stackly-storage-role-selected i {
+    color: var(--storage-secondary);
+    font-size: 16px;
+}
+
+.stackly-storage-role-arrow {
+    color: #819098;
+    font-size: 12px;
+    transition: transform 0.3s ease;
+}
+
+.stackly-storage-role-dropdown.active .stackly-storage-role-arrow {
+    transform: rotate(180deg);
+    color: var(--storage-secondary);
+}
+
+
+/* DROPDOWN OPTIONS */
+
+.stackly-storage-role-options {
+    position: absolute;
+    top: calc(100% + 9px);
+    left: 0;
+    width: 100%;
+    padding: 7px;
+    border: 1px solid #e5eee2;
+    border-radius: 12px;
+    background: #ffffff;
+    box-shadow: 0 15px 35px rgba(16, 35, 51, 0.13);
+    z-index: 20;
+    transform-origin: top;
+    animation: storageDropdownOpen 0.22s ease both;
+}
+
+@keyframes storageDropdownOpen {
+    from {
+        opacity: 0;
+        transform: translateY(-8px) scaleY(0.95);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scaleY(1);
+    }
+}
+
+.stackly-storage-role-option {
+    width: 100%;
+    min-height: 45px;
+    padding: 10px 12px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border: none;
+    border-radius: 8px;
+    background: transparent;
+    color: var(--storage-navy);
+    text-align: left;
+    font-size: 14px;
+    font-weight: 600;
+    transition: var(--storage-transition);
+}
+
+.stackly-storage-role-option i {
+    width: 19px;
+    color: #819098;
+    font-size: 15px;
+    transition: var(--storage-transition);
+}
+
+.stackly-storage-role-option:hover {
+    background: #f2f9e9;
+    color: #668f30;
+    padding-left: 17px;
+}
+
+.stackly-storage-role-option:hover i {
+    color: var(--storage-secondary);
+}
+
+.stackly-storage-role-option[aria-selected="true"] {
+    color: #668f30;
+    background: rgba(185, 237, 98, 0.2);
+}
+
+.stackly-storage-role-option[aria-selected="true"] i {
+    color: var(--storage-secondary);
+}
+
+
+/* ==========================================================
+   12. REMEMBER ME & FORGOT PASSWORD
+========================================================== */
+
+.stackly-storage-auth-options {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 4px 0 25px;
+}
+
+.stackly-storage-remember {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    color: var(--storage-text);
+    font-size: 13px;
+    font-weight: 500;
+    line-height: 1.5;
+    cursor: pointer;
+}
+
+.stackly-storage-remember input {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+}
+
+.stackly-storage-checkmark {
+    position: relative;
+    flex-shrink: 0;
+    width: 18px;
+    height: 18px;
+    display: inline-block;
+    border: 1.5px solid #cbd6ce;
+    border-radius: 5px;
+    background: #ffffff;
+    transition: var(--storage-transition);
+}
+
+.stackly-storage-remember input:checked + .stackly-storage-checkmark {
+    background: var(--storage-secondary);
+    border-color: var(--storage-secondary);
+}
+
+.stackly-storage-remember input:checked + .stackly-storage-checkmark::after {
+    content: "";
+    position: absolute;
+    left: 5px;
+    top: 1px;
+    width: 5px;
+    height: 10px;
+    border: solid #ffffff;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+}
+
+.stackly-storage-remember input:focus-visible + .stackly-storage-checkmark {
+    outline: 3px solid rgba(25, 181, 165, 0.22);
+    outline-offset: 2px;
+}
+
+.stackly-storage-forgot-link {
+    color: #6e9b36;
+    font-size: 13px;
+    font-weight: 700;
+    transition: var(--storage-transition);
+}
+
+.stackly-storage-forgot-link:hover {
+    color: var(--storage-secondary);
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+
+/* ==========================================================
+   13. TERMS AND CONDITIONS
+========================================================== */
+
+.stackly-storage-terms {
+    margin: 0 0 23px;
+    flex-wrap: wrap;
+}
+
+.stackly-storage-terms a {
+    color: #6e9b36;
+    font-weight: 700;
+    transition: var(--storage-transition);
+}
+
+.stackly-storage-terms a:hover {
+    color: var(--storage-secondary);
+    text-decoration: underline;
+}
+
+
+/* ==========================================================
+   14. SUBMIT BUTTON
+========================================================== */
+
+.stackly-storage-auth-submit {
+    position: relative;
+    width: 100%;
+    min-height: 56px;
+    padding: 14px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 13px;
+    overflow: hidden;
+    border: none;
+    border-radius: 10px;
+    background: var(--storage-primary);
+    color: var(--storage-navy);
+    font-family: var(--storage-heading-font);
+    font-size: 16px;
+    font-weight: 700;
+    transition: var(--storage-transition);
+    box-shadow: 0 7px 18px rgba(147, 200, 62, 0.15);
+}
+
+.stackly-storage-auth-submit::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -110%;
+    width: 70%;
+    height: 100%;
+    background: linear-gradient(
+        100deg,
+        transparent,
+        rgba(255, 255, 255, 0.55),
+        transparent
+    );
+    transform: skewX(-20deg);
+    transition: left 0.65s ease;
+}
+
+.stackly-storage-auth-submit:hover::before {
+    left: 140%;
+}
+
+.stackly-storage-auth-submit:hover {
+    background: var(--storage-secondary);
+    color: #ffffff;
+    transform: translateY(-4px);
+    box-shadow: 0 12px 25px rgba(25, 181, 165, 0.23);
+}
+
+.stackly-storage-auth-submit i {
+    font-size: 14px;
+    transition: transform 0.3s ease;
+}
+
+.stackly-storage-auth-submit:hover i {
+    transform: translateX(5px);
+}
+
+.stackly-storage-auth-submit:active {
+    transform: translateY(-1px);
+}
+
+
+/* ==========================================================
+   15. FORM STATUS MESSAGE
+========================================================== */
+
+.stackly-storage-auth-status {
+    min-height: 0;
+    margin-top: 12px;
+    color: #c34b4b;
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1.5;
+}
+
+.stackly-storage-auth-status:empty {
+    display: none;
+}
+
+
+/* ==========================================================
+   16. LOGIN / SIGNUP SWITCH
+========================================================== */
+
+.stackly-storage-auth-switch {
+    margin-top: 24px;
+    padding-top: 21px;
+    border-top: 1px solid #edf1ed;
+    color: var(--storage-text);
+    font-size: 14px;
+    text-align: center;
+    line-height: 1.8;
+}
+
+.stackly-storage-auth-switch-btn {
+    display: inline-block;
+    margin-left: 4px;
+    padding: 0;
+    border: none;
+    background: transparent;
+    color: #6e9b36;
+    font-size: 14px;
+    font-weight: 800;
+    transition: var(--storage-transition);
+}
+
+.stackly-storage-auth-switch-btn:hover {
+    color: var(--storage-secondary);
+    text-decoration: underline;
+    text-underline-offset: 4px;
+}
+
+
+/* ==========================================================
+   17. AUTH FOOTER
+========================================================== */
+
+.stackly-storage-auth-footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 9px;
+    margin-top: 25px;
+    text-align: center;
+}
+
+.stackly-storage-auth-footer p {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--storage-navy);
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.stackly-storage-auth-footer p i {
+    color: var(--storage-secondary);
+}
+
+.stackly-storage-auth-footer span {
+    color: #89969b;
+    font-size: 12px;
+}
+
+
+/* ==========================================================
+   18. KEYBOARD ACCESSIBILITY
+========================================================== */
+
+.stackly-storage-auth-page a:focus-visible,
+.stackly-storage-auth-page button:focus-visible {
+    outline: 3px solid rgba(25, 181, 165, 0.45);
+    outline-offset: 4px;
+}
+
+
+/* ==========================================================
+   19. LARGE LAPTOP RESPONSIVE
+========================================================== */
+
+@media (max-width: 1200px) {
+
+    .stackly-storage-auth-container {
+        max-width: 1080px;
+        gap: 40px;
+        padding: 45px;
+    }
+
+    .stackly-storage-auth-content h1 {
+        font-size: 48px;
+    }
+
+    .stackly-storage-auth-card {
+        padding: 35px 30px;
+    }
+
+    .stackly-storage-auth-logo {
+        margin-bottom: 40px;
+    }
+}
+
+
+/* ==========================================================
+   20. TABLET RESPONSIVE
+========================================================== */
+
+@media (max-width: 991px) {
+
+    .stackly-storage-auth-page {
+        padding: 45px 4%;
+    }
+
+    .stackly-storage-auth-container {
+        max-width: 720px;
+        min-height: auto;
+        grid-template-columns: 1fr;
+        gap: 45px;
+        padding: 40px;
+    }
+
+    .stackly-storage-auth-content {
+        align-items: center;
+        text-align: center;
+    }
+
+    .stackly-storage-auth-logo {
+        margin-bottom: 30px;
+    }
+
+    .stackly-storage-auth-content h1 {
+        max-width: 600px;
+        font-size: 48px;
+    }
+
+    .stackly-storage-auth-content > p {
+        max-width: 570px;
+    }
+
+    .stackly-storage-auth-benefits {
+        max-width: 560px;
+        text-align: left;
+    }
+
+    .stackly-storage-auth-benefit {
+        padding: 17px;
+    }
+
+    .stackly-storage-auth-form-wrapper {
+        max-width: 560px;
+        justify-self: center;
+    }
+
+    .stackly-storage-auth-card {
+        padding: 40px;
+    }
+
+}
+
+
+/* ==========================================================
+   21. MOBILE RESPONSIVE
+========================================================== */
+
+@media (max-width: 767px) {
+
+    .stackly-storage-auth-page {
+        min-height: 100vh;
+        padding: 25px 16px;
+    }
+
+    .stackly-storage-auth-container {
+        padding: 28px 20px;
+        gap: 35px;
+        border-radius: 22px;
+    }
+
+    .stackly-storage-auth-logo {
+        margin-bottom: 25px;
+    }
+
+    .stackly-storage-auth-logo img {
+        width: 150px;
+        height: 65px;
+    }
+
+    .stackly-storage-auth-label {
+        font-size: 11px;
+        letter-spacing: 1.7px;
+        margin-bottom: 17px;
+    }
+
+    .stackly-storage-auth-content h1 {
+        font-size: clamp(36px, 8vw, 45px);
+        letter-spacing: -1.5px;
+        margin-bottom: 17px;
+    }
+
+    .stackly-storage-auth-content > p {
+        font-size: 14px;
+        line-height: 1.8;
+        margin-bottom: 25px;
+    }
+
+    .stackly-storage-auth-benefits {
+        gap: 11px;
+        margin-bottom: 28px;
+    }
+
+    .stackly-storage-auth-benefit {
+        gap: 13px;
+        padding: 13px;
+        border-radius: 12px;
+    }
+
+    .stackly-storage-auth-benefit-icon {
+        width: 43px;
+        height: 43px;
+        font-size: 18px;
+    }
+
+    .stackly-storage-auth-benefit h3 {
+        font-size: 14px;
+    }
+
+    .stackly-storage-auth-benefit p {
+        font-size: 12px;
+    }
+
+    .stackly-storage-auth-home-btn {
+        padding: 12px 19px;
+        font-size: 13px;
+    }
+
+    .stackly-storage-auth-card {
+        padding: 30px 22px;
+        border-radius: 17px;
+    }
+
+    .stackly-storage-auth-heading {
+        margin-bottom: 25px;
+    }
+
+    .stackly-storage-auth-heading h2 {
+        font-size: 29px;
+    }
+
+    .stackly-storage-auth-heading p {
+        font-size: 14px;
+    }
+
+    .stackly-storage-auth-field {
+        margin-bottom: 18px;
+    }
+
+    .stackly-storage-auth-field > label {
+        font-size: 13px;
+    }
+
+    .stackly-storage-auth-input-wrap input,
+    .stackly-storage-role-trigger {
+        height: 53px;
+        font-size: 13px;
+    }
+
+    .stackly-storage-auth-input-wrap input::placeholder {
+        font-size: 12px;
+    }
+
+    .stackly-storage-auth-options {
+        align-items: flex-start;
+        margin-bottom: 22px;
+    }
+
+    .stackly-storage-remember,
+    .stackly-storage-forgot-link {
+        font-size: 12px;
+    }
+
+    .stackly-storage-auth-submit {
+        min-height: 53px;
+        font-size: 15px;
+    }
+
+    .stackly-storage-auth-switch {
+        font-size: 13px;
+    }
+
+    .stackly-storage-auth-switch-btn {
+        font-size: 13px;
+    }
+
+    .stackly-storage-auth-footer {
+        margin-top: 20px;
+    }
+
+}
+
+
+/* ==========================================================
+   22. SMALL MOBILE RESPONSIVE
+========================================================== */
+
+@media (max-width: 480px) {
+
+    .stackly-storage-auth-page {
+        padding: 18px 11px;
+    }
+
+    .stackly-storage-auth-container {
+        padding: 24px 15px;
+        gap: 30px;
+        border-radius: 18px;
+    }
+
+    .stackly-storage-auth-content h1 {
+        font-size: 35px;
+    }
+
+    .stackly-storage-auth-content > p {
+        font-size: 13px;
+    }
+
+    .stackly-storage-auth-benefit {
+        padding: 11px;
+    }
+
+    .stackly-storage-auth-benefit-icon {
+        width: 39px;
+        height: 39px;
+        font-size: 16px;
+    }
+
+    .stackly-storage-auth-benefit h3 {
+        font-size: 13px;
+    }
+
+    .stackly-storage-auth-benefit p {
+        font-size: 11px;
+    }
+
+    .stackly-storage-auth-card {
+        padding: 25px 16px;
+    }
+
+    .stackly-storage-auth-heading h2 {
+        font-size: 27px;
+    }
+
+    .stackly-storage-auth-options {
+        gap: 10px;
+    }
+
+    .stackly-storage-auth-input-wrap input {
+        padding-left: 43px;
+        padding-right: 42px;
+    }
+
+    .stackly-storage-auth-footer span {
+        font-size: 11px;
+    }
+
+}
+
+
+/* ==========================================================
+   23. EXTRA SMALL DEVICES
+========================================================== */
+
+@media (max-width: 360px) {
+
+    .stackly-storage-auth-container {
+        padding: 20px 12px;
+    }
+
+    .stackly-storage-auth-content h1 {
+        font-size: 30px;
+    }
+
+    .stackly-storage-auth-label {
+        font-size: 9px;
+        letter-spacing: 1.2px;
+    }
+
+    .stackly-storage-auth-card {
+        padding: 22px 13px;
+    }
+
+    .stackly-storage-auth-heading h2 {
+        font-size: 24px;
+    }
+
+    .stackly-storage-auth-input-wrap input,
+    .stackly-storage-role-trigger {
+        height: 50px;
+    }
+
+    .stackly-storage-remember,
+    .stackly-storage-forgot-link {
+        font-size: 11px;
+    }
+
+}
+
+
+/* ==========================================================
+   24. REDUCED MOTION ACCESSIBILITY
+========================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+
+}

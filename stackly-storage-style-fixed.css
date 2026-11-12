@@ -1,0 +1,2424 @@
+
+/* ==========================================================
+   STACKLY | SMART STORAGE SOLUTIONS
+   PREMIUM STORAGE COMPANY WEBSITE
+   COMPLETE RESPONSIVE STYLESHEET
+========================================================== */
+
+
+/* ==========================================================
+   01. ROOT VARIABLES
+========================================================== */
+
+:root {
+    --storage-primary: #b9ed62;
+    --storage-primary-dark: #93c83e;
+    --storage-secondary: #19b5a5;
+
+    --storage-navy: #102333;
+    --storage-dark: #091723;
+    --storage-blue: #24445a;
+
+    --storage-white: #ffffff;
+    --storage-light: #f4f7f6;
+    --storage-grey: #aebbc2;
+    --storage-text: #657680;
+
+    --storage-border: rgba(255,255,255,0.15);
+
+    --storage-heading: 'Space Grotesk', sans-serif;
+    --storage-body: 'DM Sans', sans-serif;
+
+    --storage-container: 1350px;
+    --storage-transition: 0.4s ease;
+}
+
+
+/* ==========================================================
+   02. RESET AND GLOBAL
+========================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px;
+}
+
+body {
+    font-family: var(--storage-body);
+    font-size: 16px;
+    color: var(--storage-navy);
+    background: var(--storage-white);
+    overflow-x: hidden;
+}
+
+body.storage-menu-open {
+    overflow: hidden;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button {
+    font-family: inherit;
+    cursor: pointer;
+    border: none;
+}
+
+img,
+video {
+    display: block;
+    max-width: 100%;
+}
+
+::selection {
+    background: var(--storage-primary);
+    color: var(--storage-dark);
+}
+
+
+/* ==========================================================
+   03. PAGE LOADER
+========================================================== */
+
+.stackly-storage-loader {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+
+    background: var(--storage-dark);
+
+    transition: opacity 0.7s ease,
+                visibility 0.7s ease;
+}
+
+.stackly-storage-loader.hidden {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.stackly-storage-loader-logo img {
+    width: 115px;
+    height: 115px;
+    object-fit: contain;
+
+    filter: brightness(0) invert(1);
+
+    animation: storageLoaderPulse 1.5s infinite ease-in-out;
+}
+
+.stackly-storage-loader-line {
+    width: 145px;
+    height: 4px;
+
+    background: rgba(255,255,255,0.15);
+    overflow: hidden;
+}
+
+.stackly-storage-loader-line::after {
+    content: "";
+    display: block;
+
+    height: 100%;
+    width: 100%;
+
+    background: var(--storage-primary);
+
+    transform: translateX(-100%);
+    animation: storageLoaderProgress 1.5s ease forwards;
+}
+
+@keyframes storageLoaderPulse {
+    50% {
+        transform: scale(1.12);
+    }
+}
+
+@keyframes storageLoaderProgress {
+    to {
+        transform: translateX(0);
+    }
+}
+
+
+/* ==========================================================
+   04. HEADER
+========================================================== */
+
+.stackly-storage-header {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    z-index: 1000;
+
+    padding: 22px 5%;
+
+    border-bottom: 1px solid rgba(255,255,255,0.15);
+
+    transition: all 0.4s ease;
+}
+
+.stackly-storage-header.scrolled {
+    position: fixed;
+
+    padding-top: 12px;
+    padding-bottom: 12px;
+
+    background: rgba(9,23,35,0.97);
+
+    backdrop-filter: blur(18px);
+
+    box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+
+    animation: storageHeaderDrop 0.5s ease;
+}
+
+@keyframes storageHeaderDrop {
+    from {
+        transform: translateY(-100%);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+.stackly-storage-header-inner {
+    max-width: var(--storage-container);
+    margin: auto;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 30px;
+}
+
+
+/* ==========================================================
+   05. LOGO
+========================================================== */
+
+.stackly-storage-logo {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.stackly-storage-logo img {
+    width: 155px;
+    height: 62px;
+
+    object-fit: contain;
+
+    filter: brightness(0) invert(1);
+
+    transition: all 0.4s ease;
+}
+
+.stackly-storage-logo:hover img {
+    transform: scale(1.08) rotate(-2deg);
+}
+
+
+/* ==========================================================
+   06. DESKTOP NAVIGATION
+========================================================== */
+
+.stackly-storage-nav {
+    display: flex;
+    align-items: center;
+    gap: clamp(17px, 2vw, 30px);
+}
+
+.stackly-storage-nav-link {
+    position: relative;
+
+    padding: 13px 0;
+
+    color: rgba(255,255,255,0.85);
+
+    font-size: 15px;
+    font-weight: 700;
+
+    transition: all 0.35s ease;
+}
+
+.stackly-storage-nav-link::before {
+    content: "";
+
+    position: absolute;
+    left: 0;
+    bottom: 3px;
+
+    width: 0;
+    height: 3px;
+
+    border-radius: 5px;
+
+    background: var(--storage-primary);
+
+    transition: width 0.4s ease;
+}
+
+.stackly-storage-nav-link:hover,
+.stackly-storage-nav-link.active {
+    color: var(--storage-primary);
+    transform: translateY(-3px);
+}
+
+.stackly-storage-nav-link:hover::before,
+.stackly-storage-nav-link.active::before {
+    width: 100%;
+}
+
+
+/* LETTER HOVER EFFECT */
+
+.stackly-storage-nav-link {
+    display: inline-block;
+}
+
+.stackly-storage-nav-link:hover {
+    text-shadow: 0 0 15px rgba(185,237,98,0.25);
+}
+
+
+/* ==========================================================
+   07. HEADER BUTTON
+========================================================== */
+
+.stackly-storage-header-right {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.stackly-storage-header-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+
+    padding: 16px 22px;
+
+    color: var(--storage-dark);
+    background: var(--storage-primary);
+
+    font-size: 14px;
+    font-weight: 800;
+
+    border: 1px solid var(--storage-primary);
+
+    transition: all 0.4s ease;
+}
+
+.stackly-storage-header-btn i {
+    transition: transform 0.4s ease;
+}
+
+.stackly-storage-header-btn:hover {
+    background: white;
+    border-color: white;
+
+    transform: translateY(-5px);
+
+    box-shadow: 0 12px 25px rgba(185,237,98,0.22);
+}
+
+.stackly-storage-header-btn:hover i {
+    transform: translate(5px,-5px);
+}
+
+
+/* ==========================================================
+   08. HAMBURGER BUTTON
+========================================================== */
+
+.stackly-storage-menu-toggle {
+    width: 48px;
+    height: 48px;
+
+    display: none;
+
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    gap: 7px;
+
+    background: var(--storage-primary);
+
+    border-radius: 3px;
+
+    transition: all 0.35s ease;
+}
+
+.stackly-storage-menu-toggle span {
+    width: 24px;
+    height: 2px;
+
+    background: var(--storage-dark);
+
+    transition: all 0.35s ease;
+}
+
+.stackly-storage-menu-toggle:hover {
+    transform: rotate(5deg);
+    background: white;
+}
+
+.stackly-storage-menu-toggle:hover span:first-child {
+    transform: translateY(-2px);
+}
+
+.stackly-storage-menu-toggle:hover span:last-child {
+    transform: translateY(2px);
+}
+
+
+/* ==========================================================
+   09. MOBILE OVERLAY
+========================================================== */
+
+.stackly-storage-overlay {
+    position: fixed;
+    inset: 0;
+
+    z-index: 1100;
+
+    background: rgba(0,0,0,0.75);
+
+    backdrop-filter: blur(5px);
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition: all 0.4s ease;
+}
+
+.stackly-storage-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+/* ==========================================================
+   10. MOBILE EXIT BUTTON
+========================================================== */
+
+.stackly-storage-menu-close {
+    position: fixed;
+
+    top: 22px;
+    right: 22px;
+
+    width: 48px;
+    height: 48px;
+
+    z-index: 1300;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: var(--storage-primary);
+    color: var(--storage-dark);
+
+    font-size: 23px;
+
+    border-radius: 3px;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transform: rotate(-90deg);
+
+    transition: all 0.4s ease;
+}
+
+.stackly-storage-menu-close.active {
+    opacity: 1;
+    visibility: visible;
+    transform: rotate(0);
+}
+
+.stackly-storage-menu-close:hover {
+    background: white;
+    transform: rotate(90deg);
+}
+
+
+/* ==========================================================
+   11. HERO MAIN SECTION
+========================================================== */
+
+.stackly-storage-hero {
+    position: relative;
+
+    width: 100%;
+    height: 100vh;
+
+    min-height: 800px;
+    max-height: 1050px;
+
+    overflow: hidden;
+
+    background: var(--storage-dark);
+    color: white;
+
+    isolation: isolate;
+}
+
+
+/* ==========================================================
+   12. BACKGROUND VIDEO
+========================================================== */
+
+.stackly-storage-video-wrapper {
+    position: absolute;
+    inset: 0;
+    z-index: -3;
+}
+
+.stackly-storage-video {
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    opacity: 0;
+
+    transform: scale(1.12);
+
+    transition: opacity 1.2s ease,
+                transform 8s linear;
+}
+
+.stackly-storage-video.active {
+    opacity: 1;
+    transform: scale(1);
+}
+
+
+/* ==========================================================
+   13. VIDEO OVERLAY
+========================================================== */
+
+.stackly-storage-video-overlay {
+    position: absolute;
+    inset: 0;
+
+    z-index: -2;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(5,18,29,0.95) 0%,
+            rgba(5,18,29,0.85) 38%,
+            rgba(5,18,29,0.52) 70%,
+            rgba(5,18,29,0.35) 100%
+        );
+}
+
+
+/* ==========================================================
+   14. GRID BACKGROUND
+========================================================== */
+
+.stackly-storage-hero-grid {
+    position: absolute;
+    inset: 0;
+
+    z-index: -1;
+
+    opacity: 0.15;
+
+    pointer-events: none;
+
+    background-image:
+        linear-gradient(rgba(255,255,255,0.12) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.12) 1px, transparent 1px);
+
+    background-size: 85px 85px;
+
+    mask-image: linear-gradient(90deg, black, transparent);
+}
+
+
+/* ==========================================================
+   15. ANIMATED ORBIT
+========================================================== */
+
+.stackly-storage-hero-orb {
+    position: absolute;
+
+    top: 20%;
+    right: -180px;
+
+    width: 480px;
+    height: 480px;
+
+    border: 1px solid rgba(185,237,98,0.25);
+
+    border-radius: 50%;
+
+    z-index: -1;
+
+    animation: storageOrb 25s linear infinite;
+}
+
+.stackly-storage-hero-orb::before,
+.stackly-storage-hero-orb::after {
+    content: "";
+
+    position: absolute;
+    inset: 35px;
+
+    border: 1px solid rgba(185,237,98,0.2);
+    border-radius: 50%;
+}
+
+.stackly-storage-hero-orb::after {
+    inset: 85px;
+}
+
+@keyframes storageOrb {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+/* ==========================================================
+   16. SLIDE LAYOUT
+========================================================== */
+
+.stackly-storage-slides {
+    position: relative;
+
+    width: 100%;
+    height: 100%;
+}
+
+.stackly-storage-slide {
+    position: absolute;
+    inset: 0;
+
+    display: flex;
+    align-items: center;
+
+    padding: 150px 9% 125px;
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition: opacity 0.9s ease,
+                visibility 0.9s ease;
+}
+
+.stackly-storage-slide.active {
+    opacity: 1;
+    visibility: visible;
+    z-index: 2;
+}
+
+.stackly-storage-slide-content {
+    width: 100%;
+    max-width: var(--storage-container);
+
+    margin: auto;
+}
+
+
+/* ==========================================================
+   17. SLIDE ONE - LEFT ALIGNMENT
+========================================================== */
+
+.stackly-storage-slide-left {
+    text-align: left;
+}
+
+.stackly-storage-slide-left .stackly-storage-hero-title {
+    max-width: 850px;
+}
+
+.stackly-storage-slide-left .stackly-storage-hero-description {
+    max-width: 650px;
+}
+
+
+/* ==========================================================
+   18. HERO LABEL
+========================================================== */
+
+.stackly-storage-hero-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 15px;
+
+    margin-bottom: 32px;
+
+    color: var(--storage-primary);
+
+    font-size: 13px;
+    font-weight: 800;
+
+    letter-spacing: 2.5px;
+}
+
+.stackly-storage-tag-dot {
+    width: 10px;
+    height: 10px;
+
+    background: var(--storage-primary);
+
+    border-radius: 50%;
+
+    box-shadow: 0 0 0 6px rgba(185,237,98,0.15);
+
+    animation: storageDot 2s infinite;
+}
+
+@keyframes storageDot {
+    50% {
+        box-shadow: 0 0 0 12px rgba(185,237,98,0.02);
+    }
+}
+
+
+/* ==========================================================
+   19. HERO HEADING
+========================================================== */
+
+.stackly-storage-hero-title {
+    font-family: var(--storage-heading);
+
+    font-size: clamp(58px, 6.5vw, 94px);
+
+    line-height: 1.06;
+
+    font-weight: 700;
+
+    letter-spacing: -4px;
+
+    margin-bottom: 28px;
+}
+
+.stackly-storage-hero-title span {
+    display: block;
+}
+
+.stackly-storage-highlight {
+    color: var(--storage-primary);
+
+    position: relative;
+
+    width: fit-content;
+}
+
+
+/* ==========================================================
+   20. HERO DESCRIPTION
+========================================================== */
+
+.stackly-storage-hero-description {
+    max-width: 650px;
+
+    color: rgba(255,255,255,0.82);
+
+    font-size: 18px;
+    font-weight: 400;
+
+    line-height: 1.9;
+
+    margin-bottom: 38px;
+}
+
+
+/* ==========================================================
+   21. HERO BUTTONS
+========================================================== */
+
+.stackly-storage-hero-buttons {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+
+    gap: 20px;
+}
+
+.stackly-storage-primary-btn {
+    min-height: 62px;
+
+    padding: 0 27px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 20px;
+
+    background: var(--storage-primary);
+    color: var(--storage-dark);
+
+    border: 1px solid var(--storage-primary);
+
+    font-size: 15px;
+    font-weight: 800;
+
+    transition: all 0.4s ease;
+
+    overflow: hidden;
+}
+
+.stackly-storage-primary-btn i {
+    transition: transform 0.4s ease;
+}
+
+.stackly-storage-primary-btn:hover {
+    background: white;
+    border-color: white;
+
+    transform: translateY(-6px);
+
+    box-shadow: 0 15px 35px rgba(185,237,98,0.25);
+}
+
+.stackly-storage-primary-btn:hover i {
+    transform: translateX(8px);
+}
+
+.stackly-storage-outline-btn {
+    min-height: 62px;
+
+    padding: 0 25px;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 15px;
+
+    color: white;
+
+    border: 1px solid rgba(255,255,255,0.45);
+
+    font-size: 15px;
+    font-weight: 700;
+
+    transition: all 0.4s ease;
+}
+
+.stackly-storage-outline-btn:hover {
+    color: var(--storage-primary);
+
+    border-color: var(--storage-primary);
+
+    background: rgba(185,237,98,0.09);
+
+    transform: translateY(-6px);
+}
+
+.stackly-storage-play-icon {
+    width: 32px;
+    height: 32px;
+
+    display: grid;
+    place-items: center;
+
+    border: 1px solid var(--storage-primary);
+    border-radius: 50%;
+
+    color: var(--storage-primary);
+
+    font-size: 11px;
+
+    transition: all 0.4s ease;
+}
+
+.stackly-storage-outline-btn:hover .stackly-storage-play-icon {
+    background: var(--storage-primary);
+    color: var(--storage-dark);
+    transform: scale(1.1);
+}
+
+
+/* ==========================================================
+   22. TRUST ITEMS
+========================================================== */
+
+.stackly-storage-hero-trust {
+    display: flex;
+    align-items: center;
+
+    gap: 30px;
+
+    margin-top: 58px;
+}
+
+.stackly-storage-trust-item {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.stackly-storage-trust-item strong {
+    font-family: var(--storage-heading);
+
+    color: white;
+
+    font-size: 27px;
+    font-weight: 700;
+}
+
+.stackly-storage-trust-item span {
+    color: rgba(255,255,255,0.68);
+
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.stackly-storage-trust-divider {
+    width: 1px;
+    height: 45px;
+
+    background: rgba(255,255,255,0.3);
+}
+
+
+/* ==========================================================
+   23. FLOATING STORAGE CARD
+========================================================== */
+
+.stackly-storage-floating-card {
+    position: absolute;
+
+    right: 8%;
+    bottom: 23%;
+
+    display: flex;
+    align-items: center;
+    gap: 18px;
+
+    padding: 23px 25px;
+
+    background: rgba(255,255,255,0.13);
+
+    backdrop-filter: blur(18px);
+
+    border: 1px solid rgba(255,255,255,0.24);
+
+    box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+
+    animation: storageFloat 4s ease-in-out infinite;
+
+    transition: all 0.4s ease;
+}
+
+.stackly-storage-floating-card:hover {
+    background: rgba(185,237,98,0.18);
+
+    border-color: var(--storage-primary);
+
+    transform: translateY(-12px) scale(1.03);
+}
+
+.stackly-storage-floating-icon {
+    width: 58px;
+    height: 58px;
+
+    display: grid;
+    place-items: center;
+
+    background: var(--storage-primary);
+    color: var(--storage-dark);
+
+    font-size: 25px;
+
+    transition: transform 0.4s ease;
+}
+
+.stackly-storage-floating-card:hover .stackly-storage-floating-icon {
+    transform: rotate(-10deg);
+}
+
+.stackly-storage-floating-card span {
+    display: block;
+
+    color: var(--storage-primary);
+
+    font-size: 11px;
+    font-weight: 800;
+
+    letter-spacing: 1.5px;
+
+    margin-bottom: 9px;
+}
+
+.stackly-storage-floating-card h3 {
+    font-family: var(--storage-heading);
+
+    font-size: 17px;
+    font-weight: 700;
+
+    color: white;
+}
+
+.stackly-storage-card-arrow {
+    color: var(--storage-primary);
+
+    font-size: 17px;
+
+    margin-left: 10px;
+}
+
+@keyframes storageFloat {
+    50% {
+        transform: translateY(-13px);
+    }
+}
+
+
+/* ==========================================================
+   24. SLIDE TWO - RIGHT ALIGNMENT
+========================================================== */
+
+.stackly-storage-slide-right {
+    max-width: 1300px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+
+    text-align: right;
+}
+
+.stackly-storage-slide-right .stackly-storage-hero-title {
+    max-width: 950px;
+}
+
+.stackly-storage-slide-right .stackly-storage-highlight {
+    margin-left: auto;
+}
+
+.stackly-storage-slide-right .stackly-storage-hero-description {
+    max-width: 650px;
+}
+
+.stackly-storage-slide-right .stackly-storage-hero-buttons {
+    justify-content: flex-end;
+}
+
+
+/* ==========================================================
+   25. SLIDE TWO STAT CARD
+========================================================== */
+
+.stackly-storage-slide-stat {
+    display: flex;
+    align-items: center;
+
+    gap: 18px;
+
+    margin-top: 55px;
+
+    padding: 20px 25px;
+
+    text-align: left;
+
+    background: rgba(255,255,255,0.12);
+
+    border-left: 4px solid var(--storage-primary);
+
+    backdrop-filter: blur(15px);
+
+    transition: all 0.4s ease;
+}
+
+.stackly-storage-slide-stat:hover {
+    transform: translateX(-10px);
+
+    background: rgba(185,237,98,0.13);
+}
+
+.stackly-storage-stat-icon {
+    width: 55px;
+    height: 55px;
+
+    display: grid;
+    place-items: center;
+
+    background: var(--storage-primary);
+    color: var(--storage-dark);
+
+    font-size: 23px;
+}
+
+.stackly-storage-slide-stat span {
+    display: block;
+
+    color: var(--storage-primary);
+
+    font-size: 11px;
+    font-weight: 800;
+
+    letter-spacing: 1.5px;
+
+    margin-bottom: 8px;
+}
+
+.stackly-storage-slide-stat strong {
+    display: block;
+
+    color: white;
+
+    font-size: 16px;
+}
+
+
+/* ==========================================================
+   26. SLIDE TWO CIRCLE DECORATION
+========================================================== */
+
+.stackly-storage-slide-decoration {
+    position: absolute;
+
+    left: 8%;
+    top: 30%;
+
+    width: 170px;
+    height: 170px;
+
+    display: grid;
+    place-items: center;
+
+    border: 1px solid rgba(185,237,98,0.45);
+
+    border-radius: 50%;
+
+    animation: storageOrb 22s linear infinite;
+}
+
+.stackly-storage-circle-text {
+    width: 125px;
+    height: 125px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+    gap: 12px;
+
+    color: var(--storage-primary);
+
+    background: rgba(185,237,98,0.13);
+
+    border-radius: 50%;
+}
+
+.stackly-storage-circle-text span {
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+
+.stackly-storage-circle-text i {
+    font-size: 34px;
+}
+
+
+/* ==========================================================
+   27. SLIDE THREE - CENTER ALIGNMENT
+========================================================== */
+
+.stackly-storage-slide-center {
+    max-width: 1150px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+}
+
+.stackly-storage-slide-center .stackly-storage-hero-title {
+    font-size: clamp(65px, 7vw, 100px);
+}
+
+.stackly-storage-slide-center .stackly-storage-highlight {
+    margin: auto;
+}
+
+.stackly-storage-slide-center .stackly-storage-hero-description {
+    max-width: 750px;
+}
+
+.stackly-storage-slide-center .stackly-storage-hero-buttons {
+    justify-content: center;
+}
+
+.stackly-storage-center-bottom {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    gap: 22px;
+
+    margin-top: 70px;
+
+    color: rgba(255,255,255,0.8);
+
+    font-size: 12px;
+    font-weight: 800;
+
+    letter-spacing: 2px;
+}
+
+.stackly-storage-center-line {
+    width: 75px;
+    height: 2px;
+
+    background: var(--storage-primary);
+}
+
+
+/* ==========================================================
+   28. HERO TEXT ANIMATIONS
+========================================================== */
+
+.stackly-storage-slide.active .stackly-storage-hero-tag {
+    animation: storageFadeUp 0.8s 0.15s both;
+}
+
+.stackly-storage-slide.active .stackly-storage-hero-title span {
+    animation: storageTitleReveal 0.9s both;
+}
+
+.stackly-storage-slide.active .stackly-storage-hero-title span:nth-child(2) {
+    animation-delay: 0.18s;
+}
+
+.stackly-storage-slide.active .stackly-storage-hero-title span:nth-child(3) {
+    animation-delay: 0.34s;
+}
+
+.stackly-storage-slide.active .stackly-storage-hero-description {
+    animation: storageFadeUp 0.9s 0.4s both;
+}
+
+.stackly-storage-slide.active .stackly-storage-hero-buttons {
+    animation: storageFadeUp 0.9s 0.55s both;
+}
+
+.stackly-storage-slide.active .stackly-storage-hero-trust,
+.stackly-storage-slide.active .stackly-storage-slide-stat,
+.stackly-storage-slide.active .stackly-storage-center-bottom {
+    animation: storageFadeUp 0.9s 0.7s both;
+}
+
+@keyframes storageFadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(35px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes storageTitleReveal {
+    from {
+        opacity: 0;
+        transform: translateY(55px);
+        clip-path: inset(0 0 100% 0);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+        clip-path: inset(0 0 0 0);
+    }
+}
+
+
+/* ==========================================================
+   29. HERO BOTTOM CONTROLS
+========================================================== */
+
+.stackly-storage-hero-bottom {
+    position: absolute;
+
+    left: 9%;
+    right: 9%;
+    bottom: 38px;
+
+    z-index: 10;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+/* COUNTER */
+
+.stackly-storage-slide-counter {
+    display: flex;
+    align-items: center;
+
+    gap: 15px;
+
+    color: white;
+
+    font-family: var(--storage-heading);
+
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.stackly-storage-slide-counter span:first-child {
+    color: var(--storage-primary);
+    font-size: 22px;
+}
+
+.stackly-storage-counter-line {
+    width: 50px;
+    height: 1px;
+
+    background: rgba(255,255,255,0.5);
+}
+
+
+/* ==========================================================
+   30. SLIDE INDICATORS
+========================================================== */
+
+.stackly-storage-slide-indicators {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.stackly-storage-indicator {
+    width: 55px;
+    height: 5px;
+
+    padding: 0;
+
+    background: rgba(255,255,255,0.35);
+
+    overflow: hidden;
+
+    transition: all 0.3s ease;
+}
+
+.stackly-storage-indicator span {
+    display: block;
+
+    width: 0;
+    height: 100%;
+
+    background: var(--storage-primary);
+}
+
+.stackly-storage-indicator.active span {
+    animation: storageIndicator 7s linear forwards;
+}
+
+.stackly-storage-indicator:hover {
+    background: rgba(255,255,255,0.7);
+}
+
+@keyframes storageIndicator {
+    to {
+        width: 100%;
+    }
+}
+
+
+/* ==========================================================
+   31. SLIDER ARROWS
+========================================================== */
+
+.stackly-storage-slide-arrows {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.stackly-storage-slide-arrows button {
+    width: 48px;
+    height: 48px;
+
+    display: grid;
+    place-items: center;
+
+    background: rgba(255,255,255,0.13);
+
+    color: white;
+
+    border: 1px solid rgba(255,255,255,0.3);
+
+    font-size: 16px;
+
+    transition: all 0.35s ease;
+}
+
+.stackly-storage-slide-arrows button:hover {
+    background: var(--storage-primary);
+
+    color: var(--storage-dark);
+
+    border-color: var(--storage-primary);
+
+    transform: translateY(-5px) scale(1.08);
+}
+
+
+/* ==========================================================
+   32. SCROLL INDICATOR
+========================================================== */
+
+.stackly-storage-scroll {
+    position: absolute;
+
+    right: 3.5%;
+    bottom: 50%;
+
+    z-index: 5;
+
+    display: flex;
+    align-items: center;
+
+    gap: 15px;
+
+    color: white;
+
+    font-size: 11px;
+    font-weight: 800;
+
+    letter-spacing: 2px;
+
+    transform: translateY(50%) rotate(90deg);
+}
+
+.stackly-storage-scroll i {
+    color: var(--storage-primary);
+    font-size: 17px;
+
+    animation: storageScroll 1.5s infinite;
+}
+
+@keyframes storageScroll {
+    50% {
+        transform: translateX(9px);
+    }
+}
+
+
+/* ==========================================================
+   33. VERTICAL LABEL
+========================================================== */
+
+.stackly-storage-vertical-label {
+    position: absolute;
+
+    left: 2.5%;
+    bottom: 45%;
+
+    z-index: 5;
+
+    color: rgba(255,255,255,0.6);
+
+    font-size: 10px;
+    font-weight: 800;
+
+    letter-spacing: 2px;
+
+    transform: rotate(-90deg);
+    transform-origin: left;
+}
+
+
+/* ==========================================================
+   34. INTRO SECTION
+========================================================== */
+
+.stackly-storage-intro {
+    position: relative;
+
+    padding: 130px 8% 110px;
+
+    background: var(--storage-light);
+
+    overflow: hidden;
+}
+
+.stackly-storage-intro-container {
+    max-width: var(--storage-container);
+    margin: auto;
+}
+
+.stackly-storage-intro-label {
+    display: flex;
+    align-items: center;
+
+    gap: 15px;
+
+    margin-bottom: 45px;
+
+    color: #6d7e85;
+
+    font-size: 13px;
+    font-weight: 800;
+
+    letter-spacing: 2px;
+}
+
+.stackly-storage-intro-label span {
+    width: 40px;
+    height: 3px;
+
+    background: var(--storage-primary-dark);
+}
+
+
+/* ==========================================================
+   35. INTRO GRID
+========================================================== */
+
+.stackly-storage-intro-content {
+    display: grid;
+
+    grid-template-columns: 1.2fr 0.8fr;
+
+    gap: 90px;
+
+    align-items: center;
+}
+
+.stackly-storage-intro-heading h2 {
+    font-family: var(--storage-heading);
+
+    color: var(--storage-navy);
+
+    font-size: clamp(42px, 4.5vw, 65px);
+
+    line-height: 1.2;
+
+    font-weight: 700;
+
+    letter-spacing: -2.5px;
+}
+
+.stackly-storage-intro-heading h2 span {
+    display: block;
+
+    color: #839396;
+
+    margin-top: 8px;
+}
+
+
+/* ==========================================================
+   36. INTRO DESCRIPTION
+========================================================== */
+
+.stackly-storage-intro-text p {
+    color: var(--storage-text);
+
+    font-size: 17px;
+    line-height: 2;
+
+    margin-bottom: 32px;
+}
+
+.stackly-storage-text-link {
+    display: inline-flex;
+    align-items: center;
+
+    gap: 15px;
+
+    color: var(--storage-navy);
+
+    font-size: 15px;
+    font-weight: 800;
+
+    padding-bottom: 12px;
+
+    border-bottom: 3px solid var(--storage-primary-dark);
+
+    transition: all 0.4s ease;
+}
+
+.stackly-storage-text-link i {
+    color: var(--storage-primary-dark);
+
+    transition: transform 0.4s ease;
+}
+
+.stackly-storage-text-link:hover {
+    color: var(--storage-primary-dark);
+
+    gap: 23px;
+}
+
+.stackly-storage-text-link:hover i {
+    transform: translateX(7px);
+}
+
+
+/* ==========================================================
+   37. INTRO BOTTOM ITEMS
+========================================================== */
+
+.stackly-storage-intro-bottom {
+    display: flex;
+    justify-content: space-between;
+
+    gap: 25px;
+
+    margin-top: 90px;
+    padding-top: 30px;
+
+    border-top: 1px solid #dbe3e2;
+
+    color: #78888e;
+
+    font-size: 13px;
+    font-weight: 800;
+
+    letter-spacing: 1.5px;
+}
+
+.stackly-storage-intro-bottom span {
+    transition: all 0.3s ease;
+}
+
+.stackly-storage-intro-bottom span:hover {
+    color: var(--storage-primary-dark);
+    transform: translateY(-4px);
+}
+
+
+/* ==========================================================
+   38. FOOTER
+========================================================== */
+
+.stackly-storage-footer {
+    padding: 75px 8% 28px;
+
+    background: var(--storage-dark);
+
+    color: white;
+}
+
+.stackly-storage-footer-inner {
+    max-width: var(--storage-container);
+
+    margin: auto;
+
+    padding-bottom: 45px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 30px;
+}
+
+.stackly-storage-footer-logo img {
+    width: 155px;
+    height: 60px;
+
+    object-fit: contain;
+
+    filter: brightness(0) invert(1);
+
+    transition: transform 0.4s ease;
+}
+
+.stackly-storage-footer-logo:hover img {
+    transform: scale(1.08);
+}
+
+.stackly-storage-footer-inner p {
+    color: var(--storage-grey);
+
+    font-size: 15px;
+    line-height: 1.7;
+}
+
+.stackly-storage-footer-social {
+    display: flex;
+    gap: 13px;
+}
+
+.stackly-storage-footer-social a {
+    width: 46px;
+    height: 46px;
+
+    display: grid;
+    place-items: center;
+
+    border: 1px solid rgba(255,255,255,0.25);
+
+    color: white;
+
+    transition: all 0.4s ease;
+}
+
+.stackly-storage-footer-social a:hover {
+    color: var(--storage-dark);
+
+    background: var(--storage-primary);
+
+    border-color: var(--storage-primary);
+
+    transform: translateY(-6px) rotate(7deg);
+}
+
+.stackly-storage-footer-bottom {
+    max-width: var(--storage-container);
+
+    margin: auto;
+
+    padding-top: 25px;
+
+    border-top: 1px solid rgba(255,255,255,0.15);
+
+    display: flex;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    color: #98a5ac;
+
+    font-size: 13px;
+}
+
+
+/* ==========================================================
+   39. TABLET RESPONSIVE
+========================================================== */
+
+@media (max-width: 1100px) {
+
+    .stackly-storage-header {
+        padding-left: 4%;
+        padding-right: 4%;
+    }
+
+    .stackly-storage-header-inner {
+        gap: 18px;
+    }
+
+    .stackly-storage-logo img {
+        width: 125px;
+    }
+
+    .stackly-storage-nav {
+        gap: 14px;
+    }
+
+    .stackly-storage-nav-link {
+        font-size: 12px;
+    }
+
+    .stackly-storage-header-btn {
+        padding: 13px;
+        font-size: 12px;
+    }
+
+    .stackly-storage-hero-title {
+        font-size: 67px;
+    }
+
+    .stackly-storage-floating-card {
+        right: 4%;
+        bottom: 17%;
+        transform: scale(0.9);
+    }
+
+    .stackly-storage-intro-content {
+        gap: 45px;
+    }
+
+}
+
+
+/* ==========================================================
+   40. MOBILE NAVIGATION
+========================================================== */
+
+@media (max-width: 850px) {
+
+    .stackly-storage-header {
+        padding: 15px 5%;
+    }
+
+    .stackly-storage-header-inner {
+        gap: 15px;
+    }
+
+    .stackly-storage-logo img {
+        width: 140px;
+        height: 53px;
+    }
+
+    .stackly-storage-menu-toggle {
+        display: flex;
+    }
+
+    .stackly-storage-header-btn {
+        display: none;
+    }
+
+    .stackly-storage-nav {
+        position: fixed;
+
+        top: 0;
+        left: -100%;
+
+        width: min(360px, 85%);
+        height: 100dvh;
+
+        z-index: 1200;
+
+        display: flex;
+        flex-direction: column;
+
+        align-items: flex-start;
+        justify-content: center;
+
+        gap: 8px;
+
+        padding: 90px 35px 45px;
+
+        background: var(--storage-dark);
+
+        overflow-y: auto;
+
+        transition: left 0.5s cubic-bezier(.77,0,.18,1);
+    }
+
+    .stackly-storage-nav.active {
+        left: 0;
+    }
+
+    .stackly-storage-nav-link {
+        width: 100%;
+
+        padding: 16px 0;
+
+        border-bottom: 1px solid rgba(255,255,255,0.13);
+
+        font-family: var(--storage-heading);
+
+        font-size: 22px;
+        font-weight: 700;
+
+        color: white;
+    }
+
+    .stackly-storage-nav-link::before {
+        display: none;
+    }
+
+    .stackly-storage-nav-link:hover {
+        padding-left: 15px;
+        color: var(--storage-primary);
+    }
+
+
+    /* MOBILE HERO */
+
+    .stackly-storage-hero {
+        min-height: 800px;
+        height: 100svh;
+        max-height: 1000px;
+    }
+
+    .stackly-storage-video-overlay {
+        background: rgba(5,18,29,0.82);
+    }
+
+    .stackly-storage-slide {
+        padding: 135px 7% 125px;
+    }
+
+    .stackly-storage-hero-title {
+        font-size: clamp(48px, 8vw, 68px);
+        letter-spacing: -2.5px;
+    }
+
+    .stackly-storage-hero-description {
+        font-size: 16px;
+        max-width: 570px;
+    }
+
+    .stackly-storage-floating-card {
+        display: none;
+    }
+
+    .stackly-storage-slide-decoration {
+        opacity: 0.25;
+        left: 2%;
+    }
+
+    .stackly-storage-scroll,
+    .stackly-storage-vertical-label {
+        display: none;
+    }
+
+    .stackly-storage-hero-bottom {
+        left: 7%;
+        right: 7%;
+        bottom: 25px;
+    }
+
+    .stackly-storage-hero-trust {
+        margin-top: 40px;
+    }
+
+
+    /* MOBILE INTRO */
+
+    .stackly-storage-intro {
+        padding: 95px 7%;
+    }
+
+    .stackly-storage-intro-content {
+        grid-template-columns: 1fr;
+        gap: 35px;
+    }
+
+    .stackly-storage-intro-heading h2 {
+        font-size: 50px;
+    }
+
+    .stackly-storage-intro-bottom {
+        margin-top: 55px;
+        flex-wrap: wrap;
+    }
+
+}
+
+
+/* ==========================================================
+   41. SMALL MOBILE
+========================================================== */
+
+@media (max-width: 550px) {
+
+    .stackly-storage-header {
+        padding: 12px 5%;
+    }
+
+    .stackly-storage-logo img {
+        width: 120px;
+        height: 47px;
+    }
+
+    .stackly-storage-menu-toggle {
+        width: 44px;
+        height: 44px;
+    }
+
+    .stackly-storage-menu-close {
+        width: 44px;
+        height: 44px;
+
+        top: 17px;
+        right: 17px;
+    }
+
+
+    /* HERO */
+
+    .stackly-storage-hero {
+        min-height: 760px;
+        height: 100svh;
+    }
+
+    .stackly-storage-slide {
+        padding: 115px 6% 125px;
+    }
+
+    .stackly-storage-hero-tag {
+        font-size: 10px;
+        letter-spacing: 1.3px;
+        gap: 10px;
+        margin-bottom: 23px;
+    }
+
+    .stackly-storage-tag-dot {
+        width: 8px;
+        height: 8px;
+        flex-shrink: 0;
+    }
+
+    .stackly-storage-hero-title {
+        font-size: clamp(39px, 10vw, 55px);
+        line-height: 1.13;
+        letter-spacing: -2px;
+        margin-bottom: 22px;
+    }
+
+    .stackly-storage-hero-description {
+        font-size: 14px;
+        line-height: 1.85;
+        margin-bottom: 27px;
+    }
+
+    .stackly-storage-hero-buttons {
+        width: 100%;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 13px;
+    }
+
+    .stackly-storage-primary-btn,
+    .stackly-storage-outline-btn {
+        width: 100%;
+        min-height: 55px;
+
+        padding: 0 15px;
+
+        font-size: 13px;
+
+        justify-content: center;
+    }
+
+
+    /* SLIDE TWO MOBILE ALIGNMENT */
+
+    .stackly-storage-slide-right {
+        align-items: flex-start;
+        text-align: left;
+    }
+
+    .stackly-storage-slide-right .stackly-storage-highlight {
+        margin-left: 0;
+    }
+
+    .stackly-storage-slide-right .stackly-storage-hero-buttons {
+        justify-content: flex-start;
+    }
+
+    .stackly-storage-slide-stat {
+        width: 100%;
+        margin-top: 30px;
+        padding: 15px;
+        gap: 12px;
+    }
+
+    .stackly-storage-stat-icon {
+        width: 45px;
+        height: 45px;
+        font-size: 19px;
+        flex-shrink: 0;
+    }
+
+    .stackly-storage-slide-stat strong {
+        font-size: 13px;
+    }
+
+
+    /* SLIDE THREE */
+
+    .stackly-storage-slide-center {
+        text-align: center;
+    }
+
+    .stackly-storage-slide-center .stackly-storage-hero-title {
+        font-size: clamp(41px, 10vw, 56px);
+    }
+
+    .stackly-storage-slide-center .stackly-storage-highlight {
+        margin: auto;
+    }
+
+    .stackly-storage-slide-center .stackly-storage-hero-buttons {
+        align-items: stretch;
+    }
+
+    .stackly-storage-center-bottom {
+        margin-top: 38px;
+        gap: 10px;
+        font-size: 8px;
+        letter-spacing: 1px;
+    }
+
+    .stackly-storage-center-line {
+        width: 27px;
+    }
+
+
+    /* TRUST ITEMS */
+
+    .stackly-storage-hero-trust {
+        gap: 9px;
+        justify-content: space-between;
+        margin-top: 32px;
+    }
+
+    .stackly-storage-trust-item {
+        gap: 6px;
+    }
+
+    .stackly-storage-trust-item strong {
+        font-size: 18px;
+    }
+
+    .stackly-storage-trust-item span {
+        font-size: 9px;
+    }
+
+    .stackly-storage-trust-divider {
+        height: 32px;
+    }
+
+
+    /* SLIDER CONTROLS */
+
+    .stackly-storage-hero-bottom {
+        left: 6%;
+        right: 6%;
+        bottom: 20px;
+    }
+
+    .stackly-storage-slide-counter {
+        gap: 7px;
+        font-size: 11px;
+    }
+
+    .stackly-storage-slide-counter span:first-child {
+        font-size: 16px;
+    }
+
+    .stackly-storage-counter-line {
+        width: 22px;
+    }
+
+    .stackly-storage-indicator {
+        width: 26px;
+        height: 4px;
+    }
+
+    .stackly-storage-slide-indicators {
+        gap: 6px;
+    }
+
+    .stackly-storage-slide-arrows {
+        gap: 6px;
+    }
+
+    .stackly-storage-slide-arrows button {
+        width: 35px;
+        height: 35px;
+        font-size: 12px;
+    }
+
+
+    /* INTRO */
+
+    .stackly-storage-intro {
+        padding: 75px 6%;
+    }
+
+    .stackly-storage-intro-label {
+        font-size: 10px;
+        letter-spacing: 1.2px;
+    }
+
+    .stackly-storage-intro-heading h2 {
+        font-size: 39px;
+        letter-spacing: -1.5px;
+    }
+
+    .stackly-storage-intro-text p {
+        font-size: 14px;
+        line-height: 1.9;
+    }
+
+    .stackly-storage-text-link {
+        font-size: 14px;
+    }
+
+    .stackly-storage-intro-bottom {
+        flex-direction: column;
+        gap: 18px;
+        font-size: 10px;
+    }
+
+
+    /* FOOTER */
+
+    .stackly-storage-footer {
+        padding: 50px 6% 25px;
+    }
+
+    .stackly-storage-footer-inner {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 25px;
+    }
+
+    .stackly-storage-footer-inner p {
+        font-size: 13px;
+    }
+
+    .stackly-storage-footer-bottom {
+        flex-direction: column;
+        gap: 10px;
+        font-size: 11px;
+        line-height: 1.8;
+    }
+
+}
+
+
+/* ==========================================================
+   42. EXTRA SMALL MOBILE
+========================================================== */
+
+@media (max-width: 360px) {
+
+    .stackly-storage-hero-title {
+        font-size: 36px;
+    }
+
+    .stackly-storage-hero-tag {
+        font-size: 8px;
+    }
+
+    .stackly-storage-hero-trust {
+        gap: 5px;
+    }
+
+    .stackly-storage-trust-item strong {
+        font-size: 15px;
+    }
+
+    .stackly-storage-trust-item span {
+        font-size: 8px;
+    }
+
+    .stackly-storage-slide-counter {
+        display: none;
+    }
+
+    .stackly-storage-center-bottom {
+        font-size: 7px;
+    }
+
+}
+
+
+/* ==========================================================
+   43. ACCESSIBILITY
+========================================================== */
+
+.stackly-storage-nav-link:focus-visible,
+.stackly-storage-header-btn:focus-visible,
+.stackly-storage-primary-btn:focus-visible,
+.stackly-storage-outline-btn:focus-visible,
+.stackly-storage-slide-arrows button:focus-visible,
+.stackly-storage-indicator:focus-visible,
+.stackly-storage-menu-toggle:focus-visible,
+.stackly-storage-menu-close:focus-visible {
+    outline: 3px solid var(--storage-secondary);
+    outline-offset: 4px;
+}
+
+
+/* ==========================================================
+   44. REDUCED MOTION
+========================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+
+    *,
+    *::before,
+    *::after {
+        scroll-behavior: auto !important;
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+
+}
+
+/* ==========================================================
+   45. FIXED MOBILE NAVIGATION - OPEN / CLOSE LAYERING
+   Uses the existing .active classes from the Stackly JS.
+========================================================== */
+
+.stackly-storage-header {
+    z-index: 1000;
+}
+
+.stackly-storage-menu-toggle {
+    position: relative;
+    z-index: 1002;
+    flex: 0 0 48px;
+    cursor: pointer;
+    pointer-events: auto;
+}
+
+.stackly-storage-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 1100;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.stackly-storage-overlay.active {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+.stackly-storage-menu-close {
+    position: fixed;
+    z-index: 1302;
+    pointer-events: none;
+}
+
+.stackly-storage-menu-close.active {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+}
+
+@media (max-width: 850px) {
+    .stackly-storage-header-inner {
+        position: relative;
+        width: 100%;
+    }
+
+    .stackly-storage-menu-toggle {
+        display: flex !important;
+        margin-left: auto;
+    }
+
+    .stackly-storage-nav {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        width: min(360px, 86vw);
+        height: 100vh;
+        height: 100dvh;
+        z-index: 1201;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        gap: 8px;
+        padding: 90px 32px 40px;
+        overflow-x: hidden;
+        overflow-y: auto;
+        background: var(--storage-dark);
+        transform: translateX(-105%);
+        visibility: hidden;
+        pointer-events: none;
+        transition: transform 0.45s cubic-bezier(.77, 0, .18, 1),
+                    visibility 0.45s ease;
+    }
+
+    .stackly-storage-nav.active {
+        left: 0;
+        transform: translateX(0);
+        visibility: visible;
+        pointer-events: auto;
+    }
+
+    .stackly-storage-nav-link {
+        display: block;
+        width: 100%;
+        color: #fff;
+        padding: 15px 0;
+        font-size: 21px;
+        line-height: 1.35;
+        border-bottom: 1px solid rgba(255,255,255,.13);
+    }
+
+    .stackly-storage-menu-close {
+        top: 18px;
+        right: 18px;
+        width: 46px;
+        height: 46px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        opacity: 0;
+        visibility: hidden;
+        transform: rotate(-90deg);
+        background: var(--storage-primary);
+        color: var(--storage-dark);
+        border: 0;
+        border-radius: 3px;
+        font-size: 23px;
+        cursor: pointer;
+        transition: opacity .3s ease, visibility .3s ease,
+                    transform .3s ease, background .3s ease;
+    }
+
+    .stackly-storage-menu-close.active {
+        opacity: 1;
+        visibility: visible;
+        transform: rotate(0);
+    }
+
+    .stackly-storage-menu-close:hover {
+        background: #fff;
+        transform: rotate(90deg);
+    }
+
+    body.storage-menu-open {
+        overflow: hidden;
+        touch-action: none;
+    }
+}
+
+@media (min-width: 851px) {
+    .stackly-storage-nav {
+        position: static;
+        transform: none;
+        visibility: visible;
+        pointer-events: auto;
+    }
+
+    .stackly-storage-menu-toggle,
+    .stackly-storage-menu-close,
+    .stackly-storage-overlay {
+        display: none !important;
+    }
+}
+

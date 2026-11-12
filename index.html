@@ -1,0 +1,3625 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Stackly | Smart Storage Solutions</title>
+
+    <meta name="description"
+        content="Discover smart, secure, and flexible storage solutions with Stackly. Professional warehousing, inventory management, and logistics services.">
+
+    <link rel="icon" href="Stackly-logo-Blue.webp">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <!-- AOS Animation -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"
+        rel="stylesheet">
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="index.css">
+
+</head>
+
+<body>
+
+    <!-- =========================================
+         PAGE LOADER
+    ========================================== -->
+
+    <div class="stackly-storage-loader" id="storageLoader">
+        <div class="stackly-storage-loader-logo">
+            <img src="Stackly-logo-Blue.webp" alt="Stackly Logo">
+        </div>
+
+        <div class="stackly-storage-loader-line"></div>
+    </div>
+
+
+    <!-- =========================================
+         HEADER
+    ========================================== -->
+
+    <header class="stackly-storage-header" id="storageHeader">
+
+        <div class="stackly-storage-header-inner">
+
+            <!-- LOGO -->
+
+            <a href="index.html"
+                class="stackly-storage-logo"
+                aria-label="Stackly Home">
+
+                <img src="Stackly-logo-Blue.webp"
+                    alt="Stackly Logo">
+
+            </a>
+
+
+            <!-- DESKTOP NAVIGATION -->
+
+            <nav class="stackly-storage-nav"
+                id="storageNavigation"
+                aria-label="Main Navigation">
+
+                <a href="index.html" class="stackly-storage-nav-link active">
+                    Home
+                </a>
+
+                <a href="about.html" class="stackly-storage-nav-link">
+                    About Us
+                </a>
+
+                <a href="services.html" class="stackly-storage-nav-link">
+                    Services
+                </a>
+
+                <a href="solutions.html" class="stackly-storage-nav-link">
+                    Solutions
+                </a>
+
+                <a href="facilities.html" class="stackly-storage-nav-link">
+                    Facilities
+                </a>
+
+                <a href="blog.html" class="stackly-storage-nav-link">
+                    Blog
+                </a>
+
+                <a href="contact.html" class="stackly-storage-nav-link">
+                    Contact Us
+                </a>
+                
+                <!-- MOBILE LOGIN BUTTON -->
+                
+                <a href="login.html" class="stackly-storage-mobile-login">
+                    <span>Login to Stackly</span>
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+
+
+            </nav>
+
+
+            <!-- HEADER RIGHT -->
+
+            <div class="stackly-storage-header-right">
+
+                <a href="login.html"
+                    class="stackly-storage-header-btn">
+
+                    <span>Login</span>
+
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+                </a>
+
+
+                <!-- MOBILE MENU BUTTON -->
+
+                <button class="stackly-storage-menu-toggle"
+                    id="storageMenuToggle"
+                    aria-label="Open navigation menu"
+                    aria-expanded="false"
+                    aria-controls="storageNavigation">
+
+                    <span></span>
+                    <span></span>
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </header>
+
+
+    <!-- =========================================
+         MOBILE OVERLAY
+    ========================================== -->
+
+    <div class="stackly-storage-overlay"
+        id="storageOverlay">
+    </div>
+
+
+    <!-- =========================================
+         MOBILE MENU CLOSE BUTTON
+    ========================================== -->
+
+    <button class="stackly-storage-menu-close"
+        id="storageMenuClose"
+        aria-label="Close navigation menu">
+
+        <i class="fa-solid fa-xmark"></i>
+
+    </button>
+
+
+    <!-- =========================================
+         HERO SECTION
+    ========================================== -->
+
+    <main>
+
+        <section class="stackly-storage-hero"
+            id="storageHero">
+
+
+            <!-- BACKGROUND VIDEO -->
+
+            <div class="stackly-storage-video-wrapper">
+
+                <video class="stackly-storage-video active"
+                    id="storageVideo1"
+                    autoplay
+                    muted
+                    loop
+                    playsinline
+                    preload="auto">
+
+                    <source src="video-1.mp4" type="video/mp4">
+
+                </video>
+
+
+                <video class="stackly-storage-video"
+                    id="storageVideo2"
+                    muted
+                    loop
+                    playsinline
+                    preload="metadata">
+
+                    <source src="video-2.mp4" type="video/mp4">
+
+                </video>
+
+
+                <video class="stackly-storage-video"
+                    id="storageVideo3"
+                    muted
+                    loop
+                    playsinline
+                    preload="metadata">
+
+                    <source src="video-3.mp4" type="video/mp4">
+
+                </video>
+
+            </div>
+
+
+            <!-- DARK OVERLAY -->
+
+            <div class="stackly-storage-video-overlay"></div>
+
+
+            <!-- DECORATIVE BACKGROUND -->
+
+            <div class="stackly-storage-hero-grid"></div>
+
+            <div class="stackly-storage-hero-orb"></div>
+
+
+            <!-- HERO SLIDES -->
+
+            <div class="stackly-storage-slides">
+
+
+                <!-- =================================
+                     SLIDE 01 - LEFT ALIGNMENT
+                ================================== -->
+
+                <div class="stackly-storage-slide active"
+                    data-slide="0">
+
+                    <div class="stackly-storage-slide-content stackly-storage-slide-left">
+
+                        <div class="stackly-storage-hero-tag"
+                            data-aos="fade-down">
+
+                            <span class="stackly-storage-tag-dot"></span>
+
+                            SMART STORAGE. SIMPLER BUSINESS.
+
+                        </div>
+
+
+                        <h1 class="stackly-storage-hero-title">
+
+                            <span>Space For</span>
+
+                            <span class="stackly-storage-highlight">
+                                Everything.
+                            </span>
+
+                            <span>Built For More.</span>
+
+                        </h1>
+
+
+                        <p class="stackly-storage-hero-description">
+
+                            Intelligent storage solutions designed
+                            to protect your assets, simplify operations,
+                            and create room for your business to grow.
+
+                        </p>
+
+
+                        <div class="stackly-storage-hero-buttons">
+
+                            <a href="404.html"
+                                class="stackly-storage-primary-btn">
+
+                                Explore Our Services
+
+                                <i class="fa-solid fa-arrow-right"></i>
+
+                            </a>
+
+
+                            <a href="404.html"
+                                class="stackly-storage-outline-btn">
+
+                                <span class="stackly-storage-play-icon">
+                                    <i class="fa-solid fa-play"></i>
+                                </span>
+
+                                Talk To Our Team
+
+                            </a>
+
+                        </div>
+
+
+                        <div class="stackly-storage-hero-trust">
+
+                            <div class="stackly-storage-trust-item">
+
+                                <strong>24/7</strong>
+
+                                <span>Secure Access</span>
+
+                            </div>
+
+
+                            <div class="stackly-storage-trust-divider"></div>
+
+
+                            <div class="stackly-storage-trust-item">
+
+                                <strong>100%</strong>
+
+                                <span>Careful Handling</span>
+
+                            </div>
+
+
+                            <div class="stackly-storage-trust-divider"></div>
+
+
+                            <div class="stackly-storage-trust-item">
+
+                                <strong>Smart</strong>
+
+                                <span>Storage Systems</span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- RIGHT FLOATING CARD -->
+
+                    <div class="stackly-storage-floating-card">
+
+                        <div class="stackly-storage-floating-icon">
+
+                            <i class="fa-solid fa-warehouse"></i>
+
+                        </div>
+
+                        <div>
+
+                            <span>YOUR SPACE, REIMAGINED</span>
+
+                            <h3>Storage Without Limits</h3>
+
+                        </div>
+
+                        <i class="fa-solid fa-arrow-up-right-from-square stackly-storage-card-arrow"></i>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =================================
+                     SLIDE 02 - RIGHT ALIGNMENT
+                ================================== -->
+
+                <div class="stackly-storage-slide"
+                    data-slide="1">
+
+                    <div class="stackly-storage-slide-content stackly-storage-slide-right">
+
+                        <div class="stackly-storage-hero-tag">
+
+                            <span class="stackly-storage-tag-dot"></span>
+
+                            PROTECTION THAT MOVES WITH YOU
+
+                        </div>
+
+
+                        <h1 class="stackly-storage-hero-title">
+
+                            <span>More Than</span>
+
+                            <span class="stackly-storage-highlight">
+                                Just Storage.
+                            </span>
+
+                            <span>It's Peace Of Mind.</span>
+
+                        </h1>
+
+
+                        <p class="stackly-storage-hero-description">
+
+                            From organized warehousing to dependable
+                            inventory care, we bring security,
+                            visibility, and confidence to every space.
+
+                        </p>
+
+
+                        <div class="stackly-storage-hero-buttons">
+
+                            <a href="404.html"
+                                class="stackly-storage-primary-btn">
+
+                                Discover Solutions
+
+                                <i class="fa-solid fa-arrow-right"></i>
+
+                            </a>
+
+
+                            <a href="404.html"
+                                class="stackly-storage-outline-btn">
+
+                                Discover Stackly
+
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+                            </a>
+
+                        </div>
+
+
+                        <div class="stackly-storage-slide-stat">
+
+                            <div class="stackly-storage-stat-icon">
+
+                                <i class="fa-solid fa-shield-halved"></i>
+
+                            </div>
+
+                            <div>
+
+                                <span>SMARTER PROTECTION</span>
+
+                                <strong>Security In Every Square Foot</strong>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- RIGHT SIDE DECORATION -->
+
+                    <div class="stackly-storage-slide-decoration">
+
+                        <div class="stackly-storage-circle-text">
+
+                            <span>SMART STORAGE</span>
+
+                            <i class="fa-solid fa-boxes-stacked"></i>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- =================================
+                     SLIDE 03 - CENTER / BOTTOM ALIGNMENT
+                ================================== -->
+
+                <div class="stackly-storage-slide"
+                    data-slide="2">
+
+                    <div class="stackly-storage-slide-content stackly-storage-slide-center">
+
+                        <div class="stackly-storage-hero-tag">
+
+                            <span class="stackly-storage-tag-dot"></span>
+
+                            MAKE ROOM FOR WHAT MATTERS
+
+                        </div>
+
+
+                        <h1 class="stackly-storage-hero-title">
+
+                            <span>Your Growth.</span>
+
+                            <span class="stackly-storage-highlight">
+                                Our Space.
+                            </span>
+
+                        </h1>
+
+
+                        <p class="stackly-storage-hero-description">
+
+                            Flexible storage infrastructure and
+                            professional management that scale
+                            with your ambitions. Your next chapter
+                            starts with more room.
+
+                        </p>
+
+
+                        <div class="stackly-storage-hero-buttons">
+
+                            <a href="404.html"
+                                class="stackly-storage-primary-btn">
+
+                                Start Your Journey
+
+                                <i class="fa-solid fa-arrow-right"></i>
+
+                            </a>
+
+
+                            <a href="404.html"
+                                class="stackly-storage-outline-btn">
+
+                                View Our Facilities
+
+                            </a>
+
+                        </div>
+
+
+                        <div class="stackly-storage-center-bottom">
+
+                            <span>SPACE TO GROW</span>
+
+                            <span class="stackly-storage-center-line"></span>
+
+                            <span>BUILT TO LAST</span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- =================================
+                 HERO BOTTOM CONTROLS
+            ================================== -->
+
+            <div class="stackly-storage-hero-bottom">
+
+
+                <!-- SLIDE COUNTER -->
+
+                <div class="stackly-storage-slide-counter">
+
+                    <span id="storageCurrentSlide">01</span>
+
+                    <span class="stackly-storage-counter-line"></span>
+
+                    <span>03</span>
+
+                </div>
+
+
+                <!-- SLIDE INDICATORS -->
+
+                <div class="stackly-storage-slide-indicators">
+
+                    <button class="stackly-storage-indicator active"
+                        data-index="0"
+                        aria-label="Go to slide 1">
+
+                        <span></span>
+
+                    </button>
+
+                    <button class="stackly-storage-indicator"
+                        data-index="1"
+                        aria-label="Go to slide 2">
+
+                        <span></span>
+
+                    </button>
+
+                    <button class="stackly-storage-indicator"
+                        data-index="2"
+                        aria-label="Go to slide 3">
+
+                        <span></span>
+
+                    </button>
+
+                </div>
+
+
+                <!-- SLIDE ARROWS -->
+
+                <div class="stackly-storage-slide-arrows">
+
+                    <button id="storagePrev"
+                        aria-label="Previous slide">
+
+                        <i class="fa-solid fa-arrow-left"></i>
+
+                    </button>
+
+                    <button id="storageNext"
+                        aria-label="Next slide">
+
+                        <i class="fa-solid fa-arrow-right"></i>
+
+                    </button>
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- SCROLL INDICATOR -->
+
+            <a href="#storageIntro"
+                class="stackly-storage-scroll">
+
+                <span>SCROLL TO EXPLORE</span>
+
+                <i class="fa-solid fa-arrow-down"></i>
+
+            </a>
+
+
+            <!-- VERTICAL LABEL -->
+
+            <div class="stackly-storage-vertical-label">
+
+                STACKLY / SMART STORAGE SOLUTIONS
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =========================================
+             INTRO SECTION
+        ========================================== -->
+
+        <section class="stackly-storage-intro"
+            id="storageIntro">
+
+            <div class="stackly-storage-intro-container">
+
+
+                <div class="stackly-storage-intro-label"
+                    data-aos="fade-up">
+
+                    <span></span>
+
+                    STORAGE THAT WORKS SMARTER
+
+                </div>
+
+
+                <div class="stackly-storage-intro-content">
+
+                    <div class="stackly-storage-intro-heading"
+                        data-aos="fade-right">
+
+                        <h2>
+
+                            The Space You Need.
+
+                            <span>The Confidence You Deserve.</span>
+
+                        </h2>
+
+                    </div>
+
+
+                    <div class="stackly-storage-intro-text"
+                        data-aos="fade-left">
+
+                        <p>
+
+                            At Stackly, we believe storage should
+                            do more than hold your belongings.
+                            It should create opportunities,
+                            improve efficiency, and support
+                            your next big move.
+
+                        </p>
+
+
+                        <a href="404.html"
+                            class="stackly-storage-text-link">
+
+                            Discover Our Story
+
+                            <i class="fa-solid fa-arrow-right"></i>
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <div class="stackly-storage-intro-bottom"
+                    data-aos="fade-up">
+
+                    <span>01 — SMART SPACE</span>
+
+                    <span>02 — SECURE STORAGE</span>
+
+                    <span>03 — SEAMLESS OPERATIONS</span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+<!-- =========================================
+     ABOUT US SECTION
+     STACKLY SMART STORAGE SOLUTIONS
+========================================== -->
+
+<section class="stackly-storage-about" id="storageAbout">
+
+    <div class="stackly-storage-about-container">
+
+        <!-- LEFT IMAGE AREA -->
+
+        <div class="stackly-storage-about-visual" data-aos="fade-right">
+
+            <!-- Main Image -->
+
+            <div class="stackly-storage-about-main-image">
+
+                <img src="about-warehouse.webp"
+                    alt="Modern Stackly warehouse storage facility">
+
+                <div class="stackly-storage-about-image-overlay"></div>
+
+                <div class="stackly-storage-about-image-caption">
+
+                    <span>OUR COMMITMENT</span>
+
+                    <h3>Space Designed Around You.</h3>
+
+                </div>
+
+            </div>
+
+
+            <!-- Floating Secondary Image -->
+
+            <div class="stackly-storage-about-small-image"
+                data-aos="zoom-in"
+                data-aos-delay="250">
+
+                <img src="about-storage.webp"
+                    alt="Organized and secure warehouse inventory">
+
+                <div class="stackly-storage-about-small-icon">
+
+                    <i class="fa-solid fa-boxes-stacked"></i>
+
+                </div>
+
+            </div>
+
+
+            <!-- Experience Card -->
+
+            <div class="stackly-storage-about-experience"
+                data-aos="fade-up"
+                data-aos-delay="350">
+
+                <div class="stackly-storage-about-experience-icon">
+
+                    <i class="fa-solid fa-award"></i>
+
+                </div>
+
+                <div>
+
+                    <strong>Built On Trust</strong>
+
+                    <span>Focused on smarter storage</span>
+
+                </div>
+
+            </div>
+
+
+            <!-- Decorative Circle -->
+
+            <div class="stackly-storage-about-circle">
+
+                <span>SMARTER SPACE • BETTER FUTURE • </span>
+
+                <i class="fa-solid fa-leaf"></i>
+
+            </div>
+
+        </div>
+
+
+        <!-- RIGHT CONTENT AREA -->
+
+        <div class="stackly-storage-about-content">
+
+            <div class="stackly-storage-about-label"
+                data-aos="fade-down">
+
+                <span></span>
+
+                ABOUT STACKLY
+
+            </div>
+
+
+            <h2 data-aos="fade-up" data-aos-delay="100">
+
+                We Create Space
+
+                <span>For Bigger Possibilities.</span>
+
+            </h2>
+
+
+            <p class="stackly-storage-about-description"
+                data-aos="fade-up"
+                data-aos-delay="180">
+
+                At Stackly, we transform the way businesses
+                manage their storage. We combine organized
+                warehousing, intelligent inventory solutions,
+                and dependable operations to help businesses
+                move forward with confidence.
+
+            </p>
+
+
+            <!-- ABOUT FEATURES -->
+
+            <div class="stackly-storage-about-features">
+
+                <div class="stackly-storage-about-feature"
+                    data-aos="fade-up"
+                    data-aos-delay="300">
+
+                    <div class="stackly-storage-about-feature-icon">
+
+                        <i class="fa-solid fa-shield-halved"></i>
+
+                    </div>
+
+                    <div>
+
+                        <h3>Security First</h3>
+
+                        <p>
+                            Thoughtfully designed storage
+                            with protection at every step.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="stackly-storage-about-feature"
+                    data-aos="fade-up"
+                    data-aos-delay="380">
+
+                    <div class="stackly-storage-about-feature-icon">
+
+                        <i class="fa-solid fa-chart-line"></i>
+
+                    </div>
+
+                    <div>
+
+                        <h3>Smarter Operations</h3>
+
+                        <p>
+                            Organized systems that simplify
+                            inventory and storage management.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="stackly-storage-about-feature"
+                    data-aos="fade-up"
+                    data-aos-delay="460">
+
+                    <div class="stackly-storage-about-feature-icon">
+
+                        <i class="fa-solid fa-expand"></i>
+
+                    </div>
+
+                    <div>
+
+                        <h3>Flexible Solutions</h3>
+
+                        <p>
+                            Adaptable storage options that
+                            support changing business needs.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- BOTTOM CTA -->
+
+            <div class="stackly-storage-about-bottom"
+                data-aos="fade-up"
+                data-aos-delay="500">
+
+                <a href="404.html"
+                    class="stackly-storage-about-btn">
+
+                    Explore Our Story
+
+                    <span>
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </span>
+
+                </a>
+
+
+                <div class="stackly-storage-about-signature">
+
+                    <span>YOUR SPACE. OUR PRIORITY.</span>
+
+                    <strong>STACKLY</strong>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- BOTTOM HIGHLIGHTS -->
+
+    <div class="stackly-storage-about-highlights"
+        data-aos="fade-up">
+
+        <div class="stackly-storage-about-highlight">
+
+            <i class="fa-solid fa-warehouse"></i>
+
+            <div>
+
+                <strong>Organized Spaces</strong>
+
+                <span>Designed for efficiency</span>
+
+            </div>
+
+        </div>
+
+
+        <div class="stackly-storage-about-highlight">
+
+            <i class="fa-solid fa-lock"></i>
+
+            <div>
+
+                <strong>Secure Environment</strong>
+
+                <span>Protection you can trust</span>
+
+            </div>
+
+        </div>
+
+
+        <div class="stackly-storage-about-highlight">
+
+            <i class="fa-solid fa-boxes-packing"></i>
+
+            <div>
+
+                <strong>Careful Handling</strong>
+
+                <span>Attention to every detail</span>
+
+            </div>
+
+        </div>
+
+
+        <div class="stackly-storage-about-highlight">
+
+            <i class="fa-solid fa-handshake"></i>
+
+            <div>
+
+                <strong>Reliable Partnership</strong>
+
+                <span>Growing together</span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================
+     SERVICES SECTION
+     STACKLY SMART STORAGE SOLUTIONS
+========================================== -->
+
+<section class="stackly-storage-services" id="storageServices">
+
+    <!-- Decorative Background -->
+    <div class="stackly-storage-services-bg-circle"></div>
+    <div class="stackly-storage-services-grid"></div>
+
+    <div class="stackly-storage-services-container">
+
+        <!-- SECTION HEADING -->
+
+        <div class="stackly-storage-services-heading">
+
+            <div class="stackly-storage-services-heading-left"
+                data-aos="fade-right">
+
+                <div class="stackly-storage-services-label">
+                    <span></span>
+                    WHAT WE OFFER
+                </div>
+
+                <h2>
+                    Storage Solutions
+                    <span>That Move You Forward.</span>
+                </h2>
+
+            </div>
+
+            <div class="stackly-storage-services-heading-right"
+                data-aos="fade-left">
+
+                <p>
+                    Discover smarter ways to store, organize,
+                    protect, and manage your valuable assets.
+                    Our flexible services are designed to make
+                    every storage experience simpler and more efficient.
+                </p>
+
+                <a href="404.html"
+                    class="stackly-storage-services-view-link">
+
+                    Explore All Services
+
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- FEATURED SERVICE -->
+
+        <div class="stackly-storage-featured-service"
+            data-aos="fade-up">
+
+            <div class="stackly-storage-featured-image">
+
+                <img src="services-1.webp"
+                    alt="Large modern warehouse storage facility">
+
+                <div class="stackly-storage-featured-overlay"></div>
+
+                <div class="stackly-storage-featured-top">
+
+                    <span>01 / FEATURED SERVICE</span>
+
+                    <div class="stackly-storage-featured-icon">
+                        <i class="fa-solid fa-warehouse"></i>
+                    </div>
+
+                </div>
+
+                <div class="stackly-storage-featured-content">
+
+                    <span class="stackly-storage-service-category">
+                        PROFESSIONAL STORAGE
+                    </span>
+
+                    <h3>Warehouse & Storage Management</h3>
+
+                    <p>
+                        Spacious, organized, and professionally
+                        managed warehouse solutions designed
+                        to keep your business moving efficiently.
+                    </p>
+
+                    <a href="404.html"
+                        class="stackly-storage-featured-btn">
+
+                        Discover Service
+
+                        <span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </span>
+
+                    </a>
+
+                </div>
+
+                <div class="stackly-storage-featured-watermark">
+                    STACKLY
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- SERVICE CARDS HEADING -->
+
+        <div class="stackly-storage-services-subheading"
+            data-aos="fade-up">
+
+            <div>
+                <span>MORE WAYS WE HELP</span>
+                <h3>Designed For Every Storage Need.</h3>
+            </div>
+
+            <div class="stackly-storage-services-subheading-number">
+                02 — 04
+            </div>
+
+        </div>
+
+
+        <!-- SERVICE CARDS -->
+
+        <div class="stackly-storage-services-grid-cards">
+
+
+            <!-- SERVICE 02 -->
+
+            <article class="stackly-storage-service-card"
+                data-aos="fade-up"
+                data-aos-delay="100">
+
+                <div class="stackly-storage-service-image">
+
+                    <img src="services-2.webp"
+                        alt="Organized warehouse inventory management">
+
+                    <span class="stackly-storage-service-number">
+                        02
+                    </span>
+
+                    <div class="stackly-storage-service-image-icon">
+                        <i class="fa-solid fa-boxes-stacked"></i>
+                    </div>
+
+                </div>
+
+                <div class="stackly-storage-service-card-content">
+
+                    <div class="stackly-storage-service-card-top">
+
+                        <span>INVENTORY CONTROL</span>
+
+                         
+
+                    </div>
+
+                    <h3>Inventory Management</h3>
+
+                    <p>
+                        Keep your stock organized and accessible
+                        with smarter inventory tracking and
+                        efficient storage management.
+                    </p>
+
+                    <a href="404.html"
+                        class="stackly-storage-service-link">
+
+                        Learn More
+
+                        <span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </span>
+
+                    </a>
+
+                </div>
+
+            </article>
+
+
+            <!-- SERVICE 03 -->
+
+            <article class="stackly-storage-service-card"
+                data-aos="fade-up"
+                data-aos-delay="200">
+
+                <div class="stackly-storage-service-image">
+
+                    <img src="services-3.webp"
+                        alt="Secure warehouse facility and storage protection">
+
+                    <span class="stackly-storage-service-number">
+                        03
+                    </span>
+
+                    <div class="stackly-storage-service-image-icon">
+                        <i class="fa-solid fa-shield-halved"></i>
+                    </div>
+
+                </div>
+
+                <div class="stackly-storage-service-card-content">
+
+                    <div class="stackly-storage-service-card-top">
+
+                        <span>SAFETY & PROTECTION</span>
+
+                         
+
+                    </div>
+
+                    <h3>Secure Storage Solutions</h3>
+
+                    <p>
+                        Protect your valuable goods with carefully
+                        managed storage environments and
+                        dependable security practices.
+                    </p>
+
+                    <a href="404.html"
+                        class="stackly-storage-service-link">
+
+                        Learn More
+
+                        <span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </span>
+
+                    </a>
+
+                </div>
+
+            </article>
+
+
+            <!-- SERVICE 04 -->
+
+            <article class="stackly-storage-service-card"
+                data-aos="fade-up"
+                data-aos-delay="300">
+
+                <div class="stackly-storage-service-image">
+
+                    <img src="services-4.webp"
+                        alt="Warehouse logistics and goods transportation">
+
+                    <span class="stackly-storage-service-number">
+                        04
+                    </span>
+
+                    <div class="stackly-storage-service-image-icon">
+                        <i class="fa-solid fa-truck-fast"></i>
+                    </div>
+
+                </div>
+
+                <div class="stackly-storage-service-card-content">
+
+                    <div class="stackly-storage-service-card-top">
+
+                        <span>SMART DISTRIBUTION</span>
+
+                         
+
+                    </div>
+
+                    <h3>Logistics & Distribution</h3>
+
+                    <p>
+                        Support smoother business operations
+                        through organized goods handling,
+                        movement, and distribution coordination.
+                    </p>
+
+                    <a href="404.html"
+                        class="stackly-storage-service-link">
+
+                        Learn More
+
+                        <span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </span>
+
+                    </a>
+
+                </div>
+
+            </article>
+
+
+        </div>
+
+
+        <!-- BOTTOM CALL TO ACTION -->
+
+        <div class="stackly-storage-services-bottom"
+            data-aos="fade-up">
+
+            <div class="stackly-storage-services-bottom-icon">
+                <i class="fa-solid fa-lightbulb"></i>
+            </div>
+
+            <div class="stackly-storage-services-bottom-text">
+
+                <span>HAVE A UNIQUE STORAGE REQUIREMENT?</span>
+
+                <h3>Let's Find The Right Space For Your Business.</h3>
+
+            </div>
+
+            <a href="404.html"
+                class="stackly-storage-services-bottom-btn">
+
+                Talk To Our Experts
+
+                <i class="fa-solid fa-arrow-right"></i>
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================
+     OUR STORAGE SOLUTIONS SECTION
+     STACKLY SMART STORAGE SOLUTIONS
+========================================== -->
+
+<section class="stackly-storage-solutions" id="storageSolutions">
+
+    <!-- BACKGROUND DECORATION -->
+
+    <div class="stackly-storage-solutions-glow"></div>
+    <div class="stackly-storage-solutions-pattern"></div>
+
+    <div class="stackly-storage-solutions-container">
+
+        <!-- SECTION HEADER -->
+
+        <div class="stackly-storage-solutions-heading">
+
+            <div class="stackly-storage-solutions-heading-left"
+                data-aos="fade-right">
+
+                <div class="stackly-storage-solutions-label">
+                    <span></span>
+                    STORAGE BUILT AROUND YOU
+                </div>
+
+                <h2>
+                    The Right Space.
+                    <span>For Every Possibility.</span>
+                </h2>
+
+            </div>
+
+            <div class="stackly-storage-solutions-heading-right"
+                data-aos="fade-left">
+
+                <p>
+                    Every business has different storage needs.
+                    Discover flexible, secure, and intelligent
+                    storage solutions designed to keep your
+                    operations organized and moving forward.
+                </p>
+
+                <a href="404.html"
+                    class="stackly-storage-solutions-heading-link">
+
+                    Explore All Solutions
+
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- SOLUTIONS SHOWCASE -->
+
+        <div class="stackly-storage-solutions-showcase">
+
+
+            <!-- FEATURED SOLUTION -->
+
+            <article class="stackly-storage-solution-featured"
+                data-aos="fade-up"
+                data-aos-duration="1000">
+
+                <img src="solutions-1.webp"
+                    alt="Large commercial warehouse storage facility">
+
+                <div class="stackly-storage-solution-featured-overlay"></div>
+
+
+                <div class="stackly-storage-solution-featured-top">
+
+                    <span class="stackly-storage-solution-featured-tag">
+                        <i class="fa-solid fa-star"></i>
+                        FEATURED SOLUTION
+                    </span>
+
+                    <span class="stackly-storage-solution-featured-number">
+                        01 / 04
+                    </span>
+
+                </div>
+
+
+                <div class="stackly-storage-solution-featured-icon">
+                    <i class="fa-solid fa-warehouse"></i>
+                </div>
+
+
+                <div class="stackly-storage-solution-featured-content">
+
+                    <span>BUSINESS STORAGE</span>
+
+                    <h3>Commercial & Industrial Storage</h3>
+
+                    <p>
+                        Make room for business growth with spacious,
+                        organized, and professionally managed storage
+                        facilities designed for your operational needs.
+                    </p>
+
+                    <a href="404.html"
+                        class="stackly-storage-solution-featured-btn">
+
+                        Discover This Solution
+
+                        <span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </span>
+
+                    </a>
+
+                </div>
+
+
+                <div class="stackly-storage-solution-featured-watermark">
+                    STACKLY
+                </div>
+
+            </article>
+
+
+
+            <!-- RIGHT SIDE SOLUTIONS -->
+
+            <div class="stackly-storage-solutions-side">
+
+
+                <!-- SOLUTION 02 -->
+
+                <article class="stackly-storage-solution-card"
+                    data-aos="fade-left"
+                    data-aos-delay="150">
+
+                    <div class="stackly-storage-solution-card-image">
+
+                        <img src="solutions-2.webp"
+                            alt="E-commerce warehouse inventory storage">
+
+                        <span class="stackly-storage-solution-card-number">
+                            02
+                        </span>
+
+                        <div class="stackly-storage-solution-card-icon">
+                            <i class="fa-solid fa-boxes-stacked"></i>
+                        </div>
+
+                    </div>
+
+
+                    <div class="stackly-storage-solution-card-content">
+
+                        <div class="stackly-storage-solution-card-category">
+                            <span></span>
+                            E-COMMERCE & RETAIL
+                        </div>
+
+                        <h3>Inventory & Retail Storage</h3>
+
+                        <p>
+                            Keep products organized, accessible,
+                            and ready for your next business order.
+                        </p>
+
+                        <a href="404.html"
+                            class="stackly-storage-solution-card-link">
+
+                            Explore Solution
+
+                            <i class="fa-solid fa-arrow-right"></i>
+
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- SOLUTION 03 -->
+
+                <article class="stackly-storage-solution-card"
+                    data-aos="fade-left"
+                    data-aos-delay="300">
+
+                    <div class="stackly-storage-solution-card-image">
+
+                        <img src="solutions-3.webp"
+                            alt="Secure warehouse storage with organized goods">
+
+                        <span class="stackly-storage-solution-card-number">
+                            03
+                        </span>
+
+                        <div class="stackly-storage-solution-card-icon">
+                            <i class="fa-solid fa-shield-halved"></i>
+                        </div>
+
+                    </div>
+
+
+                    <div class="stackly-storage-solution-card-content">
+
+                        <div class="stackly-storage-solution-card-category">
+                            <span></span>
+                            SAFETY & PROTECTION
+                        </div>
+
+                        <h3>Secure Goods Storage</h3>
+
+                        <p>
+                            Protect your valuable goods with
+                            carefully managed and secure environments.
+                        </p>
+
+                        <a href="404.html"
+                            class="stackly-storage-solution-card-link">
+
+                            Explore Solution
+
+                            <i class="fa-solid fa-arrow-right"></i>
+
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- SOLUTION 04 -->
+
+                <article class="stackly-storage-solution-card"
+                    data-aos="fade-left"
+                    data-aos-delay="450">
+
+                    <div class="stackly-storage-solution-card-image">
+
+                        <img src="solutions-4.webp"
+                            alt="Logistics distribution and warehouse operations">
+
+                        <span class="stackly-storage-solution-card-number">
+                            04
+                        </span>
+
+                        <div class="stackly-storage-solution-card-icon">
+                            <i class="fa-solid fa-truck-fast"></i>
+                        </div>
+
+                    </div>
+
+
+                    <div class="stackly-storage-solution-card-content">
+
+                        <div class="stackly-storage-solution-card-category">
+                            <span></span>
+                            LOGISTICS & DISTRIBUTION
+                        </div>
+
+                        <h3>Distribution & Fulfillment</h3>
+
+                        <p>
+                            Simplify goods movement with organized
+                            handling and efficient distribution support.
+                        </p>
+
+                        <a href="404.html"
+                            class="stackly-storage-solution-card-link">
+
+                            Explore Solution
+
+                            <i class="fa-solid fa-arrow-right"></i>
+
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+            </div>
+
+        </div>
+
+
+
+        <!-- BOTTOM SOLUTION STRIP -->
+
+        <div class="stackly-storage-solutions-bottom"
+            data-aos="zoom-in"
+            data-aos-duration="900">
+
+            <div class="stackly-storage-solutions-bottom-left">
+
+                <div class="stackly-storage-solutions-bottom-icon">
+                    <i class="fa-solid fa-cubes-stacked"></i>
+                </div>
+
+                <div>
+                    <span>YOUR BUSINESS. YOUR REQUIREMENTS.</span>
+
+                    <h3>Need A Storage Solution That Fits Your Business?</h3>
+                </div>
+
+            </div>
+
+
+            <a href="404.html"
+                class="stackly-storage-solutions-bottom-btn">
+
+                Find Your Space
+
+                <span>
+                    <i class="fa-solid fa-arrow-right"></i>
+                </span>
+
+            </a>
+
+        </div>
+
+
+        <!-- DECORATIVE BOTTOM TEXT -->
+
+        <div class="stackly-storage-solutions-footer-text"
+            data-aos="fade-up">
+
+            <span>SMARTER STORAGE</span>
+
+            <div></div>
+
+            <span>BETTER ORGANIZATION</span>
+
+            <div></div>
+
+            <span>STRONGER BUSINESS</span>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- =========================================
+     WHY CHOOSE STACKLY SECTION
+     PREMIUM CORPORATE STORAGE DESIGN
+========================================== -->
+
+<section class="stackly-storage-why" id="whyChooseStackly">
+
+    <!-- BACKGROUND ELEMENTS -->
+
+    <div class="stackly-storage-why-glow"></div>
+    <div class="stackly-storage-why-outline"></div>
+
+
+    <div class="stackly-storage-why-container">
+
+
+        <!-- SECTION TOP HEADING -->
+
+        <div class="stackly-storage-why-top">
+
+            <div class="stackly-storage-why-heading"
+                data-aos="fade-right">
+
+                <div class="stackly-storage-why-label">
+                    <span></span>
+                    THE STACKLY ADVANTAGE
+                </div>
+
+                <h2>
+                    Why Businesses
+                    <span>Choose Stackly.</span>
+                </h2>
+
+            </div>
+
+
+            <div class="stackly-storage-why-intro"
+                data-aos="fade-left">
+
+                <p>
+                    More than just storage, we deliver confidence.
+                    From intelligent space management to dependable
+                    operations, we help businesses store smarter
+                    and move forward with peace of mind.
+                </p>
+
+                <a href="404.html"
+                    class="stackly-storage-why-link">
+
+                    Discover Our Difference
+
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- MAIN CONTENT AREA -->
+
+        <div class="stackly-storage-why-main">
+
+
+            <!-- LEFT VISUAL AREA -->
+
+            <div class="stackly-storage-why-visual"
+                data-aos="zoom-in"
+                data-aos-duration="1100">
+
+
+                <div class="stackly-storage-why-image">
+
+                    <img src="stackly-warehouse.webp"
+                        alt="Modern and professionally managed Stackly warehouse">
+
+                    <div class="stackly-storage-why-image-overlay"></div>
+
+
+                    <!-- IMAGE TOP LABEL -->
+
+                    <div class="stackly-storage-why-image-top">
+
+                        <span class="stackly-storage-why-live-dot"></span>
+
+                        SMART STORAGE ENVIRONMENT
+
+                    </div>
+
+
+                    <!-- IMAGE BOTTOM CONTENT -->
+
+                    <div class="stackly-storage-why-image-content">
+
+                        <span>SPACE. SECURITY. SIMPLICITY.</span>
+
+                        <h3>
+                            Every Detail.
+                            <strong>Handled With Care.</strong>
+                        </h3>
+
+                    </div>
+
+
+                    <!-- IMAGE CORNER DECORATION -->
+
+                    <div class="stackly-storage-why-image-corner">
+                        <a href="404.html">
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        </a>
+                    </div>
+
+                </div>
+
+
+
+                <!-- FLOATING TRUST BADGE -->
+
+                <div class="stackly-storage-why-trust-card"
+                    data-aos="fade-up"
+                    data-aos-delay="350">
+
+                    <div class="stackly-storage-why-trust-icon">
+
+                        <i class="fa-solid fa-shield-halved"></i>
+
+                    </div>
+
+                    <div>
+
+                        <span>OUR PROMISE</span>
+
+                        <strong>Storage You Can Trust</strong>
+
+                        <p>Built around your business needs.</p>
+
+                    </div>
+
+                    <div class="stackly-storage-why-trust-check">
+
+                        <i class="fa-solid fa-check"></i>
+
+                    </div>
+
+                </div>
+
+
+                <!-- DECORATIVE VERTICAL TEXT -->
+
+                <div class="stackly-storage-why-vertical">
+
+                    STACKLY / TRUSTED STORAGE PARTNER
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- RIGHT ADVANTAGES AREA -->
+
+            <div class="stackly-storage-why-content">
+
+
+                <!-- ADVANTAGE 01 -->
+
+                <article class="stackly-storage-why-item"
+                    data-aos="fade-left"
+                    data-aos-delay="100">
+
+                    <div class="stackly-storage-why-item-number">
+                        01
+                    </div>
+
+                    <div class="stackly-storage-why-item-icon">
+
+                        <i class="fa-solid fa-lock"></i>
+
+                    </div>
+
+                    <div class="stackly-storage-why-item-text">
+
+                        <span>PROTECTION FIRST</span>
+
+                        <h3>Security You Can Depend On</h3>
+
+                        <p>
+                            Your valuable goods deserve careful
+                            protection through organized storage
+                            environments and security-focused practices.
+                        </p>
+
+                    </div>
+
+                    <div class="stackly-storage-why-item-arrow">
+
+                        <a href="404.html">
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- ADVANTAGE 02 -->
+
+                <article class="stackly-storage-why-item"
+                    data-aos="fade-left"
+                    data-aos-delay="200">
+
+                    <div class="stackly-storage-why-item-number">
+                        02
+                    </div>
+
+                    <div class="stackly-storage-why-item-icon">
+
+                        <i class="fa-solid fa-microchip"></i>
+
+                    </div>
+
+                    <div class="stackly-storage-why-item-text">
+
+                        <span>INTELLIGENT MANAGEMENT</span>
+
+                        <h3>Smarter Storage Technology</h3>
+
+                        <p>
+                            Bring greater visibility and control
+                            to your inventory with organized systems
+                            and efficient management processes.
+                        </p>
+
+                    </div>
+
+                    <div class="stackly-storage-why-item-arrow">
+
+                        <a href="404.html">
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- ADVANTAGE 03 -->
+
+                <article class="stackly-storage-why-item"
+                    data-aos="fade-left"
+                    data-aos-delay="300">
+
+                    <div class="stackly-storage-why-item-number">
+                        03
+                    </div>
+
+                    <div class="stackly-storage-why-item-icon">
+
+                        <i class="fa-solid fa-expand"></i>
+
+                    </div>
+
+                    <div class="stackly-storage-why-item-text">
+
+                        <span>FLEXIBLE SPACE</span>
+
+                        <h3>Solutions That Grow With You</h3>
+
+                        <p>
+                            Choose adaptable storage arrangements
+                            that support changing inventory levels
+                            and evolving business requirements.
+                        </p>
+
+                    </div>
+
+                    <div class="stackly-storage-why-item-arrow">
+
+                        <a href="404.html">
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- ADVANTAGE 04 -->
+
+                <article class="stackly-storage-why-item"
+                    data-aos="fade-left"
+                    data-aos-delay="400">
+
+                    <div class="stackly-storage-why-item-number">
+                        04
+                    </div>
+
+                    <div class="stackly-storage-why-item-icon">
+
+                        <i class="fa-solid fa-people-carry-box"></i>
+
+                    </div>
+
+                    <div class="stackly-storage-why-item-text">
+
+                        <span>PROFESSIONAL HANDLING</span>
+
+                        <h3>Care In Every Operation</h3>
+
+                        <p>
+                            From goods receiving to organized
+                            storage and dispatch coordination,
+                            every step receives attention and care.
+                        </p>
+
+                    </div>
+
+                    <div class="stackly-storage-why-item-arrow">
+
+                        <a href="404.html">
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+
+                <!-- ADVANTAGE 05 -->
+
+                <article class="stackly-storage-why-item"
+                    data-aos="fade-left"
+                    data-aos-delay="500">
+
+                    <div class="stackly-storage-why-item-number">
+                        05
+                    </div>
+
+                    <div class="stackly-storage-why-item-icon">
+
+                        <i class="fa-solid fa-headset"></i>
+
+                    </div>
+
+                    <div class="stackly-storage-why-item-text">
+
+                        <span>DEDICATED SUPPORT</span>
+
+                        <h3>A Partner Beyond Storage</h3>
+
+                        <p>
+                            Work with a dependable team focused
+                            on understanding your storage needs
+                            and supporting your business journey.
+                        </p>
+
+                    </div>
+
+                    <div class="stackly-storage-why-item-arrow">
+
+                        <a href="404.html">
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        </a>
+
+                    </div>
+
+                </article>
+
+
+            </div>
+
+        </div>
+
+
+
+        <!-- BOTTOM VALUE STRIP -->
+
+        <div class="stackly-storage-why-bottom"
+            data-aos="fade-up"
+            data-aos-duration="1000">
+
+
+            <div class="stackly-storage-why-bottom-heading">
+
+                <span>WHAT MAKES US DIFFERENT?</span>
+
+                <h3>
+                    A Better Storage Experience Starts Here.
+                </h3>
+
+            </div>
+
+
+            <div class="stackly-storage-why-bottom-points">
+
+                <div class="stackly-storage-why-bottom-point">
+
+                    <i class="fa-solid fa-circle-check"></i>
+
+                    <span>Business-Focused Approach</span>
+
+                </div>
+
+
+                <div class="stackly-storage-why-bottom-point">
+
+                    <i class="fa-solid fa-circle-check"></i>
+
+                    <span>Organized Operations</span>
+
+                </div>
+
+
+                <div class="stackly-storage-why-bottom-point">
+
+                    <i class="fa-solid fa-circle-check"></i>
+
+                    <span>Flexible Storage Planning</span>
+
+                </div>
+
+            </div>
+
+
+            <a href="404.html"
+                class="stackly-storage-why-bottom-btn">
+
+                Let's Work Together
+
+                <i class="fa-solid fa-arrow-right"></i>
+
+            </a>
+
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- =========================================
+     STACKLY FACILITIES SECTION
+     PREMIUM STORAGE FACILITY SHOWCASE
+========================================== -->
+
+<section class="stackly-storage-facilities" id="storageFacilities">
+
+    <!-- BACKGROUND DECORATIONS -->
+
+    <div class="stackly-storage-facilities-glow"></div>
+    <div class="stackly-storage-facilities-pattern"></div>
+
+
+    <div class="stackly-storage-facilities-container">
+
+
+        <!-- SECTION HEADER -->
+
+        <div class="stackly-storage-facilities-header"
+            data-aos="fade-up">
+
+            <div class="stackly-storage-facilities-label">
+                <span></span>
+                INSIDE OUR FACILITIES
+            </div>
+
+            <h2>
+                Built For Better Storage.
+                <span>Designed For Your Growth.</span>
+            </h2>
+
+            <p>
+                Explore thoughtfully designed storage environments
+                where modern infrastructure, organized spaces, and
+                dependable operations come together.
+            </p>
+
+        </div>
+
+
+
+        <!-- MAIN FACILITY SHOWCASE -->
+
+        <div class="stackly-storage-facilities-showcase">
+
+
+            <!-- LEFT CONTENT AREA -->
+
+            <div class="stackly-storage-facilities-content"
+                data-aos="fade-right"
+                data-aos-duration="1000">
+
+
+                <div class="stackly-storage-facilities-eyebrow">
+
+                    <i class="fa-solid fa-building"></i>
+
+                    OUR STORAGE INFRASTRUCTURE
+
+                </div>
+
+
+                <h3>
+                    More Than A Warehouse.
+                    <span>A Smarter Way To Store.</span>
+                </h3>
+
+
+                <p class="stackly-storage-facilities-description">
+
+                    Every Stackly facility is designed with purpose.
+                    From spacious storage areas to organized inventory
+                    zones, we create environments that help businesses
+                    operate with greater efficiency and confidence.
+
+                </p>
+
+
+                <!-- FACILITY FEATURES -->
+
+                <div class="stackly-storage-facilities-features">
+
+
+                    <!-- FEATURE 01 -->
+
+                    <div class="stackly-storage-facility-feature"
+                        data-aos="fade-up"
+                        data-aos-delay="100">
+
+                        <div class="stackly-storage-facility-feature-icon">
+
+                            <i class="fa-solid fa-warehouse"></i>
+
+                        </div>
+
+                        <div class="stackly-storage-facility-feature-text">
+
+                            <h4>Spacious Warehouse Areas</h4>
+
+                            <p>
+                                Well-planned storage spaces designed
+                                to accommodate different business needs.
+                            </p>
+
+                        </div>
+
+                        <span class="stackly-storage-facility-feature-number">
+                            01
+                        </span>
+
+                    </div>
+
+
+
+                    <!-- FEATURE 02 -->
+
+                    <div class="stackly-storage-facility-feature"
+                        data-aos="fade-up"
+                        data-aos-delay="180">
+
+                        <div class="stackly-storage-facility-feature-icon">
+
+                            <i class="fa-solid fa-shield-halved"></i>
+
+                        </div>
+
+                        <div class="stackly-storage-facility-feature-text">
+
+                            <h4>Secure Storage Environment</h4>
+
+                            <p>
+                                Protection-focused facilities with
+                                organized goods handling practices.
+                            </p>
+
+                        </div>
+
+                        <span class="stackly-storage-facility-feature-number">
+                            02
+                        </span>
+
+                    </div>
+
+
+
+                    <!-- FEATURE 03 -->
+
+                    <div class="stackly-storage-facility-feature"
+                        data-aos="fade-up"
+                        data-aos-delay="260">
+
+                        <div class="stackly-storage-facility-feature-icon">
+
+                            <i class="fa-solid fa-boxes-stacked"></i>
+
+                        </div>
+
+                        <div class="stackly-storage-facility-feature-text">
+
+                            <h4>Organized Inventory Zones</h4>
+
+                            <p>
+                                Structured storage arrangements that
+                                support easier inventory management.
+                            </p>
+
+                        </div>
+
+                        <span class="stackly-storage-facility-feature-number">
+                            03
+                        </span>
+
+                    </div>
+
+
+
+                    <!-- FEATURE 04 -->
+
+                    <div class="stackly-storage-facility-feature"
+                        data-aos="fade-up"
+                        data-aos-delay="340">
+
+                        <div class="stackly-storage-facility-feature-icon">
+
+                            <i class="fa-solid fa-truck-fast"></i>
+
+                        </div>
+
+                        <div class="stackly-storage-facility-feature-text">
+
+                            <h4>Efficient Loading & Dispatch</h4>
+
+                            <p>
+                                Dedicated operational areas for smoother
+                                receiving, handling, and dispatch.
+                            </p>
+
+                        </div>
+
+                        <span class="stackly-storage-facility-feature-number">
+                            04
+                        </span>
+
+                    </div>
+
+
+                </div>
+
+
+                <!-- CONTENT BOTTOM -->
+
+                <div class="stackly-storage-facilities-content-bottom"
+                    data-aos="fade-up"
+                    data-aos-delay="400">
+
+                    <a href="404.html"
+                        class="stackly-storage-facilities-btn">
+
+                        Explore Our Facilities
+
+                        <span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </span>
+
+                    </a>
+
+
+                    <div class="stackly-storage-facilities-note">
+
+                        <i class="fa-solid fa-circle-check"></i>
+
+                        <span>SPACE PLANNED WITH PURPOSE</span>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- RIGHT IMAGE SHOWCASE -->
+
+            <div class="stackly-storage-facilities-visual"
+                data-aos="fade-left"
+                data-aos-duration="1100">
+
+
+                <!-- MAIN IMAGE -->
+
+                <div class="stackly-storage-facilities-main-image">
+
+                    <img src="facility-1.webp"
+                        alt="Modern Stackly warehouse facility with organized storage racks">
+
+                    <div class="stackly-storage-facilities-image-overlay"></div>
+
+
+                    <!-- IMAGE TOP TAG -->
+
+                    <div class="stackly-storage-facilities-image-tag">
+
+                        <span></span>
+
+                        BUILT FOR PERFORMANCE
+
+                    </div>
+
+
+                    <!-- IMAGE BOTTOM TEXT -->
+
+                    <div class="stackly-storage-facilities-image-content">
+
+                        <span>SMART INFRASTRUCTURE</span>
+
+                        <h3>
+                            Space That
+                            <strong>Works Smarter.</strong>
+                        </h3>
+
+                    </div>
+
+
+                    <!-- IMAGE NUMBER -->
+
+                    <div class="stackly-storage-facilities-image-number">
+
+                        <span>01</span>
+
+                        <div></div>
+
+                        <span>04</span>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- FLOATING SMALL IMAGE -->
+
+                <div class="stackly-storage-facilities-small-image"
+                    data-aos="zoom-in"
+                    data-aos-delay="300">
+
+                    <img src="facility-2.webp"
+                        alt="Organized warehouse storage interior">
+
+                    <div class="stackly-storage-facilities-small-image-icon">
+
+                        <i class="fa-solid fa-expand"></i>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- FLOATING INFORMATION CARD -->
+
+                <div class="stackly-storage-facilities-info-card"
+                    data-aos="fade-up"
+                    data-aos-delay="450">
+
+                    <div class="stackly-storage-facilities-info-icon">
+
+                        <i class="fa-solid fa-location-dot"></i>
+
+                    </div>
+
+                    <div>
+
+                        <span>FACILITY STANDARD</span>
+
+                        <strong>Designed Around Efficiency</strong>
+
+                        <p>Every space has a purpose.</p>
+
+                    </div>
+
+                    <a href="404.html">
+                        <i class="fa-solid fa-arrow-up-right-from-square stackly-storage-facilities-info-arrow"></i>
+                    </a>
+
+                </div>
+
+
+
+                <!-- DECORATIVE VERTICAL LABEL -->
+
+                <div class="stackly-storage-facilities-vertical-text">
+
+                    STACKLY / STORAGE INFRASTRUCTURE
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- FACILITY STATISTICS STRIP -->
+
+        <div class="stackly-storage-facilities-stats"
+            data-aos="fade-up"
+            data-aos-duration="900">
+
+
+            <div class="stackly-storage-facility-stat">
+
+                <div class="stackly-storage-facility-stat-icon">
+
+                    <i class="fa-solid fa-warehouse"></i>
+
+                </div>
+
+                <div>
+
+                    <strong>01</strong>
+
+                    <span>Organized Storage</span>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="stackly-storage-facilities-stat-divider"></div>
+
+
+
+            <div class="stackly-storage-facility-stat">
+
+                <div class="stackly-storage-facility-stat-icon">
+
+                    <i class="fa-solid fa-lock"></i>
+
+                </div>
+
+                <div>
+
+                    <strong>02</strong>
+
+                    <span>Security Focused</span>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="stackly-storage-facilities-stat-divider"></div>
+
+
+
+            <div class="stackly-storage-facility-stat">
+
+                <div class="stackly-storage-facility-stat-icon">
+
+                    <i class="fa-solid fa-boxes-stacked"></i>
+
+                </div>
+
+                <div>
+
+                    <strong>03</strong>
+
+                    <span>Inventory Ready</span>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="stackly-storage-facilities-stat-divider"></div>
+
+
+
+            <div class="stackly-storage-facility-stat">
+
+                <div class="stackly-storage-facility-stat-icon">
+
+                    <i class="fa-solid fa-truck-fast"></i>
+
+                </div>
+
+                <div>
+
+                    <strong>04</strong>
+
+                    <span>Dispatch Support</span>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+</section>
+
+<!-- =========================================
+     STACKLY OUR TEAM SECTION
+     FOUR MEMBER PROFILE SHOWCASE
+========================================== -->
+
+<section class="stackly-storage-team" id="storageTeam">
+
+    <!-- BACKGROUND DECORATIONS -->
+    <div class="stackly-storage-team-glow"></div>
+    <div class="stackly-storage-team-pattern"></div>
+
+    <div class="stackly-storage-team-container">
+
+        <!-- SECTION HEADER -->
+        <div class="stackly-storage-team-header" data-aos="fade-up">
+
+            <div class="stackly-storage-team-label">
+                <span></span>
+                THE PEOPLE BEHIND STACKLY
+                <span></span>
+            </div>
+
+            <h2>
+                Meet The People
+                <span>Behind Our Success.</span>
+            </h2>
+
+            <p>
+                Great service starts with great people. Meet our dedicated
+                team working together to deliver smarter, safer, and more
+                reliable storage solutions.
+            </p>
+
+        </div>
+
+
+        <!-- TEAM MEMBERS GRID -->
+        <div class="stackly-storage-team-grid">
+
+
+            <!-- TEAM MEMBER 01 -->
+            <article class="stackly-storage-team-card"
+                data-aos="fade-up"
+                data-aos-delay="100">
+
+                <div class="stackly-storage-team-image">
+
+                    <img src="team-1.webp"
+                        alt="Alex Morgan - Operations Manager">
+
+                    <span class="stackly-storage-team-number">01</span>
+
+                    <!-- SOCIAL LINKS -->
+                    <div class="stackly-storage-team-socials">
+
+                        <a href="404.html"
+                            aria-label="Alex Morgan LinkedIn">
+                            <i class="fa-brands fa-linkedin-in"></i>
+                        </a>
+
+                        <a href="404.html"
+                            aria-label="Email Alex Morgan">
+                            <i class="fa-solid fa-envelope"></i>
+                        </a>
+
+                    </div>
+
+                </div>
+
+                <div class="stackly-storage-team-info">
+
+                    <span class="stackly-storage-team-role">
+                        OPERATIONS & MANAGEMENT
+                    </span>
+
+                    <h3>Alex Morgan</h3>
+
+                    <p>Operations Manager</p>
+
+                    <div class="stackly-storage-team-info-line"></div>
+
+                </div>
+
+            </article>
+
+
+            <!-- TEAM MEMBER 02 -->
+            <article class="stackly-storage-team-card"
+                data-aos="fade-up"
+                data-aos-delay="200">
+
+                <div class="stackly-storage-team-image">
+
+                    <img src="team-2.webp"
+                        alt="Sarah Williams - Inventory Manager">
+
+                    <span class="stackly-storage-team-number">02</span>
+
+                    <!-- SOCIAL LINKS -->
+                    <div class="stackly-storage-team-socials">
+
+                        <a href="404.html"
+                            aria-label="Sarah Williams LinkedIn">
+                            <i class="fa-brands fa-linkedin-in"></i>
+                        </a>
+
+                        <a href="404.html"
+                            aria-label="Email Sarah Williams">
+                            <i class="fa-solid fa-envelope"></i>
+                        </a>
+
+                    </div>
+
+                </div>
+
+                <div class="stackly-storage-team-info">
+
+                    <span class="stackly-storage-team-role">
+                        INVENTORY MANAGEMENT
+                    </span>
+
+                    <h3>Sarah Williams</h3>
+
+                    <p>Inventory Manager</p>
+
+                    <div class="stackly-storage-team-info-line"></div>
+
+                </div>
+
+            </article>
+
+
+            <!-- TEAM MEMBER 03 -->
+            <article class="stackly-storage-team-card"
+                data-aos="fade-up"
+                data-aos-delay="300">
+
+                <div class="stackly-storage-team-image">
+
+                    <img src="team-3.webp"
+                        alt="Daniel Thomas - Warehouse Supervisor">
+
+                    <span class="stackly-storage-team-number">03</span>
+
+                    <!-- SOCIAL LINKS -->
+                    <div class="stackly-storage-team-socials">
+
+                        <a href="404.html"
+                            aria-label="Daniel Thomas LinkedIn">
+                            <i class="fa-brands fa-linkedin-in"></i>
+                        </a>
+
+                        <a href="404.html"
+                            aria-label="Email Daniel Thomas">
+                            <i class="fa-solid fa-envelope"></i>
+                        </a>
+
+                    </div>
+
+                </div>
+
+                <div class="stackly-storage-team-info">
+
+                    <span class="stackly-storage-team-role">
+                        WAREHOUSE OPERATIONS
+                    </span>
+
+                    <h3>Daniel Thomas</h3>
+
+                    <p>Warehouse Supervisor</p>
+
+                    <div class="stackly-storage-team-info-line"></div>
+
+                </div>
+
+            </article>
+
+
+            <!-- TEAM MEMBER 04 -->
+            <article class="stackly-storage-team-card"
+                data-aos="fade-up"
+                data-aos-delay="400">
+
+                <div class="stackly-storage-team-image">
+
+                    <img src="team-4.webp"
+                        alt="Emily Johnson - Logistics Coordinator">
+
+                    <span class="stackly-storage-team-number">04</span>
+
+                    <!-- SOCIAL LINKS -->
+                    <div class="stackly-storage-team-socials">
+
+                        <a href="404.html"
+                            aria-label="Emily Johnson LinkedIn">
+                            <i class="fa-brands fa-linkedin-in"></i>
+                        </a>
+
+                        <a href="404.html"
+                            aria-label="Email Emily Johnson">
+                            <i class="fa-solid fa-envelope"></i>
+                        </a>
+
+                    </div>
+
+                </div>
+
+                <div class="stackly-storage-team-info">
+
+                    <span class="stackly-storage-team-role">
+                        LOGISTICS & DISTRIBUTION
+                    </span>
+
+                    <h3>Emily Johnson</h3>
+
+                    <p>Logistics Coordinator</p>
+
+                    <div class="stackly-storage-team-info-line"></div>
+
+                </div>
+
+            </article>
+
+
+        </div>
+
+
+        <!-- BOTTOM TEAM MESSAGE -->
+        <div class="stackly-storage-team-bottom"
+            data-aos="fade-up"
+            data-aos-duration="900">
+
+            <div class="stackly-storage-team-bottom-content">
+
+                <span>ONE TEAM. ONE VISION.</span>
+
+                <h3>
+                    Great People Make Great Things Happen.
+                </h3>
+
+                <p>
+                    Together, we build smarter storage experiences
+                    through teamwork, dedication, and innovation.
+                </p>
+
+            </div>
+
+            <a href="404.html"
+                class="stackly-storage-team-bottom-btn">
+
+                Connect With Us
+
+                <span>
+                    <i class="fa-solid fa-arrow-right"></i>
+                </span>
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================
+     STACKLY STORAGE INSIGHTS SECTION
+     MODERN EDITORIAL BLOG DESIGN
+========================================== -->
+
+<section class="stackly-insights-section" id="storageInsights">
+
+    <div class="stackly-insights-bg-shape"></div>
+    <div class="stackly-insights-grid-pattern"></div>
+
+    <div class="stackly-insights-container">
+
+        <!-- SECTION INTRO -->
+
+        <div class="stackly-insights-top">
+
+            <div class="stackly-insights-heading" data-aos="fade-up">
+
+                <div class="stackly-insights-eyebrow">
+                    <span class="stackly-insights-eyebrow-line"></span>
+                    <span>THE STACKLY JOURNAL</span>
+                    <span class="stackly-insights-eyebrow-dot"></span>
+                </div>
+
+                <h2>
+                    Fresh Perspectives.
+                    <span>Smarter Possibilities.</span>
+                </h2>
+
+            </div>
+
+            <div class="stackly-insights-description" data-aos="fade-up" data-aos-delay="150">
+
+                <p>
+                    Discover new ideas, practical knowledge, and industry
+                    perspectives that help businesses create smarter,
+                    more efficient storage operations.
+                </p>
+
+                <a href="404.html" class="stackly-insights-all-link">
+                    Explore All Insights
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- FEATURED ARTICLE AREA -->
+
+        <div class="stackly-insights-featured" data-aos="fade-up">
+
+            <div class="stackly-insights-featured-image">
+
+                <img src="blog-1.webp"
+                    alt="Modern warehouse featuring organized storage racks and inventory systems">
+
+                <div class="stackly-insights-image-shade"></div>
+
+                <div class="stackly-insights-featured-badge">
+                    <i class="fa-solid fa-bookmark"></i>
+                    FEATURED STORY
+                </div>
+
+                <div class="stackly-insights-featured-bottom">
+
+                    <div class="stackly-insights-featured-meta">
+                        <span><i class="fa-regular fa-calendar"></i> NOV 08, 2026</span>
+                        <span><i class="fa-regular fa-clock"></i> 6 MIN READ</span>
+                    </div>
+
+                    <h3>
+                        The Future of Warehousing:
+                        A New Era of Smarter Storage.
+                    </h3>
+
+                    <p>
+                        Explore how modern warehouse planning, intelligent
+                        inventory systems, and efficient operations are
+                        transforming the way businesses manage their space.
+                    </p>
+
+                    <a href="404.html" class="stackly-insights-featured-link">
+                        Discover the Story
+                        <span><i class="fa-solid fa-arrow-right"></i></span>
+                    </a>
+
+                </div>
+
+                <span class="stackly-insights-image-index">01</span>
+
+            </div>
+
+
+            <div class="stackly-insights-featured-side">
+
+                <div class="stackly-insights-side-heading">
+                    <span>EDITORIAL PICKS</span>
+                    <span>02 — 04</span>
+                </div>
+
+                <div class="stackly-insights-side-text">
+                    <h3>Ideas Worth Exploring.</h3>
+                    <p>
+                        Useful insights for better planning,
+                        organized inventory, and stronger operations.
+                    </p>
+                </div>
+
+                <div class="stackly-insights-mini-stat">
+                    <div class="stackly-insights-mini-stat-icon">
+                        <i class="fa-solid fa-lightbulb"></i>
+                    </div>
+                    <div>
+                        <strong>Knowledge for progress</strong>
+                        <span>Insights that make a difference.</span>
+                    </div>
+                </div>
+
+                <a href="404.html" class="stackly-insights-side-link">
+                    Browse the journal
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- LATEST ARTICLES HEADER -->
+
+        <div class="stackly-insights-latest-header" data-aos="fade-up">
+
+            <div>
+                <span class="stackly-insights-section-label">MORE TO DISCOVER</span>
+                <h3>Explore the Latest <span>Stories.</span></h3>
+            </div>
+
+            <div class="stackly-insights-latest-count">
+                <span>03</span>
+                <p>SELECTED ARTICLES</p>
+            </div>
+
+        </div>
+
+
+        <!-- ARTICLE CARDS -->
+
+        <div class="stackly-insights-grid">
+
+            <!-- ARTICLE 01 -->
+
+            <article class="stackly-insights-card" data-aos="fade-up" data-aos-delay="100">
+
+                <a href="404.html" class="stackly-insights-card-image">
+
+                    <img src="blog-2.webp"
+                        alt="Organized warehouse racks and structured storage areas">
+
+                    <span class="stackly-insights-card-category">
+                        WAREHOUSING
+                    </span>
+
+                    <span class="stackly-insights-card-number">02</span>
+
+                    <span class="stackly-insights-card-image-icon">
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </span>
+
+                </a>
+
+                <div class="stackly-insights-card-content">
+
+                    <div class="stackly-insights-card-meta">
+                        <span><i class="fa-regular fa-calendar"></i> NOV 06, 2026</span>
+                        <span>5 MIN READ</span>
+                    </div>
+
+                    <h4>
+                        How Organized Warehouses Improve Business Productivity
+                    </h4>
+
+                    <p>
+                        Discover how effective space planning and organized
+                        warehouse systems can improve everyday productivity.
+                    </p>
+
+                    <a href="404.html" class="stackly-insights-read-link">
+                        Read Article
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+
+                </div>
+
+            </article>
+
+
+            <!-- ARTICLE 02 -->
+
+            <article class="stackly-insights-card" data-aos="fade-up" data-aos-delay="200">
+
+                <a href="404.html" class="stackly-insights-card-image">
+
+                    <img src="blog-3.webp"
+                        alt="Inventory management with neatly arranged warehouse stock">
+
+                    <span class="stackly-insights-card-category">
+                        INVENTORY
+                    </span>
+
+                    <span class="stackly-insights-card-number">03</span>
+
+                    <span class="stackly-insights-card-image-icon">
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </span>
+
+                </a>
+
+                <div class="stackly-insights-card-content">
+
+                    <div class="stackly-insights-card-meta">
+                        <span><i class="fa-regular fa-calendar"></i> NOV 04, 2026</span>
+                        <span>4 MIN READ</span>
+                    </div>
+
+                    <h4>
+                        Simple Inventory Management Strategies That Work
+                    </h4>
+
+                    <p>
+                        Learn practical methods to organize stock,
+                        improve inventory visibility, and reduce confusion.
+                    </p>
+
+                    <a href="404.html" class="stackly-insights-read-link">
+                        Read Article
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+
+                </div>
+
+            </article>
+
+
+            <!-- ARTICLE 03 -->
+
+            <article class="stackly-insights-card" data-aos="fade-up" data-aos-delay="300">
+
+                <a href="404.html" class="stackly-insights-card-image">
+
+                    <img src="blog-4.webp"
+                        alt="Logistics and distribution operations inside a warehouse">
+
+                    <span class="stackly-insights-card-category">
+                        LOGISTICS
+                    </span>
+
+                    <span class="stackly-insights-card-number">04</span>
+
+                    <span class="stackly-insights-card-image-icon">
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </span>
+
+                </a>
+
+                <div class="stackly-insights-card-content">
+
+                    <div class="stackly-insights-card-meta">
+                        <span><i class="fa-regular fa-calendar"></i> NOV 02, 2026</span>
+                        <span>6 MIN READ</span>
+                    </div>
+
+                    <h4>
+                        Making Supply Chains More Efficient and Reliable
+                    </h4>
+
+                    <p>
+                        Explore how connected storage and distribution
+                        processes support reliable business operations.
+                    </p>
+
+                    <a href="404.html" class="stackly-insights-read-link">
+                        Read Article
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+
+                </div>
+
+            </article>
+
+        </div>
+
+
+        <!-- BOTTOM INFORMATION STRIP -->
+
+        <div class="stackly-insights-bottom" data-aos="fade-up">
+
+            <div class="stackly-insights-bottom-decoration">
+                <i class="fa-solid fa-quote-right"></i>
+            </div>
+
+            <div class="stackly-insights-bottom-content">
+
+                <span>THINK BETTER. STORE SMARTER.</span>
+
+                <h3>
+                    Every Great Operation Begins With A Better Idea.
+                </h3>
+
+            </div>
+
+            <a href="404.html" class="stackly-insights-bottom-btn">
+                Read More Insights
+                <span><i class="fa-solid fa-arrow-right"></i></span>
+            </a>
+
+        </div>
+
+
+        <!-- SECTION FOOTER -->
+
+        <div class="stackly-insights-footer">
+            <span>SMARTER THINKING</span>
+            <span class="stackly-insights-footer-line"></span>
+            <span>BETTER STORAGE</span>
+            <span class="stackly-insights-footer-line"></span>
+            <span>STRONGER BUSINESS</span>
+        </div>
+
+    </div>
+
+</section>
+
+
+    </main>
+
+
+
+<!-- =========================================
+     STACKLY PROFESSIONAL FOOTER
+     SMART STORAGE SOLUTIONS
+========================================== -->
+
+<footer class="stackly-storage-footer" id="storageFooter">
+
+    <!-- FOOTER TOP DECORATION -->
+    <div class="stackly-storage-footer-glow"></div>
+
+    <div class="stackly-storage-footer-container">
+
+        <!-- TOP CTA SECTION -->
+        <div class="stackly-storage-footer-cta" data-aos="fade-up">
+
+            <div class="stackly-storage-footer-cta-content">
+
+                <span class="stackly-storage-footer-cta-label">
+                    <span></span>
+                    LET'S BUILD SOMETHING BETTER
+                </span>
+
+                <h2>
+                    Need More Space
+                    <span>For Your Business?</span>
+                </h2>
+
+                <p>
+                    Find the right storage solution with Stackly.
+                    Let's make your business operations simpler,
+                    smarter, and more efficient.
+                </p>
+
+            </div>
+
+            <a href="404.html" class="stackly-storage-footer-cta-btn">
+                Talk To Our Team
+                <span>
+                    <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </span>
+            </a>
+
+            <div class="stackly-storage-footer-cta-decoration">
+                <i class="fa-solid fa-warehouse"></i>
+            </div>
+
+        </div>
+
+
+        <!-- MAIN FOOTER CONTENT -->
+        <div class="stackly-storage-footer-main">
+
+            <!-- BRAND COLUMN -->
+            <div class="stackly-storage-footer-brand"
+                data-aos="fade-up">
+
+                <a href="index.html" class="stackly-storage-footer-logo">
+                    <img src="Stackly-logo-Blue.webp"
+                        alt="Stackly Smart Storage Solutions">
+                </a>
+
+                <p>
+                    Creating smarter storage experiences through
+                    organized warehousing, secure environments,
+                    and dependable logistics solutions.
+                </p>
+
+                <div class="stackly-storage-footer-socials">
+
+                    <a href="404.html" aria-label="Facebook">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+
+                    <a href="404.html" aria-label="Instagram">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+
+                    <a href="404.html" aria-label="LinkedIn">
+                        <i class="fa-brands fa-linkedin-in"></i>
+                    </a>
+
+                    <a href="404.html" aria-label="YouTube">
+                        <i class="fa-brands fa-youtube"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <!-- QUICK LINKS -->
+            <div class="stackly-storage-footer-column"
+                data-aos="fade-up"
+                data-aos-delay="100">
+
+                <h3>Quick Links</h3>
+
+                <span class="stackly-storage-footer-heading-line"></span>
+
+                <ul>
+                    <li>
+                        <a href="index.html">
+                            <i class="fa-solid fa-arrow-right"></i>
+                            Home
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="about.html">
+                            <i class="fa-solid fa-arrow-right"></i>
+                            About Us
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="services.html">
+                            <i class="fa-solid fa-arrow-right"></i>
+                            Our Services
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="solutions.html">
+                            <i class="fa-solid fa-arrow-right"></i>
+                            Storage Solutions
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="facilities.html">
+                            <i class="fa-solid fa-arrow-right"></i>
+                            Our Facilities
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="blog.html">
+                            <i class="fa-solid fa-arrow-right"></i>
+                            Blog & Insights
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="contact.html">
+                            <i class="fa-solid fa-arrow-right"></i>
+                            Contact Us
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <!-- OUR SERVICES -->
+            <div class="stackly-storage-footer-column"
+                data-aos="fade-up"
+                data-aos-delay="200">
+
+                <h3>Our Services</h3>
+
+                <span class="stackly-storage-footer-heading-line"></span>
+
+                <ul>
+                    <li>
+                        <a href="404.html">
+                            <i class="fa-solid fa-arrow-right"></i>
+                            Warehouse Management
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="404.html">
+                            <i class="fa-solid fa-arrow-right"></i>
+                            Inventory Management
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="404.html">
+                            <i class="fa-solid fa-arrow-right"></i>
+                            Secure Storage
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="404.html">
+                            <i class="fa-solid fa-arrow-right"></i>
+                            Logistics & Distribution
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="404.html">
+                            <i class="fa-solid fa-arrow-right"></i>
+                            Commercial Storage
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="404.html">
+                            <i class="fa-solid fa-arrow-right"></i>
+                            Fulfillment Solutions
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="404.html">
+                            <i class="fa-solid fa-arrow-right"></i>
+                            Inventory Management
+                        </a>
+                    </li>
+
+                </ul>
+
+            </div>
+
+
+            <!-- CONTACT COLUMN -->
+            <div class="stackly-storage-footer-column stackly-storage-footer-contact"
+    data-aos="fade-up"
+    data-aos-delay="300">
+
+    <h3>Get In Touch</h3>
+
+    <span class="stackly-storage-footer-heading-line"></span>
+
+    <p class="stackly-storage-footer-contact-intro">
+        Have questions about storage or warehouse
+        requirements? Our team is ready to help.
+    </p>
+
+    <!-- ADDRESS -->
+    <a href="404.html"
+        rel="noopener noreferrer"
+        class="stackly-storage-footer-contact-item">
+
+        <span class="stackly-storage-footer-contact-icon">
+            <i class="fa-solid fa-location-dot"></i>
+        </span>
+
+        <span>
+            <small>OUR LOCATION</small>
+            <strong>Guindy Industrial Estate, Chennai, Tamil Nadu - 600032</strong>
+        </span>
+
+    </a>
+
+    <!-- EMAIL -->
+    <a href="404.html"
+        class="stackly-storage-footer-contact-item">
+
+        <span class="stackly-storage-footer-contact-icon">
+            <i class="fa-solid fa-envelope"></i>
+        </span>
+
+        <span>
+            <small>EMAIL US</small>
+            <strong>info@stacklystorage.com</strong>
+        </span>
+
+    </a>
+
+    <!-- PHONE -->
+    <a href="404.html"
+        class="stackly-storage-footer-contact-item">
+
+        <span class="stackly-storage-footer-contact-icon">
+            <i class="fa-solid fa-phone"></i>
+        </span>
+
+        <span>
+            <small>CALL US</small>
+            <strong>+91 98765 43210</strong>
+        </span>
+
+    </a>
+
+</div>
+
+        </div>
+
+
+        <!-- FOOTER NEWSLETTER STRIP -->
+        <div class="stackly-storage-footer-newsletter"
+            data-aos="fade-up">
+
+            <div class="stackly-storage-footer-newsletter-content">
+
+                <div class="stackly-storage-footer-newsletter-icon">
+                    <i class="fa-regular fa-paper-plane"></i>
+                </div>
+
+                <div>
+                    <span>STAY CONNECTED WITH STACKLY</span>
+                    <h3>Ideas For Smarter Storage.</h3>
+                    <p>
+                        Explore useful updates, storage insights,
+                        and industry perspectives.
+                    </p>
+                </div>
+
+            </div>
+
+            <a href="404.html" class="stackly-storage-footer-newsletter-btn">
+                Explore Latest Insights
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+        </div>
+
+
+        <!-- FOOTER BOTTOM -->
+        <div class="stackly-storage-footer-bottom">
+
+            <div class="stackly-storage-footer-copyright">
+
+                <span class="stackly-storage-footer-copyright-icon">
+                    <i class="fa-regular fa-copyright"></i>
+                </span>
+
+                <p>
+                    2026 Stackly. All Rights Reserved.
+                </p>
+
+            </div>
+
+
+            <div class="stackly-storage-footer-bottom-center">
+
+                <span>SMARTER STORAGE.</span>
+                <span class="stackly-storage-footer-bottom-dot"></span>
+                <span>STRONGER BUSINESS.</span>
+
+            </div>
+
+
+            <div class="stackly-storage-footer-legal">
+
+                <a href="404.html">Privacy Policy</a>
+
+                <span></span>
+
+                <a href="404.html">Terms & Conditions</a>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+    <!-- BACK TO TOP BUTTON -->
+    <a href="#storageHero"
+        class="stackly-storage-back-to-top"
+        aria-label="Back to top">
+
+        <i class="fa-solid fa-arrow-up"></i>
+
+    </a>
+
+</footer>
+
+
+
+    <!-- AOS JS -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
+
+    <!-- MAIN JS -->
+
+    <script src="index.js"></script>
+
+</body>
+
+</html>

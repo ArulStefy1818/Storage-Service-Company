@@ -1,0 +1,939 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Stackly | Admin Dashboard</title>
+
+    <meta name="description"
+        content="Manage storage operations, inventory, warehouses, orders and business performance with the Stackly Admin Dashboard.">
+
+    <link rel="icon" href="Stackly-logo-Blue.webp">
+
+    <!-- GOOGLE FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <!-- AOS ANIMATION -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+
+    <!-- DASHBOARD CSS -->
+    <link rel="stylesheet" href="admin.css">
+</head>
+
+<body>
+
+    <!-- =========================================
+         DASHBOARD OVERLAY
+    ========================================== -->
+
+    <div class="stackly-storage-admin-overlay"
+        id="stacklyGiftAdminOverlay"></div>
+
+
+    <!-- =========================================
+         SIDEBAR
+    ========================================== -->
+
+    <aside class="stackly-storage-admin-sidebar"
+        id="stacklyGiftAdminSidebar">
+
+        <!-- SIDEBAR HEADER -->
+
+        <div class="stackly-storage-admin-sidebar-header">
+
+            <a href="admin.html" class="stackly-storage-admin-logo">
+
+                <img src="Stackly-logo-Blue.webp"
+                    alt="Stackly Smart Storage Solutions Logo">
+
+            </a>
+
+            <!-- MOBILE CLOSE BUTTON -->
+
+            <button class="stackly-storage-admin-close"
+                id="stacklyGiftAdminClose"
+                aria-label="Close sidebar">
+
+                <i class="fa-solid fa-xmark"></i>
+
+            </button>
+
+        </div>
+
+
+        <!-- ADMIN PROFILE -->
+
+        <div class="stackly-storage-admin-profile">
+
+            <div class="stackly-storage-admin-avatar">
+                <i class="fa-solid fa-user-tie"></i>
+            </div>
+
+            <div class="stackly-storage-admin-profile-info">
+                <h3>Administrator</h3>
+                <span>
+                    <span class="stackly-storage-admin-online-dot"></span>
+                    Online
+                </span>
+            </div>
+
+        </div>
+
+
+        <!-- SIDEBAR NAVIGATION -->
+
+        <nav class="stackly-storage-admin-nav">
+
+            <p class="stackly-storage-admin-nav-title">
+                MAIN MENU
+            </p>
+
+            <a href="admin.html"
+                class="stackly-storage-admin-nav-link active">
+
+                <i class="fa-solid fa-chart-pie"></i>
+                <span>Dashboard</span>
+
+            </a>
+
+            <a href="admin-warehouses.html"
+                class="stackly-storage-admin-nav-link">
+
+                <i class="fa-solid fa-warehouse"></i>
+                <span>Warehouses</span>
+
+            </a>
+
+            <a href="admin-orders.html"
+                class="stackly-storage-admin-nav-link">
+
+                <i class="fa-solid fa-clipboard-list"></i>
+                <span>Orders</span>
+                <span class="stackly-storage-admin-nav-count">08</span>
+
+            </a>
+
+            <a href="admin-shipments.html"
+                class="stackly-storage-admin-nav-link">
+
+                <i class="fa-solid fa-truck-fast"></i>
+                <span>Shipments</span>
+
+            </a>
+
+            <a href="admin-customers.html"
+                class="stackly-storage-admin-nav-link">
+
+                <i class="fa-solid fa-users"></i>
+                <span>Customers</span>
+
+            </a>
+
+
+            <p class="stackly-storage-admin-nav-title">
+                MANAGEMENT
+            </p>
+
+
+            <a href="admin-billing.html"
+                class="stackly-storage-admin-nav-link">
+
+                <i class="fa-solid fa-file-invoice-dollar"></i>
+                <span>Billing & Payments</span>
+
+            </a>
+
+            <a href="admin-settings.html"
+                class="stackly-storage-admin-nav-link">
+
+                <i class="fa-solid fa-gear"></i>
+                <span>Settings</span>
+
+            </a>
+
+
+            <p class="stackly-storage-admin-nav-title">
+                OTHER
+            </p>
+
+            <a href="index.html"
+                class="stackly-storage-admin-nav-link stackly-storage-admin-logout">
+
+                <i class="fa-solid fa-right-from-bracket"></i>
+                <span>Logout</span>
+
+            </a>
+
+        </nav>
+
+
+        <!-- SIDEBAR BOTTOM CARD -->
+
+        <div class="stackly-storage-admin-sidebar-card">
+
+            <div class="stackly-storage-admin-sidebar-card-icon">
+                <i class="fa-solid fa-headset"></i>
+            </div>
+
+            <h4>Need Assistance?</h4>
+
+            <p>Our support team is ready to help you.</p>
+
+            <a href="404-admin.html">
+                Contact Support
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+        </div>
+
+         
+
+    </aside>
+
+
+    <!-- =========================================
+         MAIN DASHBOARD CONTENT
+    ========================================== -->
+
+    <main class="stackly-storage-admin-main">
+
+
+        <!-- =====================================
+             TOP HEADER
+        ====================================== -->
+
+        <header class="stackly-storage-admin-topbar">
+
+            <div class="stackly-storage-admin-topbar-left">
+
+                <!-- MOBILE MENU BUTTON -->
+
+                <button class="stackly-storage-admin-menu-toggle"
+                    id="stacklyGiftAdminMenuToggle"
+                    aria-label="Open navigation menu"
+                    aria-expanded="false"
+                    aria-controls="stacklyGiftAdminSidebar">
+
+                    <i class="fa-solid fa-bars"></i>
+
+                </button>
+
+                <div class="stackly-storage-admin-page-title">
+                    <span>ADMINISTRATION</span>
+                    <h1>Dashboard Overview</h1>
+                </div>
+
+            </div>
+
+
+            <!-- TOPBAR RIGHT -->
+
+            <div class="stackly-storage-admin-topbar-right">
+
+                <a href="404-admin.html"><button class="stackly-storage-admin-icon-btn"
+                    aria-label="Notifications">
+
+                    <i class="fa-regular fa-bell"></i>
+                    <span class="stackly-storage-admin-notification-dot"></span>
+
+                </button></a>
+
+                 
+
+
+                <!-- ADMIN EMAIL DISPLAY -->
+
+                <div class="stackly-storage-admin-email-box">
+
+                    <div class="stackly-storage-admin-email-avatar">
+                        <i class="fa-solid fa-user-shield"></i>
+                    </div>
+
+                    <div class="stackly-storage-admin-email-info">
+                        <span>Administrator Account</span>
+                        <strong>admin@stacklystorage.com</strong>
+                    </div>
+
+                    <i class="fa-solid fa-chevron-down"></i>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+<div class="stackly-storage-admin-content">
+
+<!-- =========================================
+     WAREHOUSE MANAGEMENT HERO
+========================================== -->
+
+<section class="stackly-storage-warehouse-hero" data-aos="fade-up">
+
+    <div class="stackly-storage-warehouse-hero-content">
+
+        <div class="stackly-storage-warehouse-hero-text">
+
+            <span class="stackly-storage-warehouse-eyebrow">
+                <i class="fa-solid fa-warehouse"></i>
+                SMART FACILITY MANAGEMENT
+            </span>
+
+            <h1>
+                Manage Your
+                <span>Warehouses</span>
+                With Confidence.
+            </h1>
+
+            <p>
+                Monitor storage capacity, track facility performance,
+                and manage your warehouse network from one intelligent
+                dashboard.
+            </p>
+
+            <div class="stackly-storage-warehouse-hero-actions">
+
+                <a href="404-admin.html" class="stackly-storage-warehouse-primary-btn">
+                    <i class="fa-solid fa-plus"></i>
+                    Add New Warehouse
+                </a>
+
+                <a href="404-admin.html"
+                    class="stackly-storage-warehouse-secondary-btn">
+                    Explore Facilities
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+
+            </div>
+
+            <div class="stackly-storage-warehouse-hero-trust">
+
+                <div>
+                    <i class="fa-solid fa-shield-halved"></i>
+                    Secure Storage
+                </div>
+
+                <div>
+                    <i class="fa-solid fa-chart-line"></i>
+                    Smart Monitoring
+                </div>
+
+                <div>
+                    <i class="fa-solid fa-clock"></i>
+                    24/7 Operations
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="stackly-storage-warehouse-hero-image">
+
+            <img src="stackly-warehouse.webp"
+                alt="Modern Stackly warehouse facility">
+
+            <div class="stackly-storage-warehouse-image-badge">
+                <span class="stackly-storage-warehouse-live-dot"></span>
+                <div>
+                    <strong>All Systems Active</strong>
+                    <small>Warehouse network status</small>
+                </div>
+            </div>
+
+            <div class="stackly-storage-warehouse-image-stat">
+                <i class="fa-solid fa-boxes-stacked"></i>
+                <div>
+                    <strong>12 Facilities</strong>
+                    <span>Across our network</span>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================
+     WAREHOUSE OVERVIEW STATISTICS
+========================================== -->
+
+<section class="stackly-storage-warehouse-stats"
+    data-aos="fade-up">
+
+    <div class="stackly-storage-warehouse-stat-card">
+
+        <div class="stackly-storage-warehouse-stat-icon green">
+            <i class="fa-solid fa-warehouse"></i>
+        </div>
+
+        <div>
+            <span>Total Warehouses</span>
+            <h3>12</h3>
+            <small>Across 5 regions</small>
+        </div>
+
+        <i class="fa-solid fa-arrow-up-right-from-square stat-arrow"></i>
+
+    </div>
+
+    <div class="stackly-storage-warehouse-stat-card">
+
+        <div class="stackly-storage-warehouse-stat-icon blue">
+            <i class="fa-solid fa-boxes-stacked"></i>
+        </div>
+
+        <div>
+            <span>Total Storage Units</span>
+            <h3>8,450</h3>
+            <small>All facilities combined</small>
+        </div>
+
+        <i class="fa-solid fa-arrow-up-right-from-square stat-arrow"></i>
+
+    </div>
+
+    <div class="stackly-storage-warehouse-stat-card">
+
+        <div class="stackly-storage-warehouse-stat-icon orange">
+            <i class="fa-solid fa-chart-pie"></i>
+        </div>
+
+        <div>
+            <span>Average Occupancy</span>
+            <h3>78%</h3>
+            <small>+5.2% this month</small>
+        </div>
+
+        <i class="fa-solid fa-arrow-up-right-from-square stat-arrow"></i>
+
+    </div>
+
+    <div class="stackly-storage-warehouse-stat-card">
+
+        <div class="stackly-storage-warehouse-stat-icon purple">
+            <i class="fa-solid fa-truck-ramp-box"></i>
+        </div>
+
+        <div>
+            <span>Active Operations</span>
+            <h3>186</h3>
+            <small>Currently in progress</small>
+        </div>
+
+        <i class="fa-solid fa-arrow-up-right-from-square stat-arrow"></i>
+
+    </div>
+
+</section>
+
+<!-- =========================================
+     FEATURED WAREHOUSE FACILITIES
+========================================== -->
+
+<section class="stackly-storage-warehouse-facilities"
+    id="stacklyWarehouseLocations"
+    data-aos="fade-up">
+
+    <div class="stackly-storage-warehouse-section-heading">
+
+        <div>
+            <span>OUR STORAGE NETWORK</span>
+            <h2>Explore Our Warehouse Facilities</h2>
+            <p>
+                Get a closer look at your facilities and their
+                current operational performance.
+            </p>
+        </div>
+
+        <a href="404-admin.html" class="stackly-storage-warehouse-view-all">
+            View All Facilities
+            <i class="fa-solid fa-arrow-right"></i>
+        </a>
+
+    </div>
+
+
+    <div class="stackly-storage-warehouse-facility-grid">
+
+        <!-- FACILITY 01 -->
+
+        <article class="stackly-storage-warehouse-facility-card">
+
+            <div class="stackly-storage-warehouse-facility-image">
+
+                <img src="warehouse-1.webp"
+                    alt="Chennai central distribution warehouse">
+
+                <span class="facility-status active">
+                    <i class="fa-solid fa-circle"></i>
+                    Operational
+                </span>
+
+                <span class="facility-number">01</span>
+
+            </div>
+
+            <div class="stackly-storage-warehouse-facility-content">
+
+                <div class="facility-location">
+                    <i class="fa-solid fa-location-dot"></i>
+                    Chennai, Tamil Nadu
+                </div>
+
+                <h3>Central Distribution Hub</h3>
+
+                <p>
+                    A high-capacity facility designed for
+                    efficient inventory storage and distribution.
+                </p>
+
+                <div class="facility-capacity">
+
+                    <div>
+                        <span>Storage Occupancy</span>
+                        <strong>85%</strong>
+                    </div>
+
+                    <div class="facility-progress">
+                        <span style="width:85%;"></span>
+                    </div>
+
+                </div>
+
+                <div class="facility-footer">
+
+                    <div>
+                        <i class="fa-solid fa-box"></i>
+                        2,450 Units
+                    </div>
+
+                    <a href="404-admin.html" aria-label="View Chennai warehouse">
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+        <!-- FACILITY 02 -->
+
+        <article class="stackly-storage-warehouse-facility-card">
+
+            <div class="stackly-storage-warehouse-facility-image">
+
+                <img src="warehouse-2.webp"
+                    alt="Bangalore automated logistics warehouse">
+
+                <span class="facility-status active">
+                    <i class="fa-solid fa-circle"></i>
+                    Operational
+                </span>
+
+                <span class="facility-number">02</span>
+
+            </div>
+
+            <div class="stackly-storage-warehouse-facility-content">
+
+                <div class="facility-location">
+                    <i class="fa-solid fa-location-dot"></i>
+                    Bangalore, Karnataka
+                </div>
+
+                <h3>Automated Logistics Center</h3>
+
+                <p>
+                    Advanced storage infrastructure supporting
+                    streamlined warehouse operations.
+                </p>
+
+                <div class="facility-capacity">
+
+                    <div>
+                        <span>Storage Occupancy</span>
+                        <strong>72%</strong>
+                    </div>
+
+                    <div class="facility-progress">
+                        <span style="width:72%;"></span>
+                    </div>
+
+                </div>
+
+                <div class="facility-footer">
+
+                    <div>
+                        <i class="fa-solid fa-box"></i>
+                        1,850 Units
+                    </div>
+
+                    <a href="404-admin.html" aria-label="View Bangalore warehouse">
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+        </article>
+
+
+        <!-- FACILITY 03 -->
+
+        <article class="stackly-storage-warehouse-facility-card">
+
+            <div class="stackly-storage-warehouse-facility-image">
+
+                <img src="warehouse-3.webp"
+                    alt="Hyderabad temperature controlled warehouse">
+
+                <span class="facility-status maintenance">
+                    <i class="fa-solid fa-circle"></i>
+                    Maintenance
+                </span>
+
+                <span class="facility-number">03</span>
+
+            </div>
+
+            <div class="stackly-storage-warehouse-facility-content">
+
+                <div class="facility-location">
+                    <i class="fa-solid fa-location-dot"></i>
+                    Hyderabad, Telangana
+                </div>
+
+                <h3>Climate-Controlled Facility</h3>
+
+                <p>
+                    Specialized storage space with controlled
+                    conditions for sensitive inventory.
+                </p>
+
+                <div class="facility-capacity">
+
+                    <div>
+                        <span>Storage Occupancy</span>
+                        <strong>64%</strong>
+                    </div>
+
+                    <div class="facility-progress">
+                        <span style="width:64%;"></span>
+                    </div>
+
+                </div>
+
+                <div class="facility-footer">
+
+                    <div>
+                        <i class="fa-solid fa-box"></i>
+                        1,420 Units
+                    </div>
+
+                    <a href="404-admin.html" aria-label="View Hyderabad warehouse">
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+        </article>
+
+    </div>
+
+</section>
+
+<!-- =========================================
+     WAREHOUSE STORAGE SOLUTIONS
+========================================== -->
+
+<section class="stackly-storage-warehouse-solutions"
+    data-aos="fade-up">
+
+    <div class="stackly-storage-warehouse-solutions-heading">
+
+        <span>SMART STORAGE INFRASTRUCTURE</span>
+
+        <h2>
+            Every Space Has
+            <span>A Smarter Purpose.</span>
+        </h2>
+
+        <p>
+            Discover specialized storage environments built
+            to support different inventory and operational needs.
+        </p>
+
+    </div>
+
+
+    <div class="stackly-storage-warehouse-solutions-grid">
+
+        <article class="stackly-storage-warehouse-solution-card">
+
+            <img src="storage-racking.webp"
+                alt="Industrial pallet racking storage">
+
+            <div class="solution-overlay"></div>
+
+            <div class="solution-content">
+
+                <span>01 / STORAGE TYPE</span>
+
+                <i class="fa-solid fa-boxes-stacked"></i>
+
+                <h3>General Storage</h3>
+
+                <p>
+                    Organized warehouse spaces for everyday
+                    inventory and bulk storage.
+                </p>
+
+                <a href="404-admin.html">
+                    Explore Facility
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+
+            </div>
+
+        </article>
+
+
+        <article class="stackly-storage-warehouse-solution-card">
+
+            <img src="automated-storage.webp"
+                alt="Automated warehouse storage system">
+
+            <div class="solution-overlay"></div>
+
+            <div class="solution-content">
+
+                <span>02 / STORAGE TYPE</span>
+
+                <i class="fa-solid fa-robot"></i>
+
+                <h3>Automated Storage</h3>
+
+                <p>
+                    Intelligent storage systems that improve
+                    accuracy and operational efficiency.
+                </p>
+
+                <a href="404-admin.html">
+                    Explore Facility
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+
+            </div>
+
+        </article>
+
+
+        <article class="stackly-storage-warehouse-solution-card">
+
+            <img src="climate-storage.webp"
+                alt="Climate controlled warehouse storage">
+
+            <div class="solution-overlay"></div>
+
+            <div class="solution-content">
+
+                <span>03 / STORAGE TYPE</span>
+
+                <i class="fa-solid fa-temperature-low"></i>
+
+                <h3>Climate-Controlled</h3>
+
+                <p>
+                    Temperature-managed environments for
+                    specialized storage requirements.
+                </p>
+
+                <a href="404-admin.html">
+                    Explore Facility
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+
+            </div>
+
+        </article>
+
+    </div>
+
+</section>
+
+<!-- =========================================
+     WAREHOUSE OPERATIONAL HIGHLIGHTS
+========================================== -->
+
+<section class="stackly-storage-warehouse-performance"
+    data-aos="fade-up">
+
+    <div class="stackly-storage-warehouse-performance-content">
+
+        <div class="stackly-storage-warehouse-performance-heading">
+
+            <span>OPERATIONAL EXCELLENCE</span>
+
+            <h2>
+                Smarter Operations.
+                <span>Stronger Performance.</span>
+            </h2>
+
+            <p>
+                Keep track of essential warehouse activities
+                and maintain efficient storage operations
+                across your network.
+            </p>
+
+            <a href="404-admin.html">
+                View Operational Reports
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+        </div>
+
+
+        <div class="stackly-storage-warehouse-performance-list">
+
+            <div class="performance-item">
+
+                <div class="performance-icon">
+                    <i class="fa-solid fa-truck-fast"></i>
+                </div>
+
+                <div>
+                    <h3>Inbound Shipments</h3>
+                    <p>Incoming inventory awaiting warehouse processing.</p>
+                </div>
+
+                <strong>42</strong>
+
+            </div>
+
+
+            <div class="performance-item">
+
+                <div class="performance-icon">
+                    <i class="fa-solid fa-box-open"></i>
+                </div>
+
+                <div>
+                    <h3>Orders Processed</h3>
+                    <p>Successfully processed warehouse orders.</p>
+                </div>
+
+                <strong>186</strong>
+
+            </div>
+
+
+            <div class="performance-item">
+
+                <div class="performance-icon">
+                    <i class="fa-solid fa-dolly"></i>
+                </div>
+
+                <div>
+                    <h3>Pending Dispatch</h3>
+                    <p>Orders prepared and waiting for dispatch.</p>
+                </div>
+
+                <strong>28</strong>
+
+            </div>
+
+
+            <div class="performance-item">
+
+                <div class="performance-icon">
+                    <i class="fa-solid fa-clipboard-check"></i>
+                </div>
+
+                <div>
+                    <h3>Inventory Audits</h3>
+                    <p>Scheduled inventory verification activities.</p>
+                </div>
+
+                <strong>09</strong>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<!-- =========================================
+     WAREHOUSE MANAGEMENT CTA
+========================================== -->
+
+<section class="stackly-storage-warehouse-cta"
+    data-aos="fade-up">
+
+    <div class="stackly-storage-warehouse-cta-content">
+
+        <div class="stackly-storage-warehouse-cta-icon">
+            <i class="fa-solid fa-building-circle-check"></i>
+        </div>
+
+        <div>
+
+            <span>GROW YOUR STORAGE NETWORK</span>
+
+            <h2>Ready to Expand Your Warehouse Operations?</h2>
+
+            <p>
+                Add new facilities, optimize storage capacity,
+                and build a more connected warehouse network.
+            </p>
+
+        </div>
+
+        <a href="404-admin.html">
+            Add New Facility
+            <i class="fa-solid fa-arrow-right"></i>
+        </a>
+
+    </div>
+
+</section>
+
+</div>
+
+    </main>
+
+
+    <!-- =========================================
+         AOS SCRIPT
+    ========================================== -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
+    <!-- DASHBOARD JAVASCRIPT -->
+    <script src="admin.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,1195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Stackly | Client Dashboard</title>
+
+    <meta name="description"
+        content="Manage your storage bookings, shipments, invoices and account details with the Stackly Client Dashboard.">
+
+    <link rel="icon" href="Stackly-logo-Blue.webp">
+
+    <!-- GOOGLE FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <!-- AOS ANIMATION -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+
+    <!-- DASHBOARD CSS -->
+     
+    <link rel="stylesheet" href="client.css">
+
+</head>
+
+<body>
+
+    <!-- =========================================
+         CLIENT DASHBOARD SIDEBAR
+    ========================================== -->
+
+    <aside class="stackly-storage-client-sidebar"
+        id="stacklyStorageClientSidebar">
+
+        <!-- LOGO -->
+        <div class="stackly-storage-client-logo">
+
+            <a href="client.html" aria-label="Stackly Home">
+                <img src="Stackly-logo-Blue.webp"
+                    alt="Stackly Storage Solutions Logo">
+            </a>
+
+            <!-- MOBILE CLOSE BUTTON -->
+            <button class="stackly-storage-client-close"
+                id="stacklyStorageClientClose"
+                type="button"
+                aria-label="Close sidebar">
+
+                <i class="fa-solid fa-xmark"></i>
+
+            </button>
+
+        </div>
+
+
+        <!-- CLIENT PROFILE -->
+        <div class="stackly-storage-client-sidebar-profile">
+
+            <div class="stackly-storage-client-avatar">
+                <i class="fa-solid fa-user"></i>
+            </div>
+
+            <div class="stackly-storage-client-profile-info">
+
+                <h4 id="storageClientSidebarName">Client</h4>
+
+                <span>
+                    <span class="stackly-storage-client-online-dot"></span>
+                    Active Account
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <!-- SIDEBAR NAVIGATION -->
+        <nav class="stackly-storage-client-navigation">
+
+            <span class="stackly-storage-client-nav-label">
+                MAIN MENU
+            </span>
+
+            <a href="client.html"
+                class="stackly-storage-client-nav-link active">
+
+                <i class="fa-solid fa-house"></i>
+                <span>Dashboard</span>
+
+            </a>
+
+            <a href="client-storage.html"
+                class="stackly-storage-client-nav-link">
+
+                <i class="fa-solid fa-warehouse"></i>
+                <span>My Storage</span>
+
+            </a>
+
+            <a href="client-bookings.html"
+                class="stackly-storage-client-nav-link">
+
+                <i class="fa-solid fa-calendar-check"></i>
+                <span>My Bookings</span>
+
+            </a>
+
+            <a href="client-shipments.html"
+                class="stackly-storage-client-nav-link">
+
+                <i class="fa-solid fa-truck-fast"></i>
+                <span>Shipments</span>
+
+                <span class="stackly-storage-client-nav-count">02</span>
+
+            </a>
+
+            <a href="client-invoices.html"
+                class="stackly-storage-client-nav-link">
+
+                <i class="fa-solid fa-file-invoice-dollar"></i>
+                <span>Invoices</span>
+
+            </a>
+
+
+            <span class="stackly-storage-client-nav-label">
+                ACCOUNT
+            </span>
+
+            <a href="client-profile.html"
+                class="stackly-storage-client-nav-link">
+
+                <i class="fa-solid fa-user-gear"></i>
+                <span>My Profile</span>
+
+            </a>
+
+        </nav>
+
+
+        <!-- SIDEBAR BOTTOM -->
+        <div class="stackly-storage-client-sidebar-bottom">
+
+            <div class="stackly-storage-client-help-card">
+
+                <div class="stackly-storage-client-help-icon">
+                    <i class="fa-solid fa-headset"></i>
+                </div>
+
+                <h4>Need Assistance?</h4>
+
+                <p>Our support team is ready to help you.</p>
+
+                <a href="404-client.html">
+                    Contact Support
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+
+            </div>
+
+
+            <a href="index.html"
+                class="stackly-storage-client-logout">
+
+                <i class="fa-solid fa-right-from-bracket"></i>
+                <span>Logout</span>
+
+            </a>
+
+        </div>
+
+    </aside>
+
+
+    <!-- =========================================
+         MOBILE SIDEBAR OVERLAY
+    ========================================== -->
+
+    <div class="stackly-storage-client-overlay"
+        id="stacklyStorageClientOverlay"></div>
+
+
+    <!-- =========================================
+         CLIENT MAIN CONTENT
+    ========================================== -->
+
+    <main class="stackly-storage-client-main">
+
+
+        <!-- =====================================
+             TOPBAR
+        ====================================== -->
+
+        <header class="stackly-storage-client-topbar">
+
+            <div class="stackly-storage-client-topbar-left">
+
+                <!-- MOBILE HAMBURGER -->
+                <button class="stackly-storage-client-menu-toggle"
+                    id="stacklyStorageClientMenuToggle"
+                    type="button"
+                    aria-label="Open navigation menu"
+                    aria-expanded="false">
+
+                    <i class="fa-solid fa-bars"></i>
+
+                </button>
+
+
+                <div class="stackly-storage-client-page-heading">
+
+                    <span>CLIENT PORTAL</span>
+
+                    <h2>Client Dashboard</h2>
+
+                </div>
+
+            </div>
+
+
+            <!-- TOPBAR RIGHT -->
+            <div class="stackly-storage-client-topbar-right">
+
+                <a href="404-client.html"
+                    class="stackly-storage-client-notification"
+                    aria-label="Support">
+
+                    <i class="fa-regular fa-bell"></i>
+
+                    <span></span>
+
+                </a>
+
+
+                <!-- EMAIL DISPLAY -->
+                <div class="stackly-storage-client-email-box">
+
+                    <div class="stackly-storage-client-email-avatar">
+                        <i class="fa-solid fa-user"></i>
+                    </div>
+
+                    <div class="stackly-storage-client-email-info">
+
+                        <span>Logged in as</span>
+
+                        <strong id="storageClientTopbarEmail">
+                            client@stacklystorage.com
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </header>
+
+        <div class="stackly-storage-client-content">
+
+
+<!-- =========================================
+     STACKLY CLIENT BOOKINGS PAGE
+     MY STORAGE BOOKINGS
+========================================== -->
+
+
+<!-- =========================================
+     01. BOOKINGS HERO SECTION
+========================================== -->
+
+<section class="stackly-storage-client-bookings-hero"
+    id="clientBookingsHero"
+    data-aos="fade-up">
+
+    <div class="stackly-storage-client-bookings-hero-content">
+
+        <div class="stackly-storage-client-bookings-hero-text">
+
+            <span class="stackly-storage-client-bookings-tag">
+                <i class="fa-solid fa-calendar-check"></i>
+                BOOKING MANAGEMENT
+            </span>
+
+            <h1>
+                Manage Your
+                <span>Storage Bookings</span>
+                With Ease.
+            </h1>
+
+            <p>
+                Keep track of your storage reservations, monitor booking
+                progress, and manage all your storage arrangements
+                from one convenient place.
+            </p>
+
+            <div class="stackly-storage-client-bookings-hero-actions">
+
+                <a href="404-client.html"
+                    class="stackly-storage-client-bookings-primary-btn">
+                    <i class="fa-solid fa-plus"></i>
+                    Create New Booking
+                </a>
+
+                <a href="404-client.html"
+                    class="stackly-storage-client-bookings-outline-btn">
+                    View Booking History
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+
+            </div>
+
+            <div class="stackly-storage-client-bookings-trust">
+
+                <span>
+                    <i class="fa-solid fa-shield-halved"></i>
+                    Secure Reservations
+                </span>
+
+                <span>
+                    <i class="fa-solid fa-clock"></i>
+                    Easy Management
+                </span>
+
+            </div>
+
+        </div>
+
+        <div class="stackly-storage-client-bookings-hero-visual">
+
+            <div class="stackly-storage-client-bookings-hero-icon">
+                <i class="fa-solid fa-calendar-days"></i>
+            </div>
+
+            <div class="stackly-storage-client-bookings-floating-card">
+
+                <div class="stackly-storage-client-bookings-floating-icon">
+                    <i class="fa-solid fa-circle-check"></i>
+                </div>
+
+                <div>
+                    <strong>Booking Confirmed</strong>
+                    <span>Your storage is reserved</span>
+                </div>
+
+            </div>
+
+            <div class="stackly-storage-client-bookings-hero-decoration"></div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================
+     02. BOOKING OVERVIEW
+========================================== -->
+
+<section class="stackly-storage-client-booking-overview"
+    data-aos="fade-up">
+
+    <div class="stackly-storage-client-booking-section-heading">
+
+        <div>
+            <span>BOOKING SUMMARY</span>
+            <h2>Your Booking Overview</h2>
+            <p>A quick look at all your storage reservations.</p>
+        </div>
+
+        <a href="404-client.html">
+            Booking Assistance
+            <i class="fa-solid fa-arrow-right"></i>
+        </a>
+
+    </div>
+
+
+    <div class="stackly-storage-client-booking-overview-grid">
+
+        <!-- TOTAL BOOKINGS -->
+
+        <div class="stackly-storage-client-booking-stat-card">
+
+            <div class="stackly-storage-client-booking-stat-top">
+
+                <div class="stackly-storage-client-booking-stat-icon total">
+                    <i class="fa-solid fa-calendar-check"></i>
+                </div>
+
+                <span class="stackly-storage-client-booking-stat-label">
+                    All Time
+                </span>
+
+            </div>
+
+            <h3>24</h3>
+
+            <p>Total Bookings</p>
+
+            <span class="stackly-storage-client-booking-stat-note">
+                <i class="fa-solid fa-chart-line"></i>
+                Your booking activity
+            </span>
+
+        </div>
+
+
+        <!-- CONFIRMED BOOKINGS -->
+
+        <div class="stackly-storage-client-booking-stat-card">
+
+            <div class="stackly-storage-client-booking-stat-top">
+
+                <div class="stackly-storage-client-booking-stat-icon confirmed">
+                    <i class="fa-solid fa-circle-check"></i>
+                </div>
+
+                <span class="stackly-storage-client-booking-stat-label">
+                    Active
+                </span>
+
+            </div>
+
+            <h3>12</h3>
+
+            <p>Confirmed Bookings</p>
+
+            <span class="stackly-storage-client-booking-stat-note">
+                <i class="fa-solid fa-check"></i>
+                Successfully reserved
+            </span>
+
+        </div>
+
+
+        <!-- PENDING BOOKINGS -->
+
+        <div class="stackly-storage-client-booking-stat-card">
+
+            <div class="stackly-storage-client-booking-stat-top">
+
+                <div class="stackly-storage-client-booking-stat-icon pending">
+                    <i class="fa-solid fa-hourglass-half"></i>
+                </div>
+
+                <span class="stackly-storage-client-booking-stat-label">
+                    In Review
+                </span>
+
+            </div>
+
+            <h3>03</h3>
+
+            <p>Pending Bookings</p>
+
+            <span class="stackly-storage-client-booking-stat-note">
+                <i class="fa-solid fa-clock"></i>
+                Awaiting confirmation
+            </span>
+
+        </div>
+
+
+        <!-- COMPLETED BOOKINGS -->
+
+        <div class="stackly-storage-client-booking-stat-card">
+
+            <div class="stackly-storage-client-booking-stat-top">
+
+                <div class="stackly-storage-client-booking-stat-icon completed">
+                    <i class="fa-solid fa-box-open"></i>
+                </div>
+
+                <span class="stackly-storage-client-booking-stat-label">
+                    Finished
+                </span>
+
+            </div>
+
+            <h3>09</h3>
+
+            <p>Completed Bookings</p>
+
+            <span class="stackly-storage-client-booking-stat-note">
+                <i class="fa-solid fa-check-double"></i>
+                Successfully completed
+            </span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================
+     03. UPCOMING BOOKINGS
+========================================== -->
+
+<section class="stackly-storage-client-upcoming-bookings"
+    data-aos="fade-up">
+
+    <div class="stackly-storage-client-booking-section-heading">
+
+        <div>
+            <span>YOUR RESERVATIONS</span>
+            <h2>Upcoming Bookings</h2>
+            <p>Stay updated with your scheduled storage reservations.</p>
+        </div>
+
+        <a href="404-client.html">
+            View All
+            <i class="fa-solid fa-arrow-right"></i>
+        </a>
+
+    </div>
+
+
+    <div class="stackly-storage-client-upcoming-bookings-list">
+
+
+        <!-- BOOKING 01 -->
+
+        <div class="stackly-storage-client-upcoming-card">
+
+            <div class="stackly-storage-client-upcoming-image">
+
+                <img src="warehouse-1.webp"
+                    alt="Modern warehouse storage facility">
+
+                <span class="stackly-storage-client-booking-status confirmed">
+                    Confirmed
+                </span>
+
+            </div>
+
+            <div class="stackly-storage-client-upcoming-content">
+
+                <div class="stackly-storage-client-upcoming-heading">
+
+                    <div>
+                        <span>BOOKING ID: #STK-2048</span>
+                        <h3>Premium Warehouse Storage</h3>
+                    </div>
+
+                    <div class="stackly-storage-client-booking-price">
+                        ₹8,500
+                        <small>/ month</small>
+                    </div>
+
+                </div>
+
+                <div class="stackly-storage-client-upcoming-details">
+
+                    <span>
+                        <i class="fa-solid fa-location-dot"></i>
+                        Chennai, Tamil Nadu
+                    </span>
+
+                    <span>
+                        <i class="fa-solid fa-calendar"></i>
+                        18 November 2026
+                    </span>
+
+                    <span>
+                        <i class="fa-solid fa-cubes-stacked"></i>
+                        500 sq. ft.
+                    </span>
+
+                </div>
+
+                <div class="stackly-storage-client-upcoming-footer">
+
+                    <span>
+                        <i class="fa-solid fa-circle-check"></i>
+                        Reservation successfully confirmed
+                    </span>
+
+                    <a href="404-client.html">
+                        View Details
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- BOOKING 02 -->
+
+        <div class="stackly-storage-client-upcoming-card">
+
+            <div class="stackly-storage-client-upcoming-image">
+
+                <img src="warehouse-2.webp"
+                    alt="Secure climate controlled storage facility">
+
+                <span class="stackly-storage-client-booking-status pending">
+                    Pending
+                </span>
+
+            </div>
+
+            <div class="stackly-storage-client-upcoming-content">
+
+                <div class="stackly-storage-client-upcoming-heading">
+
+                    <div>
+                        <span>BOOKING ID: #STK-2052</span>
+                        <h3>Climate Controlled Storage</h3>
+                    </div>
+
+                    <div class="stackly-storage-client-booking-price">
+                        ₹6,200
+                        <small>/ month</small>
+                    </div>
+
+                </div>
+
+                <div class="stackly-storage-client-upcoming-details">
+
+                    <span>
+                        <i class="fa-solid fa-location-dot"></i>
+                        Coimbatore, Tamil Nadu
+                    </span>
+
+                    <span>
+                        <i class="fa-solid fa-calendar"></i>
+                        22 November 2026
+                    </span>
+
+                    <span>
+                        <i class="fa-solid fa-cubes-stacked"></i>
+                        300 sq. ft.
+                    </span>
+
+                </div>
+
+                <div class="stackly-storage-client-upcoming-footer">
+
+                    <span class="pending-text">
+                        <i class="fa-solid fa-clock"></i>
+                        Waiting for booking approval
+                    </span>
+
+                    <a href="404-client.html">
+                        View Details
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- BOOKING 03 -->
+
+        <div class="stackly-storage-client-upcoming-card">
+
+            <div class="stackly-storage-client-upcoming-image">
+
+                <img src="warehouse-3.webp"
+                    alt="Organized commercial storage facility">
+
+                <span class="stackly-storage-client-booking-status confirmed">
+                    Confirmed
+                </span>
+
+            </div>
+
+            <div class="stackly-storage-client-upcoming-content">
+
+                <div class="stackly-storage-client-upcoming-heading">
+
+                    <div>
+                        <span>BOOKING ID: #STK-2058</span>
+                        <h3>Commercial Goods Storage</h3>
+                    </div>
+
+                    <div class="stackly-storage-client-booking-price">
+                        ₹12,000
+                        <small>/ month</small>
+                    </div>
+
+                </div>
+
+                <div class="stackly-storage-client-upcoming-details">
+
+                    <span>
+                        <i class="fa-solid fa-location-dot"></i>
+                        Bengaluru, Karnataka
+                    </span>
+
+                    <span>
+                        <i class="fa-solid fa-calendar"></i>
+                        28 November 2026
+                    </span>
+
+                    <span>
+                        <i class="fa-solid fa-cubes-stacked"></i>
+                        800 sq. ft.
+                    </span>
+
+                </div>
+
+                <div class="stackly-storage-client-upcoming-footer">
+
+                    <span>
+                        <i class="fa-solid fa-circle-check"></i>
+                        Reservation successfully confirmed
+                    </span>
+
+                    <a href="404-client.html">
+                        View Details
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================
+     04. BOOKING PROGRESS TRACKER
+========================================== -->
+
+<section class="stackly-storage-client-booking-progress"
+    data-aos="fade-up">
+
+    <div class="stackly-storage-client-booking-section-heading">
+
+        <div>
+            <span>RESERVATION TRACKER</span>
+            <h2>Booking Progress</h2>
+            <p>Follow the progress of your latest storage reservation.</p>
+        </div>
+
+    </div>
+
+
+    <div class="stackly-storage-client-progress-panel">
+
+        <div class="stackly-storage-client-progress-header">
+
+            <div>
+                <span>BOOKING REFERENCE</span>
+                <h3>#STK-2048</h3>
+            </div>
+
+            <span class="stackly-storage-client-booking-status confirmed">
+                Confirmed
+            </span>
+
+        </div>
+
+
+        <div class="stackly-storage-client-progress-timeline">
+
+            <!-- STEP 01 -->
+
+            <div class="stackly-storage-client-progress-step completed">
+
+                <div class="stackly-storage-client-progress-circle">
+                    <i class="fa-solid fa-check"></i>
+                </div>
+
+                <div class="stackly-storage-client-progress-info">
+
+                    <h4>Booking Requested</h4>
+
+                    <p>Your storage reservation request was submitted.</p>
+
+                    <span>12 November 2026</span>
+
+                </div>
+
+            </div>
+
+
+            <!-- STEP 02 -->
+
+            <div class="stackly-storage-client-progress-step completed">
+
+                <div class="stackly-storage-client-progress-circle">
+                    <i class="fa-solid fa-check"></i>
+                </div>
+
+                <div class="stackly-storage-client-progress-info">
+
+                    <h4>Booking Approved</h4>
+
+                    <p>Your reservation has been reviewed and approved.</p>
+
+                    <span>13 November 2026</span>
+
+                </div>
+
+            </div>
+
+
+            <!-- STEP 03 -->
+
+            <div class="stackly-storage-client-progress-step active">
+
+                <div class="stackly-storage-client-progress-circle">
+                    <i class="fa-solid fa-warehouse"></i>
+                </div>
+
+                <div class="stackly-storage-client-progress-info">
+
+                    <h4>Storage Preparation</h4>
+
+                    <p>Your allocated storage space is being prepared.</p>
+
+                    <span>Currently In Progress</span>
+
+                </div>
+
+            </div>
+
+
+            <!-- STEP 04 -->
+
+            <div class="stackly-storage-client-progress-step">
+
+                <div class="stackly-storage-client-progress-circle">
+                    <i class="fa-solid fa-box"></i>
+                </div>
+
+                <div class="stackly-storage-client-progress-info">
+
+                    <h4>Storage Access Ready</h4>
+
+                    <p>Your storage space will be ready for use.</p>
+
+                    <span>Upcoming</span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================
+     05. BOOKING HISTORY
+========================================== -->
+
+<section class="stackly-storage-client-booking-history"
+    id="clientBookingHistory"
+    data-aos="fade-up">
+
+    <div class="stackly-storage-client-booking-section-heading">
+
+        <div>
+            <span>PAST RESERVATIONS</span>
+            <h2>Booking History</h2>
+            <p>Review your previous storage reservations.</p>
+        </div>
+
+        <a href="404-client.html">
+            Download History
+            <i class="fa-solid fa-download"></i>
+        </a>
+
+    </div>
+
+
+    <div class="stackly-storage-client-history-table-wrapper">
+
+        <table class="stackly-storage-client-history-table">
+
+            <thead>
+
+                <tr>
+                    <th>Booking ID</th>
+                    <th>Storage Type</th>
+                    <th>Booking Date</th>
+                    <th>Duration</th>
+                    <th>Amount</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                </tr>
+
+            </thead>
+
+            <tbody>
+
+                <tr>
+
+                    <td>
+                        <strong>#STK-1985</strong>
+                    </td>
+
+                    <td>Standard Storage</td>
+
+                    <td>05 Oct 2026</td>
+
+                    <td>1 Month</td>
+
+                    <td>₹5,000</td>
+
+                    <td>
+                        <span class="stackly-storage-client-history-status completed">
+                            Completed
+                        </span>
+                    </td>
+
+                    <td>
+                        <a href="404-client.html"
+                            aria-label="View booking">
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        </a>
+                    </td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>
+                        <strong>#STK-1942</strong>
+                    </td>
+
+                    <td>Commercial Storage</td>
+
+                    <td>18 Sep 2026</td>
+
+                    <td>2 Months</td>
+
+                    <td>₹16,000</td>
+
+                    <td>
+                        <span class="stackly-storage-client-history-status completed">
+                            Completed
+                        </span>
+                    </td>
+
+                    <td>
+                        <a href="404-client.html"
+                            aria-label="View booking">
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        </a>
+                    </td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>
+                        <strong>#STK-1896</strong>
+                    </td>
+
+                    <td>Climate Storage</td>
+
+                    <td>02 Aug 2026</td>
+
+                    <td>1 Month</td>
+
+                    <td>₹6,500</td>
+
+                    <td>
+                        <span class="stackly-storage-client-history-status cancelled">
+                            Cancelled
+                        </span>
+                    </td>
+
+                    <td>
+                        <a href="404-client.html"
+                            aria-label="View booking">
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        </a>
+                    </td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>
+                        <strong>#STK-1840</strong>
+                    </td>
+
+                    <td>Premium Warehouse</td>
+
+                    <td>15 Jul 2026</td>
+
+                    <td>3 Months</td>
+
+                    <td>₹25,500</td>
+
+                    <td>
+                        <span class="stackly-storage-client-history-status completed">
+                            Completed
+                        </span>
+                    </td>
+
+                    <td>
+                        <a href="404-client.html"
+                            aria-label="View booking">
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        </a>
+                    </td>
+
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================
+     06. BOOKING BENEFITS
+========================================== -->
+
+<section class="stackly-storage-client-booking-benefits"
+    data-aos="fade-up">
+
+    <div class="stackly-storage-client-booking-section-heading">
+
+        <div>
+            <span>WHY BOOK WITH US</span>
+            <h2>A Better Storage Experience</h2>
+            <p>Enjoy convenient storage management with reliable support.</p>
+        </div>
+
+    </div>
+
+
+    <div class="stackly-storage-client-benefits-grid">
+
+
+        <div class="stackly-storage-client-benefit-card">
+
+            <div class="stackly-storage-client-benefit-icon">
+                <i class="fa-solid fa-shield-halved"></i>
+            </div>
+
+            <h3>Secure Reservations</h3>
+
+            <p>
+                Your storage reservations are managed with
+                reliable processes and secure facilities.
+            </p>
+
+        </div>
+
+
+        <div class="stackly-storage-client-benefit-card">
+
+            <div class="stackly-storage-client-benefit-icon">
+                <i class="fa-solid fa-calendar-days"></i>
+            </div>
+
+            <h3>Flexible Scheduling</h3>
+
+            <p>
+                Keep track of reservation dates and manage
+                your storage schedule conveniently.
+            </p>
+
+        </div>
+
+
+        <div class="stackly-storage-client-benefit-card">
+
+            <div class="stackly-storage-client-benefit-icon">
+                <i class="fa-solid fa-file-circle-check"></i>
+            </div>
+
+            <h3>Clear Booking Details</h3>
+
+            <p>
+                Access your reservation information,
+                payment details, and booking status easily.
+            </p>
+
+        </div>
+
+
+        <div class="stackly-storage-client-benefit-card">
+
+            <div class="stackly-storage-client-benefit-icon">
+                <i class="fa-solid fa-headset"></i>
+            </div>
+
+            <h3>Dedicated Assistance</h3>
+
+            <p>
+                Get the help you need from our team
+                whenever you have booking questions.
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- =========================================
+     07. BOOKING SUPPORT CTA
+========================================== -->
+
+<section class="stackly-storage-client-booking-support"
+    data-aos="fade-up">
+
+    <div class="stackly-storage-client-booking-support-content">
+
+        <div class="stackly-storage-client-booking-support-icon">
+            <i class="fa-solid fa-headset"></i>
+        </div>
+
+        <div class="stackly-storage-client-booking-support-text">
+
+            <span>WE ARE HERE TO HELP</span>
+
+            <h2>Need Help With Your Booking?</h2>
+
+            <p>
+                Have questions about your reservation, booking status,
+                or storage availability? Our support team is ready
+                to assist you.
+            </p>
+
+        </div>
+
+        <a href="404-client.html"
+            class="stackly-storage-client-booking-support-btn">
+
+            Contact Support
+            <i class="fa-solid fa-arrow-right"></i>
+
+        </a>
+
+    </div>
+
+</section>
+
+
+        </div>
+
+
+</main>
+
+
+    <!-- =========================================
+         AOS SCRIPT
+    ========================================== -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
+
+    <!-- =========================================
+         CLIENT DASHBOARD JAVASCRIPT
+    ========================================== -->
+
+    <script src="client.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,1095 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Stackly | Client Dashboard</title>
+
+    <meta name="description"
+        content="Manage your storage bookings, shipments, invoices and account details with the Stackly Client Dashboard.">
+
+    <link rel="icon" href="Stackly-logo-Blue.webp">
+
+    <!-- GOOGLE FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <!-- AOS ANIMATION -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+
+    <!-- DASHBOARD CSS -->
+     
+    <link rel="stylesheet" href="client.css">
+
+</head>
+
+<body>
+
+    <!-- =========================================
+         CLIENT DASHBOARD SIDEBAR
+    ========================================== -->
+
+    <aside class="stackly-storage-client-sidebar"
+        id="stacklyStorageClientSidebar">
+
+        <!-- LOGO -->
+        <div class="stackly-storage-client-logo">
+
+            <a href="client.html" aria-label="Stackly Home">
+                <img src="Stackly-logo-Blue.webp"
+                    alt="Stackly Storage Solutions Logo">
+            </a>
+
+            <!-- MOBILE CLOSE BUTTON -->
+            <button class="stackly-storage-client-close"
+                id="stacklyStorageClientClose"
+                type="button"
+                aria-label="Close sidebar">
+
+                <i class="fa-solid fa-xmark"></i>
+
+            </button>
+
+        </div>
+
+
+        <!-- CLIENT PROFILE -->
+        <div class="stackly-storage-client-sidebar-profile">
+
+            <div class="stackly-storage-client-avatar">
+                <i class="fa-solid fa-user"></i>
+            </div>
+
+            <div class="stackly-storage-client-profile-info">
+
+                <h4 id="storageClientSidebarName">Client</h4>
+
+                <span>
+                    <span class="stackly-storage-client-online-dot"></span>
+                    Active Account
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <!-- SIDEBAR NAVIGATION -->
+        <nav class="stackly-storage-client-navigation">
+
+            <span class="stackly-storage-client-nav-label">
+                MAIN MENU
+            </span>
+
+            <a href="client.html"
+                class="stackly-storage-client-nav-link active">
+
+                <i class="fa-solid fa-house"></i>
+                <span>Dashboard</span>
+
+            </a>
+
+            <a href="client-storage.html"
+                class="stackly-storage-client-nav-link">
+
+                <i class="fa-solid fa-warehouse"></i>
+                <span>My Storage</span>
+
+            </a>
+
+            <a href="client-bookings.html"
+                class="stackly-storage-client-nav-link">
+
+                <i class="fa-solid fa-calendar-check"></i>
+                <span>My Bookings</span>
+
+            </a>
+
+            <a href="client-shipments.html"
+                class="stackly-storage-client-nav-link">
+
+                <i class="fa-solid fa-truck-fast"></i>
+                <span>Shipments</span>
+
+                <span class="stackly-storage-client-nav-count">02</span>
+
+            </a>
+
+            <a href="client-invoices.html"
+                class="stackly-storage-client-nav-link">
+
+                <i class="fa-solid fa-file-invoice-dollar"></i>
+                <span>Invoices</span>
+
+            </a>
+
+
+            <span class="stackly-storage-client-nav-label">
+                ACCOUNT
+            </span>
+
+            <a href="client-profile.html"
+                class="stackly-storage-client-nav-link">
+
+                <i class="fa-solid fa-user-gear"></i>
+                <span>My Profile</span>
+
+            </a>
+
+        </nav>
+
+
+        <!-- SIDEBAR BOTTOM -->
+        <div class="stackly-storage-client-sidebar-bottom">
+
+            <div class="stackly-storage-client-help-card">
+
+                <div class="stackly-storage-client-help-icon">
+                    <i class="fa-solid fa-headset"></i>
+                </div>
+
+                <h4>Need Assistance?</h4>
+
+                <p>Our support team is ready to help you.</p>
+
+                <a href="404-client.html">
+                    Contact Support
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+
+            </div>
+
+
+            <a href="index.html"
+                class="stackly-storage-client-logout">
+
+                <i class="fa-solid fa-right-from-bracket"></i>
+                <span>Logout</span>
+
+            </a>
+
+        </div>
+
+    </aside>
+
+
+    <!-- =========================================
+         MOBILE SIDEBAR OVERLAY
+    ========================================== -->
+
+    <div class="stackly-storage-client-overlay"
+        id="stacklyStorageClientOverlay"></div>
+
+
+    <!-- =========================================
+         CLIENT MAIN CONTENT
+    ========================================== -->
+
+    <main class="stackly-storage-client-main">
+
+
+        <!-- =====================================
+             TOPBAR
+        ====================================== -->
+
+        <header class="stackly-storage-client-topbar">
+
+            <div class="stackly-storage-client-topbar-left">
+
+                <!-- MOBILE HAMBURGER -->
+                <button class="stackly-storage-client-menu-toggle"
+                    id="stacklyStorageClientMenuToggle"
+                    type="button"
+                    aria-label="Open navigation menu"
+                    aria-expanded="false">
+
+                    <i class="fa-solid fa-bars"></i>
+
+                </button>
+
+
+                <div class="stackly-storage-client-page-heading">
+
+                    <span>CLIENT PORTAL</span>
+
+                    <h2>Client Dashboard</h2>
+
+                </div>
+
+            </div>
+
+
+            <!-- TOPBAR RIGHT -->
+            <div class="stackly-storage-client-topbar-right">
+
+                <a href="404-client.html"
+                    class="stackly-storage-client-notification"
+                    aria-label="Support">
+
+                    <i class="fa-regular fa-bell"></i>
+
+                    <span></span>
+
+                </a>
+
+
+                <!-- EMAIL DISPLAY -->
+                <div class="stackly-storage-client-email-box">
+
+                    <div class="stackly-storage-client-email-avatar">
+                        <i class="fa-solid fa-user"></i>
+                    </div>
+
+                    <div class="stackly-storage-client-email-info">
+
+                        <span>Logged in as</span>
+
+                        <strong id="storageClientTopbarEmail">
+                            client@stacklystorage.com
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </header>
+
+        <div class="stackly-storage-client-content">
+
+            
+<!-- =========================================
+     STACKLY CLIENT INVOICES PAGE
+     COMPLETE HTML SECTIONS
+========================================== -->
+
+
+<!-- =========================================
+     01. INVOICE HERO SECTION
+========================================== -->
+
+<section class="stackly-storage-client-invoice-hero"
+    id="clientInvoiceHero">
+
+    <div class="stackly-storage-client-invoice-hero-content"
+        data-aos="fade-up">
+
+        <div class="stackly-storage-client-invoice-hero-text">
+
+            <span class="stackly-storage-client-invoice-tag">
+                <i class="fa-solid fa-file-invoice-dollar"></i>
+                BILLING CENTER
+            </span>
+
+            <h1>
+                Your Payments,
+                <span>Simply Organized.</span>
+            </h1>
+
+            <p>
+                View your invoices, track payment status, download
+                billing documents and manage your storage payments
+                from one convenient place.
+            </p>
+
+            <div class="stackly-storage-client-invoice-hero-actions">
+
+                <a href="404-client.html"
+                    class="stackly-storage-client-invoice-primary-btn">
+                    <i class="fa-solid fa-file-lines"></i>
+                    View All Invoices
+                </a>
+
+                <a href="404-client.html"
+                    class="stackly-storage-client-invoice-outline-btn">
+                    Explore Billing
+                    <i class="fa-solid fa-arrow-down"></i>
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="stackly-storage-client-invoice-hero-visual">
+
+            <div class="stackly-storage-client-invoice-visual-circle">
+
+                <i class="fa-solid fa-file-invoice-dollar"></i>
+
+            </div>
+
+            <div class="stackly-storage-client-invoice-floating-card">
+
+                <div class="stackly-storage-client-invoice-floating-icon">
+                    <i class="fa-solid fa-circle-check"></i>
+                </div>
+
+                <div>
+                    <strong>Payments Made Easy</strong>
+                    <span>Secure billing management</span>
+                </div>
+
+            </div>
+
+            <div class="stackly-storage-client-invoice-hero-decoration decoration-one"></div>
+            <div class="stackly-storage-client-invoice-hero-decoration decoration-two"></div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================
+     02. INVOICE FINANCIAL OVERVIEW
+========================================== -->
+
+<section class="stackly-storage-client-invoice-overview"
+    id="invoiceSummary"
+    data-aos="fade-up">
+
+    <div class="stackly-storage-client-invoice-section-heading">
+
+        <div>
+            <span>BILLING AT A GLANCE</span>
+            <h2>Your Financial Overview</h2>
+            <p>Keep track of your invoices and payment activity.</p>
+        </div>
+
+        <div class="stackly-storage-client-invoice-period">
+            <i class="fa-regular fa-calendar"></i>
+            November 2026
+        </div>
+
+    </div>
+
+
+    <div class="stackly-storage-client-invoice-overview-grid">
+
+
+        <!-- TOTAL PAID -->
+
+        <div class="stackly-storage-client-invoice-stat-card paid">
+
+            <div class="stackly-storage-client-invoice-stat-top">
+
+                <div class="stackly-storage-client-invoice-stat-icon">
+                    <i class="fa-solid fa-wallet"></i>
+                </div>
+
+                <span class="stackly-storage-client-invoice-stat-trend">
+                    <i class="fa-solid fa-arrow-trend-up"></i>
+                    +8.5%
+                </span>
+
+            </div>
+
+            <span class="stackly-storage-client-invoice-stat-label">
+                Total Amount Paid
+            </span>
+
+            <h3>₹48,500</h3>
+
+            <p>
+                <i class="fa-solid fa-circle-check"></i>
+                Successfully completed payments
+            </p>
+
+        </div>
+
+
+        <!-- PENDING AMOUNT -->
+
+        <div class="stackly-storage-client-invoice-stat-card pending">
+
+            <div class="stackly-storage-client-invoice-stat-top">
+
+                <div class="stackly-storage-client-invoice-stat-icon">
+                    <i class="fa-solid fa-clock"></i>
+                </div>
+
+                <span class="stackly-storage-client-invoice-stat-badge">
+                    Attention
+                </span>
+
+            </div>
+
+            <span class="stackly-storage-client-invoice-stat-label">
+                Pending Amount
+            </span>
+
+            <h3>₹8,500</h3>
+
+            <p>
+                <i class="fa-solid fa-hourglass-half"></i>
+                Awaiting payment confirmation
+            </p>
+
+        </div>
+
+
+        <!-- TOTAL INVOICES -->
+
+        <div class="stackly-storage-client-invoice-stat-card total">
+
+            <div class="stackly-storage-client-invoice-stat-top">
+
+                <div class="stackly-storage-client-invoice-stat-icon">
+                    <i class="fa-solid fa-file-invoice"></i>
+                </div>
+
+                <span class="stackly-storage-client-invoice-stat-trend">
+                    This month
+                </span>
+
+            </div>
+
+            <span class="stackly-storage-client-invoice-stat-label">
+                Total Invoices
+            </span>
+
+            <h3>12</h3>
+
+            <p>
+                <i class="fa-solid fa-folder-open"></i>
+                Across all storage services
+            </p>
+
+        </div>
+
+
+        <!-- OVERDUE INVOICES -->
+
+        <div class="stackly-storage-client-invoice-stat-card overdue">
+
+            <div class="stackly-storage-client-invoice-stat-top">
+
+                <div class="stackly-storage-client-invoice-stat-icon">
+                    <i class="fa-solid fa-triangle-exclamation"></i>
+                </div>
+
+                <span class="stackly-storage-client-invoice-stat-badge">
+                    Review
+                </span>
+
+            </div>
+
+            <span class="stackly-storage-client-invoice-stat-label">
+                Overdue Invoices
+            </span>
+
+            <h3>01</h3>
+
+            <p>
+                <i class="fa-solid fa-calendar-xmark"></i>
+                Requires your attention
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================
+     03. FEATURED OUTSTANDING INVOICE
+========================================== -->
+
+<section class="stackly-storage-client-featured-invoice"
+    data-aos="fade-up">
+
+    <div class="stackly-storage-client-featured-invoice-header">
+
+        <div>
+            <span>PAYMENT REMINDER</span>
+            <h2>Outstanding Invoice</h2>
+            <p>Review your latest invoice and complete the payment.</p>
+        </div>
+
+        <span class="stackly-storage-client-featured-status">
+            <i class="fa-solid fa-circle"></i>
+            Payment Pending
+        </span>
+
+    </div>
+
+
+    <div class="stackly-storage-client-featured-invoice-card">
+
+        <div class="stackly-storage-client-featured-invoice-main">
+
+            <div class="stackly-storage-client-featured-invoice-brand">
+
+                <div class="stackly-storage-client-featured-invoice-logo">
+                    <i class="fa-solid fa-warehouse"></i>
+                </div>
+
+                <div>
+                    <h3>STACKLY</h3>
+                    <span>SMART STORAGE SOLUTIONS</span>
+                </div>
+
+            </div>
+
+
+            <div class="stackly-storage-client-featured-invoice-number">
+
+                <span>INVOICE NUMBER</span>
+                <h3>INV-2026-0085</h3>
+
+            </div>
+
+
+            <div class="stackly-storage-client-featured-invoice-details">
+
+                <div>
+                    <span>Invoice Date</span>
+                    <strong>05 Nov 2026</strong>
+                </div>
+
+                <div>
+                    <span>Due Date</span>
+                    <strong>15 Nov 2026</strong>
+                </div>
+
+                <div>
+                    <span>Service</span>
+                    <strong>Warehouse Storage</strong>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="stackly-storage-client-featured-invoice-total">
+
+            <span>TOTAL AMOUNT DUE</span>
+
+            <h2>₹8,500</h2>
+
+            <p>
+                <i class="fa-solid fa-shield-halved"></i>
+                Secure payment processing
+            </p>
+
+            <a href="404-client.html"
+                class="stackly-storage-client-featured-pay-btn">
+                Pay Invoice Now
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+            <a href="404-client.html"
+                class="stackly-storage-client-featured-download">
+                <i class="fa-solid fa-download"></i>
+                Download Invoice
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================
+     04. INVOICE HISTORY
+========================================== -->
+
+<section class="stackly-storage-client-invoice-history"
+    id="invoiceHistory"
+    data-aos="fade-up">
+
+    <div class="stackly-storage-client-invoice-section-heading">
+
+        <div>
+            <span>YOUR BILLING RECORDS</span>
+            <h2>Recent Invoice History</h2>
+            <p>Access your previous invoices and payment details.</p>
+        </div>
+
+        <a href="404-client.html"
+            class="stackly-storage-client-invoice-view-all">
+            View All Records
+            <i class="fa-solid fa-arrow-right"></i>
+        </a>
+
+    </div>
+
+
+    <!-- INVOICE FILTERS -->
+
+    <div class="stackly-storage-client-invoice-filters">
+
+         
+
+         
+
+    </div>
+
+
+    <!-- INVOICE TABLE -->
+
+    <div class="stackly-storage-client-invoice-table-wrapper">
+
+        <table class="stackly-storage-client-invoice-table">
+
+            <thead>
+
+                <tr>
+                    <th>Invoice Details</th>
+                    <th>Issue Date</th>
+                    <th>Due Date</th>
+                    <th>Amount</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                </tr>
+
+            </thead>
+
+
+            <tbody id="clientInvoiceTableBody">
+
+
+                <!-- INVOICE 1 -->
+
+                <tr data-status="pending" data-year="2026">
+
+                    <td>
+                        <div class="stackly-storage-client-invoice-table-info">
+
+                            <div class="stackly-storage-client-invoice-table-icon">
+                                <i class="fa-solid fa-file-invoice"></i>
+                            </div>
+
+                            <div>
+                                <strong>INV-2026-0085</strong>
+                                <span>Warehouse Storage</span>
+                            </div>
+
+                        </div>
+                    </td>
+
+                    <td>05 Nov 2026</td>
+
+                    <td>15 Nov 2026</td>
+
+                    <td class="stackly-storage-client-invoice-amount">
+                        ₹8,500
+                    </td>
+
+                    <td>
+                        <span class="stackly-storage-client-invoice-status pending">
+                            <i class="fa-solid fa-circle"></i>
+                            Pending
+                        </span>
+                    </td>
+
+                    <td>
+                        <a href="404-client.html"
+                            class="stackly-storage-client-invoice-action"
+                            aria-label="View invoice INV-2026-0085">
+                            <i class="fa-solid fa-eye"></i>
+                        </a>
+
+                        <a href="404-client.html"
+                            class="stackly-storage-client-invoice-action"
+                            aria-label="Download invoice INV-2026-0085">
+                            <i class="fa-solid fa-download"></i>
+                        </a>
+                    </td>
+
+                </tr>
+
+
+                <!-- INVOICE 2 -->
+
+                <tr data-status="paid" data-year="2026">
+
+                    <td>
+                        <div class="stackly-storage-client-invoice-table-info">
+
+                            <div class="stackly-storage-client-invoice-table-icon">
+                                <i class="fa-solid fa-file-invoice"></i>
+                            </div>
+
+                            <div>
+                                <strong>INV-2026-0078</strong>
+                                <span>Monthly Storage Plan</span>
+                            </div>
+
+                        </div>
+                    </td>
+
+                    <td>20 Oct 2026</td>
+
+                    <td>30 Oct 2026</td>
+
+                    <td class="stackly-storage-client-invoice-amount">
+                        ₹12,000
+                    </td>
+
+                    <td>
+                        <span class="stackly-storage-client-invoice-status paid">
+                            <i class="fa-solid fa-circle-check"></i>
+                            Paid
+                        </span>
+                    </td>
+
+                    <td>
+                        <a href="404-client.html"
+                            class="stackly-storage-client-invoice-action"
+                            aria-label="View invoice INV-2026-0078">
+                            <i class="fa-solid fa-eye"></i>
+                        </a>
+
+                        <a href="404-client.html"
+                            class="stackly-storage-client-invoice-action"
+                            aria-label="Download invoice INV-2026-0078">
+                            <i class="fa-solid fa-download"></i>
+                        </a>
+                    </td>
+
+                </tr>
+
+
+                <!-- INVOICE 3 -->
+
+                <tr data-status="overdue" data-year="2026">
+
+                    <td>
+                        <div class="stackly-storage-client-invoice-table-info">
+
+                            <div class="stackly-storage-client-invoice-table-icon">
+                                <i class="fa-solid fa-file-invoice"></i>
+                            </div>
+
+                            <div>
+                                <strong>INV-2026-0062</strong>
+                                <span>Shipment Handling</span>
+                            </div>
+
+                        </div>
+                    </td>
+
+                    <td>05 Oct 2026</td>
+
+                    <td>15 Oct 2026</td>
+
+                    <td class="stackly-storage-client-invoice-amount">
+                        ₹4,500
+                    </td>
+
+                    <td>
+                        <span class="stackly-storage-client-invoice-status overdue">
+                            <i class="fa-solid fa-circle-exclamation"></i>
+                            Overdue
+                        </span>
+                    </td>
+
+                    <td>
+                        <a href="404-client.html"
+                            class="stackly-storage-client-invoice-action"
+                            aria-label="View invoice INV-2026-0062">
+                            <i class="fa-solid fa-eye"></i>
+                        </a>
+
+                        <a href="404-client.html"
+                            class="stackly-storage-client-invoice-action"
+                            aria-label="Download invoice INV-2026-0062">
+                            <i class="fa-solid fa-download"></i>
+                        </a>
+                    </td>
+
+                </tr>
+
+
+                <!-- INVOICE 4 -->
+
+                <tr data-status="paid" data-year="2026">
+
+                    <td>
+                        <div class="stackly-storage-client-invoice-table-info">
+
+                            <div class="stackly-storage-client-invoice-table-icon">
+                                <i class="fa-solid fa-file-invoice"></i>
+                            </div>
+
+                            <div>
+                                <strong>INV-2026-0049</strong>
+                                <span>Storage Extension</span>
+                            </div>
+
+                        </div>
+                    </td>
+
+                    <td>18 Sep 2026</td>
+
+                    <td>28 Sep 2026</td>
+
+                    <td class="stackly-storage-client-invoice-amount">
+                        ₹9,500
+                    </td>
+
+                    <td>
+                        <span class="stackly-storage-client-invoice-status paid">
+                            <i class="fa-solid fa-circle-check"></i>
+                            Paid
+                        </span>
+                    </td>
+
+                    <td>
+                        <a href="404-client.html"
+                            class="stackly-storage-client-invoice-action"
+                            aria-label="View invoice INV-2026-0049">
+                            <i class="fa-solid fa-eye"></i>
+                        </a>
+
+                        <a href="404-client.html"
+                            class="stackly-storage-client-invoice-action"
+                            aria-label="Download invoice INV-2026-0049">
+                            <i class="fa-solid fa-download"></i>
+                        </a>
+                    </td>
+
+                </tr>
+
+
+            </tbody>
+
+        </table>
+
+        <p class="stackly-storage-client-invoice-empty"
+            id="clientInvoiceEmpty"
+            hidden>
+            <i class="fa-solid fa-folder-open"></i>
+            No invoices match your search.
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================
+     05. PAYMENT METHODS
+========================================== -->
+
+<section class="stackly-storage-client-payment-methods"
+    data-aos="fade-up">
+
+    <div class="stackly-storage-client-invoice-section-heading">
+
+        <div>
+            <span>PAYMENT PREFERENCES</span>
+            <h2>Payment Methods</h2>
+            <p>Manage your preferred payment options securely.</p>
+        </div>
+
+        <a href="404-client.html"
+            class="stackly-storage-client-payment-add-btn">
+            <i class="fa-solid fa-plus"></i>
+            Add Payment Method
+        </a>
+
+    </div>
+
+
+    <div class="stackly-storage-client-payment-grid">
+
+
+        <!-- UPI -->
+
+        <div class="stackly-storage-client-payment-card">
+
+            <div class="stackly-storage-client-payment-card-top">
+
+                <div class="stackly-storage-client-payment-icon upi">
+                    <i class="fa-solid fa-mobile-screen-button"></i>
+                </div>
+
+                <span class="stackly-storage-client-payment-default">
+                    Default
+                </span>
+
+            </div>
+
+            <h3>UPI Payment</h3>
+
+            <p>client@upi</p>
+
+            <div class="stackly-storage-client-payment-footer">
+
+                <span>
+                    <i class="fa-solid fa-shield-halved"></i>
+                    Secure Payment
+                </span>
+
+                <a href="404-client.html"
+                    aria-label="Manage UPI payment">
+                    <i class="fa-solid fa-ellipsis"></i>
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- BANK TRANSFER -->
+
+        <div class="stackly-storage-client-payment-card">
+
+            <div class="stackly-storage-client-payment-card-top">
+
+                <div class="stackly-storage-client-payment-icon bank">
+                    <i class="fa-solid fa-building-columns"></i>
+                </div>
+
+                <span class="stackly-storage-client-payment-available">
+                    Available
+                </span>
+
+            </div>
+
+            <h3>Bank Transfer</h3>
+
+            <p>Direct account payment</p>
+
+            <div class="stackly-storage-client-payment-footer">
+
+                <span>
+                    <i class="fa-solid fa-lock"></i>
+                    Verified Transfer
+                </span>
+
+                <a href="404-client.html"
+                    aria-label="Manage bank transfer">
+                    <i class="fa-solid fa-ellipsis"></i>
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <!-- CARD PAYMENT -->
+
+        <div class="stackly-storage-client-payment-card">
+
+            <div class="stackly-storage-client-payment-card-top">
+
+                <div class="stackly-storage-client-payment-icon card">
+                    <i class="fa-regular fa-credit-card"></i>
+                </div>
+
+                <span class="stackly-storage-client-payment-available">
+                    Available
+                </span>
+
+            </div>
+
+            <h3>Card Payment</h3>
+
+            <p>Credit / Debit Card</p>
+
+            <div class="stackly-storage-client-payment-footer">
+
+                <span>
+                    <i class="fa-solid fa-shield-halved"></i>
+                    Encrypted Payment
+                </span>
+
+                <a href="404-client.html"
+                    aria-label="Manage card payment">
+                    <i class="fa-solid fa-ellipsis"></i>
+                </a>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================
+     06. BILLING SUPPORT CTA
+========================================== -->
+
+<section class="stackly-storage-client-invoice-support"
+    data-aos="fade-up">
+
+    <div class="stackly-storage-client-invoice-support-content">
+
+        <div class="stackly-storage-client-invoice-support-icon">
+            <i class="fa-solid fa-headset"></i>
+        </div>
+
+        <div class="stackly-storage-client-invoice-support-text">
+
+            <span>HERE TO HELP</span>
+
+            <h2>Need Help With Your Billing?</h2>
+
+            <p>
+                Have questions about an invoice, payment or billing
+                details? Our support team is ready to assist you.
+            </p>
+
+        </div>
+
+        <a href="404-client.html"
+            class="stackly-storage-client-invoice-support-btn">
+            Contact Billing Support
+            <i class="fa-solid fa-arrow-right"></i>
+        </a>
+
+    </div>
+
+</section>
+
+
+        </div>
+
+
+</main>
+
+
+    <!-- =========================================
+         AOS SCRIPT
+    ========================================== -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
+
+    <!-- =========================================
+         CLIENT DASHBOARD JAVASCRIPT
+    ========================================== -->
+
+    <script src="client.js"></script>
+
+</body>
+
+</html>

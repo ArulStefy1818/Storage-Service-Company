@@ -1,0 +1,1002 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>404 | Page Not Found - Stackly</title>
+
+    <meta name="description"
+        content="The page you are looking for could not be found. Return to Stackly Smart Storage Solutions.">
+
+    <link rel="icon" href="Stackly-logo-Blue.webp">
+
+    <!-- GOOGLE FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <!-- MAIN CSS -->
+    <link rel="stylesheet" href="index.css">
+
+    <style>
+
+
+/* =====================================================
+   STACKLY SMART STORAGE - 404 ERROR PAGE
+   FULL SCREEN / NO SCROLL VERSION
+===================================================== */
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    width: 100%;
+    min-height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'DM Sans', sans-serif;
+    overflow: hidden;
+}
+
+
+/* MAIN ERROR SECTION */
+
+.stackly-storage-error {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    height: 100svh;
+    min-height: 500px;
+    padding: 75px 6% 65px;
+    overflow: hidden;
+    background: #091723;
+    isolation: isolate;
+}
+
+
+/* BACKGROUND DECORATIONS */
+
+.stackly-storage-error::before {
+    content: "";
+    position: absolute;
+    top: -280px;
+    right: -130px;
+    width: 550px;
+    height: 550px;
+    border: 1px solid rgba(185, 237, 98, .13);
+    border-radius: 50%;
+    z-index: -1;
+    pointer-events: none;
+}
+
+.stackly-storage-error::after {
+    content: "";
+    position: absolute;
+    bottom: -300px;
+    left: -150px;
+    width: 550px;
+    height: 550px;
+    border: 1px solid rgba(185, 237, 98, .13);
+    border-radius: 50%;
+    z-index: -1;
+    pointer-events: none;
+}
+
+.stackly-storage-error-grid {
+    position: absolute;
+    inset: 0;
+    opacity: .12;
+    background-image:
+        linear-gradient(rgba(185, 237, 98, .15) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(185, 237, 98, .15) 1px, transparent 1px);
+    background-size: 50px 50px;
+    pointer-events: none;
+    z-index: -1;
+}
+
+
+/* MAIN CONTAINER */
+
+.stackly-storage-error-container {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: 1.05fr .95fr;
+    align-items: center;
+    gap: clamp(25px, 5vw, 75px);
+    width: 100%;
+    max-width: 1180px;
+    max-height: 100%;
+    margin: auto;
+}
+
+
+/* LEFT CONTENT */
+
+.stackly-storage-error-content {
+    min-width: 0;
+    animation: storageErrorContent .9s ease both;
+}
+
+.stackly-storage-error-label {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    margin-bottom: 18px;
+    color: #b9ed62;
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 2.5px;
+}
+
+.stackly-storage-error-label span {
+    width: 28px;
+    height: 3px;
+    flex-shrink: 0;
+    background: #b9ed62;
+    border-radius: 5px;
+}
+
+
+/* 404 NUMBER */
+
+.stackly-storage-error-code {
+    margin: 0;
+    color: #b9ed62;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(100px, 12vw, 165px);
+    line-height: .88;
+    font-weight: 700;
+    letter-spacing: -10px;
+    text-shadow: 0 15px 45px rgba(185, 237, 98, .12);
+}
+
+
+/* ERROR HEADING */
+
+.stackly-storage-error-content h1 {
+    margin: 20px 0 14px;
+    color: #ffffff;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: clamp(30px, 3.4vw, 44px);
+    line-height: 1.15;
+    font-weight: 700;
+}
+
+.stackly-storage-error-content h1 span {
+    display: block;
+    color: #b9ed62;
+}
+
+
+/* DESCRIPTION */
+
+.stackly-storage-error-description {
+    max-width: 455px;
+    margin: 0;
+    color: rgba(255, 255, 255, .68);
+    font-size: 15px;
+    line-height: 1.8;
+}
+
+
+/* BUTTONS */
+
+.stackly-storage-error-buttons {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 13px;
+    margin-top: 27px;
+}
+
+.stackly-storage-error-home,
+.stackly-storage-error-back {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 11px;
+    min-height: 51px;
+    padding: 0 23px;
+    border-radius: 7px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 800;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all .35s ease;
+}
+
+.stackly-storage-error-home {
+    color: #102333;
+    background: #b9ed62;
+    border: 1px solid #b9ed62;
+}
+
+.stackly-storage-error-home:hover {
+    color: #102333;
+    background: #ffffff;
+    border-color: #ffffff;
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(185, 237, 98, .17);
+}
+
+.stackly-storage-error-back {
+    color: #ffffff;
+    background: transparent;
+    border: 1px solid rgba(255, 255, 255, .3);
+}
+
+.stackly-storage-error-back:hover {
+    color: #102333;
+    background: #b9ed62;
+    border-color: #b9ed62;
+    transform: translateY(-4px);
+}
+
+.stackly-storage-error-home i,
+.stackly-storage-error-back i {
+    transition: transform .35s ease;
+}
+
+.stackly-storage-error-home:hover i,
+.stackly-storage-error-back:hover i {
+    transform: translateX(-4px);
+}
+
+
+/* RIGHT VISUAL */
+
+.stackly-storage-error-visual {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 0;
+    min-height: 390px;
+    animation: storageErrorVisual 1.1s ease both;
+}
+
+
+/* ROTATING CIRCLE */
+
+.stackly-storage-error-visual-circle {
+    position: absolute;
+    width: clamp(250px, 29vw, 350px);
+    aspect-ratio: 1;
+    border: 1px solid rgba(185, 237, 98, .3);
+    border-radius: 50%;
+    animation: storageErrorRotate 25s linear infinite;
+}
+
+.stackly-storage-error-visual-circle::before,
+.stackly-storage-error-visual-circle::after {
+    content: "";
+    position: absolute;
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+    background: #b9ed62;
+    box-shadow: 0 0 20px rgba(185, 237, 98, .6);
+}
+
+.stackly-storage-error-visual-circle::before {
+    top: 35px;
+    left: 65px;
+}
+
+.stackly-storage-error-visual-circle::after {
+    right: 20px;
+    bottom: 100px;
+}
+
+
+/* ILLUSTRATION */
+
+.stackly-storage-error-illustration {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: clamp(210px, 25vw, 290px);
+    aspect-ratio: 1;
+    background: linear-gradient(145deg, #19364a, #102333);
+    border: 1px solid rgba(185, 237, 98, .2);
+    border-radius: 38px;
+    box-shadow: 0 30px 80px rgba(0, 0, 0, .25);
+    transform: rotate(-5deg);
+    transition: transform .5s ease;
+}
+
+.stackly-storage-error-visual:hover .stackly-storage-error-illustration {
+    transform: rotate(0deg) scale(1.04);
+}
+
+.stackly-storage-error-illustration i {
+    color: #b9ed62;
+    font-size: clamp(65px, 8vw, 95px);
+    animation: storageErrorFloat 3.5s ease-in-out infinite;
+}
+
+.stackly-storage-error-illustration strong {
+    margin-top: 20px;
+    color: #ffffff;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 19px;
+    letter-spacing: 2px;
+}
+
+.stackly-storage-error-illustration span {
+    margin-top: 7px;
+    color: rgba(255, 255, 255, .55);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+
+
+/* FLOATING ICONS */
+
+.stackly-storage-error-float {
+    position: absolute;
+    z-index: 3;
+    display: grid;
+    place-items: center;
+    width: 53px;
+    height: 53px;
+    color: #102333;
+    background: #b9ed62;
+    border-radius: 15px;
+    font-size: 21px;
+    box-shadow: 0 12px 35px rgba(0, 0, 0, .2);
+    animation: storageErrorFloat 4s ease-in-out infinite;
+}
+
+.stackly-storage-error-float.one {
+    top: 35px;
+    right: 8%;
+}
+
+.stackly-storage-error-float.two {
+    bottom: 35px;
+    left: 5%;
+    width: 46px;
+    height: 46px;
+    color: #b9ed62;
+    background: #24445a;
+    animation-delay: 1s;
+}
+
+.stackly-storage-error-float.three {
+    top: 65px;
+    left: 5%;
+    width: 40px;
+    height: 40px;
+    color: #b9ed62;
+    background: #24445a;
+    font-size: 16px;
+    animation-delay: 1.7s;
+}
+
+
+/* FOOTER */
+
+.stackly-storage-error-footer {
+    position: absolute;
+    z-index: 3;
+    left: 6%;
+    right: 6%;
+    bottom: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    padding-top: 13px;
+    border-top: 1px solid rgba(255, 255, 255, .12);
+}
+
+.stackly-storage-error-footer span {
+    color: rgba(255, 255, 255, .45);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+
+.stackly-storage-error-footer a {
+    color: #b9ed62;
+    font-size: 11px;
+    font-weight: 700;
+    text-decoration: none;
+    transition: color .3s ease;
+}
+
+.stackly-storage-error-footer a:hover {
+    color: #ffffff;
+}
+
+
+/* ANIMATIONS */
+
+@keyframes storageErrorContent {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes storageErrorVisual {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes storageErrorRotate {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes storageErrorFloat {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+
+/* =====================================================
+   TABLET RESPONSIVE
+===================================================== */
+
+@media (max-width: 900px) {
+
+    .stackly-storage-error {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    .stackly-storage-error-container {
+        gap: 25px;
+    }
+
+    .stackly-storage-error-visual {
+        min-height: 330px;
+    }
+
+    .stackly-storage-error-visual-circle {
+        width: 270px;
+    }
+
+    .stackly-storage-error-illustration {
+        width: 220px;
+        border-radius: 30px;
+    }
+
+    .stackly-storage-error-illustration i {
+        font-size: 70px;
+    }
+
+    .stackly-storage-error-content h1 {
+        font-size: 34px;
+    }
+
+    .stackly-storage-error-description {
+        font-size: 14px;
+    }
+
+}
+
+
+/* =====================================================
+   MOBILE RESPONSIVE
+===================================================== */
+
+@media (max-width: 650px) {
+
+    .stackly-storage-error {
+        min-height: 0;
+        height: 100vh;
+        height: 100svh;
+        padding: 18px 6% 65px;
+    }
+
+    .stackly-storage-error-container {
+        grid-template-columns: 1fr;
+        justify-items: center;
+        gap: 8px;
+        width: 100%;
+        text-align: center;
+    }
+
+    /* VISUAL FIRST */
+
+    .stackly-storage-error-visual {
+        order: 0;
+        width: 100%;
+        min-height: clamp(190px, 31svh, 245px);
+    }
+
+    .stackly-storage-error-visual-circle {
+        width: clamp(175px, 52vw, 225px);
+    }
+
+    .stackly-storage-error-illustration {
+        width: clamp(150px, 43vw, 190px);
+        border-radius: 25px;
+    }
+
+    .stackly-storage-error-illustration i {
+        font-size: 55px;
+    }
+
+    .stackly-storage-error-illustration strong {
+        margin-top: 13px;
+        font-size: 15px;
+    }
+
+    .stackly-storage-error-illustration span {
+        font-size: 8px;
+    }
+
+    .stackly-storage-error-float {
+        width: 40px;
+        height: 40px;
+        font-size: 16px;
+        border-radius: 12px;
+    }
+
+    .stackly-storage-error-float.one {
+        top: 5px;
+        right: 9%;
+    }
+
+    .stackly-storage-error-float.two {
+        bottom: 5px;
+        left: 8%;
+        width: 38px;
+        height: 38px;
+    }
+
+    .stackly-storage-error-float.three {
+        top: 25px;
+        left: 7%;
+        width: 34px;
+        height: 34px;
+        font-size: 14px;
+    }
+
+    /* CONTENT */
+
+    .stackly-storage-error-content {
+        order: 1;
+        width: 100%;
+    }
+
+    .stackly-storage-error-label {
+        justify-content: center;
+        margin-bottom: 12px;
+        font-size: 10px;
+        letter-spacing: 1.7px;
+    }
+
+    .stackly-storage-error-label span {
+        width: 20px;
+    }
+
+    .stackly-storage-error-code {
+        font-size: clamp(75px, 22vw, 110px);
+        letter-spacing: -6px;
+    }
+
+    .stackly-storage-error-content h1 {
+        margin: 12px 0 10px;
+        font-size: clamp(25px, 7vw, 32px);
+    }
+
+    .stackly-storage-error-description {
+        max-width: 390px;
+        margin: 0 auto;
+        font-size: 12px;
+        line-height: 1.65;
+    }
+
+    /* BUTTONS */
+
+    .stackly-storage-error-buttons {
+        justify-content: center;
+        gap: 10px;
+        margin-top: 18px;
+    }
+
+    .stackly-storage-error-home,
+    .stackly-storage-error-back {
+        min-height: 44px;
+        padding: 0 17px;
+        gap: 8px;
+        font-size: 12px;
+    }
+
+    /* FOOTER */
+
+    .stackly-storage-error-footer {
+        left: 6%;
+        right: 6%;
+        bottom: 12px;
+        justify-content: center;
+        flex-direction: column;
+        gap: 5px;
+        padding-top: 9px;
+    }
+
+    .stackly-storage-error-footer span {
+        font-size: 8px;
+        letter-spacing: 1px;
+    }
+
+    .stackly-storage-error-footer a {
+        font-size: 9px;
+    }
+
+}
+
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+@media (max-width: 380px) {
+
+    .stackly-storage-error {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    .stackly-storage-error-visual {
+        min-height: 180px;
+    }
+
+    .stackly-storage-error-visual-circle {
+        width: 165px;
+    }
+
+    .stackly-storage-error-illustration {
+        width: 140px;
+    }
+
+    .stackly-storage-error-illustration i {
+        font-size: 45px;
+    }
+
+    .stackly-storage-error-illustration strong {
+        font-size: 13px;
+    }
+
+    .stackly-storage-error-content h1 {
+        font-size: 25px;
+    }
+
+    .stackly-storage-error-description {
+        font-size: 11px;
+    }
+
+    .stackly-storage-error-buttons {
+        gap: 8px;
+    }
+
+    .stackly-storage-error-home,
+    .stackly-storage-error-back {
+        min-height: 41px;
+        padding: 0 13px;
+        font-size: 11px;
+    }
+
+}
+
+
+/* =====================================================
+   SHORT SCREEN LAPTOPS / LANDSCAPE MOBILES
+===================================================== */
+
+@media (max-height: 600px) and (min-width: 651px) {
+
+    .stackly-storage-error {
+        min-height: 0;
+        padding-top: 45px;
+        padding-bottom: 55px;
+    }
+
+    .stackly-storage-error-visual {
+        min-height: 280px;
+    }
+
+    .stackly-storage-error-visual-circle {
+        width: 230px;
+    }
+
+    .stackly-storage-error-illustration {
+        width: 185px;
+    }
+
+    .stackly-storage-error-illustration i {
+        font-size: 60px;
+    }
+
+    .stackly-storage-error-code {
+        font-size: 105px;
+    }
+
+    .stackly-storage-error-content h1 {
+        margin: 12px 0;
+        font-size: 30px;
+    }
+
+    .stackly-storage-error-description {
+        font-size: 13px;
+        line-height: 1.6;
+    }
+
+    .stackly-storage-error-buttons {
+        margin-top: 17px;
+    }
+
+}
+
+
+/* SHORT MOBILE HEIGHT */
+
+@media (max-height: 650px) and (max-width: 650px) {
+
+    .stackly-storage-error {
+        padding-top: 8px;
+        padding-bottom: 55px;
+    }
+
+    .stackly-storage-error-container {
+        gap: 0;
+    }
+
+    .stackly-storage-error-visual {
+        min-height: 165px;
+    }
+
+    .stackly-storage-error-visual-circle {
+        width: 150px;
+    }
+
+    .stackly-storage-error-illustration {
+        width: 125px;
+    }
+
+    .stackly-storage-error-illustration i {
+        font-size: 40px;
+    }
+
+    .stackly-storage-error-illustration strong {
+        margin-top: 8px;
+        font-size: 11px;
+    }
+
+    .stackly-storage-error-illustration span {
+        font-size: 7px;
+    }
+
+    .stackly-storage-error-code {
+        font-size: 70px;
+    }
+
+    .stackly-storage-error-content h1 {
+        margin: 7px 0;
+        font-size: 23px;
+    }
+
+    .stackly-storage-error-description {
+        font-size: 10px;
+        line-height: 1.5;
+    }
+
+    .stackly-storage-error-buttons {
+        margin-top: 12px;
+    }
+
+}
+
+
+/* ACCESSIBILITY */
+
+.stackly-storage-error a:focus-visible,
+.stackly-storage-error button:focus-visible {
+    outline: 2px solid #ffffff;
+    outline-offset: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .stackly-storage-error *,
+    .stackly-storage-error *::before,
+    .stackly-storage-error *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+        scroll-behavior: auto !important;
+    }
+
+}
+
+
+    </style>
+
+</head>
+
+<body>
+
+    <main class="stackly-storage-error">
+
+        <div class="stackly-storage-error-grid"></div>
+
+        <div class="stackly-storage-error-container">
+
+            <!-- LEFT CONTENT -->
+
+            <div class="stackly-storage-error-content">
+
+                <div class="stackly-storage-error-label">
+                    <span></span>
+                    OOPS! SOMETHING WENT WRONG
+                </div>
+
+                <div class="stackly-storage-error-code">
+                    404
+                </div>
+
+                <h1>
+                    Page Not Found.
+                    <span>Lost In Space?</span>
+                </h1>
+
+                <p class="stackly-storage-error-description">
+                    The page you're looking for may have been moved,
+                    removed, or is temporarily unavailable.
+                    Don't worry — let's get you back on track.
+                </p>
+
+                <!-- BUTTONS -->
+
+                <div class="stackly-storage-error-buttons">
+
+                    <a href="client.html"
+                        class="stackly-storage-error-home">
+
+                        <i class="fa-solid fa-house"></i>
+
+                        Go Dashboard
+
+                    </a>
+
+                    <button type="button"
+                        class="stackly-storage-error-back"
+                        id="storageErrorBack">
+
+                        <i class="fa-solid fa-arrow-left"></i>
+
+                        Go Back
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- RIGHT VISUAL -->
+
+            <div class="stackly-storage-error-visual">
+
+                <div class="stackly-storage-error-visual-circle"></div>
+
+                <div class="stackly-storage-error-illustration">
+
+                    <i class="fa-solid fa-box-open"></i>
+
+                    <strong>SPACE FOUND?</strong>
+
+                    <span>PAGE NOT AVAILABLE</span>
+
+                </div>
+
+                <div class="stackly-storage-error-float one">
+                    <i class="fa-solid fa-location-dot"></i>
+                </div>
+
+                <div class="stackly-storage-error-float two">
+                    <i class="fa-solid fa-boxes-stacked"></i>
+                </div>
+
+                <div class="stackly-storage-error-float three">
+                    <i class="fa-solid fa-compass"></i>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- FOOTER -->
+
+        <div class="stackly-storage-error-footer">
+
+            <span>
+                © 2026 STACKLY SMART STORAGE SOLUTIONS
+            </span>
+
+            <a href="admin.html">
+                BACK TO STACKLY DASHBOARD
+            </a>
+
+        </div>
+
+    </main>
+
+
+    <!-- GO BACK FUNCTION -->
+
+    <script>
+
+        document.addEventListener("DOMContentLoaded", function () {
+
+            const backButton = document.getElementById("storageErrorBack");
+
+            if (backButton) {
+
+                backButton.addEventListener("click", function () {
+
+                    if (window.history.length > 1) {
+                        window.history.back();
+                    } else {
+                        window.location.href = "admin.html";
+                    }
+
+                });
+
+            }
+
+        });
+
+    </script>
+
+</body>
+
+</html>

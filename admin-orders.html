@@ -1,0 +1,912 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Stackly | Admin Dashboard</title>
+
+    <meta name="description"
+        content="Manage storage operations, inventory, warehouses, orders and business performance with the Stackly Admin Dashboard.">
+
+    <link rel="icon" href="Stackly-logo-Blue.webp">
+
+    <!-- GOOGLE FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <!-- AOS ANIMATION -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+
+    <!-- DASHBOARD CSS -->
+    <link rel="stylesheet" href="admin.css">
+</head>
+
+<body>
+
+    <!-- =========================================
+         DASHBOARD OVERLAY
+    ========================================== -->
+
+    <div class="stackly-storage-admin-overlay"
+        id="stacklyGiftAdminOverlay"></div>
+
+
+    <!-- =========================================
+         SIDEBAR
+    ========================================== -->
+
+    <aside class="stackly-storage-admin-sidebar"
+        id="stacklyGiftAdminSidebar">
+
+        <!-- SIDEBAR HEADER -->
+
+        <div class="stackly-storage-admin-sidebar-header">
+
+            <a href="admin.html" class="stackly-storage-admin-logo">
+
+                <img src="Stackly-logo-Blue.webp"
+                    alt="Stackly Smart Storage Solutions Logo">
+
+            </a>
+
+            <!-- MOBILE CLOSE BUTTON -->
+
+            <button class="stackly-storage-admin-close"
+                id="stacklyGiftAdminClose"
+                aria-label="Close sidebar">
+
+                <i class="fa-solid fa-xmark"></i>
+
+            </button>
+
+        </div>
+
+
+        <!-- ADMIN PROFILE -->
+
+        <div class="stackly-storage-admin-profile">
+
+            <div class="stackly-storage-admin-avatar">
+                <i class="fa-solid fa-user-tie"></i>
+            </div>
+
+            <div class="stackly-storage-admin-profile-info">
+                <h3>Administrator</h3>
+                <span>
+                    <span class="stackly-storage-admin-online-dot"></span>
+                    Online
+                </span>
+            </div>
+
+        </div>
+
+
+        <!-- SIDEBAR NAVIGATION -->
+
+        <nav class="stackly-storage-admin-nav">
+
+            <p class="stackly-storage-admin-nav-title">
+                MAIN MENU
+            </p>
+
+            <a href="admin.html"
+                class="stackly-storage-admin-nav-link active">
+
+                <i class="fa-solid fa-chart-pie"></i>
+                <span>Dashboard</span>
+
+            </a>
+
+            <a href="admin-warehouses.html"
+                class="stackly-storage-admin-nav-link">
+
+                <i class="fa-solid fa-warehouse"></i>
+                <span>Warehouses</span>
+
+            </a>
+
+            <a href="admin-orders.html"
+                class="stackly-storage-admin-nav-link">
+
+                <i class="fa-solid fa-clipboard-list"></i>
+                <span>Orders</span>
+                <span class="stackly-storage-admin-nav-count">08</span>
+
+            </a>
+
+            <a href="admin-shipments.html"
+                class="stackly-storage-admin-nav-link">
+
+                <i class="fa-solid fa-truck-fast"></i>
+                <span>Shipments</span>
+
+            </a>
+
+            <a href="admin-customers.html"
+                class="stackly-storage-admin-nav-link">
+
+                <i class="fa-solid fa-users"></i>
+                <span>Customers</span>
+
+            </a>
+
+
+            <p class="stackly-storage-admin-nav-title">
+                MANAGEMENT
+            </p>
+
+
+            <a href="admin-billing.html"
+                class="stackly-storage-admin-nav-link">
+
+                <i class="fa-solid fa-file-invoice-dollar"></i>
+                <span>Billing & Payments</span>
+
+            </a>
+
+            <a href="admin-settings.html"
+                class="stackly-storage-admin-nav-link">
+
+                <i class="fa-solid fa-gear"></i>
+                <span>Settings</span>
+
+            </a>
+
+
+            <p class="stackly-storage-admin-nav-title">
+                OTHER
+            </p>
+
+            <a href="index.html"
+                class="stackly-storage-admin-nav-link stackly-storage-admin-logout">
+
+                <i class="fa-solid fa-right-from-bracket"></i>
+                <span>Logout</span>
+
+            </a>
+
+        </nav>
+
+
+        <!-- SIDEBAR BOTTOM CARD -->
+
+        <div class="stackly-storage-admin-sidebar-card">
+
+            <div class="stackly-storage-admin-sidebar-card-icon">
+                <i class="fa-solid fa-headset"></i>
+            </div>
+
+            <h4>Need Assistance?</h4>
+
+            <p>Our support team is ready to help you.</p>
+
+            <a href="404-admin.html">
+                Contact Support
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+        </div>
+
+         
+
+    </aside>
+
+
+    <!-- =========================================
+         MAIN DASHBOARD CONTENT
+    ========================================== -->
+
+    <main class="stackly-storage-admin-main">
+
+
+        <!-- =====================================
+             TOP HEADER
+        ====================================== -->
+
+        <header class="stackly-storage-admin-topbar">
+
+            <div class="stackly-storage-admin-topbar-left">
+
+                <!-- MOBILE MENU BUTTON -->
+
+                <button class="stackly-storage-admin-menu-toggle"
+                    id="stacklyGiftAdminMenuToggle"
+                    aria-label="Open navigation menu"
+                    aria-expanded="false"
+                    aria-controls="stacklyGiftAdminSidebar">
+
+                    <i class="fa-solid fa-bars"></i>
+
+                </button>
+
+                <div class="stackly-storage-admin-page-title">
+                    <span>ADMINISTRATION</span>
+                    <h1>Dashboard Overview</h1>
+                </div>
+
+            </div>
+
+
+            <!-- TOPBAR RIGHT -->
+
+            <div class="stackly-storage-admin-topbar-right">
+
+                <a href="404-admin.html"><button class="stackly-storage-admin-icon-btn"
+                    aria-label="Notifications">
+
+                    <i class="fa-regular fa-bell"></i>
+                    <span class="stackly-storage-admin-notification-dot"></span>
+
+                </button></a>
+
+                 
+
+
+                <!-- ADMIN EMAIL DISPLAY -->
+
+                <div class="stackly-storage-admin-email-box">
+
+                    <div class="stackly-storage-admin-email-avatar">
+                        <i class="fa-solid fa-user-shield"></i>
+                    </div>
+
+                    <div class="stackly-storage-admin-email-info">
+                        <span>Administrator Account</span>
+                        <strong>admin@stacklystorage.com</strong>
+                    </div>
+
+                    <i class="fa-solid fa-chevron-down"></i>
+
+                </div>
+
+            </div>
+
+        </header>
+
+<div class="stackly-storage-admin-content">
+
+<!-- =========================================
+     ORDERS MANAGEMENT HERO
+========================================== -->
+
+<section class="stackly-storage-orders-hero" data-aos="fade-up">
+
+    <div class="stackly-storage-orders-hero-content">
+
+        <div class="stackly-storage-orders-hero-text">
+
+            <span class="stackly-storage-orders-eyebrow">
+                <i class="fa-solid fa-clipboard-list"></i>
+                ORDER MANAGEMENT CENTER
+            </span>
+
+            <h1>
+                Every Order.
+                <span>Under Control.</span>
+            </h1>
+
+            <p>
+                Manage incoming orders, monitor fulfillment progress,
+                and keep every storage operation moving smoothly
+                from one centralized workspace.
+            </p>
+
+            <div class="stackly-storage-orders-hero-actions">
+
+                <a href="404-admin.html" class="stackly-storage-orders-primary-btn">
+                    <i class="fa-solid fa-plus"></i>
+                    Create New Order
+                </a>
+
+                <a href="404-admin.html"
+                    class="stackly-storage-orders-secondary-btn">
+                    View Orders
+                    <i class="fa-solid fa-arrow-down"></i>
+                </a>
+
+            </div>
+
+            <div class="stackly-storage-orders-hero-highlights">
+
+                <div>
+                    <i class="fa-solid fa-shield-halved"></i>
+                    Secure Processing
+                </div>
+
+                <div>
+                    <i class="fa-solid fa-truck-fast"></i>
+                    Live Tracking
+                </div>
+
+                <div>
+                    <i class="fa-solid fa-clock"></i>
+                    Timely Fulfillment
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="stackly-storage-orders-hero-visual">
+
+            <img src="orders-hero.webp"
+                alt="Warehouse team managing customer orders">
+
+            <div class="stackly-storage-orders-floating-card">
+
+                <div class="stackly-storage-orders-floating-icon">
+                    <i class="fa-solid fa-box-open"></i>
+                </div>
+
+                <div>
+                    <span>Orders Completed</span>
+                    <strong>1,186</strong>
+                    <small>
+                        <i class="fa-solid fa-arrow-trend-up"></i>
+                        12.8% this month
+                    </small>
+                </div>
+
+            </div>
+
+            <div class="stackly-storage-orders-hero-badge">
+                <span></span>
+                Order System Active
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================
+     ORDER PERFORMANCE STATISTICS
+========================================== -->
+
+<section class="stackly-storage-orders-stats"
+    data-aos="fade-up">
+
+    <div class="stackly-storage-orders-stat-card">
+
+        <div class="stackly-storage-orders-stat-top">
+            <div class="stackly-storage-orders-stat-icon green">
+                <i class="fa-solid fa-cart-shopping"></i>
+            </div>
+
+            <span class="positive">
+                <i class="fa-solid fa-arrow-trend-up"></i>
+                12.8%
+            </span>
+        </div>
+
+        <span>Total Orders</span>
+        <h3>1,284</h3>
+        <small>Compared to last month</small>
+
+    </div>
+
+
+    <div class="stackly-storage-orders-stat-card">
+
+        <div class="stackly-storage-orders-stat-top">
+            <div class="stackly-storage-orders-stat-icon orange">
+                <i class="fa-solid fa-hourglass-half"></i>
+            </div>
+
+            <span class="neutral">Active</span>
+        </div>
+
+        <span>Pending Orders</span>
+        <h3>86</h3>
+        <small>Awaiting processing</small>
+
+    </div>
+
+
+    <div class="stackly-storage-orders-stat-card">
+
+        <div class="stackly-storage-orders-stat-top">
+            <div class="stackly-storage-orders-stat-icon blue">
+                <i class="fa-solid fa-truck-fast"></i>
+            </div>
+
+            <span class="positive">
+                <i class="fa-solid fa-arrow-trend-up"></i>
+                8.4%
+            </span>
+        </div>
+
+        <span>Orders Dispatched</span>
+        <h3>342</h3>
+        <small>Ready for delivery</small>
+
+    </div>
+
+
+    <div class="stackly-storage-orders-stat-card">
+
+        <div class="stackly-storage-orders-stat-top">
+            <div class="stackly-storage-orders-stat-icon purple">
+                <i class="fa-solid fa-circle-check"></i>
+            </div>
+
+            <span class="positive">Completed</span>
+        </div>
+
+        <span>Delivered Orders</span>
+        <h3>856</h3>
+        <small>Successfully fulfilled</small>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================
+     ORDER STATUS OVERVIEW
+========================================== -->
+
+<section class="stackly-storage-orders-status"
+    data-aos="fade-up">
+
+    <div class="stackly-storage-orders-section-heading">
+
+        <div>
+            <span>ORDER WORKFLOW</span>
+            <h2>Track Every Order Stage</h2>
+            <p>
+                Monitor the movement of orders through each
+                stage of the fulfillment process.
+            </p>
+        </div>
+
+        <a href="404-admin.html">
+            Full Order Report
+            <i class="fa-solid fa-arrow-right"></i>
+        </a>
+
+    </div>
+
+
+    <div class="stackly-storage-orders-status-grid">
+
+        <article class="stackly-storage-orders-status-card">
+
+            <div class="stackly-storage-orders-status-icon pending">
+                <i class="fa-solid fa-inbox"></i>
+            </div>
+
+            <div class="stackly-storage-orders-status-info">
+                <span>New Orders</span>
+                <h3>24</h3>
+                <small>Recently received</small>
+            </div>
+
+            <div class="stackly-storage-orders-status-indicator">
+                <i class="fa-solid fa-arrow-right"></i>
+            </div>
+
+        </article>
+
+
+        <article class="stackly-storage-orders-status-card">
+
+            <div class="stackly-storage-orders-status-icon processing">
+                <i class="fa-solid fa-gears"></i>
+            </div>
+
+            <div class="stackly-storage-orders-status-info">
+                <span>Processing</span>
+                <h3>38</h3>
+                <small>Being prepared</small>
+            </div>
+
+            <div class="stackly-storage-orders-status-indicator">
+                <i class="fa-solid fa-arrow-right"></i>
+            </div>
+
+        </article>
+
+
+        <article class="stackly-storage-orders-status-card">
+
+            <div class="stackly-storage-orders-status-icon shipped">
+                <i class="fa-solid fa-truck"></i>
+            </div>
+
+            <div class="stackly-storage-orders-status-info">
+                <span>In Transit</span>
+                <h3>18</h3>
+                <small>On the way</small>
+            </div>
+
+            <div class="stackly-storage-orders-status-indicator">
+                <i class="fa-solid fa-arrow-right"></i>
+            </div>
+
+        </article>
+
+
+        <article class="stackly-storage-orders-status-card">
+
+            <div class="stackly-storage-orders-status-icon delivered">
+                <i class="fa-solid fa-box"></i>
+            </div>
+
+            <div class="stackly-storage-orders-status-info">
+                <span>Delivered</span>
+                <h3>856</h3>
+                <small>Successfully completed</small>
+            </div>
+
+            <div class="stackly-storage-orders-status-indicator">
+                <i class="fa-solid fa-check"></i>
+            </div>
+
+        </article>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================
+     RECENT ORDERS TABLE
+========================================== -->
+
+<section class="stackly-storage-orders-recent"
+    id="stacklyStorageRecentOrders"
+    data-aos="fade-up">
+
+    <div class="stackly-storage-orders-section-heading">
+
+        <div>
+            <span>ORDER ACTIVITY</span>
+            <h2>Recent Customer Orders</h2>
+            <p>
+                Review the latest orders and their current
+                fulfillment information.
+            </p>
+        </div>
+
+        <a href="404-admin.html">
+            View All Orders
+            <i class="fa-solid fa-arrow-right"></i>
+        </a>
+
+    </div>
+
+
+    <div class="stackly-storage-orders-table-wrapper">
+
+        <table class="stackly-storage-orders-table">
+
+            <thead>
+                <tr>
+                    <th>ORDER ID</th>
+                    <th>CUSTOMER</th>
+                    <th>WAREHOUSE</th>
+                    <th>ORDER DATE</th>
+                    <th>AMOUNT</th>
+                    <th>STATUS</th>
+                    <th>ACTION</th>
+                </tr>
+            </thead>
+
+            <tbody>
+
+                <tr>
+                    <td><strong>#STK-10248</strong></td>
+
+                    <td>
+                        <div class="stackly-storage-orders-customer">
+                            <div class="customer-avatar green">AK</div>
+                            <div>
+                                <strong>Arun Kumar</strong>
+                                <span>arun@example.com</span>
+                            </div>
+                        </div>
+                    </td>
+
+                    <td>Chennai Hub</td>
+                    <td>Nov 12, 2026</td>
+                    <td><strong>₹18,500</strong></td>
+
+                    <td>
+                        <span class="order-status processing">
+                            Processing
+                        </span>
+                    </td>
+
+                    <td>
+                        <a href="404-admin.html" aria-label="View order STK-10248">
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        </a>
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td><strong>#STK-10247</strong></td>
+
+                    <td>
+                        <div class="stackly-storage-orders-customer">
+                            <div class="customer-avatar blue">PR</div>
+                            <div>
+                                <strong>Priya Raj</strong>
+                                <span>priya@example.com</span>
+                            </div>
+                        </div>
+                    </td>
+
+                    <td>Bangalore Hub</td>
+                    <td>Nov 11, 2026</td>
+                    <td><strong>₹24,800</strong></td>
+
+                    <td>
+                        <span class="order-status shipped">
+                            Dispatched
+                        </span>
+                    </td>
+
+                    <td>
+                        <a href="404-admin.html" aria-label="View order STK-10247">
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        </a>
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td><strong>#STK-10246</strong></td>
+
+                    <td>
+                        <div class="stackly-storage-orders-customer">
+                            <div class="customer-avatar orange">RK</div>
+                            <div>
+                                <strong>Rahul Kumar</strong>
+                                <span>rahul@example.com</span>
+                            </div>
+                        </div>
+                    </td>
+
+                    <td>Hyderabad Hub</td>
+                    <td>Nov 11, 2026</td>
+                    <td><strong>₹12,400</strong></td>
+
+                    <td>
+                        <span class="order-status delivered">
+                            Delivered
+                        </span>
+                    </td>
+
+                    <td>
+                        <a href="404-admin.html" aria-label="View order STK-10246">
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        </a>
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td><strong>#STK-10245</strong></td>
+
+                    <td>
+                        <div class="stackly-storage-orders-customer">
+                            <div class="customer-avatar purple">SM</div>
+                            <div>
+                                <strong>Sneha Mohan</strong>
+                                <span>sneha@example.com</span>
+                            </div>
+                        </div>
+                    </td>
+
+                    <td>Chennai Hub</td>
+                    <td>Nov 10, 2026</td>
+                    <td><strong>₹9,750</strong></td>
+
+                    <td>
+                        <span class="order-status pending">
+                            Pending
+                        </span>
+                    </td>
+
+                    <td>
+                        <a href="404-admin.html" aria-label="View order STK-10245">
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        </a>
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td><strong>#STK-10244</strong></td>
+
+                    <td>
+                        <div class="stackly-storage-orders-customer">
+                            <div class="customer-avatar teal">VK</div>
+                            <div>
+                                <strong>Vikram Kumar</strong>
+                                <span>vikram@example.com</span>
+                            </div>
+                        </div>
+                    </td>
+
+                    <td>Bangalore Hub</td>
+                    <td>Nov 09, 2026</td>
+                    <td><strong>₹31,200</strong></td>
+
+                    <td>
+                        <span class="order-status delivered">
+                            Delivered
+                        </span>
+                    </td>
+
+                    <td>
+                        <a href="404-admin.html" aria-label="View order STK-10244">
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        </a>
+                    </td>
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================
+     ORDER FULFILLMENT PERFORMANCE
+========================================== -->
+
+<section class="stackly-storage-orders-fulfillment"
+    data-aos="fade-up">
+
+    <div class="stackly-storage-orders-fulfillment-content">
+
+        <div class="stackly-storage-orders-fulfillment-heading">
+
+            <span>FULFILLMENT PERFORMANCE</span>
+
+            <h2>
+                Delivering Excellence
+                <span>At Every Step.</span>
+            </h2>
+
+            <p>
+                Maintain reliable order fulfillment with
+                streamlined warehouse processes and
+                consistent delivery performance.
+            </p>
+
+            <a href="404-admin.html">
+                Explore Performance
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+        </div>
+
+
+        <div class="stackly-storage-orders-fulfillment-card">
+
+            <div class="fulfillment-card-header">
+
+                <div>
+                    <span>FULFILLMENT RATE</span>
+                    <h3>96.8%</h3>
+                </div>
+
+                <div class="fulfillment-icon">
+                    <i class="fa-solid fa-chart-line"></i>
+                </div>
+
+            </div>
+
+            <div class="fulfillment-progress">
+                <span style="width:96.8%;"></span>
+            </div>
+
+            <div class="fulfillment-card-footer">
+                <span>Monthly target: 95%</span>
+                <strong>+1.8%</strong>
+            </div>
+
+
+            <div class="fulfillment-divider"></div>
+
+
+            <div class="fulfillment-metrics">
+
+                <div>
+                    <span>On-Time Delivery</span>
+                    <strong>94.5%</strong>
+                </div>
+
+                <div>
+                    <span>Order Accuracy</span>
+                    <strong>99.2%</strong>
+                </div>
+
+                <div>
+                    <span>Returns Rate</span>
+                    <strong>2.4%</strong>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================
+     ORDER MANAGEMENT CTA
+========================================== -->
+
+<section class="stackly-storage-orders-cta"
+    data-aos="fade-up">
+
+    <div class="stackly-storage-orders-cta-content">
+
+        <div class="stackly-storage-orders-cta-icon">
+            <i class="fa-solid fa-boxes-packing"></i>
+        </div>
+
+        <div class="stackly-storage-orders-cta-text">
+
+            <span>STREAMLINE YOUR OPERATIONS</span>
+
+            <h2>Keep Every Order Moving Forward.</h2>
+
+            <p>
+                Simplify order management, improve fulfillment
+                efficiency, and deliver a better customer experience.
+            </p>
+
+        </div>
+
+        <a href="404-admin.html">
+            Manage All Orders
+            <i class="fa-solid fa-arrow-right"></i>
+        </a>
+
+    </div>
+
+</section>
+
+</div>
+
+    </main>
+
+
+    <!-- =========================================
+         AOS SCRIPT
+    ========================================== -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
+    <!-- DASHBOARD JAVASCRIPT -->
+    <script src="admin.js"></script>
+
+</body>
+
+</html>

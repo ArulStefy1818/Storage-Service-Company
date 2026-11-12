@@ -1,0 +1,1374 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Stackly | Admin Dashboard</title>
+
+    <meta name="description"
+        content="Manage storage operations, inventory, warehouses, orders and business performance with the Stackly Admin Dashboard.">
+
+    <link rel="icon" href="Stackly-logo-Blue.webp">
+
+    <!-- GOOGLE FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <!-- AOS ANIMATION -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+
+    <!-- DASHBOARD CSS -->
+    <link rel="stylesheet" href="admin.css">
+</head>
+
+<body>
+
+    <!-- =========================================
+         DASHBOARD OVERLAY
+    ========================================== -->
+
+    <div class="stackly-storage-admin-overlay"
+        id="stacklyGiftAdminOverlay"></div>
+
+
+    <!-- =========================================
+         SIDEBAR
+    ========================================== -->
+
+    <aside class="stackly-storage-admin-sidebar"
+        id="stacklyGiftAdminSidebar">
+
+        <!-- SIDEBAR HEADER -->
+
+        <div class="stackly-storage-admin-sidebar-header">
+
+            <a href="admin.html" class="stackly-storage-admin-logo">
+
+                <img src="Stackly-logo-Blue.webp"
+                    alt="Stackly Smart Storage Solutions Logo">
+
+            </a>
+
+            <!-- MOBILE CLOSE BUTTON -->
+
+            <button class="stackly-storage-admin-close"
+                id="stacklyGiftAdminClose"
+                aria-label="Close sidebar">
+
+                <i class="fa-solid fa-xmark"></i>
+
+            </button>
+
+        </div>
+
+
+        <!-- ADMIN PROFILE -->
+
+        <div class="stackly-storage-admin-profile">
+
+            <div class="stackly-storage-admin-avatar">
+                <i class="fa-solid fa-user-tie"></i>
+            </div>
+
+            <div class="stackly-storage-admin-profile-info">
+                <h3>Administrator</h3>
+                <span>
+                    <span class="stackly-storage-admin-online-dot"></span>
+                    Online
+                </span>
+            </div>
+
+        </div>
+
+
+        <!-- SIDEBAR NAVIGATION -->
+
+        <nav class="stackly-storage-admin-nav">
+
+            <p class="stackly-storage-admin-nav-title">
+                MAIN MENU
+            </p>
+
+            <a href="admin.html"
+                class="stackly-storage-admin-nav-link active">
+
+                <i class="fa-solid fa-chart-pie"></i>
+                <span>Dashboard</span>
+
+            </a>
+
+            <a href="admin-warehouses.html"
+                class="stackly-storage-admin-nav-link">
+
+                <i class="fa-solid fa-warehouse"></i>
+                <span>Warehouses</span>
+
+            </a>
+
+            <a href="admin-orders.html"
+                class="stackly-storage-admin-nav-link">
+
+                <i class="fa-solid fa-clipboard-list"></i>
+                <span>Orders</span>
+                <span class="stackly-storage-admin-nav-count">08</span>
+
+            </a>
+
+            <a href="admin-shipments.html"
+                class="stackly-storage-admin-nav-link">
+
+                <i class="fa-solid fa-truck-fast"></i>
+                <span>Shipments</span>
+
+            </a>
+
+            <a href="admin-customers.html"
+                class="stackly-storage-admin-nav-link">
+
+                <i class="fa-solid fa-users"></i>
+                <span>Customers</span>
+
+            </a>
+
+
+            <p class="stackly-storage-admin-nav-title">
+                MANAGEMENT
+            </p>
+
+
+            <a href="admin-billing.html"
+                class="stackly-storage-admin-nav-link">
+
+                <i class="fa-solid fa-file-invoice-dollar"></i>
+                <span>Billing & Payments</span>
+
+            </a>
+
+            <a href="admin-settings.html"
+                class="stackly-storage-admin-nav-link">
+
+                <i class="fa-solid fa-gear"></i>
+                <span>Settings</span>
+
+            </a>
+
+
+            <p class="stackly-storage-admin-nav-title">
+                OTHER
+            </p>
+
+            <a href="index.html"
+                class="stackly-storage-admin-nav-link stackly-storage-admin-logout">
+
+                <i class="fa-solid fa-right-from-bracket"></i>
+                <span>Logout</span>
+
+            </a>
+
+        </nav>
+
+
+        <!-- SIDEBAR BOTTOM CARD -->
+
+        <div class="stackly-storage-admin-sidebar-card">
+
+            <div class="stackly-storage-admin-sidebar-card-icon">
+                <i class="fa-solid fa-headset"></i>
+            </div>
+
+            <h4>Need Assistance?</h4>
+
+            <p>Our support team is ready to help you.</p>
+
+            <a href="404-admin.html">
+                Contact Support
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+        </div>
+
+         
+
+    </aside>
+
+
+    <!-- =========================================
+         MAIN DASHBOARD CONTENT
+    ========================================== -->
+
+    <main class="stackly-storage-admin-main">
+
+
+        <!-- =====================================
+             TOP HEADER
+        ====================================== -->
+
+        <header class="stackly-storage-admin-topbar">
+
+            <div class="stackly-storage-admin-topbar-left">
+
+                <!-- MOBILE MENU BUTTON -->
+
+                <button class="stackly-storage-admin-menu-toggle"
+                    id="stacklyGiftAdminMenuToggle"
+                    aria-label="Open navigation menu"
+                    aria-expanded="false"
+                    aria-controls="stacklyGiftAdminSidebar">
+
+                    <i class="fa-solid fa-bars"></i>
+
+                </button>
+
+                <div class="stackly-storage-admin-page-title">
+                    <span>ADMINISTRATION</span>
+                    <h1>Dashboard Overview</h1>
+                </div>
+
+            </div>
+
+
+            <!-- TOPBAR RIGHT -->
+
+            <div class="stackly-storage-admin-topbar-right">
+
+                <a href="404-admin.html"><button class="stackly-storage-admin-icon-btn"
+                    aria-label="Notifications">
+
+                    <i class="fa-regular fa-bell"></i>
+                    <span class="stackly-storage-admin-notification-dot"></span>
+
+                </button></a>
+
+                 
+
+
+                <!-- ADMIN EMAIL DISPLAY -->
+
+                <div class="stackly-storage-admin-email-box">
+
+                    <div class="stackly-storage-admin-email-avatar">
+                        <i class="fa-solid fa-user-shield"></i>
+                    </div>
+
+                    <div class="stackly-storage-admin-email-info">
+                        <span>Administrator Account</span>
+                        <strong>admin@stacklystorage.com</strong>
+                    </div>
+
+                    <i class="fa-solid fa-chevron-down"></i>
+
+                </div>
+
+            </div>
+
+        </header>
+
+<div class="stackly-storage-admin-content">
+
+
+<!-- =========================================
+     STACKLY SMART STORAGE SOLUTIONS
+     BILLING & PAYMENTS MANAGEMENT PAGE
+========================================== -->
+
+
+<!-- =========================================
+     01. BILLING HERO SECTION
+========================================== -->
+
+<section class="stackly-storage-billing-hero" data-aos="fade-up">
+
+    <div class="stackly-storage-billing-hero-content">
+
+        <div class="stackly-storage-billing-hero-text">
+
+            <span class="stackly-storage-billing-eyebrow">
+                <i class="fa-solid fa-file-invoice-dollar"></i>
+                FINANCIAL MANAGEMENT CENTER
+            </span>
+
+            <h2>
+                Smarter Billing.
+                <span>Simpler Payments.</span>
+            </h2>
+
+            <p>
+                Manage invoices, monitor transactions, track outstanding
+                payments, and maintain complete visibility into your
+                storage business finances.
+            </p>
+
+            <div class="stackly-storage-billing-hero-actions">
+
+                <a href="404-admin.html"
+                    class="stackly-storage-billing-primary-btn">
+                    <i class="fa-solid fa-receipt"></i>
+                    View Transactions
+                </a>
+
+                <a href="404-admin.html"
+                    class="stackly-storage-billing-secondary-btn">
+                    Manage Invoices
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+
+            </div>
+
+            <div class="stackly-storage-billing-hero-features">
+
+                <div>
+                    <i class="fa-solid fa-shield-halved"></i>
+                    Secure Payments
+                </div>
+
+                <div>
+                    <i class="fa-solid fa-file-circle-check"></i>
+                    Invoice Tracking
+                </div>
+
+                <div>
+                    <i class="fa-solid fa-chart-line"></i>
+                    Financial Insights
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <div class="stackly-storage-billing-hero-visual">
+
+            <img src="solutions-banner.webp"
+                alt="Professional billing and financial management">
+
+            <div class="stackly-storage-billing-floating-card">
+
+                <div class="stackly-storage-billing-floating-icon">
+                    <i class="fa-solid fa-wallet"></i>
+                </div>
+
+                <div>
+                    <span>TOTAL REVENUE</span>
+                    <h3>₹8.45L</h3>
+                    <small>
+                        <i class="fa-solid fa-arrow-trend-up"></i>
+                        18.4% growth this month
+                    </small>
+                </div>
+
+            </div>
+
+            <div class="stackly-storage-billing-hero-tag">
+                <i class="fa-solid fa-circle-check"></i>
+                Payments Monitored
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================
+     02. BILLING PERFORMANCE STATISTICS
+========================================== -->
+
+<section class="stackly-storage-billing-stats" data-aos="fade-up">
+
+    <!-- TOTAL REVENUE -->
+
+    <div class="stackly-storage-billing-stat-card">
+
+        <div class="stackly-storage-billing-stat-top">
+
+            <div class="stackly-storage-billing-stat-icon green">
+                <i class="fa-solid fa-indian-rupee-sign"></i>
+            </div>
+
+            <span class="positive">
+                <i class="fa-solid fa-arrow-trend-up"></i>
+                18.4%
+            </span>
+
+        </div>
+
+        <h3>₹8.45L</h3>
+        <p>Total Revenue</p>
+        <small>Revenue generated this month</small>
+
+    </div>
+
+
+    <!-- COMPLETED PAYMENTS -->
+
+    <div class="stackly-storage-billing-stat-card">
+
+        <div class="stackly-storage-billing-stat-top">
+
+            <div class="stackly-storage-billing-stat-icon blue">
+                <i class="fa-solid fa-circle-check"></i>
+            </div>
+
+            <span class="positive">
+                <i class="fa-solid fa-arrow-trend-up"></i>
+                12.6%
+            </span>
+
+        </div>
+
+        <h3>1,248</h3>
+        <p>Completed Payments</p>
+        <small>Successfully processed transactions</small>
+
+    </div>
+
+
+    <!-- PENDING PAYMENTS -->
+
+    <div class="stackly-storage-billing-stat-card">
+
+        <div class="stackly-storage-billing-stat-top">
+
+            <div class="stackly-storage-billing-stat-icon orange">
+                <i class="fa-solid fa-clock"></i>
+            </div>
+
+            <span class="neutral">
+                Needs Attention
+            </span>
+
+        </div>
+
+        <h3>₹42,850</h3>
+        <p>Pending Payments</p>
+        <small>Payments awaiting confirmation</small>
+
+    </div>
+
+
+    <!-- OVERDUE INVOICES -->
+
+    <div class="stackly-storage-billing-stat-card">
+
+        <div class="stackly-storage-billing-stat-top">
+
+            <div class="stackly-storage-billing-stat-icon purple">
+                <i class="fa-solid fa-file-circle-exclamation"></i>
+            </div>
+
+            <span class="positive">
+                <i class="fa-solid fa-arrow-trend-down"></i>
+                6.2%
+            </span>
+
+        </div>
+
+        <h3>18</h3>
+        <p>Overdue Invoices</p>
+        <small>Invoices requiring follow-up</small>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================
+     03. REVENUE OVERVIEW
+========================================== -->
+
+<section class="stackly-storage-billing-revenue"
+    id="stacklyBillingRevenue"
+    data-aos="fade-up">
+
+    <div class="stackly-storage-billing-section-heading">
+
+        <div>
+            <span>FINANCIAL PERFORMANCE</span>
+            <h2>Revenue Overview</h2>
+            <p>Understand your payment performance and revenue distribution.</p>
+        </div>
+
+        <a href="404-admin.html">
+            Detailed Report
+            <i class="fa-solid fa-arrow-right"></i>
+        </a>
+
+    </div>
+
+
+    <div class="stackly-storage-billing-revenue-grid">
+
+        <!-- REVENUE CHART -->
+
+        <div class="stackly-storage-billing-revenue-panel">
+
+            <div class="stackly-storage-billing-panel-header">
+
+                <div>
+                    <h3>Monthly Revenue</h3>
+                    <span>Revenue performance throughout the year</span>
+                </div>
+
+                <a href="404-admin.html"
+                    class="stackly-storage-billing-period-btn">
+                    <i class="fa-regular fa-calendar"></i>
+                    This Year
+                    <i class="fa-solid fa-chevron-down"></i>
+                </a>
+
+            </div>
+
+
+            <div class="stackly-storage-billing-chart-summary">
+
+                <div>
+                    <span>TOTAL REVENUE</span>
+                    <h3>₹8,45,620</h3>
+                </div>
+
+                <span class="stackly-storage-billing-chart-growth">
+                    <i class="fa-solid fa-arrow-trend-up"></i>
+                    18.4%
+                </span>
+
+            </div>
+
+
+            <div class="stackly-storage-billing-chart">
+
+                <div class="stackly-storage-billing-chart-grid">
+
+                    <div class="stackly-storage-billing-chart-labels">
+                        <span>₹10L</span>
+                        <span>₹7.5L</span>
+                        <span>₹5L</span>
+                        <span>₹2.5L</span>
+                        <span>₹0</span>
+                    </div>
+
+                    <div class="stackly-storage-billing-chart-bars">
+
+                        <div class="stackly-storage-billing-bar-item">
+                            <div class="stackly-storage-billing-bar" style="height:42%;">
+                                <span>₹3.8L</span>
+                            </div>
+                            <small>Jan</small>
+                        </div>
+
+                        <div class="stackly-storage-billing-bar-item">
+                            <div class="stackly-storage-billing-bar" style="height:53%;">
+                                <span>₹4.6L</span>
+                            </div>
+                            <small>Feb</small>
+                        </div>
+
+                        <div class="stackly-storage-billing-bar-item">
+                            <div class="stackly-storage-billing-bar" style="height:48%;">
+                                <span>₹4.2L</span>
+                            </div>
+                            <small>Mar</small>
+                        </div>
+
+                        <div class="stackly-storage-billing-bar-item">
+                            <div class="stackly-storage-billing-bar" style="height:65%;">
+                                <span>₹5.7L</span>
+                            </div>
+                            <small>Apr</small>
+                        </div>
+
+                        <div class="stackly-storage-billing-bar-item">
+                            <div class="stackly-storage-billing-bar" style="height:58%;">
+                                <span>₹5.1L</span>
+                            </div>
+                            <small>May</small>
+                        </div>
+
+                        <div class="stackly-storage-billing-bar-item">
+                            <div class="stackly-storage-billing-bar" style="height:76%;">
+                                <span>₹6.8L</span>
+                            </div>
+                            <small>Jun</small>
+                        </div>
+
+                        <div class="stackly-storage-billing-bar-item">
+                            <div class="stackly-storage-billing-bar" style="height:69%;">
+                                <span>₹6.2L</span>
+                            </div>
+                            <small>Jul</small>
+                        </div>
+
+                        <div class="stackly-storage-billing-bar-item">
+                            <div class="stackly-storage-billing-bar" style="height:83%;">
+                                <span>₹7.4L</span>
+                            </div>
+                            <small>Aug</small>
+                        </div>
+
+                        <div class="stackly-storage-billing-bar-item">
+                            <div class="stackly-storage-billing-bar" style="height:73%;">
+                                <span>₹6.5L</span>
+                            </div>
+                            <small>Sep</small>
+                        </div>
+
+                        <div class="stackly-storage-billing-bar-item">
+                            <div class="stackly-storage-billing-bar" style="height:90%;">
+                                <span>₹8.1L</span>
+                            </div>
+                            <small>Oct</small>
+                        </div>
+
+                        <div class="stackly-storage-billing-bar-item">
+                            <div class="stackly-storage-billing-bar active" style="height:96%;">
+                                <span>₹8.45L</span>
+                            </div>
+                            <small>Nov</small>
+                        </div>
+
+                        <div class="stackly-storage-billing-bar-item">
+                            <div class="stackly-storage-billing-bar future" style="height:60%;">
+                                <span>—</span>
+                            </div>
+                            <small>Dec</small>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- PAYMENT BREAKDOWN -->
+
+        <div class="stackly-storage-billing-breakdown-panel">
+
+            <div class="stackly-storage-billing-panel-header">
+
+                <div>
+                    <h3>Payment Breakdown</h3>
+                    <span>Transactions by payment method</span>
+                </div>
+
+                <i class="fa-solid fa-ellipsis"></i>
+
+            </div>
+
+
+            <div class="stackly-storage-billing-donut">
+
+                <div class="stackly-storage-billing-donut-inner">
+                    <strong>1,248</strong>
+                    <span>Payments</span>
+                </div>
+
+            </div>
+
+
+            <div class="stackly-storage-billing-breakdown-list">
+
+                <div class="stackly-storage-billing-breakdown-item">
+
+                    <span class="stackly-storage-billing-breakdown-dot green"></span>
+
+                    <div>
+                        <strong>UPI Payments</strong>
+                        <small>624 transactions</small>
+                    </div>
+
+                    <b>50%</b>
+
+                </div>
+
+
+                <div class="stackly-storage-billing-breakdown-item">
+
+                    <span class="stackly-storage-billing-breakdown-dot blue"></span>
+
+                    <div>
+                        <strong>Credit / Debit Cards</strong>
+                        <small>374 transactions</small>
+                    </div>
+
+                    <b>30%</b>
+
+                </div>
+
+
+                <div class="stackly-storage-billing-breakdown-item">
+
+                    <span class="stackly-storage-billing-breakdown-dot orange"></span>
+
+                    <div>
+                        <strong>Net Banking</strong>
+                        <small>150 transactions</small>
+                    </div>
+
+                    <b>12%</b>
+
+                </div>
+
+
+                <div class="stackly-storage-billing-breakdown-item">
+
+                    <span class="stackly-storage-billing-breakdown-dot purple"></span>
+
+                    <div>
+                        <strong>Other Methods</strong>
+                        <small>100 transactions</small>
+                    </div>
+
+                    <b>8%</b>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================
+     04. RECENT PAYMENT TRANSACTIONS
+========================================== -->
+
+<section class="stackly-storage-billing-transactions"
+    id="stacklyBillingTransactions"
+    data-aos="fade-up">
+
+    <div class="stackly-storage-billing-section-heading">
+
+        <div>
+            <span>PAYMENT ACTIVITY</span>
+            <h2>Recent Transactions</h2>
+            <p>Monitor customer payments and transaction status.</p>
+        </div>
+
+        <a href="404-admin.html">
+            View All Transactions
+            <i class="fa-solid fa-arrow-right"></i>
+        </a>
+
+    </div>
+
+
+    <div class="stackly-storage-billing-transactions-panel">
+
+        <div class="stackly-storage-billing-transactions-toolbar">
+
+            <div>
+                <h3>Latest Payments</h3>
+                <span>Recently processed transactions</span>
+            </div>
+
+            <a href="404-admin.html"
+                class="stackly-storage-billing-filter-btn">
+                <i class="fa-solid fa-filter"></i>
+                Filter Transactions
+            </a>
+
+        </div>
+
+
+        <div class="stackly-storage-billing-table-wrapper">
+
+            <table class="stackly-storage-billing-table">
+
+                <thead>
+                    <tr>
+                        <th>TRANSACTION ID</th>
+                        <th>CUSTOMER</th>
+                        <th>PAYMENT DATE</th>
+                        <th>PAYMENT METHOD</th>
+                        <th>AMOUNT</th>
+                        <th>STATUS</th>
+                        <th>ACTION</th>
+                    </tr>
+                </thead>
+
+
+                <tbody>
+
+                    <tr>
+
+                        <td><strong>#TXN-80521</strong></td>
+
+                        <td>
+                            <div class="stackly-storage-billing-customer">
+                                <span class="billing-avatar green">RK</span>
+                                <div>
+                                    <strong>Rahul Kumar</strong>
+                                    <small>Chennai, India</small>
+                                </div>
+                            </div>
+                        </td>
+
+                        <td>Nov 12, 2026</td>
+
+                        <td>
+                            <span class="stackly-storage-billing-method">
+                                <i class="fa-brands fa-google-pay"></i>
+                                UPI
+                            </span>
+                        </td>
+
+                        <td><strong>₹12,500</strong></td>
+
+                        <td>
+                            <span class="stackly-storage-billing-status paid">
+                                Paid
+                            </span>
+                        </td>
+
+                        <td>
+                            <a href="404-admin.html"
+                                class="stackly-storage-billing-action"
+                                aria-label="View transaction TXN-80521">
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            </a>
+                        </td>
+
+                    </tr>
+
+
+                    <tr>
+
+                        <td><strong>#TXN-80520</strong></td>
+
+                        <td>
+                            <div class="stackly-storage-billing-customer">
+                                <span class="billing-avatar blue">AP</span>
+                                <div>
+                                    <strong>Ananya Patel</strong>
+                                    <small>Hyderabad, India</small>
+                                </div>
+                            </div>
+                        </td>
+
+                        <td>Nov 11, 2026</td>
+
+                        <td>
+                            <span class="stackly-storage-billing-method">
+                                <i class="fa-regular fa-credit-card"></i>
+                                Card
+                            </span>
+                        </td>
+
+                        <td><strong>₹28,400</strong></td>
+
+                        <td>
+                            <span class="stackly-storage-billing-status paid">
+                                Paid
+                            </span>
+                        </td>
+
+                        <td>
+                            <a href="404-admin.html"
+                                class="stackly-storage-billing-action"
+                                aria-label="View transaction TXN-80520">
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            </a>
+                        </td>
+
+                    </tr>
+
+
+                    <tr>
+
+                        <td><strong>#TXN-80519</strong></td>
+
+                        <td>
+                            <div class="stackly-storage-billing-customer">
+                                <span class="billing-avatar orange">VS</span>
+                                <div>
+                                    <strong>Vikram Shah</strong>
+                                    <small>Coimbatore, India</small>
+                                </div>
+                            </div>
+                        </td>
+
+                        <td>Nov 10, 2026</td>
+
+                        <td>
+                            <span class="stackly-storage-billing-method">
+                                <i class="fa-solid fa-building-columns"></i>
+                                Net Banking
+                            </span>
+                        </td>
+
+                        <td><strong>₹8,750</strong></td>
+
+                        <td>
+                            <span class="stackly-storage-billing-status pending">
+                                Pending
+                            </span>
+                        </td>
+
+                        <td>
+                            <a href="404-admin.html"
+                                class="stackly-storage-billing-action"
+                                aria-label="View transaction TXN-80519">
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            </a>
+                        </td>
+
+                    </tr>
+
+
+                    <tr>
+
+                        <td><strong>#TXN-80518</strong></td>
+
+                        <td>
+                            <div class="stackly-storage-billing-customer">
+                                <span class="billing-avatar purple">SM</span>
+                                <div>
+                                    <strong>Sneha Menon</strong>
+                                    <small>Kochi, India</small>
+                                </div>
+                            </div>
+                        </td>
+
+                        <td>Nov 09, 2026</td>
+
+                        <td>
+                            <span class="stackly-storage-billing-method">
+                                <i class="fa-brands fa-google-pay"></i>
+                                UPI
+                            </span>
+                        </td>
+
+                        <td><strong>₹16,200</strong></td>
+
+                        <td>
+                            <span class="stackly-storage-billing-status failed">
+                                Failed
+                            </span>
+                        </td>
+
+                        <td>
+                            <a href="404-admin.html"
+                                class="stackly-storage-billing-action"
+                                aria-label="View transaction TXN-80518">
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            </a>
+                        </td>
+
+                    </tr>
+
+
+                    <tr>
+
+                        <td><strong>#TXN-80517</strong></td>
+
+                        <td>
+                            <div class="stackly-storage-billing-customer">
+                                <span class="billing-avatar teal">MJ</span>
+                                <div>
+                                    <strong>Manoj Joseph</strong>
+                                    <small>Madurai, India</small>
+                                </div>
+                            </div>
+                        </td>
+
+                        <td>Nov 08, 2026</td>
+
+                        <td>
+                            <span class="stackly-storage-billing-method">
+                                <i class="fa-regular fa-credit-card"></i>
+                                Card
+                            </span>
+                        </td>
+
+                        <td><strong>₹21,600</strong></td>
+
+                        <td>
+                            <span class="stackly-storage-billing-status paid">
+                                Paid
+                            </span>
+                        </td>
+
+                        <td>
+                            <a href="404-admin.html"
+                                class="stackly-storage-billing-action"
+                                aria-label="View transaction TXN-80517">
+                                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            </a>
+                        </td>
+
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+
+        <div class="stackly-storage-billing-table-footer">
+
+            <span>Showing 5 of 1,248 transactions</span>
+
+            <a href="404-admin.html">
+                Explore Transactions
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================
+     05. OUTSTANDING INVOICES
+========================================== -->
+
+<section class="stackly-storage-billing-invoices"
+    id="stacklyBillingInvoices"
+    data-aos="fade-up">
+
+    <div class="stackly-storage-billing-section-heading">
+
+        <div>
+            <span>INVOICE MANAGEMENT</span>
+            <h2>Outstanding Invoices</h2>
+            <p>Keep track of unpaid invoices and upcoming payment deadlines.</p>
+        </div>
+
+        <a href="404-admin.html">
+            Manage All Invoices
+            <i class="fa-solid fa-arrow-right"></i>
+        </a>
+
+    </div>
+
+
+    <div class="stackly-storage-billing-invoice-grid">
+
+        <!-- INVOICE 01 -->
+
+        <div class="stackly-storage-billing-invoice-card">
+
+            <div class="stackly-storage-billing-invoice-top">
+
+                <div class="stackly-storage-billing-invoice-icon orange">
+                    <i class="fa-solid fa-file-invoice"></i>
+                </div>
+
+                <span class="stackly-storage-billing-invoice-status overdue">
+                    Overdue
+                </span>
+
+            </div>
+
+            <span class="stackly-storage-billing-invoice-number">
+                INVOICE #INV-2048
+            </span>
+
+            <h3>₹18,500</h3>
+
+            <div class="stackly-storage-billing-invoice-customer">
+                <i class="fa-solid fa-user"></i>
+                Rahul Kumar
+            </div>
+
+            <div class="stackly-storage-billing-invoice-details">
+
+                <div>
+                    <span>Invoice Date</span>
+                    <strong>Oct 25, 2026</strong>
+                </div>
+
+                <div>
+                    <span>Due Date</span>
+                    <strong>Nov 05, 2026</strong>
+                </div>
+
+            </div>
+
+            <a href="404-admin.html">
+                View Invoice
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+        </div>
+
+
+        <!-- INVOICE 02 -->
+
+        <div class="stackly-storage-billing-invoice-card">
+
+            <div class="stackly-storage-billing-invoice-top">
+
+                <div class="stackly-storage-billing-invoice-icon blue">
+                    <i class="fa-solid fa-file-invoice"></i>
+                </div>
+
+                <span class="stackly-storage-billing-invoice-status pending">
+                    Pending
+                </span>
+
+            </div>
+
+            <span class="stackly-storage-billing-invoice-number">
+                INVOICE #INV-2049
+            </span>
+
+            <h3>₹32,750</h3>
+
+            <div class="stackly-storage-billing-invoice-customer">
+                <i class="fa-solid fa-user"></i>
+                Ananya Patel
+            </div>
+
+            <div class="stackly-storage-billing-invoice-details">
+
+                <div>
+                    <span>Invoice Date</span>
+                    <strong>Nov 02, 2026</strong>
+                </div>
+
+                <div>
+                    <span>Due Date</span>
+                    <strong>Nov 15, 2026</strong>
+                </div>
+
+            </div>
+
+            <a href="404-admin.html">
+                View Invoice
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+        </div>
+
+
+        <!-- INVOICE 03 -->
+
+        <div class="stackly-storage-billing-invoice-card">
+
+            <div class="stackly-storage-billing-invoice-top">
+
+                <div class="stackly-storage-billing-invoice-icon purple">
+                    <i class="fa-solid fa-file-invoice"></i>
+                </div>
+
+                <span class="stackly-storage-billing-invoice-status pending">
+                    Pending
+                </span>
+
+            </div>
+
+            <span class="stackly-storage-billing-invoice-number">
+                INVOICE #INV-2050
+            </span>
+
+            <h3>₹14,200</h3>
+
+            <div class="stackly-storage-billing-invoice-customer">
+                <i class="fa-solid fa-user"></i>
+                Sneha Menon
+            </div>
+
+            <div class="stackly-storage-billing-invoice-details">
+
+                <div>
+                    <span>Invoice Date</span>
+                    <strong>Nov 04, 2026</strong>
+                </div>
+
+                <div>
+                    <span>Due Date</span>
+                    <strong>Nov 18, 2026</strong>
+                </div>
+
+            </div>
+
+            <a href="404-admin.html">
+                View Invoice
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================
+     06. BILLING & PAYMENT INSIGHTS
+========================================== -->
+
+<section class="stackly-storage-billing-insights"
+    data-aos="fade-up">
+
+    <div class="stackly-storage-billing-section-heading">
+
+        <div>
+            <span>PAYMENT HEALTH</span>
+            <h2>Billing Performance Insights</h2>
+            <p>Important indicators for efficient financial management.</p>
+        </div>
+
+    </div>
+
+
+    <div class="stackly-storage-billing-insights-grid">
+
+        <!-- COLLECTION RATE -->
+
+        <div class="stackly-storage-billing-insight-card">
+
+            <div class="stackly-storage-billing-insight-icon green">
+                <i class="fa-solid fa-money-bill-transfer"></i>
+            </div>
+
+            <div>
+                <span>PAYMENT COLLECTION RATE</span>
+                <h3>96.8%</h3>
+                <p>Successful payment collections</p>
+            </div>
+
+            <div class="stackly-storage-billing-insight-progress">
+                <span style="width:96.8%"></span>
+            </div>
+
+        </div>
+
+
+        <!-- INVOICE COMPLETION -->
+
+        <div class="stackly-storage-billing-insight-card">
+
+            <div class="stackly-storage-billing-insight-icon blue">
+                <i class="fa-solid fa-file-circle-check"></i>
+            </div>
+
+            <div>
+                <span>INVOICE COMPLETION</span>
+                <h3>91.5%</h3>
+                <p>Invoices successfully settled</p>
+            </div>
+
+            <div class="stackly-storage-billing-insight-progress">
+                <span style="width:91.5%"></span>
+            </div>
+
+        </div>
+
+
+        <!-- PAYMENT SUCCESS -->
+
+        <div class="stackly-storage-billing-insight-card">
+
+            <div class="stackly-storage-billing-insight-icon purple">
+                <i class="fa-solid fa-shield-heart"></i>
+            </div>
+
+            <div>
+                <span>PAYMENT SUCCESS RATE</span>
+                <h3>98.2%</h3>
+                <p>Successful transaction processing</p>
+            </div>
+
+            <div class="stackly-storage-billing-insight-progress">
+                <span style="width:98.2%"></span>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================
+     07. BILLING MANAGEMENT CTA
+========================================== -->
+
+<section class="stackly-storage-billing-cta"
+    data-aos="fade-up">
+
+    <div class="stackly-storage-billing-cta-content">
+
+        <div class="stackly-storage-billing-cta-icon">
+            <i class="fa-solid fa-file-invoice-dollar"></i>
+        </div>
+
+
+        <div class="stackly-storage-billing-cta-text">
+
+            <span>STREAMLINE YOUR FINANCIAL OPERATIONS</span>
+
+            <h2>
+                Better Billing.
+                <span>Stronger Business Growth.</span>
+            </h2>
+
+            <p>
+                Keep your financial operations organized with
+                transparent invoices, timely payment tracking,
+                and reliable billing management.
+            </p>
+
+            <a href="404-admin.html">
+                Explore Billing Management
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+        </div>
+
+
+        <div class="stackly-storage-billing-cta-visual">
+
+            <div class="stackly-storage-billing-cta-circle">
+                <i class="fa-solid fa-chart-pie"></i>
+                <strong>98.2%</strong>
+                <span>Payment Success</span>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+    
+</div>
+
+    </main>
+
+
+    <!-- =========================================
+         AOS SCRIPT
+    ========================================== -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
+    <!-- DASHBOARD JAVASCRIPT -->
+    <script src="admin.js"></script>
+
+</body>
+
+</html>

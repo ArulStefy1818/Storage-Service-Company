@@ -1,0 +1,944 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Stackly | Client Dashboard</title>
+
+    <meta name="description"
+        content="Manage your storage bookings, shipments, invoices and account details with the Stackly Client Dashboard.">
+
+    <link rel="icon" href="Stackly-logo-Blue.webp">
+
+    <!-- GOOGLE FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <!-- AOS ANIMATION -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+
+    <!-- DASHBOARD CSS -->
+     
+    <link rel="stylesheet" href="client.css">
+
+</head>
+
+<body>
+
+    <!-- =========================================
+         CLIENT DASHBOARD SIDEBAR
+    ========================================== -->
+
+    <aside class="stackly-storage-client-sidebar"
+        id="stacklyStorageClientSidebar">
+
+        <!-- LOGO -->
+        <div class="stackly-storage-client-logo">
+
+            <a href="client.html" aria-label="Stackly Home">
+                <img src="Stackly-logo-Blue.webp"
+                    alt="Stackly Storage Solutions Logo">
+            </a>
+
+            <!-- MOBILE CLOSE BUTTON -->
+            <button class="stackly-storage-client-close"
+                id="stacklyStorageClientClose"
+                type="button"
+                aria-label="Close sidebar">
+
+                <i class="fa-solid fa-xmark"></i>
+
+            </button>
+
+        </div>
+
+
+        <!-- CLIENT PROFILE -->
+        <div class="stackly-storage-client-sidebar-profile">
+
+            <div class="stackly-storage-client-avatar">
+                <i class="fa-solid fa-user"></i>
+            </div>
+
+            <div class="stackly-storage-client-profile-info">
+
+                <h4 id="storageClientSidebarName">Client</h4>
+
+                <span>
+                    <span class="stackly-storage-client-online-dot"></span>
+                    Active Account
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <!-- SIDEBAR NAVIGATION -->
+        <nav class="stackly-storage-client-navigation">
+
+            <span class="stackly-storage-client-nav-label">
+                MAIN MENU
+            </span>
+
+            <a href="client.html"
+                class="stackly-storage-client-nav-link active">
+
+                <i class="fa-solid fa-house"></i>
+                <span>Dashboard</span>
+
+            </a>
+
+            <a href="client-storage.html"
+                class="stackly-storage-client-nav-link">
+
+                <i class="fa-solid fa-warehouse"></i>
+                <span>My Storage</span>
+
+            </a>
+
+            <a href="client-bookings.html"
+                class="stackly-storage-client-nav-link">
+
+                <i class="fa-solid fa-calendar-check"></i>
+                <span>My Bookings</span>
+
+            </a>
+
+            <a href="client-shipments.html"
+                class="stackly-storage-client-nav-link">
+
+                <i class="fa-solid fa-truck-fast"></i>
+                <span>Shipments</span>
+
+                <span class="stackly-storage-client-nav-count">02</span>
+
+            </a>
+
+            <a href="client-invoices.html"
+                class="stackly-storage-client-nav-link">
+
+                <i class="fa-solid fa-file-invoice-dollar"></i>
+                <span>Invoices</span>
+
+            </a>
+
+
+            <span class="stackly-storage-client-nav-label">
+                ACCOUNT
+            </span>
+
+            <a href="client-profile.html"
+                class="stackly-storage-client-nav-link">
+
+                <i class="fa-solid fa-user-gear"></i>
+                <span>My Profile</span>
+
+            </a>
+
+        </nav>
+
+
+        <!-- SIDEBAR BOTTOM -->
+        <div class="stackly-storage-client-sidebar-bottom">
+
+            <div class="stackly-storage-client-help-card">
+
+                <div class="stackly-storage-client-help-icon">
+                    <i class="fa-solid fa-headset"></i>
+                </div>
+
+                <h4>Need Assistance?</h4>
+
+                <p>Our support team is ready to help you.</p>
+
+                <a href="404-client.html">
+                    Contact Support
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+
+            </div>
+
+
+            <a href="index.html"
+                class="stackly-storage-client-logout">
+
+                <i class="fa-solid fa-right-from-bracket"></i>
+                <span>Logout</span>
+
+            </a>
+
+        </div>
+
+    </aside>
+
+
+    <!-- =========================================
+         MOBILE SIDEBAR OVERLAY
+    ========================================== -->
+
+    <div class="stackly-storage-client-overlay"
+        id="stacklyStorageClientOverlay"></div>
+
+
+    <!-- =========================================
+         CLIENT MAIN CONTENT
+    ========================================== -->
+
+    <main class="stackly-storage-client-main">
+
+
+        <!-- =====================================
+             TOPBAR
+        ====================================== -->
+
+        <header class="stackly-storage-client-topbar">
+
+            <div class="stackly-storage-client-topbar-left">
+
+                <!-- MOBILE HAMBURGER -->
+                <button class="stackly-storage-client-menu-toggle"
+                    id="stacklyStorageClientMenuToggle"
+                    type="button"
+                    aria-label="Open navigation menu"
+                    aria-expanded="false">
+
+                    <i class="fa-solid fa-bars"></i>
+
+                </button>
+
+
+                <div class="stackly-storage-client-page-heading">
+
+                    <span>CLIENT PORTAL</span>
+
+                    <h2>Client Dashboard</h2>
+
+                </div>
+
+            </div>
+
+
+            <!-- TOPBAR RIGHT -->
+            <div class="stackly-storage-client-topbar-right">
+
+                <a href="404-client.html"
+                    class="stackly-storage-client-notification"
+                    aria-label="Support">
+
+                    <i class="fa-regular fa-bell"></i>
+
+                    <span></span>
+
+                </a>
+
+
+                <!-- EMAIL DISPLAY -->
+                <div class="stackly-storage-client-email-box">
+
+                    <div class="stackly-storage-client-email-avatar">
+                        <i class="fa-solid fa-user"></i>
+                    </div>
+
+                    <div class="stackly-storage-client-email-info">
+
+                        <span>Logged in as</span>
+
+                        <strong id="storageClientTopbarEmail">
+                            client@stacklystorage.com
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- =====================================
+             DASHBOARD CONTENT
+        ====================================== -->
+
+        <div class="stackly-storage-client-content">
+
+
+            <!-- WELCOME SECTION -->
+            <section class="stackly-storage-client-welcome"
+                data-aos="fade-up">
+
+                <div class="stackly-storage-client-welcome-content">
+
+                    <span class="stackly-storage-client-welcome-tag">
+                        <i class="fa-solid fa-sparkles"></i>
+                        YOUR STORAGE OVERVIEW
+                    </span>
+
+                    <h1>
+                        Welcome Back,
+                        <span id="storageClientWelcomeName">Client</span>!
+                    </h1>
+
+                    <p>
+                        Manage your storage bookings, track shipments,
+                        and stay updated with your storage activities.
+                    </p>
+
+                    <div class="stackly-storage-client-welcome-actions">
+
+                        <a href="404-client.html"
+                            class="stackly-storage-client-primary-btn">
+
+                            <i class="fa-solid fa-plus"></i>
+                            New Booking
+
+                        </a>
+
+                        <a href="404-client.html"
+                            class="stackly-storage-client-secondary-btn">
+
+                            Track Shipment
+                            <i class="fa-solid fa-arrow-right"></i>
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+                <div class="stackly-storage-client-welcome-visual">
+
+                    <img src="mission-warehouse.webp"
+                        alt="Smart Storage Solutions">
+
+                    <div class="stackly-storage-client-welcome-floating">
+
+                        <div class="stackly-storage-client-floating-icon">
+                            <i class="fa-solid fa-shield-halved"></i>
+                        </div>
+
+                        <div>
+                            <strong>100% Secure</strong>
+                            <span>Your goods are protected</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================
+                 DASHBOARD STATISTICS
+            ================================== -->
+
+            <section class="stackly-storage-client-stats"
+                data-aos="fade-up">
+
+                <div class="stackly-storage-client-stat-card">
+
+                    <div class="stackly-storage-client-stat-top">
+
+                        <div class="stackly-storage-client-stat-icon green">
+                            <i class="fa-solid fa-boxes-stacked"></i>
+                        </div>
+
+                        <span class="stackly-storage-client-stat-change">
+                            <i class="fa-solid fa-arrow-up"></i>
+                            12.5%
+                        </span>
+
+                    </div>
+
+                    <span>Total Storage Units</span>
+
+                    <h3>08</h3>
+
+                    <p>Units currently registered</p>
+
+                </div>
+
+
+                <div class="stackly-storage-client-stat-card">
+
+                    <div class="stackly-storage-client-stat-top">
+
+                        <div class="stackly-storage-client-stat-icon blue">
+                            <i class="fa-solid fa-calendar-check"></i>
+                        </div>
+
+                        <span class="stackly-storage-client-stat-change">
+                            <i class="fa-solid fa-arrow-up"></i>
+                            08.2%
+                        </span>
+
+                    </div>
+
+                    <span>Active Bookings</span>
+
+                    <h3>05</h3>
+
+                    <p>Your ongoing storage bookings</p>
+
+                </div>
+
+
+                <div class="stackly-storage-client-stat-card">
+
+                    <div class="stackly-storage-client-stat-top">
+
+                        <div class="stackly-storage-client-stat-icon orange">
+                            <i class="fa-solid fa-truck-fast"></i>
+                        </div>
+
+                        <span class="stackly-storage-client-stat-neutral">
+                            In Progress
+                        </span>
+
+                    </div>
+
+                    <span>Active Shipments</span>
+
+                    <h3>02</h3>
+
+                    <p>Shipments being processed</p>
+
+                </div>
+
+
+                <div class="stackly-storage-client-stat-card">
+
+                    <div class="stackly-storage-client-stat-top">
+
+                        <div class="stackly-storage-client-stat-icon purple">
+                            <i class="fa-solid fa-file-invoice-dollar"></i>
+                        </div>
+
+                        <span class="stackly-storage-client-stat-neutral">
+                            Pending
+                        </span>
+
+                    </div>
+
+                    <span>Outstanding Amount</span>
+
+                    <h3>₹12,500</h3>
+
+                    <p>Pending invoice payments</p>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================
+                 STORAGE OVERVIEW
+            ================================== -->
+
+            <section class="stackly-storage-client-storage-section"
+                data-aos="fade-up">
+
+                <div class="stackly-storage-client-section-heading">
+
+                    <div>
+                        <span>YOUR STORAGE</span>
+                        <h3>Storage Overview</h3>
+                    </div>
+
+                    <a href="404-client.html">
+                        View All
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+
+                </div>
+
+
+                <div class="stackly-storage-client-storage-grid">
+
+                    <div class="stackly-storage-client-storage-card">
+
+                        <div class="stackly-storage-client-storage-image">
+
+                            <img src="warehouse-1.webp"
+                                alt="General Storage Warehouse">
+
+                            <span class="stackly-storage-client-storage-status">
+                                Active
+                            </span>
+
+                        </div>
+
+                        <div class="stackly-storage-client-storage-info">
+
+                            <div class="stackly-storage-client-storage-icon">
+                                <i class="fa-solid fa-warehouse"></i>
+                            </div>
+
+                            <h4>General Storage</h4>
+
+                            <p>Warehouse A - Unit 104</p>
+
+                            <div class="stackly-storage-client-storage-details">
+
+                                <span>
+                                    <i class="fa-solid fa-expand"></i>
+                                    500 Sq. Ft.
+                                </span>
+
+                                <span>
+                                    <i class="fa-regular fa-calendar"></i>
+                                    Monthly
+                                </span>
+
+                            </div>
+
+                            <a href="404-client.html">
+                                View Details
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="stackly-storage-client-storage-card">
+
+                        <div class="stackly-storage-client-storage-image">
+
+                            <img src="automated-storage.webp"
+                                alt="Premium Storage Facility">
+
+                            <span class="stackly-storage-client-storage-status">
+                                Active
+                            </span>
+
+                        </div>
+
+                        <div class="stackly-storage-client-storage-info">
+
+                            <div class="stackly-storage-client-storage-icon">
+                                <i class="fa-solid fa-box-open"></i>
+                            </div>
+
+                            <h4>Premium Storage</h4>
+
+                            <p>Warehouse B - Unit 208</p>
+
+                            <div class="stackly-storage-client-storage-details">
+
+                                <span>
+                                    <i class="fa-solid fa-expand"></i>
+                                    300 Sq. Ft.
+                                </span>
+
+                                <span>
+                                    <i class="fa-regular fa-calendar"></i>
+                                    Monthly
+                                </span>
+
+                            </div>
+
+                            <a href="404-client.html">
+                                View Details
+                                <i class="fa-solid fa-arrow-right"></i>
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================
+                 RECENT SHIPMENTS
+            ================================== -->
+
+            <section class="stackly-storage-client-shipments-section"
+                data-aos="fade-up">
+
+                <div class="stackly-storage-client-section-heading">
+
+                    <div>
+                        <span>SHIPMENT ACTIVITY</span>
+                        <h3>Recent Shipments</h3>
+                    </div>
+
+                    <a href="404-client.html">
+                        View All
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+
+                </div>
+
+
+                <div class="stackly-storage-client-table-wrapper">
+
+                    <table class="stackly-storage-client-table">
+
+                        <thead>
+
+                            <tr>
+                                <th>Shipment ID</th>
+                                <th>Destination</th>
+                                <th>Dispatch Date</th>
+                                <th>Expected Delivery</th>
+                                <th>Status</th>
+                                <th>Action</th>
+                            </tr>
+
+                        </thead>
+
+                        <tbody>
+
+                            <tr>
+
+                                <td>
+                                    <strong>#SHP-2048</strong>
+                                </td>
+
+                                <td>Chennai, India</td>
+
+                                <td>10 Nov 2026</td>
+
+                                <td>14 Nov 2026</td>
+
+                                <td>
+                                    <span class="stackly-storage-client-shipment-status transit">
+                                        In Transit
+                                    </span>
+                                </td>
+
+                                <td>
+                                    <a href="404-client.html"
+                                        class="stackly-storage-client-table-action"
+                                        aria-label="View shipment">
+
+                                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+                                    </a>
+                                </td>
+
+                            </tr>
+
+
+                            <tr>
+
+                                <td>
+                                    <strong>#SHP-2047</strong>
+                                </td>
+
+                                <td>Bengaluru, India</td>
+
+                                <td>09 Nov 2026</td>
+
+                                <td>13 Nov 2026</td>
+
+                                <td>
+                                    <span class="stackly-storage-client-shipment-status processing">
+                                        Processing
+                                    </span>
+                                </td>
+
+                                <td>
+                                    <a href="404-client.html"
+                                        class="stackly-storage-client-table-action"
+                                        aria-label="View shipment">
+
+                                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+                                    </a>
+                                </td>
+
+                            </tr>
+
+
+                            <tr>
+
+                                <td>
+                                    <strong>#SHP-2046</strong>
+                                </td>
+
+                                <td>Coimbatore, India</td>
+
+                                <td>06 Nov 2026</td>
+
+                                <td>10 Nov 2026</td>
+
+                                <td>
+                                    <span class="stackly-storage-client-shipment-status delivered">
+                                        Delivered
+                                    </span>
+                                </td>
+
+                                <td>
+                                    <a href="404-client.html"
+                                        class="stackly-storage-client-table-action"
+                                        aria-label="View shipment">
+
+                                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+
+                                    </a>
+                                </td>
+
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================
+                 RECENT ACTIVITY & QUICK ACTIONS
+            ================================== -->
+
+            <section class="stackly-storage-client-bottom-grid"
+                data-aos="fade-up">
+
+
+                <!-- RECENT ACTIVITY -->
+                <div class="stackly-storage-client-activity-panel">
+
+                    <div class="stackly-storage-client-section-heading">
+
+                        <div>
+                            <span>UPDATES</span>
+                            <h3>Recent Activity</h3>
+                        </div>
+
+                    </div>
+
+
+                    <div class="stackly-storage-client-activity-list">
+
+                        <div class="stackly-storage-client-activity-item">
+
+                            <div class="stackly-storage-client-activity-icon green">
+                                <i class="fa-solid fa-circle-check"></i>
+                            </div>
+
+                            <div class="stackly-storage-client-activity-info">
+
+                                <h4>Booking Confirmed</h4>
+
+                                <p>Your storage booking #BK-1024 has been confirmed.</p>
+
+                                <span>Today, 10:30 AM</span>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="stackly-storage-client-activity-item">
+
+                            <div class="stackly-storage-client-activity-icon blue">
+                                <i class="fa-solid fa-truck"></i>
+                            </div>
+
+                            <div class="stackly-storage-client-activity-info">
+
+                                <h4>Shipment Dispatched</h4>
+
+                                <p>Your shipment #SHP-2048 is on its way.</p>
+
+                                <span>Yesterday, 04:15 PM</span>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="stackly-storage-client-activity-item">
+
+                            <div class="stackly-storage-client-activity-icon orange">
+                                <i class="fa-solid fa-file-invoice"></i>
+                            </div>
+
+                            <div class="stackly-storage-client-activity-info">
+
+                                <h4>New Invoice Generated</h4>
+
+                                <p>Your November storage invoice is available.</p>
+
+                                <span>10 Nov 2026, 11:00 AM</span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- QUICK ACTIONS -->
+                <div class="stackly-storage-client-quick-panel">
+
+                    <div class="stackly-storage-client-section-heading">
+
+                        <div>
+                            <span>GET STARTED</span>
+                            <h3>Quick Actions</h3>
+                        </div>
+
+                    </div>
+
+
+                    <div class="stackly-storage-client-quick-actions">
+
+                        <a href="404-client.html"
+                            class="stackly-storage-client-quick-action">
+
+                            <div class="stackly-storage-client-quick-icon green">
+                                <i class="fa-solid fa-calendar-plus"></i>
+                            </div>
+
+                            <div>
+                                <h4>Book Storage</h4>
+                                <p>Reserve a new storage unit</p>
+                            </div>
+
+                            <i class="fa-solid fa-chevron-right"></i>
+
+                        </a>
+
+
+                        <a href="404-client.html"
+                            class="stackly-storage-client-quick-action">
+
+                            <div class="stackly-storage-client-quick-icon blue">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+
+                            <div>
+                                <h4>Track Shipment</h4>
+                                <p>Check your delivery status</p>
+                            </div>
+
+                            <i class="fa-solid fa-chevron-right"></i>
+
+                        </a>
+
+
+                        <a href="404-client.html"
+                            class="stackly-storage-client-quick-action">
+
+                            <div class="stackly-storage-client-quick-icon purple">
+                                <i class="fa-solid fa-file-invoice-dollar"></i>
+                            </div>
+
+                            <div>
+                                <h4>View Invoices</h4>
+                                <p>Manage your payments</p>
+                            </div>
+
+                            <i class="fa-solid fa-chevron-right"></i>
+
+                        </a>
+
+
+                        <a href="404-client.html"
+                            class="stackly-storage-client-quick-action">
+
+                            <div class="stackly-storage-client-quick-icon orange">
+                                <i class="fa-solid fa-headset"></i>
+                            </div>
+
+                            <div>
+                                <h4>Get Support</h4>
+                                <p>Connect with our support team</p>
+                            </div>
+
+                            <i class="fa-solid fa-chevron-right"></i>
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =================================
+                 CLIENT CTA
+            ================================== -->
+
+            <section class="stackly-storage-client-cta"
+                data-aos="fade-up">
+
+                <div class="stackly-storage-client-cta-content">
+
+                    <div class="stackly-storage-client-cta-icon">
+                        <i class="fa-solid fa-headset"></i>
+                    </div>
+
+                    <div class="stackly-storage-client-cta-text">
+
+                        <span>WE ARE HERE TO HELP</span>
+
+                        <h3>Need Help With Your Storage?</h3>
+
+                        <p>
+                            Get expert assistance with bookings, shipments,
+                            payments, or any storage-related questions.
+                        </p>
+
+                    </div>
+
+                    <a href="404-client.html"
+                        class="stackly-storage-client-cta-btn">
+
+                        Contact Our Team
+                        <i class="fa-solid fa-arrow-right"></i>
+
+                    </a>
+
+                </div>
+
+            </section>
+ 
+
+        </div>
+
+    </main>
+
+
+    <!-- =========================================
+         AOS SCRIPT
+    ========================================== -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
+
+    <!-- =========================================
+         CLIENT DASHBOARD JAVASCRIPT
+    ========================================== -->
+
+    <script src="client.js"></script>
+
+</body>
+
+</html>

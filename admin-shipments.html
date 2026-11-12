@@ -1,0 +1,1008 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Stackly | Admin Dashboard</title>
+
+    <meta name="description"
+        content="Manage storage operations, inventory, warehouses, orders and business performance with the Stackly Admin Dashboard.">
+
+    <link rel="icon" href="Stackly-logo-Blue.webp">
+
+    <!-- GOOGLE FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <!-- AOS ANIMATION -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+
+    <!-- DASHBOARD CSS -->
+    <link rel="stylesheet" href="admin.css">
+</head>
+
+<body>
+
+    <!-- =========================================
+         DASHBOARD OVERLAY
+    ========================================== -->
+
+    <div class="stackly-storage-admin-overlay"
+        id="stacklyGiftAdminOverlay"></div>
+
+
+    <!-- =========================================
+         SIDEBAR
+    ========================================== -->
+
+    <aside class="stackly-storage-admin-sidebar"
+        id="stacklyGiftAdminSidebar">
+
+        <!-- SIDEBAR HEADER -->
+
+        <div class="stackly-storage-admin-sidebar-header">
+
+            <a href="admin.html" class="stackly-storage-admin-logo">
+
+                <img src="Stackly-logo-Blue.webp"
+                    alt="Stackly Smart Storage Solutions Logo">
+
+            </a>
+
+            <!-- MOBILE CLOSE BUTTON -->
+
+            <button class="stackly-storage-admin-close"
+                id="stacklyGiftAdminClose"
+                aria-label="Close sidebar">
+
+                <i class="fa-solid fa-xmark"></i>
+
+            </button>
+
+        </div>
+
+
+        <!-- ADMIN PROFILE -->
+
+        <div class="stackly-storage-admin-profile">
+
+            <div class="stackly-storage-admin-avatar">
+                <i class="fa-solid fa-user-tie"></i>
+            </div>
+
+            <div class="stackly-storage-admin-profile-info">
+                <h3>Administrator</h3>
+                <span>
+                    <span class="stackly-storage-admin-online-dot"></span>
+                    Online
+                </span>
+            </div>
+
+        </div>
+
+
+        <!-- SIDEBAR NAVIGATION -->
+
+        <nav class="stackly-storage-admin-nav">
+
+            <p class="stackly-storage-admin-nav-title">
+                MAIN MENU
+            </p>
+
+            <a href="admin.html"
+                class="stackly-storage-admin-nav-link active">
+
+                <i class="fa-solid fa-chart-pie"></i>
+                <span>Dashboard</span>
+
+            </a>
+
+            <a href="admin-warehouses.html"
+                class="stackly-storage-admin-nav-link">
+
+                <i class="fa-solid fa-warehouse"></i>
+                <span>Warehouses</span>
+
+            </a>
+
+            <a href="admin-orders.html"
+                class="stackly-storage-admin-nav-link">
+
+                <i class="fa-solid fa-clipboard-list"></i>
+                <span>Orders</span>
+                <span class="stackly-storage-admin-nav-count">08</span>
+
+            </a>
+
+            <a href="admin-shipments.html"
+                class="stackly-storage-admin-nav-link">
+
+                <i class="fa-solid fa-truck-fast"></i>
+                <span>Shipments</span>
+
+            </a>
+
+            <a href="admin-customers.html"
+                class="stackly-storage-admin-nav-link">
+
+                <i class="fa-solid fa-users"></i>
+                <span>Customers</span>
+
+            </a>
+
+
+            <p class="stackly-storage-admin-nav-title">
+                MANAGEMENT
+            </p>
+
+
+            <a href="admin-billing.html"
+                class="stackly-storage-admin-nav-link">
+
+                <i class="fa-solid fa-file-invoice-dollar"></i>
+                <span>Billing & Payments</span>
+
+            </a>
+
+            <a href="admin-settings.html"
+                class="stackly-storage-admin-nav-link">
+
+                <i class="fa-solid fa-gear"></i>
+                <span>Settings</span>
+
+            </a>
+
+
+            <p class="stackly-storage-admin-nav-title">
+                OTHER
+            </p>
+
+            <a href="index.html"
+                class="stackly-storage-admin-nav-link stackly-storage-admin-logout">
+
+                <i class="fa-solid fa-right-from-bracket"></i>
+                <span>Logout</span>
+
+            </a>
+
+        </nav>
+
+
+        <!-- SIDEBAR BOTTOM CARD -->
+
+        <div class="stackly-storage-admin-sidebar-card">
+
+            <div class="stackly-storage-admin-sidebar-card-icon">
+                <i class="fa-solid fa-headset"></i>
+            </div>
+
+            <h4>Need Assistance?</h4>
+
+            <p>Our support team is ready to help you.</p>
+
+            <a href="404-admin.html">
+                Contact Support
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+        </div>
+
+         
+
+    </aside>
+
+
+    <!-- =========================================
+         MAIN DASHBOARD CONTENT
+    ========================================== -->
+
+    <main class="stackly-storage-admin-main">
+
+
+        <!-- =====================================
+             TOP HEADER
+        ====================================== -->
+
+        <header class="stackly-storage-admin-topbar">
+
+            <div class="stackly-storage-admin-topbar-left">
+
+                <!-- MOBILE MENU BUTTON -->
+
+                <button class="stackly-storage-admin-menu-toggle"
+                    id="stacklyGiftAdminMenuToggle"
+                    aria-label="Open navigation menu"
+                    aria-expanded="false"
+                    aria-controls="stacklyGiftAdminSidebar">
+
+                    <i class="fa-solid fa-bars"></i>
+
+                </button>
+
+                <div class="stackly-storage-admin-page-title">
+                    <span>ADMINISTRATION</span>
+                    <h1>Dashboard Overview</h1>
+                </div>
+
+            </div>
+
+
+            <!-- TOPBAR RIGHT -->
+
+            <div class="stackly-storage-admin-topbar-right">
+
+                <a href="404-admin.html"><button class="stackly-storage-admin-icon-btn"
+                    aria-label="Notifications">
+
+                    <i class="fa-regular fa-bell"></i>
+                    <span class="stackly-storage-admin-notification-dot"></span>
+
+                </button></a>
+
+                 
+
+
+                <!-- ADMIN EMAIL DISPLAY -->
+
+                <div class="stackly-storage-admin-email-box">
+
+                    <div class="stackly-storage-admin-email-avatar">
+                        <i class="fa-solid fa-user-shield"></i>
+                    </div>
+
+                    <div class="stackly-storage-admin-email-info">
+                        <span>Administrator Account</span>
+                        <strong>admin@stacklystorage.com</strong>
+                    </div>
+
+                    <i class="fa-solid fa-chevron-down"></i>
+
+                </div>
+
+            </div>
+
+        </header>
+
+<div class="stackly-storage-admin-content">
+
+
+<!-- =========================================
+     STACKLY SHIPMENTS PAGE
+     SHIPMENT MANAGEMENT OVERVIEW
+========================================== -->
+
+
+<!-- =========================================
+     01. SHIPMENTS HERO SECTION
+========================================== -->
+
+<section class="stackly-storage-shipments-hero"
+    data-aos="fade-up">
+
+    <div class="stackly-storage-shipments-hero-content">
+
+        <div class="stackly-storage-shipments-hero-text">
+
+            <span class="stackly-storage-shipments-eyebrow">
+                <i class="fa-solid fa-truck-fast"></i>
+                LOGISTICS & DELIVERY CENTER
+            </span>
+
+            <h2>
+                Every Shipment.
+                <span>Right on Schedule.</span>
+            </h2>
+
+            <p>
+                Monitor deliveries, track transportation,
+                and manage every shipment with complete
+                visibility across your storage network.
+            </p>
+
+            <div class="stackly-storage-shipments-hero-actions">
+
+                <a href="404-admin.html"
+                    class="stackly-storage-shipments-primary-btn">
+                    <i class="fa-solid fa-location-crosshairs"></i>
+                    Track Shipments
+                </a>
+
+                <a href="404-admin.html"
+                    class="stackly-storage-shipments-secondary-btn">
+                    View Activity
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+
+            </div>
+
+            <div class="stackly-storage-shipments-hero-features">
+
+                <div>
+                    <i class="fa-solid fa-shield-halved"></i>
+                    <span>Secure Delivery</span>
+                </div>
+
+                <div>
+                    <i class="fa-solid fa-clock"></i>
+                    <span>Live Monitoring</span>
+                </div>
+
+                <div>
+                    <i class="fa-solid fa-route"></i>
+                    <span>Smart Routing</span>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="stackly-storage-shipments-hero-visual">
+
+            <img src="shipments-hero.webp"
+                alt="Modern logistics shipment delivery truck">
+
+            <div class="stackly-storage-shipments-floating-card">
+
+                <div class="stackly-storage-shipments-floating-icon">
+                    <i class="fa-solid fa-truck-fast"></i>
+                </div>
+
+                <div>
+                    <span>ON-TIME DELIVERY</span>
+                    <h3>96.8%</h3>
+                    <small>Excellent performance</small>
+                </div>
+
+            </div>
+
+            <div class="stackly-storage-shipments-hero-tag">
+                <i class="fa-solid fa-circle-check"></i>
+                Logistics Connected
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================
+     02. SHIPMENT PERFORMANCE STATS
+========================================== -->
+
+<section class="stackly-storage-shipments-stats"
+    data-aos="fade-up">
+
+    <div class="stackly-storage-shipments-stat-card">
+
+        <div class="stackly-storage-shipments-stat-top">
+            <div class="stackly-storage-shipments-stat-icon green">
+                <i class="fa-solid fa-truck-fast"></i>
+            </div>
+
+            <span class="positive">
+                <i class="fa-solid fa-arrow-trend-up"></i>
+                12.5%
+            </span>
+        </div>
+
+        <h3>1,248</h3>
+        <p>Total Shipments</p>
+        <small>Across all delivery locations</small>
+
+    </div>
+
+
+    <div class="stackly-storage-shipments-stat-card">
+
+        <div class="stackly-storage-shipments-stat-top">
+            <div class="stackly-storage-shipments-stat-icon orange">
+                <i class="fa-solid fa-box"></i>
+            </div>
+
+            <span class="positive">
+                <i class="fa-solid fa-arrow-trend-up"></i>
+                8.4%
+            </span>
+        </div>
+
+        <h3>186</h3>
+        <p>In Transit</p>
+        <small>Currently moving to destinations</small>
+
+    </div>
+
+
+    <div class="stackly-storage-shipments-stat-card">
+
+        <div class="stackly-storage-shipments-stat-top">
+            <div class="stackly-storage-shipments-stat-icon blue">
+                <i class="fa-solid fa-circle-check"></i>
+            </div>
+
+            <span class="positive">
+                <i class="fa-solid fa-arrow-trend-up"></i>
+                15.2%
+            </span>
+        </div>
+
+        <h3>984</h3>
+        <p>Delivered Successfully</p>
+        <small>Completed customer deliveries</small>
+
+    </div>
+
+
+    <div class="stackly-storage-shipments-stat-card">
+
+        <div class="stackly-storage-shipments-stat-top">
+            <div class="stackly-storage-shipments-stat-icon purple">
+                <i class="fa-solid fa-clock"></i>
+            </div>
+
+            <span class="neutral">
+                <i class="fa-solid fa-minus"></i>
+                2.1%
+            </span>
+        </div>
+
+        <h3>78</h3>
+        <p>Delivery Delays</p>
+        <small>Require attention and follow-up</small>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================
+     03. SHIPMENT TRACKING CENTER
+========================================== -->
+
+<section class="stackly-storage-shipment-tracking"
+    id="stacklyShipmentTracking"
+    data-aos="fade-up">
+
+    <div class="stackly-storage-shipment-section-heading">
+
+        <div>
+            <span>DELIVERY VISIBILITY</span>
+            <h2>Shipment Tracking Center</h2>
+            <p>Follow shipment progress from dispatch to destination.</p>
+        </div>
+
+        <a href="404-admin.html">
+            Advanced Tracking
+            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+        </a>
+
+    </div>
+
+
+    <div class="stackly-storage-shipment-tracking-grid">
+
+        <!-- MAIN TRACKING CARD -->
+
+        <div class="stackly-storage-shipment-tracking-card">
+
+            <div class="stackly-storage-shipment-tracking-header">
+
+                <div>
+                    <span>SHIPMENT REFERENCE</span>
+                    <h3>#SHP-2026-0842</h3>
+                </div>
+
+                <span class="stackly-storage-shipment-status in-transit">
+                    <i class="fa-solid fa-circle"></i>
+                    In Transit
+                </span>
+
+            </div>
+
+
+            <div class="stackly-storage-shipment-route">
+
+                <div class="stackly-storage-shipment-location">
+
+                    <div class="stackly-storage-shipment-location-icon">
+                        <i class="fa-solid fa-warehouse"></i>
+                    </div>
+
+                    <div>
+                        <span>ORIGIN</span>
+                        <h4>Chennai Warehouse</h4>
+                        <p>November 12, 2026 · 08:30 AM</p>
+                    </div>
+
+                </div>
+
+
+                <div class="stackly-storage-shipment-route-line">
+
+                    <div class="stackly-storage-shipment-route-progress"></div>
+
+                    <i class="fa-solid fa-truck-fast"></i>
+
+                </div>
+
+
+                <div class="stackly-storage-shipment-location">
+
+                    <div class="stackly-storage-shipment-location-icon destination">
+                        <i class="fa-solid fa-location-dot"></i>
+                    </div>
+
+                    <div>
+                        <span>DESTINATION</span>
+                        <h4>Bengaluru Distribution Center</h4>
+                        <p>Expected November 13, 2026 · 04:00 PM</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="stackly-storage-shipment-tracking-footer">
+
+                <div>
+                    <span>DELIVERY PROGRESS</span>
+                    <strong>68% Completed</strong>
+                </div>
+
+                <div class="stackly-storage-shipment-progress-bar">
+                    <span style="width: 68%;"></span>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- TRACKING SUMMARY CARD -->
+
+        <div class="stackly-storage-shipment-summary-card">
+
+            <div class="stackly-storage-shipment-summary-icon">
+                <i class="fa-solid fa-location-crosshairs"></i>
+            </div>
+
+            <span>LIVE SHIPMENT OVERVIEW</span>
+
+            <h3>186</h3>
+
+            <p>
+                Shipments are currently moving through
+                your distribution network.
+            </p>
+
+            <div class="stackly-storage-shipment-summary-details">
+
+                <div>
+                    <i class="fa-solid fa-circle-check"></i>
+                    <span>112 On Schedule</span>
+                </div>
+
+                <div>
+                    <i class="fa-solid fa-clock"></i>
+                    <span>46 Near Destination</span>
+                </div>
+
+                <div>
+                    <i class="fa-solid fa-triangle-exclamation"></i>
+                    <span>28 Need Attention</span>
+                </div>
+
+            </div>
+
+            <a href="404-admin.html">
+                Explore Shipment Details
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================
+     04. DELIVERY JOURNEY TIMELINE
+========================================== -->
+
+<section class="stackly-storage-shipment-journey"
+    data-aos="fade-up">
+
+    <div class="stackly-storage-shipment-section-heading">
+
+        <div>
+            <span>SHIPMENT WORKFLOW</span>
+            <h2>Delivery Journey</h2>
+            <p>Every important step of the shipment process in one view.</p>
+        </div>
+
+    </div>
+
+
+    <div class="stackly-storage-shipment-journey-grid">
+
+        <div class="stackly-storage-journey-step completed">
+
+            <div class="stackly-storage-journey-icon">
+                <i class="fa-solid fa-box"></i>
+            </div>
+
+            <span>STEP 01</span>
+            <h3>Order Packed</h3>
+            <p>Items securely packed and prepared for dispatch.</p>
+
+            <small>
+                <i class="fa-solid fa-check"></i>
+                Completed
+            </small>
+
+        </div>
+
+
+        <div class="stackly-storage-journey-step completed">
+
+            <div class="stackly-storage-journey-icon">
+                <i class="fa-solid fa-warehouse"></i>
+            </div>
+
+            <span>STEP 02</span>
+            <h3>Dispatched</h3>
+            <p>Shipment verified and released from the warehouse.</p>
+
+            <small>
+                <i class="fa-solid fa-check"></i>
+                Completed
+            </small>
+
+        </div>
+
+
+        <div class="stackly-storage-journey-step active">
+
+            <div class="stackly-storage-journey-icon">
+                <i class="fa-solid fa-truck-fast"></i>
+            </div>
+
+            <span>STEP 03</span>
+            <h3>In Transit</h3>
+            <p>Shipment is moving through the delivery network.</p>
+
+            <small>
+                <i class="fa-solid fa-spinner"></i>
+                In Progress
+            </small>
+
+        </div>
+
+
+        <div class="stackly-storage-journey-step">
+
+            <div class="stackly-storage-journey-icon">
+                <i class="fa-solid fa-house-circle-check"></i>
+            </div>
+
+            <span>STEP 04</span>
+            <h3>Delivered</h3>
+            <p>Final delivery and customer confirmation.</p>
+
+            <small>
+                <i class="fa-solid fa-clock"></i>
+                Awaiting
+            </small>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================
+     05. RECENT SHIPMENT ACTIVITY
+========================================== -->
+
+<section class="stackly-storage-shipment-activity"
+    id="stacklyShipmentActivity"
+    data-aos="fade-up">
+
+    <div class="stackly-storage-shipment-section-heading">
+
+        <div>
+            <span>LOGISTICS UPDATES</span>
+            <h2>Recent Shipment Activity</h2>
+            <p>Review the latest movements and delivery updates.</p>
+        </div>
+
+        <a href="404-admin.html">
+            View All Activity
+            <i class="fa-solid fa-arrow-right"></i>
+        </a>
+
+    </div>
+
+
+    <div class="stackly-storage-shipment-table-wrapper">
+
+        <table class="stackly-storage-shipment-table">
+
+            <thead>
+                <tr>
+                    <th>SHIPMENT ID</th>
+                    <th>CUSTOMER</th>
+                    <th>DESTINATION</th>
+                    <th>DISPATCH DATE</th>
+                    <th>DELIVERY DATE</th>
+                    <th>STATUS</th>
+                    <th>ACTION</th>
+                </tr>
+            </thead>
+
+            <tbody>
+
+                <tr>
+                    <td><strong>#SHP-0842</strong></td>
+
+                    <td>
+                        <div class="stackly-storage-shipment-customer">
+                            <span class="avatar green">RK</span>
+                            <div>
+                                <strong>Rahul Kumar</strong>
+                                <small>Premium Client</small>
+                            </div>
+                        </div>
+                    </td>
+
+                    <td> Bengaluru, India </td>
+                    <td>Nov 12, 2026</td>
+                    <td>Nov 13, 2026</td>
+
+                    <td>
+                        <span class="stackly-storage-shipment-table-status transit">
+                            In Transit
+                        </span>
+                    </td>
+
+                    <td>
+                        <a href="404-admin.html"
+                            class="stackly-storage-shipment-action"
+                            aria-label="View shipment 0842">
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        </a>
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td><strong>#SHP-0841</strong></td>
+
+                    <td>
+                        <div class="stackly-storage-shipment-customer">
+                            <span class="avatar blue">AP</span>
+                            <div>
+                                <strong>Ananya Patel</strong>
+                                <small>Business Client</small>
+                            </div>
+                        </div>
+                    </td>
+
+                    <td> Hyderabad, India </td>
+                    <td>Nov 11, 2026</td>
+                    <td>Nov 12, 2026</td>
+
+                    <td>
+                        <span class="stackly-storage-shipment-table-status delivered">
+                            Delivered
+                        </span>
+                    </td>
+
+                    <td>
+                        <a href="404-admin.html"
+                            class="stackly-storage-shipment-action"
+                            aria-label="View shipment 0841">
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        </a>
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td><strong>#SHP-0840</strong></td>
+
+                    <td>
+                        <div class="stackly-storage-shipment-customer">
+                            <span class="avatar orange">VS</span>
+                            <div>
+                                <strong>Vikram Shah</strong>
+                                <small>Regular Client</small>
+                            </div>
+                        </div>
+                    </td>
+
+                    <td> Coimbatore, India </td>
+                    <td>Nov 11, 2026</td>
+                    <td>Nov 14, 2026</td>
+
+                    <td>
+                        <span class="stackly-storage-shipment-table-status pending">
+                            Pending
+                        </span>
+                    </td>
+
+                    <td>
+                        <a href="404-admin.html"
+                            class="stackly-storage-shipment-action"
+                            aria-label="View shipment 0840">
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        </a>
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td><strong>#SHP-0839</strong></td>
+
+                    <td>
+                        <div class="stackly-storage-shipment-customer">
+                            <span class="avatar purple">SM</span>
+                            <div>
+                                <strong>Sneha Menon</strong>
+                                <small>Premium Client</small>
+                            </div>
+                        </div>
+                    </td>
+
+                    <td> Kochi, India </td>
+                    <td>Nov 10, 2026</td>
+                    <td>Nov 12, 2026</td>
+
+                    <td>
+                        <span class="stackly-storage-shipment-table-status delayed">
+                            Delayed
+                        </span>
+                    </td>
+
+                    <td>
+                        <a href="404-admin.html"
+                            class="stackly-storage-shipment-action"
+                            aria-label="View shipment 0839">
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        </a>
+                    </td>
+                </tr>
+
+
+                <tr>
+                    <td><strong>#SHP-0838</strong></td>
+
+                    <td>
+                        <div class="stackly-storage-shipment-customer">
+                            <span class="avatar teal">MJ</span>
+                            <div>
+                                <strong>Manoj Joseph</strong>
+                                <small>Business Client</small>
+                            </div>
+                        </div>
+                    </td>
+
+                    <td> Madurai, India </td>
+                    <td>Nov 09, 2026</td>
+                    <td>Nov 11, 2026</td>
+
+                    <td>
+                        <span class="stackly-storage-shipment-table-status delivered">
+                            Delivered
+                        </span>
+                    </td>
+
+                    <td>
+                        <a href="404-admin.html"
+                            class="stackly-storage-shipment-action"
+                            aria-label="View shipment 0838">
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        </a>
+                    </td>
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================
+     06. DELIVERY PERFORMANCE BANNER
+========================================== -->
+
+<section class="stackly-storage-shipment-performance"
+    data-aos="fade-up">
+
+    <div class="stackly-storage-shipment-performance-content">
+
+        <div class="stackly-storage-shipment-performance-icon">
+            <i class="fa-solid fa-chart-line"></i>
+        </div>
+
+        <div class="stackly-storage-shipment-performance-text">
+
+            <span>DELIVERY EXCELLENCE</span>
+
+            <h2>
+                Smarter Logistics.
+                <span>Better Deliveries.</span>
+            </h2>
+
+            <p>
+                Keep your operations connected with efficient
+                transportation, organized dispatches, and
+                reliable delivery management.
+            </p>
+
+            <a href="404-admin.html">
+                Explore Performance Reports
+                <i class="fa-solid fa-arrow-right"></i>
+            </a>
+
+        </div>
+
+        <div class="stackly-storage-shipment-performance-visual">
+
+            <div class="stackly-storage-performance-circle">
+                <div>
+                    <strong>96.8%</strong>
+                    <span>On-Time Rate</span>
+                </div>
+            </div>
+
+            <div class="stackly-storage-performance-mini-card">
+                <i class="fa-solid fa-arrow-trend-up"></i>
+                <div>
+                    <strong>+12.5%</strong>
+                    <span>Monthly Growth</span>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+</div>
+
+    </main>
+
+
+    <!-- =========================================
+         AOS SCRIPT
+    ========================================== -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
+    <!-- DASHBOARD JAVASCRIPT -->
+    <script src="admin.js"></script>
+
+</body>
+
+</html>

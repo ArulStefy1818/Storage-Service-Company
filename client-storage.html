@@ -1,0 +1,1441 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Stackly | Client Dashboard</title>
+
+    <meta name="description"
+        content="Manage your storage bookings, shipments, invoices and account details with the Stackly Client Dashboard.">
+
+    <link rel="icon" href="Stackly-logo-Blue.webp">
+
+    <!-- GOOGLE FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <!-- AOS ANIMATION -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+
+    <!-- DASHBOARD CSS -->
+     
+    <link rel="stylesheet" href="client.css">
+
+</head>
+
+<body>
+
+    <!-- =========================================
+         CLIENT DASHBOARD SIDEBAR
+    ========================================== -->
+
+    <aside class="stackly-storage-client-sidebar"
+        id="stacklyStorageClientSidebar">
+
+        <!-- LOGO -->
+        <div class="stackly-storage-client-logo">
+
+            <a href="client.html" aria-label="Stackly Home">
+                <img src="Stackly-logo-Blue.webp"
+                    alt="Stackly Storage Solutions Logo">
+            </a>
+
+            <!-- MOBILE CLOSE BUTTON -->
+            <button class="stackly-storage-client-close"
+                id="stacklyStorageClientClose"
+                type="button"
+                aria-label="Close sidebar">
+
+                <i class="fa-solid fa-xmark"></i>
+
+            </button>
+
+        </div>
+
+
+        <!-- CLIENT PROFILE -->
+        <div class="stackly-storage-client-sidebar-profile">
+
+            <div class="stackly-storage-client-avatar">
+                <i class="fa-solid fa-user"></i>
+            </div>
+
+            <div class="stackly-storage-client-profile-info">
+
+                <h4 id="storageClientSidebarName">Client</h4>
+
+                <span>
+                    <span class="stackly-storage-client-online-dot"></span>
+                    Active Account
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <!-- SIDEBAR NAVIGATION -->
+        <nav class="stackly-storage-client-navigation">
+
+            <span class="stackly-storage-client-nav-label">
+                MAIN MENU
+            </span>
+
+            <a href="client.html"
+                class="stackly-storage-client-nav-link active">
+
+                <i class="fa-solid fa-house"></i>
+                <span>Dashboard</span>
+
+            </a>
+
+            <a href="client-storage.html"
+                class="stackly-storage-client-nav-link">
+
+                <i class="fa-solid fa-warehouse"></i>
+                <span>My Storage</span>
+
+            </a>
+
+            <a href="client-bookings.html"
+                class="stackly-storage-client-nav-link">
+
+                <i class="fa-solid fa-calendar-check"></i>
+                <span>My Bookings</span>
+
+            </a>
+
+            <a href="client-shipments.html"
+                class="stackly-storage-client-nav-link">
+
+                <i class="fa-solid fa-truck-fast"></i>
+                <span>Shipments</span>
+
+                <span class="stackly-storage-client-nav-count">02</span>
+
+            </a>
+
+            <a href="client-invoices.html"
+                class="stackly-storage-client-nav-link">
+
+                <i class="fa-solid fa-file-invoice-dollar"></i>
+                <span>Invoices</span>
+
+            </a>
+
+
+            <span class="stackly-storage-client-nav-label">
+                ACCOUNT
+            </span>
+
+            <a href="client-profile.html"
+                class="stackly-storage-client-nav-link">
+
+                <i class="fa-solid fa-user-gear"></i>
+                <span>My Profile</span>
+
+            </a>
+
+        </nav>
+
+
+        <!-- SIDEBAR BOTTOM -->
+        <div class="stackly-storage-client-sidebar-bottom">
+
+            <div class="stackly-storage-client-help-card">
+
+                <div class="stackly-storage-client-help-icon">
+                    <i class="fa-solid fa-headset"></i>
+                </div>
+
+                <h4>Need Assistance?</h4>
+
+                <p>Our support team is ready to help you.</p>
+
+                <a href="404-client.html">
+                    Contact Support
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+
+            </div>
+
+
+            <a href="index.html"
+                class="stackly-storage-client-logout">
+
+                <i class="fa-solid fa-right-from-bracket"></i>
+                <span>Logout</span>
+
+            </a>
+
+        </div>
+
+    </aside>
+
+
+    <!-- =========================================
+         MOBILE SIDEBAR OVERLAY
+    ========================================== -->
+
+    <div class="stackly-storage-client-overlay"
+        id="stacklyStorageClientOverlay"></div>
+
+
+    <!-- =========================================
+         CLIENT MAIN CONTENT
+    ========================================== -->
+
+    <main class="stackly-storage-client-main">
+
+
+        <!-- =====================================
+             TOPBAR
+        ====================================== -->
+
+        <header class="stackly-storage-client-topbar">
+
+            <div class="stackly-storage-client-topbar-left">
+
+                <!-- MOBILE HAMBURGER -->
+                <button class="stackly-storage-client-menu-toggle"
+                    id="stacklyStorageClientMenuToggle"
+                    type="button"
+                    aria-label="Open navigation menu"
+                    aria-expanded="false">
+
+                    <i class="fa-solid fa-bars"></i>
+
+                </button>
+
+
+                <div class="stackly-storage-client-page-heading">
+
+                    <span>CLIENT PORTAL</span>
+
+                    <h2>Client Dashboard</h2>
+
+                </div>
+
+            </div>
+
+
+            <!-- TOPBAR RIGHT -->
+            <div class="stackly-storage-client-topbar-right">
+
+                <a href="404-client.html"
+                    class="stackly-storage-client-notification"
+                    aria-label="Support">
+
+                    <i class="fa-regular fa-bell"></i>
+
+                    <span></span>
+
+                </a>
+
+
+                <!-- EMAIL DISPLAY -->
+                <div class="stackly-storage-client-email-box">
+
+                    <div class="stackly-storage-client-email-avatar">
+                        <i class="fa-solid fa-user"></i>
+                    </div>
+
+                    <div class="stackly-storage-client-email-info">
+
+                        <span>Logged in as</span>
+
+                        <strong id="storageClientTopbarEmail">
+                            client@stacklystorage.com
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+<!-- =========================================
+     STACKLY CLIENT MY STORAGE PAGE
+     COMPLETE STORAGE MANAGEMENT SECTIONS
+========================================== -->
+
+<div class="stackly-storage-client-content">
+
+<!-- =========================================
+     01. STORAGE PAGE HERO
+========================================== -->
+
+<section class="stackly-storage-client-storage-hero"
+    data-aos="fade-up">
+
+    <div class="stackly-storage-client-storage-hero-content">
+
+        <span class="stackly-storage-client-storage-hero-tag">
+            <i class="fa-solid fa-warehouse"></i>
+            MY STORAGE SPACE
+        </span>
+
+        <h1>
+            Your Storage,
+            <span>All in One Place.</span>
+        </h1>
+
+        <p>
+            Monitor your storage units, manage available space,
+            review facility details, and keep your stored
+            belongings organized with ease.
+        </p>
+
+        <div class="stackly-storage-client-storage-hero-actions">
+
+            <a href="404-client.html"
+                class="stackly-storage-client-storage-primary-btn">
+
+                <i class="fa-solid fa-plus"></i>
+                Book Additional Space
+
+            </a>
+
+            <a href="404-client.html"
+                class="stackly-storage-client-storage-outline-btn">
+
+                Explore Facilities
+                <i class="fa-solid fa-arrow-right"></i>
+
+            </a>
+
+        </div>
+
+        <div class="stackly-storage-client-storage-hero-trust">
+
+            <div>
+                <i class="fa-solid fa-shield-halved"></i>
+                Secure Facilities
+            </div>
+
+            <div>
+                <i class="fa-solid fa-clock"></i>
+                24/7 Monitoring
+            </div>
+
+            <div>
+                <i class="fa-solid fa-boxes-stacked"></i>
+                Flexible Storage
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="stackly-storage-client-storage-hero-visual">
+
+        <img src="warehouse-1.webp"
+            alt="Modern Stackly storage warehouse">
+
+        <div class="stackly-storage-client-storage-hero-floating">
+
+            <div class="stackly-storage-client-storage-hero-floating-icon">
+                <i class="fa-solid fa-boxes-stacked"></i>
+            </div>
+
+            <div>
+                <span>YOUR STORAGE CAPACITY</span>
+                <h3>800 Sq. Ft.</h3>
+                <p>Across active units</p>
+            </div>
+
+        </div>
+
+        <div class="stackly-storage-client-storage-hero-decoration">
+            <i class="fa-solid fa-warehouse"></i>
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================
+     02. STORAGE PORTFOLIO OVERVIEW
+========================================== -->
+
+<section class="stackly-storage-client-portfolio"
+    data-aos="fade-up">
+
+    <div class="stackly-storage-client-storage-section-heading">
+
+        <div>
+            <span>STORAGE SUMMARY</span>
+            <h3>Your Storage Portfolio</h3>
+            <p>Get a quick overview of your current storage allocation.</p>
+        </div>
+
+        <a href="404-client.html">
+            Storage History
+            <i class="fa-solid fa-arrow-right"></i>
+        </a>
+
+    </div>
+
+
+    <div class="stackly-storage-client-portfolio-grid">
+
+
+        <!-- TOTAL UNITS -->
+
+        <div class="stackly-storage-client-portfolio-card">
+
+            <div class="stackly-storage-client-portfolio-icon green">
+                <i class="fa-solid fa-warehouse"></i>
+            </div>
+
+            <div class="stackly-storage-client-portfolio-info">
+
+                <span>Registered Units</span>
+
+                <h3>08</h3>
+
+                <p>
+                    <i class="fa-solid fa-arrow-up"></i>
+                    2 new units this month
+                </p>
+
+            </div>
+
+            <div class="stackly-storage-client-portfolio-decoration">
+                <i class="fa-solid fa-warehouse"></i>
+            </div>
+
+        </div>
+
+
+        <!-- TOTAL CAPACITY -->
+
+        <div class="stackly-storage-client-portfolio-card">
+
+            <div class="stackly-storage-client-portfolio-icon blue">
+                <i class="fa-solid fa-expand"></i>
+            </div>
+
+            <div class="stackly-storage-client-portfolio-info">
+
+                <span>Total Capacity</span>
+
+                <h3>1,200 <small>Sq. Ft.</small></h3>
+
+                <p>
+                    <i class="fa-solid fa-chart-line"></i>
+                    Across all storage units
+                </p>
+
+            </div>
+
+            <div class="stackly-storage-client-portfolio-decoration">
+                <i class="fa-solid fa-expand"></i>
+            </div>
+
+        </div>
+
+
+        <!-- OCCUPIED SPACE -->
+
+        <div class="stackly-storage-client-portfolio-card">
+
+            <div class="stackly-storage-client-portfolio-icon orange">
+                <i class="fa-solid fa-boxes-stacked"></i>
+            </div>
+
+            <div class="stackly-storage-client-portfolio-info">
+
+                <span>Occupied Space</span>
+
+                <h3>800 <small>Sq. Ft.</small></h3>
+
+                <p>
+                    <i class="fa-solid fa-box"></i>
+                    Currently in use
+                </p>
+
+            </div>
+
+            <div class="stackly-storage-client-portfolio-decoration">
+                <i class="fa-solid fa-boxes-stacked"></i>
+            </div>
+
+        </div>
+
+
+        <!-- AVAILABLE SPACE -->
+
+        <div class="stackly-storage-client-portfolio-card">
+
+            <div class="stackly-storage-client-portfolio-icon purple">
+                <i class="fa-solid fa-cubes-stacked"></i>
+            </div>
+
+            <div class="stackly-storage-client-portfolio-info">
+
+                <span>Available Space</span>
+
+                <h3>400 <small>Sq. Ft.</small></h3>
+
+                <p>
+                    <i class="fa-solid fa-circle-check"></i>
+                    Ready for allocation
+                </p>
+
+            </div>
+
+            <div class="stackly-storage-client-portfolio-decoration">
+                <i class="fa-solid fa-cubes-stacked"></i>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================
+     03. MY STORAGE UNITS
+========================================== -->
+
+<section class="stackly-storage-client-units"
+    data-aos="fade-up">
+
+    <div class="stackly-storage-client-storage-section-heading">
+
+        <div>
+            <span>ACTIVE ALLOCATIONS</span>
+            <h3>My Storage Units</h3>
+            <p>Manage and explore your currently allocated storage spaces.</p>
+        </div>
+
+        <a href="404-client.html">
+            View All Units
+            <i class="fa-solid fa-arrow-right"></i>
+        </a>
+
+    </div>
+
+
+    <div class="stackly-storage-client-units-grid">
+
+
+        <!-- GENERAL STORAGE -->
+
+        <div class="stackly-storage-client-unit-card">
+
+            <div class="stackly-storage-client-unit-image">
+
+                <img src="warehouse-1.webp"
+                    alt="General storage warehouse">
+
+                <span class="stackly-storage-client-unit-status active">
+                    <i class="fa-solid fa-circle"></i>
+                    Active
+                </span>
+
+                <span class="stackly-storage-client-unit-number">
+                    UNIT 01
+                </span>
+
+            </div>
+
+
+            <div class="stackly-storage-client-unit-content">
+
+                <div class="stackly-storage-client-unit-heading">
+
+                    <div>
+                        <span>STANDARD FACILITY</span>
+                        <h4>General Storage</h4>
+                    </div>
+
+                    <div class="stackly-storage-client-unit-icon">
+                        <i class="fa-solid fa-warehouse"></i>
+                    </div>
+
+                </div>
+
+
+                <div class="stackly-storage-client-unit-location">
+
+                    <i class="fa-solid fa-location-dot"></i>
+                    Warehouse A, Chennai
+
+                </div>
+
+
+                <div class="stackly-storage-client-unit-details">
+
+                    <div>
+                        <span>Unit Number</span>
+                        <strong>GA-104</strong>
+                    </div>
+
+                    <div>
+                        <span>Storage Area</span>
+                        <strong>500 Sq. Ft.</strong>
+                    </div>
+
+                    <div>
+                        <span>Storage Type</span>
+                        <strong>General Goods</strong>
+                    </div>
+
+                </div>
+
+
+                <div class="stackly-storage-client-unit-footer">
+
+                    <div>
+                        <span>Monthly Plan</span>
+                        <strong>₹8,500 / Month</strong>
+                    </div>
+
+                    <a href="404-client.html"
+                        aria-label="View general storage details">
+
+                        <i class="fa-solid fa-arrow-right"></i>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- PREMIUM STORAGE -->
+
+        <div class="stackly-storage-client-unit-card">
+
+            <div class="stackly-storage-client-unit-image">
+
+                <img src="automated-storage.webp"
+                    alt="Premium automated storage facility">
+
+                <span class="stackly-storage-client-unit-status active">
+                    <i class="fa-solid fa-circle"></i>
+                    Active
+                </span>
+
+                <span class="stackly-storage-client-unit-number">
+                    UNIT 02
+                </span>
+
+            </div>
+
+
+            <div class="stackly-storage-client-unit-content">
+
+                <div class="stackly-storage-client-unit-heading">
+
+                    <div>
+                        <span>PREMIUM FACILITY</span>
+                        <h4>Premium Storage</h4>
+                    </div>
+
+                    <div class="stackly-storage-client-unit-icon">
+                        <i class="fa-solid fa-box-open"></i>
+                    </div>
+
+                </div>
+
+
+                <div class="stackly-storage-client-unit-location">
+
+                    <i class="fa-solid fa-location-dot"></i>
+                    Warehouse B, Chennai
+
+                </div>
+
+
+                <div class="stackly-storage-client-unit-details">
+
+                    <div>
+                        <span>Unit Number</span>
+                        <strong>PB-208</strong>
+                    </div>
+
+                    <div>
+                        <span>Storage Area</span>
+                        <strong>300 Sq. Ft.</strong>
+                    </div>
+
+                    <div>
+                        <span>Storage Type</span>
+                        <strong>Premium Goods</strong>
+                    </div>
+
+                </div>
+
+
+                <div class="stackly-storage-client-unit-footer">
+
+                    <div>
+                        <span>Monthly Plan</span>
+                        <strong>₹6,500 / Month</strong>
+                    </div>
+
+                    <a href="404-client.html"
+                        aria-label="View premium storage details">
+
+                        <i class="fa-solid fa-arrow-right"></i>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- CLIMATE CONTROLLED STORAGE -->
+
+        <div class="stackly-storage-client-unit-card">
+
+            <div class="stackly-storage-client-unit-image">
+
+                <img src="climate-storage.webp"
+                    alt="Climate controlled storage facility">
+
+                <span class="stackly-storage-client-unit-status active">
+                    <i class="fa-solid fa-circle"></i>
+                    Active
+                </span>
+
+                <span class="stackly-storage-client-unit-number">
+                    UNIT 03
+                </span>
+
+            </div>
+
+
+            <div class="stackly-storage-client-unit-content">
+
+                <div class="stackly-storage-client-unit-heading">
+
+                    <div>
+                        <span>CONTROLLED ENVIRONMENT</span>
+                        <h4>Climate Storage</h4>
+                    </div>
+
+                    <div class="stackly-storage-client-unit-icon">
+                        <i class="fa-solid fa-temperature-half"></i>
+                    </div>
+
+                </div>
+
+
+                <div class="stackly-storage-client-unit-location">
+
+                    <i class="fa-solid fa-location-dot"></i>
+                    Warehouse C, Chennai
+
+                </div>
+
+
+                <div class="stackly-storage-client-unit-details">
+
+                    <div>
+                        <span>Unit Number</span>
+                        <strong>CC-312</strong>
+                    </div>
+
+                    <div>
+                        <span>Storage Area</span>
+                        <strong>200 Sq. Ft.</strong>
+                    </div>
+
+                    <div>
+                        <span>Storage Type</span>
+                        <strong>Temperature Controlled</strong>
+                    </div>
+
+                </div>
+
+
+                <div class="stackly-storage-client-unit-footer">
+
+                    <div>
+                        <span>Monthly Plan</span>
+                        <strong>₹5,200 / Month</strong>
+                    </div>
+
+                    <a href="404-client.html"
+                        aria-label="View climate storage details">
+
+                        <i class="fa-solid fa-arrow-right"></i>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================
+     04. STORAGE SPACE UTILIZATION
+========================================== -->
+
+<section class="stackly-storage-client-utilization"
+    data-aos="fade-up">
+
+    <div class="stackly-storage-client-storage-section-heading">
+
+        <div>
+            <span>SPACE PERFORMANCE</span>
+            <h3>Storage Utilization</h3>
+            <p>Understand how your allocated storage capacity is being used.</p>
+        </div>
+
+        <span class="stackly-storage-client-utilization-period">
+            <i class="fa-regular fa-calendar"></i>
+            November 2026
+        </span>
+
+    </div>
+
+
+    <div class="stackly-storage-client-utilization-grid">
+
+
+        <!-- UTILIZATION SUMMARY -->
+
+        <div class="stackly-storage-client-utilization-panel">
+
+            <div class="stackly-storage-client-utilization-panel-heading">
+
+                <div>
+                    <span>CAPACITY OVERVIEW</span>
+                    <h4>Space Distribution</h4>
+                </div>
+
+                <i class="fa-solid fa-chart-pie"></i>
+
+            </div>
+
+
+            <div class="stackly-storage-client-utilization-chart">
+
+                <div class="stackly-storage-client-utilization-circle">
+
+                    <div class="stackly-storage-client-utilization-circle-inner">
+
+                        <strong>67%</strong>
+
+                        <span>Utilized</span>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="stackly-storage-client-utilization-legend">
+
+                <div>
+                    <span class="occupied"></span>
+                    <span>Occupied Space</span>
+                    <strong>800 Sq. Ft.</strong>
+                </div>
+
+                <div>
+                    <span class="available"></span>
+                    <span>Available Space</span>
+                    <strong>400 Sq. Ft.</strong>
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- SPACE BREAKDOWN -->
+
+        <div class="stackly-storage-client-space-panel">
+
+            <div class="stackly-storage-client-utilization-panel-heading">
+
+                <div>
+                    <span>UNIT PERFORMANCE</span>
+                    <h4>Space Breakdown</h4>
+                </div>
+
+                <i class="fa-solid fa-chart-column"></i>
+
+            </div>
+
+
+            <div class="stackly-storage-client-space-list">
+
+
+                <div class="stackly-storage-client-space-item">
+
+                    <div class="stackly-storage-client-space-item-heading">
+
+                        <div>
+                            <i class="fa-solid fa-warehouse"></i>
+                            General Storage
+                        </div>
+
+                        <strong>80%</strong>
+
+                    </div>
+
+                    <div class="stackly-storage-client-space-progress">
+                        <span style="width: 80%;"></span>
+                    </div>
+
+                    <div class="stackly-storage-client-space-caption">
+                        <span>400 Sq. Ft. Used</span>
+                        <span>500 Sq. Ft. Total</span>
+                    </div>
+
+                </div>
+
+
+
+                <div class="stackly-storage-client-space-item">
+
+                    <div class="stackly-storage-client-space-item-heading">
+
+                        <div>
+                            <i class="fa-solid fa-box-open"></i>
+                            Premium Storage
+                        </div>
+
+                        <strong>60%</strong>
+
+                    </div>
+
+                    <div class="stackly-storage-client-space-progress">
+                        <span style="width: 60%;"></span>
+                    </div>
+
+                    <div class="stackly-storage-client-space-caption">
+                        <span>180 Sq. Ft. Used</span>
+                        <span>300 Sq. Ft. Total</span>
+                    </div>
+
+                </div>
+
+
+
+                <div class="stackly-storage-client-space-item">
+
+                    <div class="stackly-storage-client-space-item-heading">
+
+                        <div>
+                            <i class="fa-solid fa-temperature-half"></i>
+                            Climate Storage
+                        </div>
+
+                        <strong>100%</strong>
+
+                    </div>
+
+                    <div class="stackly-storage-client-space-progress">
+                        <span style="width: 100%;"></span>
+                    </div>
+
+                    <div class="stackly-storage-client-space-caption">
+                        <span>200 Sq. Ft. Used</span>
+                        <span>200 Sq. Ft. Total</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="stackly-storage-client-space-note">
+
+                <i class="fa-solid fa-lightbulb"></i>
+
+                <p>
+                    You have <strong>400 Sq. Ft.</strong> of available
+                    storage capacity across your registered units.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================
+     05. STORAGE FACILITY FEATURES
+========================================== -->
+
+<section class="stackly-storage-client-facilities"
+    data-aos="fade-up">
+
+    <div class="stackly-storage-client-storage-section-heading">
+
+        <div>
+            <span>FACILITY BENEFITS</span>
+            <h3>Protection Beyond Storage</h3>
+            <p>Explore the facility features supporting your stored goods.</p>
+        </div>
+
+    </div>
+
+
+    <div class="stackly-storage-client-facilities-grid">
+
+
+        <div class="stackly-storage-client-facility-card">
+
+            <div class="stackly-storage-client-facility-icon green">
+                <i class="fa-solid fa-shield-halved"></i>
+            </div>
+
+            <h4>Advanced Security</h4>
+
+            <p>
+                Controlled access and continuous surveillance
+                help protect your stored inventory.
+            </p>
+
+            <span>
+                <i class="fa-solid fa-circle-check"></i>
+                Security Enabled
+            </span>
+
+        </div>
+
+
+
+        <div class="stackly-storage-client-facility-card">
+
+            <div class="stackly-storage-client-facility-icon blue">
+                <i class="fa-solid fa-video"></i>
+            </div>
+
+            <h4>24/7 Monitoring</h4>
+
+            <p>
+                Around-the-clock facility monitoring helps
+                maintain a secure storage environment.
+            </p>
+
+            <span>
+                <i class="fa-solid fa-circle-check"></i>
+                Monitoring Active
+            </span>
+
+        </div>
+
+
+
+        <div class="stackly-storage-client-facility-card">
+
+            <div class="stackly-storage-client-facility-icon orange">
+                <i class="fa-solid fa-temperature-low"></i>
+            </div>
+
+            <h4>Climate Management</h4>
+
+            <p>
+                Temperature-controlled environments support
+                the storage of sensitive materials.
+            </p>
+
+            <span>
+                <i class="fa-solid fa-circle-check"></i>
+                Climate Facility
+            </span>
+
+        </div>
+
+
+
+        <div class="stackly-storage-client-facility-card">
+
+            <div class="stackly-storage-client-facility-icon purple">
+                <i class="fa-solid fa-truck-ramp-box"></i>
+            </div>
+
+            <h4>Easy Material Handling</h4>
+
+            <p>
+                Organized loading and unloading facilities
+                simplify your daily storage operations.
+            </p>
+
+            <span>
+                <i class="fa-solid fa-circle-check"></i>
+                Handling Support
+            </span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================
+     06. UPCOMING STORAGE SCHEDULE
+========================================== -->
+
+<section class="stackly-storage-client-schedule"
+    data-aos="fade-up">
+
+    <div class="stackly-storage-client-storage-section-heading">
+
+        <div>
+            <span>UPCOMING ACTIVITIES</span>
+            <h3>Storage Schedule</h3>
+            <p>Keep track of your upcoming storage-related activities.</p>
+        </div>
+
+        <a href="404-client.html">
+            Full Schedule
+            <i class="fa-solid fa-arrow-right"></i>
+        </a>
+
+    </div>
+
+
+    <div class="stackly-storage-client-schedule-panel">
+
+
+        <!-- SCHEDULE ITEM 01 -->
+
+        <div class="stackly-storage-client-schedule-item">
+
+            <div class="stackly-storage-client-schedule-date">
+
+                <span>NOV</span>
+                <strong>14</strong>
+
+            </div>
+
+
+            <div class="stackly-storage-client-schedule-info">
+
+                <span class="stackly-storage-client-schedule-type green">
+                    STORAGE INSPECTION
+                </span>
+
+                <h4>General Storage Unit Inspection</h4>
+
+                <p>
+                    <i class="fa-solid fa-location-dot"></i>
+                    Warehouse A - Unit GA-104
+                </p>
+
+            </div>
+
+
+            <div class="stackly-storage-client-schedule-time">
+
+                <span>
+                    <i class="fa-regular fa-clock"></i>
+                    10:30 AM
+                </span>
+
+                <strong>Upcoming</strong>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- SCHEDULE ITEM 02 -->
+
+        <div class="stackly-storage-client-schedule-item">
+
+            <div class="stackly-storage-client-schedule-date">
+
+                <span>NOV</span>
+                <strong>18</strong>
+
+            </div>
+
+
+            <div class="stackly-storage-client-schedule-info">
+
+                <span class="stackly-storage-client-schedule-type blue">
+                    INVENTORY UPDATE
+                </span>
+
+                <h4>Premium Storage Inventory Review</h4>
+
+                <p>
+                    <i class="fa-solid fa-location-dot"></i>
+                    Warehouse B - Unit PB-208
+                </p>
+
+            </div>
+
+
+            <div class="stackly-storage-client-schedule-time">
+
+                <span>
+                    <i class="fa-regular fa-clock"></i>
+                    02:00 PM
+                </span>
+
+                <strong>Scheduled</strong>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- SCHEDULE ITEM 03 -->
+
+        <div class="stackly-storage-client-schedule-item">
+
+            <div class="stackly-storage-client-schedule-date">
+
+                <span>NOV</span>
+                <strong>25</strong>
+
+            </div>
+
+
+            <div class="stackly-storage-client-schedule-info">
+
+                <span class="stackly-storage-client-schedule-type orange">
+                    PAYMENT REMINDER
+                </span>
+
+                <h4>Monthly Storage Payment Due</h4>
+
+                <p>
+                    <i class="fa-solid fa-file-invoice-dollar"></i>
+                    November Storage Invoice
+                </p>
+
+            </div>
+
+
+            <div class="stackly-storage-client-schedule-time">
+
+                <span>
+                    <i class="fa-regular fa-clock"></i>
+                    Due Date
+                </span>
+
+                <strong>Pending</strong>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================
+     07. STORAGE MANAGEMENT QUICK ACTIONS
+========================================== -->
+
+<section class="stackly-storage-client-management"
+    data-aos="fade-up">
+
+    <div class="stackly-storage-client-storage-section-heading">
+
+        <div>
+            <span>MANAGE YOUR SPACE</span>
+            <h3>Storage Management</h3>
+            <p>Access essential tools to manage your storage account.</p>
+        </div>
+
+    </div>
+
+
+    <div class="stackly-storage-client-management-grid">
+
+
+        <a href="404-client.html"
+            class="stackly-storage-client-management-card">
+
+            <div class="stackly-storage-client-management-icon green">
+                <i class="fa-solid fa-boxes-stacked"></i>
+            </div>
+
+            <div>
+                <h4>Manage Inventory</h4>
+                <p>Review your stored items and inventory records.</p>
+            </div>
+
+            <span>
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </span>
+
+        </a>
+
+
+
+        <a href="404-client.html"
+            class="stackly-storage-client-management-card">
+
+            <div class="stackly-storage-client-management-icon blue">
+                <i class="fa-solid fa-calendar-plus"></i>
+            </div>
+
+            <div>
+                <h4>Extend Storage</h4>
+                <p>Request additional space or extend your storage plan.</p>
+            </div>
+
+            <span>
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </span>
+
+        </a>
+
+
+
+        <a href="404-client.html"
+            class="stackly-storage-client-management-card">
+
+            <div class="stackly-storage-client-management-icon orange">
+                <i class="fa-solid fa-truck-moving"></i>
+            </div>
+
+            <div>
+                <h4>Request Relocation</h4>
+                <p>Arrange movement of goods between storage facilities.</p>
+            </div>
+
+            <span>
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </span>
+
+        </a>
+
+
+
+        <a href="404-client.html"
+            class="stackly-storage-client-management-card">
+
+            <div class="stackly-storage-client-management-icon purple">
+                <i class="fa-solid fa-headset"></i>
+            </div>
+
+            <div>
+                <h4>Storage Assistance</h4>
+                <p>Get professional help with your storage requirements.</p>
+            </div>
+
+            <span>
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </span>
+
+        </a>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================================
+     08. STORAGE SUPPORT BANNER
+========================================== -->
+
+<section class="stackly-storage-client-storage-support"
+    data-aos="fade-up">
+
+    <div class="stackly-storage-client-storage-support-content">
+
+        <div class="stackly-storage-client-storage-support-icon">
+            <i class="fa-solid fa-warehouse"></i>
+        </div>
+
+        <div class="stackly-storage-client-storage-support-text">
+
+            <span>YOUR SPACE. OUR RESPONSIBILITY.</span>
+
+            <h3>Need More Room for Your Business?</h3>
+
+            <p>
+                Discover flexible storage options designed around
+                your changing inventory and business needs.
+                Our team is ready to help you find the right space.
+            </p>
+
+        </div>
+
+        <a href="404-client.html"
+            class="stackly-storage-client-storage-support-btn">
+
+            Explore Storage Options
+            <i class="fa-solid fa-arrow-right"></i>
+
+        </a>
+
+    </div>
+
+</section>
+
+</div>
+
+</main>
+
+
+    <!-- =========================================
+         AOS SCRIPT
+    ========================================== -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
+
+    <!-- =========================================
+         CLIENT DASHBOARD JAVASCRIPT
+    ========================================== -->
+
+    <script src="client.js"></script>
+
+</body>
+
+</html>

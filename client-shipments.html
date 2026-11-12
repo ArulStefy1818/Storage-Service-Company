@@ -1,0 +1,1319 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Stackly | Client Dashboard</title>
+
+    <meta name="description"
+        content="Manage your storage bookings, shipments, invoices and account details with the Stackly Client Dashboard.">
+
+    <link rel="icon" href="Stackly-logo-Blue.webp">
+
+    <!-- GOOGLE FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <!-- AOS ANIMATION -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+
+    <!-- DASHBOARD CSS -->
+     
+    <link rel="stylesheet" href="client.css">
+
+</head>
+
+<body>
+
+    <!-- =========================================
+         CLIENT DASHBOARD SIDEBAR
+    ========================================== -->
+
+    <aside class="stackly-storage-client-sidebar"
+        id="stacklyStorageClientSidebar">
+
+        <!-- LOGO -->
+        <div class="stackly-storage-client-logo">
+
+            <a href="client.html" aria-label="Stackly Home">
+                <img src="Stackly-logo-Blue.webp"
+                    alt="Stackly Storage Solutions Logo">
+            </a>
+
+            <!-- MOBILE CLOSE BUTTON -->
+            <button class="stackly-storage-client-close"
+                id="stacklyStorageClientClose"
+                type="button"
+                aria-label="Close sidebar">
+
+                <i class="fa-solid fa-xmark"></i>
+
+            </button>
+
+        </div>
+
+
+        <!-- CLIENT PROFILE -->
+        <div class="stackly-storage-client-sidebar-profile">
+
+            <div class="stackly-storage-client-avatar">
+                <i class="fa-solid fa-user"></i>
+            </div>
+
+            <div class="stackly-storage-client-profile-info">
+
+                <h4 id="storageClientSidebarName">Client</h4>
+
+                <span>
+                    <span class="stackly-storage-client-online-dot"></span>
+                    Active Account
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <!-- SIDEBAR NAVIGATION -->
+        <nav class="stackly-storage-client-navigation">
+
+            <span class="stackly-storage-client-nav-label">
+                MAIN MENU
+            </span>
+
+            <a href="client.html"
+                class="stackly-storage-client-nav-link active">
+
+                <i class="fa-solid fa-house"></i>
+                <span>Dashboard</span>
+
+            </a>
+
+            <a href="client-storage.html"
+                class="stackly-storage-client-nav-link">
+
+                <i class="fa-solid fa-warehouse"></i>
+                <span>My Storage</span>
+
+            </a>
+
+            <a href="client-bookings.html"
+                class="stackly-storage-client-nav-link">
+
+                <i class="fa-solid fa-calendar-check"></i>
+                <span>My Bookings</span>
+
+            </a>
+
+            <a href="client-shipments.html"
+                class="stackly-storage-client-nav-link">
+
+                <i class="fa-solid fa-truck-fast"></i>
+                <span>Shipments</span>
+
+                <span class="stackly-storage-client-nav-count">02</span>
+
+            </a>
+
+            <a href="client-invoices.html"
+                class="stackly-storage-client-nav-link">
+
+                <i class="fa-solid fa-file-invoice-dollar"></i>
+                <span>Invoices</span>
+
+            </a>
+
+
+            <span class="stackly-storage-client-nav-label">
+                ACCOUNT
+            </span>
+
+            <a href="client-profile.html"
+                class="stackly-storage-client-nav-link">
+
+                <i class="fa-solid fa-user-gear"></i>
+                <span>My Profile</span>
+
+            </a>
+
+        </nav>
+
+
+        <!-- SIDEBAR BOTTOM -->
+        <div class="stackly-storage-client-sidebar-bottom">
+
+            <div class="stackly-storage-client-help-card">
+
+                <div class="stackly-storage-client-help-icon">
+                    <i class="fa-solid fa-headset"></i>
+                </div>
+
+                <h4>Need Assistance?</h4>
+
+                <p>Our support team is ready to help you.</p>
+
+                <a href="404-client.html">
+                    Contact Support
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+
+            </div>
+
+
+            <a href="index.html"
+                class="stackly-storage-client-logout">
+
+                <i class="fa-solid fa-right-from-bracket"></i>
+                <span>Logout</span>
+
+            </a>
+
+        </div>
+
+    </aside>
+
+
+    <!-- =========================================
+         MOBILE SIDEBAR OVERLAY
+    ========================================== -->
+
+    <div class="stackly-storage-client-overlay"
+        id="stacklyStorageClientOverlay"></div>
+
+
+    <!-- =========================================
+         CLIENT MAIN CONTENT
+    ========================================== -->
+
+    <main class="stackly-storage-client-main">
+
+
+        <!-- =====================================
+             TOPBAR
+        ====================================== -->
+
+        <header class="stackly-storage-client-topbar">
+
+            <div class="stackly-storage-client-topbar-left">
+
+                <!-- MOBILE HAMBURGER -->
+                <button class="stackly-storage-client-menu-toggle"
+                    id="stacklyStorageClientMenuToggle"
+                    type="button"
+                    aria-label="Open navigation menu"
+                    aria-expanded="false">
+
+                    <i class="fa-solid fa-bars"></i>
+
+                </button>
+
+
+                <div class="stackly-storage-client-page-heading">
+
+                    <span>CLIENT PORTAL</span>
+
+                    <h2>Client Dashboard</h2>
+
+                </div>
+
+            </div>
+
+
+            <!-- TOPBAR RIGHT -->
+            <div class="stackly-storage-client-topbar-right">
+
+                <a href="404-client.html"
+                    class="stackly-storage-client-notification"
+                    aria-label="Support">
+
+                    <i class="fa-regular fa-bell"></i>
+
+                    <span></span>
+
+                </a>
+
+
+                <!-- EMAIL DISPLAY -->
+                <div class="stackly-storage-client-email-box">
+
+                    <div class="stackly-storage-client-email-avatar">
+                        <i class="fa-solid fa-user"></i>
+                    </div>
+
+                    <div class="stackly-storage-client-email-info">
+
+                        <span>Logged in as</span>
+
+                        <strong id="storageClientTopbarEmail">
+                            client@stacklystorage.com
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </header>
+
+        <div class="stackly-storage-client-content">
+
+            
+<!-- =========================================
+     STACKLY CLIENT SHIPMENTS PAGE
+     SHIPMENT MANAGEMENT
+========================================== -->
+
+
+<!-- =========================================
+     01. SHIPMENTS HERO SECTION
+========================================== -->
+
+<section class="stackly-storage-client-shipments-hero"
+    id="clientShipmentsHero"
+    data-aos="fade-up">
+
+    <div class="stackly-storage-client-shipments-hero-content">
+
+        <div class="stackly-storage-client-shipments-hero-text">
+
+            <span class="stackly-storage-client-shipments-tag">
+                <i class="fa-solid fa-truck-fast"></i>
+                SHIPMENT MANAGEMENT
+            </span>
+
+            <h1>
+                Track Your
+                <span>Shipments Smarter.</span>
+                Every Step of the Way.
+            </h1>
+
+            <p>
+                Stay connected with your goods from dispatch to delivery.
+                Monitor shipment progress, review delivery details,
+                and manage your logistics in one place.
+            </p>
+
+            <div class="stackly-storage-client-shipments-hero-actions">
+
+                <a href="404-client.html"
+                    class="stackly-storage-client-shipments-primary-btn">
+                    <i class="fa-solid fa-location-crosshairs"></i>
+                    Track Shipments
+                </a>
+
+                <a href="404-client.html"
+                    class="stackly-storage-client-shipments-outline-btn">
+                    Shipment History
+                    <i class="fa-solid fa-arrow-right"></i>
+                </a>
+
+            </div>
+
+            <div class="stackly-storage-client-shipments-trust">
+
+                <span>
+                    <i class="fa-solid fa-shield-halved"></i>
+                    Secure Handling
+                </span>
+
+                <span>
+                    <i class="fa-solid fa-clock"></i>
+                    Timely Updates
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <div class="stackly-storage-client-shipments-hero-visual">
+
+            <div class="stackly-storage-client-shipments-hero-icon">
+                <i class="fa-solid fa-truck-fast"></i>
+            </div>
+
+            <div class="stackly-storage-client-shipments-floating-card">
+
+                <div class="stackly-storage-client-shipments-floating-icon">
+                    <i class="fa-solid fa-location-dot"></i>
+                </div>
+
+                <div>
+                    <strong>Shipment In Transit</strong>
+                    <span>Your goods are on the move</span>
+                </div>
+
+            </div>
+
+            <div class="stackly-storage-client-shipments-decoration"></div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================
+     02. SHIPMENT OVERVIEW
+========================================== -->
+
+<section class="stackly-storage-client-shipment-overview"
+    data-aos="fade-up">
+
+    <div class="stackly-storage-client-shipment-section-heading">
+
+        <div>
+            <span>SHIPMENT SUMMARY</span>
+            <h2>Your Shipment Overview</h2>
+            <p>Get a quick overview of your current delivery activity.</p>
+        </div>
+
+        <a href="404-client.html">
+            Shipment Assistance
+            <i class="fa-solid fa-arrow-right"></i>
+        </a>
+
+    </div>
+
+
+    <div class="stackly-storage-client-shipment-overview-grid">
+
+
+        <!-- TOTAL SHIPMENTS -->
+
+        <div class="stackly-storage-client-shipment-stat-card">
+
+            <div class="stackly-storage-client-shipment-stat-top">
+
+                <div class="stackly-storage-client-shipment-stat-icon total">
+                    <i class="fa-solid fa-boxes-stacked"></i>
+                </div>
+
+                <span class="stackly-storage-client-shipment-stat-label">
+                    All Time
+                </span>
+
+            </div>
+
+            <h3>36</h3>
+
+            <p>Total Shipments</p>
+
+            <span class="stackly-storage-client-shipment-stat-note">
+                <i class="fa-solid fa-chart-line"></i>
+                Overall shipment activity
+            </span>
+
+        </div>
+
+
+        <!-- IN TRANSIT -->
+
+        <div class="stackly-storage-client-shipment-stat-card">
+
+            <div class="stackly-storage-client-shipment-stat-top">
+
+                <div class="stackly-storage-client-shipment-stat-icon transit">
+                    <i class="fa-solid fa-truck-fast"></i>
+                </div>
+
+                <span class="stackly-storage-client-shipment-stat-label">
+                    On The Way
+                </span>
+
+            </div>
+
+            <h3>02</h3>
+
+            <p>In Transit</p>
+
+            <span class="stackly-storage-client-shipment-stat-note">
+                <i class="fa-solid fa-route"></i>
+                Currently moving
+            </span>
+
+        </div>
+
+
+        <!-- DELIVERED -->
+
+        <div class="stackly-storage-client-shipment-stat-card">
+
+            <div class="stackly-storage-client-shipment-stat-top">
+
+                <div class="stackly-storage-client-shipment-stat-icon delivered">
+                    <i class="fa-solid fa-circle-check"></i>
+                </div>
+
+                <span class="stackly-storage-client-shipment-stat-label">
+                    Successful
+                </span>
+
+            </div>
+
+            <h3>31</h3>
+
+            <p>Delivered Shipments</p>
+
+            <span class="stackly-storage-client-shipment-stat-note">
+                <i class="fa-solid fa-check-double"></i>
+                Successfully received
+            </span>
+
+        </div>
+
+
+        <!-- PENDING -->
+
+        <div class="stackly-storage-client-shipment-stat-card">
+
+            <div class="stackly-storage-client-shipment-stat-top">
+
+                <div class="stackly-storage-client-shipment-stat-icon pending">
+                    <i class="fa-solid fa-clock"></i>
+                </div>
+
+                <span class="stackly-storage-client-shipment-stat-label">
+                    Processing
+                </span>
+
+            </div>
+
+            <h3>03</h3>
+
+            <p>Pending Shipments</p>
+
+            <span class="stackly-storage-client-shipment-stat-note">
+                <i class="fa-solid fa-box"></i>
+                Awaiting dispatch
+            </span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================
+     03. ACTIVE SHIPMENTS
+========================================== -->
+
+<section class="stackly-storage-client-active-shipments"
+    id="clientActiveShipments"
+    data-aos="fade-up">
+
+    <div class="stackly-storage-client-shipment-section-heading">
+
+        <div>
+            <span>LIVE SHIPMENT DETAILS</span>
+            <h2>Active Shipments</h2>
+            <p>Follow your goods while they are being transported.</p>
+        </div>
+
+        <a href="404-client.html">
+            View All Shipments
+            <i class="fa-solid fa-arrow-right"></i>
+        </a>
+
+    </div>
+
+
+    <div class="stackly-storage-client-active-shipment-list">
+
+
+        <!-- SHIPMENT 01 -->
+
+        <div class="stackly-storage-client-active-shipment-card">
+
+            <div class="stackly-storage-client-shipment-image">
+
+                <img src="facility-experience.webp"
+                    alt="Commercial goods transportation">
+
+                <span class="stackly-storage-client-shipment-status transit">
+                    <i class="fa-solid fa-truck-fast"></i>
+                    In Transit
+                </span>
+
+            </div>
+
+
+            <div class="stackly-storage-client-active-shipment-content">
+
+                <div class="stackly-storage-client-active-shipment-heading">
+
+                    <div>
+                        <span>SHIPMENT ID: #SHP-3025</span>
+                        <h3>Commercial Goods Delivery</h3>
+                    </div>
+
+                    <span class="stackly-storage-client-shipment-priority">
+                        <i class="fa-solid fa-circle"></i>
+                        Priority Delivery
+                    </span>
+
+                </div>
+
+
+                <div class="stackly-storage-client-shipment-route">
+
+                    <div class="stackly-storage-client-route-point">
+
+                        <span class="stackly-storage-client-route-dot origin"></span>
+
+                        <div>
+                            <small>ORIGIN</small>
+                            <strong>Chennai, Tamil Nadu</strong>
+                        </div>
+
+                    </div>
+
+
+                    <div class="stackly-storage-client-route-line">
+                        <i class="fa-solid fa-truck"></i>
+                    </div>
+
+
+                    <div class="stackly-storage-client-route-point">
+
+                        <span class="stackly-storage-client-route-dot destination"></span>
+
+                        <div>
+                            <small>DESTINATION</small>
+                            <strong>Bengaluru, Karnataka</strong>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="stackly-storage-client-shipment-details">
+
+                    <span>
+                        <i class="fa-solid fa-calendar-days"></i>
+                        Dispatched: 10 November 2026
+                    </span>
+
+                    <span>
+                        <i class="fa-solid fa-box"></i>
+                        24 Packages
+                    </span>
+
+                    <span>
+                        <i class="fa-solid fa-truck"></i>
+                        Vehicle: TN 09 AB 4582
+                    </span>
+
+                </div>
+
+
+                <div class="stackly-storage-client-shipment-progress">
+
+                    <div class="stackly-storage-client-shipment-progress-heading">
+
+                        <span>Delivery Progress</span>
+
+                        <strong>70%</strong>
+
+                    </div>
+
+                    <div class="stackly-storage-client-shipment-progress-bar">
+
+                        <span style="width: 70%;"></span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="stackly-storage-client-active-shipment-footer">
+
+                    <span>
+                        <i class="fa-solid fa-clock"></i>
+                        Expected delivery: 15 November 2026
+                    </span>
+
+                    <a href="404-client.html">
+                        Track Shipment
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- SHIPMENT 02 -->
+
+        <div class="stackly-storage-client-active-shipment-card">
+
+            <div class="stackly-storage-client-shipment-image">
+
+                <img src="operation-inventory.webp"
+                    alt="Secure warehouse goods transportation">
+
+                <span class="stackly-storage-client-shipment-status processing">
+                    <i class="fa-solid fa-box"></i>
+                    Processing
+                </span>
+
+            </div>
+
+
+            <div class="stackly-storage-client-active-shipment-content">
+
+                <div class="stackly-storage-client-active-shipment-heading">
+
+                    <div>
+                        <span>SHIPMENT ID: #SHP-3032</span>
+                        <h3>Warehouse Inventory Transfer</h3>
+                    </div>
+
+                    <span class="stackly-storage-client-shipment-priority standard">
+                        <i class="fa-solid fa-circle"></i>
+                        Standard Delivery
+                    </span>
+
+                </div>
+
+
+                <div class="stackly-storage-client-shipment-route">
+
+                    <div class="stackly-storage-client-route-point">
+
+                        <span class="stackly-storage-client-route-dot origin"></span>
+
+                        <div>
+                            <small>ORIGIN</small>
+                            <strong>Coimbatore, Tamil Nadu</strong>
+                        </div>
+
+                    </div>
+
+
+                    <div class="stackly-storage-client-route-line">
+                        <i class="fa-solid fa-truck"></i>
+                    </div>
+
+
+                    <div class="stackly-storage-client-route-point">
+
+                        <span class="stackly-storage-client-route-dot destination"></span>
+
+                        <div>
+                            <small>DESTINATION</small>
+                            <strong>Madurai, Tamil Nadu</strong>
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <div class="stackly-storage-client-shipment-details">
+
+                    <span>
+                        <i class="fa-solid fa-calendar-days"></i>
+                        Dispatched: 12 November 2026
+                    </span>
+
+                    <span>
+                        <i class="fa-solid fa-box"></i>
+                        12 Packages
+                    </span>
+
+                    <span>
+                        <i class="fa-solid fa-truck"></i>
+                        Vehicle: TN 38 CD 7621
+                    </span>
+
+                </div>
+
+
+                <div class="stackly-storage-client-shipment-progress">
+
+                    <div class="stackly-storage-client-shipment-progress-heading">
+
+                        <span>Delivery Progress</span>
+
+                        <strong>35%</strong>
+
+                    </div>
+
+                    <div class="stackly-storage-client-shipment-progress-bar">
+
+                        <span style="width: 35%;"></span>
+
+                    </div>
+
+                </div>
+
+
+                <div class="stackly-storage-client-active-shipment-footer">
+
+                    <span>
+                        <i class="fa-solid fa-clock"></i>
+                        Expected delivery: 17 November 2026
+                    </span>
+
+                    <a href="404-client.html">
+                        Track Shipment
+                        <i class="fa-solid fa-arrow-right"></i>
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================
+     04. SHIPMENT TRACKING TIMELINE
+========================================== -->
+
+<section class="stackly-storage-client-shipment-tracking"
+    data-aos="fade-up">
+
+    <div class="stackly-storage-client-shipment-section-heading">
+
+        <div>
+            <span>DELIVERY ACTIVITY</span>
+            <h2>Shipment Tracking Timeline</h2>
+            <p>Check the latest movement updates for your shipment.</p>
+        </div>
+
+    </div>
+
+
+    <div class="stackly-storage-client-tracking-panel">
+
+        <div class="stackly-storage-client-tracking-header">
+
+            <div>
+                <span>TRACKING REFERENCE</span>
+                <h3>#SHP-3025</h3>
+            </div>
+
+            <span class="stackly-storage-client-shipment-status transit">
+                In Transit
+            </span>
+
+        </div>
+
+
+        <div class="stackly-storage-client-tracking-timeline">
+
+
+            <!-- STEP 01 -->
+
+            <div class="stackly-storage-client-tracking-step completed">
+
+                <div class="stackly-storage-client-tracking-icon">
+                    <i class="fa-solid fa-file-circle-check"></i>
+                </div>
+
+                <div class="stackly-storage-client-tracking-info">
+
+                    <h4>Shipment Created</h4>
+
+                    <p>Your shipment request has been successfully registered.</p>
+
+                    <span>09 November 2026 · 09:30 AM</span>
+
+                </div>
+
+                <span class="stackly-storage-client-tracking-label">
+                    Completed
+                </span>
+
+            </div>
+
+
+            <!-- STEP 02 -->
+
+            <div class="stackly-storage-client-tracking-step completed">
+
+                <div class="stackly-storage-client-tracking-icon">
+                    <i class="fa-solid fa-box-open"></i>
+                </div>
+
+                <div class="stackly-storage-client-tracking-info">
+
+                    <h4>Goods Collected</h4>
+
+                    <p>Your packages have been collected from the origin facility.</p>
+
+                    <span>10 November 2026 · 08:15 AM</span>
+
+                </div>
+
+                <span class="stackly-storage-client-tracking-label">
+                    Completed
+                </span>
+
+            </div>
+
+
+            <!-- STEP 03 -->
+
+            <div class="stackly-storage-client-tracking-step completed">
+
+                <div class="stackly-storage-client-tracking-icon">
+                    <i class="fa-solid fa-warehouse"></i>
+                </div>
+
+                <div class="stackly-storage-client-tracking-info">
+
+                    <h4>Dispatch Completed</h4>
+
+                    <p>Your shipment has departed from the Chennai warehouse.</p>
+
+                    <span>10 November 2026 · 11:45 AM</span>
+
+                </div>
+
+                <span class="stackly-storage-client-tracking-label">
+                    Completed
+                </span>
+
+            </div>
+
+
+            <!-- STEP 04 -->
+
+            <div class="stackly-storage-client-tracking-step active">
+
+                <div class="stackly-storage-client-tracking-icon">
+                    <i class="fa-solid fa-truck-fast"></i>
+                </div>
+
+                <div class="stackly-storage-client-tracking-info">
+
+                    <h4>Shipment In Transit</h4>
+
+                    <p>Your goods are currently moving towards Bengaluru.</p>
+
+                    <span>Latest Update · 12 November 2026</span>
+
+                </div>
+
+                <span class="stackly-storage-client-tracking-label">
+                    Current Status
+                </span>
+
+            </div>
+
+
+            <!-- STEP 05 -->
+
+            <div class="stackly-storage-client-tracking-step">
+
+                <div class="stackly-storage-client-tracking-icon">
+                    <i class="fa-solid fa-house-circle-check"></i>
+                </div>
+
+                <div class="stackly-storage-client-tracking-info">
+
+                    <h4>Delivered Successfully</h4>
+
+                    <p>Your shipment will be marked delivered after receiving confirmation.</p>
+
+                    <span>Awaiting Delivery</span>
+
+                </div>
+
+                <span class="stackly-storage-client-tracking-label upcoming">
+                    Upcoming
+                </span>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================
+     05. SHIPMENT HISTORY
+========================================== -->
+
+<section class="stackly-storage-client-shipment-history"
+    id="clientShipmentHistory"
+    data-aos="fade-up">
+
+    <div class="stackly-storage-client-shipment-section-heading">
+
+        <div>
+            <span>PREVIOUS DELIVERIES</span>
+            <h2>Shipment History</h2>
+            <p>Review your completed and previous shipments.</p>
+        </div>
+
+        <a href="404-client.html">
+            Export History
+            <i class="fa-solid fa-download"></i>
+        </a>
+
+    </div>
+
+
+    <div class="stackly-storage-client-shipment-history-table-wrapper">
+
+        <table class="stackly-storage-client-shipment-history-table">
+
+            <thead>
+
+                <tr>
+                    <th>Shipment ID</th>
+                    <th>Shipment Type</th>
+                    <th>Origin</th>
+                    <th>Destination</th>
+                    <th>Delivery Date</th>
+                    <th>Packages</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                </tr>
+
+            </thead>
+
+
+            <tbody>
+
+                <tr>
+
+                    <td>
+                        <strong>#SHP-2980</strong>
+                    </td>
+
+                    <td>Commercial Goods</td>
+
+                    <td>Chennai</td>
+
+                    <td>Salem</td>
+
+                    <td>05 Nov 2026</td>
+
+                    <td>18</td>
+
+                    <td>
+                        <span class="stackly-storage-client-shipment-history-status delivered">
+                            Delivered
+                        </span>
+                    </td>
+
+                    <td>
+                        <a href="404-client.html"
+                            aria-label="View shipment">
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        </a>
+                    </td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>
+                        <strong>#SHP-2945</strong>
+                    </td>
+
+                    <td>Inventory Transfer</td>
+
+                    <td>Madurai</td>
+
+                    <td>Chennai</td>
+
+                    <td>28 Oct 2026</td>
+
+                    <td>12</td>
+
+                    <td>
+                        <span class="stackly-storage-client-shipment-history-status delivered">
+                            Delivered
+                        </span>
+                    </td>
+
+                    <td>
+                        <a href="404-client.html"
+                            aria-label="View shipment">
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        </a>
+                    </td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>
+                        <strong>#SHP-2892</strong>
+                    </td>
+
+                    <td>Warehouse Transfer</td>
+
+                    <td>Coimbatore</td>
+
+                    <td>Erode</td>
+
+                    <td>15 Oct 2026</td>
+
+                    <td>08</td>
+
+                    <td>
+                        <span class="stackly-storage-client-shipment-history-status delivered">
+                            Delivered
+                        </span>
+                    </td>
+
+                    <td>
+                        <a href="404-client.html"
+                            aria-label="View shipment">
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        </a>
+                    </td>
+
+                </tr>
+
+
+                <tr>
+
+                    <td>
+                        <strong>#SHP-2810</strong>
+                    </td>
+
+                    <td>Personal Storage</td>
+
+                    <td>Chennai</td>
+
+                    <td>Tiruchirappalli</td>
+
+                    <td>02 Oct 2026</td>
+
+                    <td>06</td>
+
+                    <td>
+                        <span class="stackly-storage-client-shipment-history-status cancelled">
+                            Cancelled
+                        </span>
+                    </td>
+
+                    <td>
+                        <a href="404-client.html"
+                            aria-label="View shipment">
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        </a>
+                    </td>
+
+                </tr>
+
+            </tbody>
+
+        </table>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================
+     06. DELIVERY PROCESS
+========================================== -->
+
+<section class="stackly-storage-client-delivery-process"
+    data-aos="fade-up">
+
+    <div class="stackly-storage-client-shipment-section-heading">
+
+        <div>
+            <span>HOW IT WORKS</span>
+            <h2>Your Delivery Journey</h2>
+            <p>Simple and organized shipment management from start to finish.</p>
+        </div>
+
+    </div>
+
+
+    <div class="stackly-storage-client-delivery-process-grid">
+
+
+        <!-- STEP 01 -->
+
+        <div class="stackly-storage-client-delivery-process-card">
+
+            <div class="stackly-storage-client-delivery-number">
+                01
+            </div>
+
+            <div class="stackly-storage-client-delivery-icon">
+                <i class="fa-solid fa-clipboard-list"></i>
+            </div>
+
+            <h3>Shipment Request</h3>
+
+            <p>
+                Create a shipment request with your goods,
+                pickup location, and delivery details.
+            </p>
+
+        </div>
+
+
+        <!-- STEP 02 -->
+
+        <div class="stackly-storage-client-delivery-process-card">
+
+            <div class="stackly-storage-client-delivery-number">
+                02
+            </div>
+
+            <div class="stackly-storage-client-delivery-icon">
+                <i class="fa-solid fa-boxes-packing"></i>
+            </div>
+
+            <h3>Pickup & Packaging</h3>
+
+            <p>
+                Your goods are collected, checked, and prepared
+                for safe transportation.
+            </p>
+
+        </div>
+
+
+        <!-- STEP 03 -->
+
+        <div class="stackly-storage-client-delivery-process-card">
+
+            <div class="stackly-storage-client-delivery-number">
+                03
+            </div>
+
+            <div class="stackly-storage-client-delivery-icon">
+                <i class="fa-solid fa-route"></i>
+            </div>
+
+            <h3>Secure Transportation</h3>
+
+            <p>
+                Your shipment moves through the delivery network
+                with regular progress updates.
+            </p>
+
+        </div>
+
+
+        <!-- STEP 04 -->
+
+        <div class="stackly-storage-client-delivery-process-card">
+
+            <div class="stackly-storage-client-delivery-number">
+                04
+            </div>
+
+            <div class="stackly-storage-client-delivery-icon">
+                <i class="fa-solid fa-house-circle-check"></i>
+            </div>
+
+            <h3>Successful Delivery</h3>
+
+            <p>
+                Your goods reach their destination and
+                delivery completion is recorded.
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+<!-- =========================================
+     07. SHIPMENT SUPPORT CTA
+========================================== -->
+
+<section class="stackly-storage-client-shipment-support"
+    data-aos="fade-up">
+
+    <div class="stackly-storage-client-shipment-support-content">
+
+        <div class="stackly-storage-client-shipment-support-icon">
+            <i class="fa-solid fa-headset"></i>
+        </div>
+
+
+        <div class="stackly-storage-client-shipment-support-text">
+
+            <span>SHIPMENT SUPPORT</span>
+
+            <h2>Need Help Tracking Your Goods?</h2>
+
+            <p>
+                If you have questions about shipment status,
+                delivery schedules, or transportation details,
+                our support team is ready to help.
+            </p>
+
+        </div>
+
+
+        <a href="404-client.html"
+            class="stackly-storage-client-shipment-support-btn">
+
+            Contact Support
+            <i class="fa-solid fa-arrow-right"></i>
+
+        </a>
+
+    </div>
+
+</section>
+
+
+        </div>
+
+
+</main>
+
+
+    <!-- =========================================
+         AOS SCRIPT
+    ========================================== -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+
+
+    <!-- =========================================
+         CLIENT DASHBOARD JAVASCRIPT
+    ========================================== -->
+
+    <script src="client.js"></script>
+
+</body>
+
+</html>
