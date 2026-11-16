@@ -9608,18 +9608,33 @@
 
 /* CONTACT DETAILS */
 
+
+/* ==========================================================
+   STACKLY STORAGE CONTACT DETAILS - PREMIUM HOVER EFFECT
+========================================================== */
+
 .stackly-storage-contact-detail {
     display: flex;
     align-items: flex-start;
     gap: 20px;
-    padding: 20px 0;
+    padding: 22px 15px;
     border-bottom: 1px solid rgba(16, 35, 51, 0.10);
-    transition: transform 0.35s ease;
+    border-radius: 12px;
+    position: relative;
+    transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
+/* DETAIL HOVER */
+
 .stackly-storage-contact-detail:hover {
-    transform: translateX(7px);
+    transform: translateX(8px);
+    background: rgba(234, 245, 217, 0.35);
+    box-shadow: 0 8px 25px rgba(16, 35, 51, 0.06);
+    padding-left: 20px;
+    padding-right: 15px;
 }
+
+/* ICON BOX */
 
 .stackly-storage-contact-detail-icon {
     flex-shrink: 0;
@@ -9631,21 +9646,41 @@
     background: #eaf5d9;
     color: #638b2d;
     font-size: 22px;
-    border-radius: 10px;
-    transition: all 0.35s ease;
+    border-radius: 12px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s ease;
 }
+
+/* ICON HOVER BACKGROUND */
 
 .stackly-storage-contact-detail:hover
 .stackly-storage-contact-detail-icon {
-    background: #b9ed62;
+    background: linear-gradient(135deg, #b9ed62, #d5f59c);
     color: #102333;
-    transform: rotate(-7deg);
+    transform: rotate(-8deg) scale(1.08);
+    box-shadow: 0 6px 16px rgba(99, 139, 45, 0.22);
 }
+
+/* ICON ANIMATION */
+
+.stackly-storage-contact-detail-icon i {
+    transition: transform 0.4s ease;
+}
+
+.stackly-storage-contact-detail:hover
+.stackly-storage-contact-detail-icon i {
+    transform: scale(1.15);
+}
+
+/* CONTENT */
 
 .stackly-storage-contact-detail > div:last-child {
     flex: 1;
     min-width: 0;
 }
+
+/* SMALL LABEL */
 
 .stackly-storage-contact-detail small {
     display: block;
@@ -9654,7 +9689,14 @@
     font-weight: 800;
     letter-spacing: 1.7px;
     margin-bottom: 6px;
+    transition: letter-spacing 0.35s ease;
 }
+
+.stackly-storage-contact-detail:hover small {
+    letter-spacing: 2px;
+}
+
+/* HEADING */
 
 .stackly-storage-contact-detail h3 {
     color: #102333;
@@ -9662,7 +9704,14 @@
     font-size: 19px;
     font-weight: 700;
     margin: 0 0 6px;
+    transition: color 0.3s ease;
 }
+
+.stackly-storage-contact-detail:hover h3 {
+    color: #638b2d;
+}
+
+/* LINKS AND TEXT */
 
 .stackly-storage-contact-detail p,
 .stackly-storage-contact-detail a {
@@ -9678,6 +9727,47 @@
 
 .stackly-storage-contact-detail a:hover {
     color: #638b2d;
+}
+
+/* ACCESSIBILITY */
+
+@media (prefers-reduced-motion: reduce) {
+    .stackly-storage-contact-detail,
+    .stackly-storage-contact-detail-icon,
+    .stackly-storage-contact-detail-icon i,
+    .stackly-storage-contact-detail h3,
+    .stackly-storage-contact-detail small {
+        transition: none;
+    }
+}
+
+/* MOBILE RESPONSIVE */
+
+@media (max-width: 576px) {
+    .stackly-storage-contact-detail {
+        gap: 14px;
+        padding: 18px 10px;
+    }
+
+    .stackly-storage-contact-detail-icon {
+        width: 48px;
+        height: 48px;
+        font-size: 19px;
+    }
+
+    .stackly-storage-contact-detail h3 {
+        font-size: 17px;
+    }
+
+    .stackly-storage-contact-detail p,
+    .stackly-storage-contact-detail a {
+        font-size: 14px;
+    }
+
+    .stackly-storage-contact-detail:hover {
+        transform: translateX(3px);
+        padding-left: 12px;
+    }
 }
 
 /* BOTTOM NOTE */
