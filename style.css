@@ -9773,6 +9773,11 @@
 
 /* BOTTOM NOTE */
 
+
+/* ==========================================================
+   STACKLY STORAGE CONTACT NOTE - HOVER EFFECT
+========================================================== */
+
 .stackly-storage-contact-note {
     display: flex;
     align-items: center;
@@ -9782,18 +9787,91 @@
     background: rgba(185, 237, 98, 0.16);
     border-left: 3px solid #93c83e;
     border-radius: 5px;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s ease;
 }
+
+/* HOVER EFFECT */
+
+.stackly-storage-contact-note:hover {
+    transform: translateY(-5px);
+    background: rgba(185, 237, 98, 0.28);
+    border-left-color: #638b2d;
+    box-shadow: 0 10px 25px rgba(99, 139, 45, 0.13);
+}
+
+/* LEFT BORDER ANIMATION */
+
+.stackly-storage-contact-note::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 3px;
+    height: 0;
+    background: #638b2d;
+    transition: height 0.4s ease;
+}
+
+.stackly-storage-contact-note:hover::before {
+    height: 100%;
+}
+
+/* ICON */
 
 .stackly-storage-contact-note i {
     color: #78a832;
     font-size: 19px;
+    flex-shrink: 0;
+    transition: all 0.4s ease;
 }
+
+.stackly-storage-contact-note:hover i {
+    color: #4f7921;
+    transform: scale(1.2) rotate(-10deg);
+}
+
+/* TEXT */
 
 .stackly-storage-contact-note span {
     color: #425b35;
     font-size: 14px;
     font-weight: 600;
     line-height: 1.6;
+    transition: color 0.3s ease;
+}
+
+.stackly-storage-contact-note:hover span {
+    color: #29451e;
+}
+
+/* ACCESSIBILITY */
+
+@media (prefers-reduced-motion: reduce) {
+    .stackly-storage-contact-note,
+    .stackly-storage-contact-note i,
+    .stackly-storage-contact-note span,
+    .stackly-storage-contact-note::before {
+        transition: none;
+    }
+}
+
+/* MOBILE */
+
+@media (max-width: 576px) {
+    .stackly-storage-contact-note {
+        padding: 15px;
+        gap: 10px;
+    }
+
+    .stackly-storage-contact-note span {
+        font-size: 13px;
+    }
+
+    .stackly-storage-contact-note:hover {
+        transform: translateY(-2px);
+    }
 }
 
 /* =========================================
